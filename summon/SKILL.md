@@ -114,6 +114,38 @@ frontier model on cost only on work larger than a single context window,
 and loses on any single dependent chain. The lead pays for the returns
 alone; every token a delegate spends reading is a token the lead did not.
 
+Where the harness offers a model choice, a delegate whose brief states its
+decision rules takes the fast tier and the join stays on the lead's tier:
+tier moved judgment less than the stated rule did (Gotchas).
+
+## Called from a skill
+
+A skill that delegates commands `/summon` and supplies what is its own; the
+mode decision, the six fields, the bounds, the sizing, and the review of
+the return are this skill's, so one brief shape and one set of laws hold
+whichever skill is calling.
+
+| The caller supplies | Lands in |
+| --- | --- |
+| The unit one delegate closes: one claim, one paper, one bank, one leaf bundle | objective |
+| The record the delegate receives, and nothing it does not need | evidence |
+| The rules of its own that this unit can break | rules |
+| Its return record's shape, by registered name | contract |
+| The gate the lead admits the return through: a script command, or the lead's own check | the join, after `review` |
+
+- The lead is the sole writer. A delegate returns a record and writes no
+  session state; the lead judges it under `review`, then admits it through
+  the caller's gate. One writer means no interleaved session files, and the
+  trust boundary sits before admission.
+- The branch leaves no trace. Deliverable and state are identical whether a
+  unit ran inline or delegated; only cost and latency differ, reported
+  where the caller's report has a line for them.
+- Sizing is the mode table's and the Cost section's, counted in the
+  caller's unit: a unit whose evidence would otherwise sit in the lead's
+  context (a fetched page, a full text) is delegated when it is independent
+  of the others; the fan fits the concurrency cap; a unit the lead closes
+  in a few tool calls stays inline whatever the count.
+
 ## Gotchas
 
 - A delegate handed a whole skill still ran `git log` for the scope
@@ -143,4 +175,5 @@ Every verb file appends its own checks to these.
   <item>A failed status was treated as no return.</item>
   <item>Telemetry was captured from the completion notification at arrival.</item>
   <item>No result was checked by re-spawning.</item>
+  <item>When called from a skill, the unit, the record shape, and the gate came from the caller, and no delegate wrote session state.</item>
 </checklist>

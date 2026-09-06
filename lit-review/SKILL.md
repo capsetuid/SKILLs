@@ -187,9 +187,7 @@ Before the protocol phase, determine from actually available tools:
 - Full-text reading: read PDF full texts with `/read-pdf`. A paper with no
   reachable PDF falls back to landing-page HTML, then to abstract level,
   disclosed in the report.
-- Sub-agents: optional for parallel extraction only. A worker receives one
-  included paper and returns one extraction record; workers never write
-  session state. Results must not depend on which branch ran.
+- Delegation: through `/summon`, for extraction only, per `extract`.
 
 ## Gotchas
 

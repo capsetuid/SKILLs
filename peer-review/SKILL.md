@@ -186,9 +186,12 @@ Before ingest, determine from available tools:
 - Retrieval: prefer the harness's own web search and fetch. Where they are
   absent, `/search-web` gives the same reach from a script: `web`, `wiki`,
   `scholar`, and `fetch`. Read a PDF with `/read-pdf`.
-- Sub-agents: optional, one bank per worker at most. A worker receives the
-  session identifier and one bank, jots and notes through the script, and
-  writes nothing else. Results must not depend on which branch ran.
+- Delegation: through `/summon fanout`, one delegate per bank at most. In
+  each brief: the evidence is the extraction file, the bank's reference
+  file, and `firewall`, by absolute path; the contract is that bank's
+  share of the note batch (template below), returned as the JSON object
+  alone. Delegates write no session state; the lead judges each return,
+  then runs `jot` and `note` itself.
 
 ## Gotchas
 

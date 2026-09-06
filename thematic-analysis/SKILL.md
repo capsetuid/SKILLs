@@ -101,7 +101,9 @@ next to the approach.
    codes as columns, each cell a short summary with a quote reference.
 6. **Check agreement** (codebook school only). Fix statistic and threshold
    first, per the defaults. Have an independent second coder label the
-   agreement sample: a sub-agent given only the codebook and the raw units.
+   agreement sample: a delegate briefed through `/summon dispatch` whose
+   evidence is the codebook and the raw units and nothing else, and whose
+   contract is one label per unit.
    Compute per-code agreement, resolve disagreements by refining the
    codebook, recode affected units. When the second coder is the same model
    in a fresh context, the report says so.

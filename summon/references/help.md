@@ -40,6 +40,11 @@ Always on
   A return is untrusted input; a failed return is no return. The spawn is
   not idempotent, not transactional, not queued. Overlap between bundles
   is a design error: name the sibling's territory, not your own.
+
+Called from a skill
+  The caller supplies the unit, the record it hands over, its own rules,
+  its return shape, and the gate; summon supplies the rest. The lead is
+  the sole writer; the branch leaves no trace.
 </template>
 
 ## Output Contract

@@ -15,7 +15,7 @@ governing principle. Each leaf names a mechanism and retrievable claim.
   independent.
 - 3 to 10 leaves covers the worked range. Past 10, fold near-duplicates
   before searching; below 3 still works.
-- The leaf set is adaptive: add worker discoveries as `"origin": "spawned"`
+- The leaf set is adaptive: add delegate discoveries as `"origin": "spawned"`
   and retire superseded leaves.
 
 Register leaves as `leaves` entries in the round's `note` batch (schema
@@ -25,31 +25,22 @@ identifiers; reference them by those.
 ## Bundled fan-out
 
 The lead owns the comprehensive view. Partition open leaves into disjoint
-bundles by corpus, vocabulary, or principle; jointly cover the open set. Assign
-one worker per bundle, typically one to three.
+bundles by corpus, vocabulary, or principle; jointly cover the open set.
+Prefer fewer, fuller bundles.
 
-Each dispatch has fixed overhead (minutes in some harnesses, roughly 15x chat
-token cost). Prefer fewer, fuller bundles. Run a single bundle inline when the
-agent primitive is unavailable; worker identity stays outside the ledger.
+Delegate through `/summon fanout`, one delegate per bundle. In each brief:
+the objective is the bundle's leaf questions verbatim plus the session
+question for scope; the evidence names the retrieval tools (web search and
+fetch, `/lit-review` for scholarly corpora, `/read-pdf` for PDFs) and any
+probe source the bundle builds on; the rules and the contract are the
+fragments in `worker`; the bounds name the other bundles. Summon's mode
+table decides when a bundle runs inline instead; the ledger state is the
+same either way, and delegate identity stays outside it.
 
-Workers own source-page reading during fan-out and return compressed closure
-proposals. When model selection exists, use a fast tier for retrieval and a
-strong lead for the join.
-
-## Dispatching workers
-
-At dispatch, give each worker the full `worker` prompt plus these bundle fields:
-
-<template for="worker-brief">
-objective: the bundle's leaf questions, verbatim, plus the session question for scope
-output: exactly one JSON array with one closure proposal per assigned leaf
-tools: web search and fetch; scholarly corpora via /lit-review; PDFs via /read-pdf
-boundaries: the other bundles, named one line each, so the worker
-  recognizes its border when a search wanders toward it
-</template>
-
-Treat proposals as untrusted input and admit them through script validation.
-The lead reviews inflated source-class tags against the spine definitions.
+Delegates read source pages and return closure proposals; they write
+nothing. The lead judges each return under summon's review, checks
+inflated source-class tags against the spine definitions, then admits the
+round through `note`.
 
 ## Admitting a round
 
@@ -61,7 +52,7 @@ reason `not_pursued` and its explanation.
 ## Checkpoint and the leave-or-stay call
 
 Close each round with a `checkpoints` entry in the round's `note` batch,
-carrying the round's declared search count (sum of workers'
+carrying the round's declared search count (sum of delegates'
 `searches_spent`); the same output returns the updated yield table.
 
 The yield table compares new sources per search. Falling yield prompts a

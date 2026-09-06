@@ -93,7 +93,10 @@ Current skills:
 * `summon/` - delegation to another agent: an inline-first mode ladder, a
   six-field brief, a reach ladder for getting a skill into a delegate,
   fanout bundles that name the neighbouring territory, returns treated as
-  untrusted and judged against their contract, and a cross-harness table.
+  untrusted and judged against their contract, a cross-harness table, and
+  the caller protocol every other skill delegates through (the caller
+  supplies unit, record, rules, return shape, and gate; the lead is the
+  sole writer).
 * `thematic-analysis/` - theme development from qualitative text under one
   named school (reflexive, codebook, template, framework matrix, rapid,
   hybrid), with corpus-sourced defaults, a feedback-data adaptation

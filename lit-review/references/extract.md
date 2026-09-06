@@ -60,8 +60,10 @@ per `report`.
 
 ## Parallel extraction
 
-With sub-agents available and more than roughly eight full-text papers, fan
-out: one worker per paper, input the record template plus the paper's corpus
-entry, output one extraction record. The orchestrator alone runs `update`
-and `jot`; workers never write session state. Worker output follows the
-same template so the branch leaves no trace in the deliverable.
+Delegate through `/summon fanout`, one delegate per included paper. In each
+brief: the evidence is the paper's corpus entry and its `pdf_url`; the
+rules are the reading order and depth above, with `/read-pdf` as the
+reader; the contract is the extraction template, returned as the JSON
+object alone. Delegates write no session state; the lead judges each
+return, then runs `jot` and `update` itself, so the branch leaves no trace
+in the deliverable.

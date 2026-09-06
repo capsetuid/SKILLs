@@ -52,7 +52,8 @@ After context compaction, re-open this file and replay state with `status`.
 
 Probe, explore for up to three rounds when material questions remain, then
 answer. The spine owns the probe; open probes load `framing` with `explore`;
-drafting loads `answer`. Load `worker` only as the subagent system prompt.
+drafting loads `answer`. Load `worker` only when composing a delegate's
+brief.
 
 ### Probe: the lead's own first round
 
@@ -170,8 +171,8 @@ Determine capabilities from available tools:
   absent, `/search-web` gives the same reach from a script: `web`, `wiki`,
   `scholar`, and `fetch`. Read a PDF with `/read-pdf`. With neither, say
   the question needs retrieval and stop.
-- Use subagents after round one for two or more orthogonal bundles; run the
-  same contract inline otherwise. Both paths produce identical ledger state.
+- Delegation: through `/summon`, after round one, per `explore`; the
+  ledger state is the same on either branch.
 - Scholarly corpus leaves command `/lit-review`; PDF reading commands
   `/read-pdf`.
 

@@ -63,8 +63,8 @@ Determine from the tools actually present:
   and stop. Do not verify from memory.
 - File editing available? If NO: deliver the report only; present corrections
   as old-span/new-span pairs the user can apply.
-- Sub-agent spawning available (a task or agent primitive among the tools)?
-  Selects the orchestration branch below.
+- Delegation available (an agent primitive among the tools)? Selects the
+  orchestration branch below; `/summon` decides the mode.
 
 Name the harness-agnostic action, never a tool signature: "replace the old
 span with the corrected span using the available file-editing tool".
@@ -128,20 +128,24 @@ authoritative source supersedes it. A claim wrong at claim-time is
 
 ## Orchestration
 
-Pick one branch from the Step 0 probe plus claim count. Verdict records and
-the report MUST be identical across branches; orchestration is an execution
-detail visible only as cost and latency metadata.
+Pick one branch from the Step 0 probe and summon's mode table. Verdict
+records and the report MUST be identical across branches; the branch is
+visible only as cost and latency metadata.
 
-- **Parallel**: sub-agents available AND claim count > 5. Spawn verification
-  workers in batches of 3-5. Each worker receives exactly the per-claim
-  contract input, performs its own retrieval, returns exactly one verdict
-  record. Workers never see the document, other claims, other verdicts, or
-  the file system for writing; workers NEVER edit files. The orchestrator
-  alone aggregates, reports, seeks approval, and edits.
-- **Sequential**: no sub-agent primitive, or claim count <= 5. Same contract
-  per claim, run inline one claim at a time. Summarize fetched evidence into
-  the verdict record immediately; discard raw page content from working
-  context (offload to a scratch file if a later step may need it).
+- **Parallel**: delegate through `/summon fanout`, one delegate per claim.
+  In each brief: the evidence is exactly the per-claim contract input; the
+  rules are the retrieval route for the claim's type per `claims` and the
+  source tiers in `evidence`; the contract is one verdict record, returned
+  as the JSON object alone. A delegate never sees the document, other
+  claims, other verdicts, or the file system for writing, and edits
+  nothing. The lead alone aggregates, reports, seeks approval, and edits.
+  This split is a security boundary: only delegates touch untrusted web
+  content.
+- **Sequential**: the same contract per claim, inline, one claim at a time,
+  when summon keeps the work inline or no agent primitive exists.
+  Summarize fetched evidence into the verdict record immediately; discard
+  raw page content from working context (offload to a scratch file if a
+  later step may need it).
 
 ## State file
 
