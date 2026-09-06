@@ -12,6 +12,7 @@ submodule.
 
 | Skill | Purpose |
 | --- | --- |
+| [advisor](advisor/SKILL.md) | Reads a research project as a principal investigator would: what prior ideas it combines, which parts of its setup the field has moved past, what the lab can afford, and the cheapest experiment that would prove or kill each claim. |
 | [aesthete](aesthete/SKILL.md) | Designs and reviews web interfaces to a WCAG 2.2 accessibility floor, applies a supplied brand or design system, and strips the templated look of generated UI. |
 | [author-skill](author-skill/SKILL.md) | Writes and reviews skills; every skill here was authored under it. |
 | [caveman](caveman/SKILL.md) | Compresses agent output into terse phrasing to cut token cost, and rewrites a prose file in place reversibly. |

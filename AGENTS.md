@@ -39,6 +39,12 @@ Each skill loads its reference files on demand from `references/`.
 
 Current skills:
 
+* `advisor/` - a principal investigator's read of a research project:
+  constitution as every origin with each mechanism tagged as-is, tweaked,
+  transferred, or new and its patterns named, each setup element classed
+  current, legacy, or toy with a source,
+  the lab's envelope written as an assumption, one instrument and one kill
+  test per claim, and verbs review, design, audit, teach, help.
 * `aesthete/` - UI design and review with an HCI eye: design read,
   composition dials, precedence ladder, ownership table, a dated WCAG 2.2
   accessibility floor, verbs (design/build/review/audit/redesign/teach/help),

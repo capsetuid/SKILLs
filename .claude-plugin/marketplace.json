@@ -15,6 +15,7 @@
       "repository": "https://github.com/BTreeMap/SKILLs",
       "license": "MIT",
       "skills": [
+        "./advisor",
         "./aesthete",
         "./author-skill",
         "./caveman",
