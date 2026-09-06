@@ -1,8 +1,6 @@
 # Evidence
 
-The sourced heuristics behind the four moves, each as the instruction it
-yields. Loaded by `teach` to cite a judgment's source; the moves in the
-spine carry the instruction without the citation.
+`teach` loads this file to cite a judgment's source.
 
 | Move | Instruction | Source |
 | --- | --- | --- |
@@ -22,6 +20,3 @@ spine carry the instruction without the citation.
 | Direction | Seek the region where the field's assumptions break down; open problems live there, incremental ones elsewhere | Alon, "How to Choose a Good Scientific Problem", Molecular Cell, 2009, https://www.weizmann.ac.il/mcb/alon/sites/mcb.UriAlon/files/uploads/nurturing/howtochoosegoodproblem.pdf |
 | Direction | Keep protected time to ask what the field's important open problems are and how the current work bears on them | Hamming, "You and Your Research", 1986, http://www.cs.virginia.edu/~robins/YouAndYourResearch.html |
 | Direction | Ask who benefits and what difference success makes before investing further | "The Heilmeier Catechism", DARPA, https://www.darpa.mil/about/heilmeier-catechism |
-
-The moves' calibration, in the spine's Measured section, is the skill's
-own measurement; the rows above are the literature it rests on.

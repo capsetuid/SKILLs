@@ -61,8 +61,7 @@ prior work it comes from (the paper's own citations usually say) and tag
 its relation to that origin: `as-is`, `tweaked` (what changed), `transferred`
 (from where), or `new`. State the project in one line,
 `<origin 1> + <origin 2> + ... [+ new]`, with the tags where they are not
-as-is, and name the patterns it fits; a paper fits several, and the
-composition of a tweaked idea with a transferred one is the ordinary case:
+as-is. Name the patterns it fits; a paper fits several:
 
 | Pattern | Shape | What it has to show |
 | --- | --- | --- |
@@ -74,11 +73,8 @@ composition of a tweaked idea with a transferred one is the ordinary case:
 | Removal | A known method with a part deleted | Parity without the part, at the setup that motivated the part |
 | Negative | X fails where it was expected to work | X was given its best configuration |
 
-Cited in `evidence`: the highest-impact papers are conventional
-combinations with one atypical pairing injected. A reading that finds only
-origins and tags demotes nothing; the tags are where the contribution
-lives. A count of origins is not a judgment: three tweaked origins can
-carry more than one new mechanism.
+Origins and tags are the reading, never a demotion; a count of origins is
+not a judgment.
 
 ### 2. Currency
 
@@ -101,9 +97,10 @@ about the mechanism and the paper says so.
 ### 3. Envelope
 
 Infer what the lab can afford from the testbed section, the affiliation,
-and anything the user states: compute (count and class of accelerators),
-network (fabric, programmable switches), data, people-months, money for
-rented compute. Write it as an assumption the lab corrects. Ask one
+and anything the user states. Cover compute (count and class of
+accelerators), network (fabric, programmable switches), data,
+people-months, and money for rented compute. Write it as an assumption the
+lab corrects. Ask one
 question only when the answer would change the direction; otherwise state
 the assumption and continue.
 
@@ -113,8 +110,8 @@ Split the contribution into claims by the instrument each needs. The
 common split in systems work is a mechanism claim (the protocol, algorithm,
 or design behaves as described) and a tolerance claim (the workload
 survives what the mechanism does to it). A claim the paper makes about a
-scale it did not test (in its abstract, its motivation, or its deployment
-language) is a claim too, and it gets its own row. For each claim, name
+scale it did not test, in its abstract, its motivation, or its deployment
+language, gets its own row. For each claim, name
 the cheapest credible instrument inside the envelope that proves it at a
 setup the field accepts as current:
 
@@ -125,15 +122,14 @@ setup the field accepts as current:
 | A workload's tolerance | The smallest workload the field still calls current, on the real system, with the mechanism's effect injected; never the paper's own workload when the Currency table classed it toy or legacy |
 | A comparison | The strongest baseline in its own best configuration, never a reimplementation with its hardware removed |
 
-Name the kill test per claim: the outcome that ends the direction. A claim
-with no kill test is a hope.
+Name the kill test per claim: the outcome that ends the direction.
 
 ## Verbs
 
 One invocation loads exactly one verb file, named for the verb. Choose in
-descending priority: an explicit verb; an unambiguous request shape (a
-plan of experiments is design, several projects or a whole program is
-audit, an explanation for a named audience is teach); otherwise review.
+descending priority: an explicit verb; an unambiguous request shape;
+otherwise review. A plan of experiments is design, several projects or a
+whole program is audit, an explanation for a named audience is teach.
 
 | Verb | Contract |
 | --- | --- |
@@ -148,48 +144,25 @@ refereeing to `/peer-review`, a literature survey to `/lit-review`, a
 factual claim in the text to `/fact-check`, an engineering direction call
 to `/reframe`.
 
-## Measured
-
-On one systems paper with two origins, four held criteria (constitution
-with every origin and delta named, every setup element classed with a
-source, the envelope written as an assumption, claims split with
-instruments inside the envelope): a delegate with no rules scored 1.0 in
-2 of 2 runs, stayed inside the authors' framing, and recommended
-reproducing on a cluster the lab did not have. The four moves as five
-rules in the brief scored 3.5 in 2 of 2 at equal cost. This file, read by
-path, scored 3.75, 3.75, 3.75, then 4.0 on the lead's tier, the last after
-the instrument table gained its "never the paper's own workload" clause
-and the untested-scale claim became a mandatory row; the misses before
-that were one instrument row or the other, never the same one twice. On
-a second paper of a different shape (a 2021 method with four origins, one
-tweaked, two transferred, one new), the same file scored 4 of 4 and sent
-the scale claim to a real run at attainable scale, since that is the
-field's instrument there.
-
 ## Gotchas
 
-- The abstract is read last: it is the authors' framing, and the
-  constitution sits in the method and the citations.
-- Two origins and a delta is one shape, not the shape. A paper that tweaks
-  a decade-old idea, or joins four, reads the same way: one line per
-  mechanism with its origin and tag. Forcing a paper into A + B is the
-  same error as accepting the abstract.
-- A reimplemented baseline with its hardware support removed is a weaker
-  baseline, not the state of the art. Say so before comparing numbers.
-- A paper's own future-work section is the authors' framing again. Judge
-  it by the four moves like anything else.
-- "Scale up on a real cluster" is no direction for a lab without one; the
-  instrument table has the row for that case.
-- An envelope inferred from one testbed section can be off by an order of
-  magnitude (rented hours, a collaborator's cluster). That is why it is
-  written as an assumption and asked about only when it changes the
-  direction.
-- A currency claim from memory ages. Retrieve when the claim decides the
-  direction.
-- Delegated to the fast model tier, the read kept the constitution and the
-  envelope but classed a raw UDP transport, consumer GPUs, and a weakened
-  baseline as current from memory, retrieved nothing, and broke the output
-  contract. Run the moves on the lead's own tier.
+- Read the abstract last; the constitution sits in the method and the
+  citations.
+- Write one line per mechanism with its origin and tag; forcing a paper
+  into A + B is the same error as accepting the abstract.
+- Say so before comparing numbers: a reimplemented baseline with its
+  hardware support removed is a weaker baseline, not the state of the art.
+- Judge a paper's own future-work section by the four moves; it is the
+  authors' framing again.
+- Take the instrument table's row for a lab without a cluster; "scale up
+  on a real cluster" is no direction there.
+- Write the envelope as an assumption and ask about it only when it
+  changes the direction; one testbed section can be off by an order of
+  magnitude.
+- Retrieve a currency claim when it decides the direction; one from memory
+  ages.
+- Run the moves on the lead's tier: the fast tier read the file, retrieved
+  nothing, and broke the contract.
 
 ## Completion Checks
 

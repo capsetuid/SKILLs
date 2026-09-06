@@ -19,32 +19,35 @@ metadata:
     <rule>Store the skill in a kebab-case directory containing a file named exactly `SKILL.md`.</rule>
     <rule>Begin the file with YAML frontmatter restricted to Agent Skills spec fields (agentskills.io), in this order: `name`, `description`, then only as needed `license`, `compatibility`, `metadata`, `allowed-tools`. Never emit agent-specific extension fields such as `argument-hint` or `when_to_use`; record such hints as quoted string values under `metadata`.</rule>
     <rule>Set `name` equal to the directory name: 1-64 characters; lowercase letters, numbers, and hyphens; no leading, trailing, or consecutive hyphens. Name a task skill with an imperative verb phrase, the command a user would speak (e.g., `fact-check`, `read-pdf`, `git-commit`); name a persona or stance skill with a single noun (e.g., `caveman`, `ponytail`). Never append filler nouns like `-protocol`, `-helper`, or `-skills`.</rule>
-    <rule>Write `description` as a `>-` folded block scalar, 1-1024 characters, third person, in two movements: first a capability statement carrying the skill's key search terms, then trigger conditions starting "Use when"; append a "Do not use for ..." exclusion when misfires are likely.</rule>
+    <rule>Write `description` as a `>-` folded block scalar, 1-1024 characters, third person, in two movements: first a capability statement carrying the skill's key search terms, then trigger conditions starting "Use when"; append a "Do not use for ..." exclusion when misfires are likely. It names the deliverable and the guarantees the reader can hold the skill to, in the reader's vocabulary; it names no internal record, phase, or file the body defines, no library the skill calls, and no verb or level the argument hint lists.</rule>
+    <rule>Give every skill `metadata.argument-hint`, the one place its invocation grammar is spelled: one bracket group per independent choice, ordered as a user types them (`"[lite|full|ultra] [design|review|help]"`); a skill with no vocabulary names its subject (`"[file-or-section]"`). Re-check it whenever a verb, level, or mode changes.</rule>
     <rule>Set `license: MIT` so a skill vendored out of this repository retains its terms.</rule>
     <rule>Add `compatibility` (max 500 characters) only when the skill requires specific runtimes, system packages, or network access; most skills omit it.</rule>
     <rule>Use Markdown `##` or `###` headings for internal structure.</rule>
     <rule>Address bundled files by registered name, never by path. Declare every path exactly once, in a `## Registry` table that is the first `##` section of `SKILL.md` and maps each name to its path, so names are declared before the body uses them. A name is the basename without `.md`, backticked so it reads as an identifier rather than the ordinary word. Reference files cite siblings by name only and never link: references stay one level deep from `SKILL.md`.</rule>
     <rule>Define each topic in exactly one file. Where a value, threshold, or enumeration is restated in a second file, replace the copy with an attribution naming its owner, so the two can never disagree. Attribute only toward a file guaranteed to be in context when the copy is read (the spine, or a kernel co-loaded with it); a file the skill loads alone keeps its own copies.</rule>
-    <rule>Wrap all examples, templates, and payloads strictly in XML tags to prevent instruction bleed. The tag set is closed: `directives` holding `rule`, `checklist` holding `item`, `procedure` holding `phase` and `step`, `examples` holding `example` holding `before`, `after`, `variant` and `context`, plus `template` and `commands`. A tag names what kind of block it is and nothing else; what the block is about goes in `for`, so a new subject never mints a new tag. Name every tag in kebab-case, leave a blank line before an opening tag, and put `<![CDATA[` on its own line. CommonMark's tag name admits letters, digits and hyphens but never an underscore, and an HTML block opens only on a line beginning with `<![CDATA[` or on a complete tag that no paragraph runs into. Satisfy all three and the payload is opaque to every markdown tool; miss one and it is paragraph text, which a formatter will rewrap into unparseable code.</rule>
+    <rule>Wrap all examples, templates, and payloads strictly in XML tags to prevent instruction bleed. The tag set is closed: `directives` holding `rule`, `checklist` holding `item`, `procedure` holding `phase` and `step`, `examples` holding `example` holding `before`, `after`, `variant` and `context`, plus `template` and `commands`. A tag names what kind of block it is and nothing else; what the block is about goes in `for`, so a new subject never mints a new tag. Name every tag in kebab-case and leave a blank line before an opening tag: CommonMark's tag name admits letters, digits and hyphens but never an underscore, and an HTML block opens only on a complete tag that no paragraph runs into. When a payload holds code or markup a formatter would rewrap, open `<![CDATA[` on its own line inside the tag. Miss either and the payload is paragraph text, which a formatter rewraps into unparseable code.</rule>
   </directives>
 
   <directives for="execution">
     <rule>Target this skill exclusively at agent-facing procedures.</rule>
-    <rule>Extract only verified tool calls and successful commands from the execution history.</rule>
+    <rule>When distilling from a session, extract only verified tool calls and successful commands from its history; the skill is a reproducible procedure, never a narrative of that session.</rule>
+    <rule>When the skill's value is a judgment (a persona, a review, a reading), test the draft before writing it up: brief a delegate through `/summon` with the draft and a held-out case, score the return against criteria fixed in advance, and change the text until it holds. The scores and the runs stay out of the skill.</rule>
     <rule>Parameterize all project-specific values (paths, hostnames, IDs) or instruct how to derive them dynamically.</rule>
-    <rule>Express directives conditionally and explicitly (e.g., "If X, execute Y").</rule>
+    <rule>State each directive with its condition where one exists ("If X, execute Y").</rule>
     <rule>Enforce token-economical language in the generated skill: sentence fragments, no conversational filler; `/caveman` defines that register in full.</rule>
     <rule>Write every sentence to carry a rule, a condition, an input, or an example; delete narration about the document, restated headings, and repeated rationale. Keep rationale only where it changes a judgment call.</rule>
     <rule>A skill's text is loaded into an agent's context to be paid for on every invocation, so it carries only what changes what the agent does: the contract (what a verb takes, returns, and refuses), the routing (when to reach for this verb, this level, or a sibling skill), and the judgments the agent owns. Leave out which library, service, or endpoint implements a verb, since the agent chooses a verb and never a vendor. Leave out why the design is as it is. Leave out policy, licensing, and terms-of-use framing, which changes no action the agent can take. Leave out anything the script already states at the moment it matters: a `signal:` line, a rejection hint, or a `next` field reaches the agent exactly once and for free, so saying it again in the skill is paid for every time. The `description` is stricter still, since it sits in context whether or not the skill ever runs.</rule>
     <rule>A docstring or comment states the contract in at most two lines, then one further sentence only where a reader would otherwise make the wrong call. History belongs to the commit: what the code replaced, which bug prompted it, and what an earlier shape did wrong are read once and paid for on every load.</rule>
     <rule>State each directive as the pattern to follow; a prohibition spells out the unwanted pattern and raises its salience. Reserve negation for hard boundaries where the banned form must be named to be recognized.</rule>
     <rule>Exclude inflation vocabulary (comprehensive, seamless, robust, powerful, leverage, delve, cutting-edge) and wind-ups (in order to, it is important to note); sweep the finished draft with `/humanize` before finalizing.</rule>
+    <rule>A skill that hands work to another agent commands `/summon` and supplies only what summon's caller table asks for: the unit one delegate closes, the record it hands over, the rules of its own that unit can break, its return shape by registered name, its cap, and the gate the lead admits the return through. Mode, brief shape, bounds, sizing, trust, and review of the return are summon's: restate none of them, and carry no worker prompt, delegation threshold, or cost figure in the skill.</rule>
     <rule>Write for a follower model less capable than the author: leave no step implied and no assumption unstated. When brevity and sufficiency conflict, sufficiency wins.</rule>
     <rule>Never emit em-dash characters (U+2014); use a hyphen, a comma, a colon, or restructure the sentence.</rule>
   </directives>
 
   <directives for="scripts">
-    <directive>A bundled script and the agent invoking it form a neuro-symbolic pair. Design the script as the symbolic half; the skill text tells the agent, the neuro half, how to consume its output.</directive>
+    <rule>A bundled script and the agent invoking it form a neuro-symbolic pair. Design the script as the symbolic half; the skill text tells the agent, the neuro half, how to consume its output.</rule>
     <rule>The script owns exact, decidable checks: invariants (existence, size, encoding, identity), structural equality, digests, atomic writes, backups. It hard-fails (nonzero exit) only on an invariant violation.</rule>
     <rule>A heuristic never holds refusal authority. Emit heuristic judgments as advisory signal lines that state their evidence (ratios, matched rules, best-guess classification); the skill text instructs the agent to weigh signals against user intent.</rule>
     <rule>Gate destructive or hard-to-reverse effects on an exact witness: a marker file, an identity record, or an explicit flag the caller must pass. Provide an undo path (verified backup) where the agent's judgment could be wrong.</rule>
@@ -62,13 +65,13 @@ metadata:
   </directives>
 
   <procedure for="distillation">
-    <phase name="extraction">
+    <phase for="extraction">
       <step>Reconstruct the verified path exclusively from executed tool calls.</step>
       <step>Isolate points of failure, surprises, and backtracks for the Gotchas section.</step>
     </phase>
-    <phase name="generalization">
+    <phase for="generalization">
       <step>Retain only the verified, successful path.</step>
-      <step>Document the structural reasoning (the "what" and "why") for non-obvious choices.</step>
+      <step>Keep the why of a choice only where it changes a judgment call.</step>
       <step>Specify exact tools, flags, branches, and expected results for every step.</step>
       <step>Limit length to approximately 500 lines.</step>
       <step>Offload bulky reference data to sibling files.</step>
@@ -76,9 +79,9 @@ metadata:
   </procedure>
 
   <checklist>
-    <directive>Silently verify these conditions before finalizing the skill.</directive>
     <item>Directory is kebab-case; file is exactly `SKILL.md`.</item>
-    <item>Frontmatter contains only Agent Skills spec fields in canonical order; `name` matches the directory; `description` is a `>-` folded block within 1024 characters following the capability-then-"Use when" form.</item>
+    <item>Frontmatter contains only Agent Skills spec fields in canonical order; `name` matches the directory; `description` is a `>-` folded block within 1024 characters following the capability-then-"Use when" form; `metadata.argument-hint` matches the verbs, levels, and modes the body declares.</item>
+    <item>Delegation, where the skill has any, goes through `/summon` with only the caller's own unit, record, rules, return shape, cap, and gate stated.</item>
     <item>Procedure strictly reflects the verified path with zero abandoned attempts.</item>
     <item>Project-specific values are parameterized or dynamically derived.</item>
     <item>Every step specifies exact tools, flags, and expected outputs.</item>
@@ -101,29 +104,29 @@ metadata:
 
 <examples>
 
-  <example type="distillation">
+  <example for="distillation">
     <context>Converting raw history into a reproducible step.</context>
     <before>I tried bumping the dependency directly, the lockfile drifted and CI failed, then I realized this repo regenerates the lock via `make lock`, so I ran that and CI passed.</before>
     <after>
       <step>Regenerate the lockfile using the repository's native command: `make lock`.</step>
       <step>Commit both the manifest and the lockfile together.</step>
+      Gotcha: editing the lockfile manually causes CI drift; regenerate it via the build tool.
     </after>
-    <example for="gotcha">Editing the lockfile manually causes CI drift. Always regenerate it via the build tool.</example>
   </example>
 
-  <example type="frontmatter-routing">
+  <example for="frontmatter-routing">
     <context>Writing trigger-based descriptions.</context>
     <before>This skill helps format python code using black and flake8.</before>
     <after>Triggered when the user asks to format Python code, lint a file, or run Black and Flake8.</after>
   </example>
 
-  <example type="parameterization">
+  <example for="parameterization">
     <context>Removing incidental project specifics.</context>
     <before>Run the build script located at `/users/joe/projects/manifold/scripts/build.sh`.</before>
     <after>Execute the build script located at `<repository-root>/scripts/build.sh`.</after>
   </example>
 
-  <example type="xml-isolation">
+  <example for="xml-isolation">
     <context>Fencing reference material to prevent instruction bleed.</context>
     <before>
       Your config file should look like this:

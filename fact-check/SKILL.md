@@ -134,8 +134,9 @@ visible only as cost and latency metadata.
 
 - **Parallel**: delegate through `/summon fanout`, one delegate per claim.
   In each brief: the evidence is exactly the per-claim contract input; the
-  rules are the retrieval route for the claim's type per `claims` and the
-  source tiers in `evidence`; the contract is one verdict record, returned
+  rules are the retrieval route for the claim's type per `claims`, the
+  source tiers in `evidence`, and the confidence rules in `verdicts`; the
+  contract is one verdict record, returned
   as the JSON object alone. A delegate never sees the document, other
   claims, other verdicts, or the file system for writing, and edits
   nothing. The lead alone aggregates, reports, seeks approval, and edits.

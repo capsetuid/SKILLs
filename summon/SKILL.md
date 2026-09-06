@@ -122,8 +122,7 @@ tier moved judgment less than the stated rule did (Gotchas).
 
 A skill that delegates commands `/summon` and supplies what is its own; the
 mode decision, the six fields, the bounds, the sizing, and the review of
-the return are this skill's, so one brief shape and one set of laws hold
-whichever skill is calling.
+the return are this skill's.
 
 | The caller supplies | Lands in |
 | --- | --- |
@@ -131,20 +130,24 @@ whichever skill is calling.
 | The record the delegate receives, and nothing it does not need | evidence |
 | The rules of its own that this unit can break | rules |
 | Its return record's shape, by registered name | contract |
+| Its cap where it has one (a search cap, a page count); else a number from the Cost section's sizing, written into the brief | budget |
 | The gate the lead admits the return through: a script command, or the lead's own check | the join, after `review` |
+
+A caller's reference file reaches the delegate by absolute path under
+evidence, the Readable variant in `reach`; the caller says so when it
+wants an excerpt instead.
 
 - The lead is the sole writer. A delegate returns a record and writes no
   session state; the lead judges it under `review`, then admits it through
-  the caller's gate. One writer means no interleaved session files, and the
-  trust boundary sits before admission.
+  the caller's gate.
 - The branch leaves no trace. Deliverable and state are identical whether a
   unit ran inline or delegated; only cost and latency differ, reported
   where the caller's report has a line for them.
 - Sizing is the mode table's and the Cost section's, counted in the
-  caller's unit: a unit whose evidence would otherwise sit in the lead's
-  context (a fetched page, a full text) is delegated when it is independent
-  of the others; the fan fits the concurrency cap; a unit the lead closes
-  in a few tool calls stays inline whatever the count.
+  caller's unit. Delegate a unit whose evidence would otherwise sit in the
+  lead's context (a fetched page, a full text) when it is independent of
+  the others. The fan fits the concurrency cap. A unit the lead closes in
+  a few tool calls stays inline whatever the count.
 
 ## Gotchas
 

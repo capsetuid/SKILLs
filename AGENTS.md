@@ -55,13 +55,13 @@ Current skills:
   commit/review/compress/stats/help modes; compress is guarded by a script.
 * `fact-check/` - atomic-claim verification against retrieved evidence:
   calibrated verdicts, evidence-first reports, tiered approval before edits,
-  capability-probed orchestration.
+  one delegate per claim through summon.
 * `git-commit/` - Conventional Commits with lite/full/ultra effort levels and
   a push verb.
 * `humanize/` - claim-preserving rewrites of AI-sounding prose: 40-pattern
   detection index (Wikipedia's "Signs of AI writing" plus Claude-specific
   tells), invariants, progressive loading, calibration guard.
-* `lit-review/` - staged literature reviews with a keyless search script over
+* `lit-review/` - staged literature reviews with a search script over
   OpenAlex, arXiv, and Crossref: criteria before search, logged queries,
   deduplication, two-pass screening, snowballing, extraction, a gated
   notebook of findings and gaps, DOI and citation checks.
@@ -95,8 +95,8 @@ Current skills:
   fanout bundles that name the neighbouring territory, returns treated as
   untrusted and judged against their contract, a cross-harness table, and
   the caller protocol every other skill delegates through (the caller
-  supplies unit, record, rules, return shape, and gate; the lead is the
-  sole writer).
+  supplies unit, record, rules, return shape, cap, and gate; the lead is
+  the sole writer).
 * `thematic-analysis/` - theme development from qualitative text under one
   named school (reflexive, codebook, template, framework matrix, rapid,
   hybrid), with corpus-sourced defaults, a feedback-data adaptation
@@ -179,7 +179,7 @@ unchanged in any spec-compliant agent and uploads without hard errors:
 * Before creating or modifying any skill, load
   [author-skill/SKILL.md](author-skill/SKILL.md) and follow it. It defines
   the required structure, the distillation workflow, the validation
-  checklist, and the full rules for bundled scripts (`script_design`).
+  checklist, and the full rules for bundled scripts (its scripts directives).
 * A skill MUST be a reproducible procedure, never a narrative of one past
   session, and MUST NOT hardcode any single project's identity (paths,
   scopes, service or package names). Parameterize project-specific values or
@@ -193,6 +193,14 @@ unchanged in any spec-compliant agent and uploads without hard errors:
   imperative holds because the library is consumed as a set, so siblings are
   present. A fallback chain responds to conditions of the environment (an
   unreachable file, no network) and names the degraded path to take.
+* A skill that hands work to another agent commands `/summon` and supplies
+  only what summon's caller table asks for: the unit one delegate closes,
+  the record it hands over, the rules of its own that unit can break, its
+  return shape by registered name, its cap, and the gate the lead admits
+  the return through. Mode, brief shape, bounds, sizing, trust, and the
+  review of a return are summon's; a skill restates none of them and
+  carries no worker prompt, delegation threshold, or cost figure of its
+  own.
 * Write directives, not commentary about the document. A sentence that
   explains why a convention exists, restates a table's headings, or narrates
   the file's structure is paid for on every load. Keep rationale only where
@@ -227,7 +235,7 @@ unchanged in any spec-compliant agent and uploads without hard errors:
     which reads as a value. In a table cell the column heading supplies that
     word.
   * **Runnable commands keep the literal path**, since they are invocations.
-  * A citation names the file that actually owns the topic. When ownership
+  * A citation names the file that owns the topic. When ownership
     moves, every citation to it moves in the same change.
 * NEVER use em-dash characters (U+2014) anywhere in this repository; use a
   hyphen, a comma, a colon, or restructure the sentence.
@@ -235,7 +243,7 @@ unchanged in any spec-compliant agent and uploads without hard errors:
   example, and docstring of the old convention, so the repository shows one
   convention at a time.
 * A bundled script and its invoking agent form a neuro-symbolic pair; the
-  `script_design` rules in author-skill govern the split (exact invariants
+  scripts directives in author-skill govern the split (exact invariants
   in the script, advisory signals for heuristics, witness-gated destruction,
   script-minted identifiers, uniform command surfaces, stdin JSON, the uv
   workspace member layout under `scripts/`, the `btm-corekit` kernel, the
@@ -276,8 +284,9 @@ unchanged in any spec-compliant agent and uploads without hard errors:
 
 ## Persona verb protocol
 
-A persona skill dispatches work through verbs. Every engineering persona
-implements the core eight, each through its own lens:
+A persona skill dispatches work through verbs. A persona implements, from
+this table, the verbs its lens can honor, each with the table's contract;
+`pl-theorist` and `ponytail` carry all eight:
 
 | Verb | Contract |
 | --- | --- |
@@ -292,10 +301,11 @@ implements the core eight, each through its own lens:
 
 Laws:
 
-* `build` and `refactor` apply changes; every other verb is read-only.
+* `build`, `refactor`, and a verb the persona declares as change-applying
+  (`aesthete`'s `redesign`) apply changes; every other verb is read-only.
 * Same verb, same contract in every persona; only the lens differs.
 * A read-only verb names what is outside its lens and routes it to the
-  sibling persona's same verb in slash form.
+  sibling skill in slash form.
 * Dispatch precedence: explicit verb, then unambiguous request shape, then
   the persona's declared default verb.
 * One verb file per invocation, registered under the verb's name.

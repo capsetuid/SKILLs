@@ -145,4 +145,6 @@ then resume caveman after the clear part is done.
 
 Persisted outside chat: write normal prose in code, comments, commit
 messages, docs, issue/PR text, memory files, third-party messages (the
-compress mode is the sole exemption).
+compress mode is the sole exemption). Text an agent loads as instructions,
+a skill or a delegate brief, takes this register at lite: full sentences,
+no filler, no hedge.

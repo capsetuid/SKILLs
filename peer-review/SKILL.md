@@ -188,7 +188,8 @@ Before ingest, determine from available tools:
   `scholar`, and `fetch`. Read a PDF with `/read-pdf`.
 - Delegation: through `/summon fanout`, one delegate per bank at most. In
   each brief: the evidence is the extraction file, the bank's reference
-  file, and `firewall`, by absolute path; the contract is that bank's
+  file, and `firewall`, by absolute path, plus the claims noted so far
+  with their keywords; the contract is that bank's
   share of the note batch (template below), returned as the JSON object
   alone. Delegates write no session state; the lead judges each return,
   then runs `jot` and `note` itself.

@@ -7,9 +7,7 @@ output is the template alone; its Direction section is a headline, and
 
 ## Sound
 
-Name what holds: an experiment that does test its claim, a baseline in its
-best configuration, a result the composition explains. Silence about a
-part means it was not checked, so the Sound lines say what was.
+Sound lines name what was checked; silence means unchecked.
 
 ## Direction
 

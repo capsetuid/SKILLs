@@ -218,7 +218,6 @@ After the target is accepted, route it to an available feasibility or landing pr
 ## Validation
 
 <checklist>
-  <directive>Silently verify before output.</directive>
   <item>Trigger gate satisfied by a real frame problem.</item>
   <item>Decision, outcome, horizon, and boundary stated.</item>
   <item>Facts, instructions, and assumptions separated.</item>
