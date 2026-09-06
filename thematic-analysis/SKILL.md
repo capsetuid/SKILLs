@@ -1,19 +1,14 @@
 ---
 name: thematic-analysis
 description: >-
-  Develops themes from qualitative text under one named methodological
-  school, reflexive, codebook, template, framework matrix, rapid, or hybrid
-  inductive/deductive, with the choice recorded and its reason given.
-  Every unit is coded against a bounded codebook, and an agreement check
-  declared in advance runs where the school calls for one. Each theme is
-  reported as a claim backed by verbatim extracts and counts. Defaults
-  suit user
-  feedback, bug and support tickets, app reviews, usability sessions, and
-  interview transcripts. Use when the user asks to find themes in
-  qualitative data, analyze feedback or tickets qualitatively, code
-  interviews or open-ended survey responses, or build a codebook. Do not use
-  for sorting items into a fixed label set such as bug/feature/question;
-  that is classification, and a direct labelling pass serves it.
+  Develops themes from qualitative text under one named school (reflexive,
+  codebook, template, framework matrix, rapid, or hybrid), with the choice
+  and its reason recorded, every unit coded against a bounded codebook, and
+  each theme reported as a claim backed by verbatim extracts and counts.
+  Defaults suit feedback, tickets, reviews, usability sessions, and
+  interviews. Use when asked to find themes in qualitative data, code
+  interviews or open responses, or build a codebook. Do not use for sorting
+  items into a fixed label set, which is classification.
 license: MIT
 metadata:
   argument-hint: "[reflexive|codebook|template|framework|rapid|hybrid] <corpus>"

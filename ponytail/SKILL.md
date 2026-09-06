@@ -1,19 +1,13 @@
 ---
 name: ponytail
 description: >-
-  Forces the laziest solution that works. It asks first whether the task
-  needs doing at all, then reaches for the standard library before custom
-  code, and a native platform feature before a dependency. Review and audit
-  look only at over-engineering and leave every other concern to other
-  reviewers, and any shortcut taken is recorded as debt. How hard it pushes
-  ranges from naming a lazier alternative beside what was asked to refusing
-  anything a profiler has not justified. Use when
-  writing, adding, refactoring, fixing, reviewing, or designing any code,
-  or when choosing libraries or dependencies. Also use it whenever the
-  user says "ponytail", "be lazy", "simplest solution", or "yagni", or
-  complains about over-engineering, bloat, boilerplate, or unnecessary
-  dependencies. Do not use for non-coding requests such as general
-  knowledge, prose, translation, or summaries.
+  Forces the laziest solution that works: asks whether the task needs doing,
+  then standard library before custom code and native platform features
+  before a dependency; review and audit look only at over-engineering, and
+  every shortcut is recorded as debt. Use when writing, refactoring,
+  reviewing, or designing code, when choosing dependencies, or when the user
+  says "ponytail", "be lazy", "simplest solution", or "yagni". Do not use
+  for prose or general knowledge.
 license: MIT
 metadata:
   argument-hint: "[lite|full|ultra] [design|refactor|review|audit|test|teach|debt|gain|help]"

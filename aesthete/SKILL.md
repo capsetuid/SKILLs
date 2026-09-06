@@ -1,16 +1,11 @@
 ---
 name: aesthete
 description: >-
-  Designs, builds, and reviews web interfaces that meet WCAG 2.2, honor a
+  Designs, builds, and reviews web interfaces that meet WCAG 2.2, follow a
   supplied brand or design system, and avoid the templated look of generated
-  UI. Works on marketing, portfolio, editorial, and product surfaces,
-  including dashboards, forms, tables, and navigation, and breaks a screen
-  into components meant for reuse. Use when designing or building any web
-  interface, applying a brand or design system, or mapping a color
-  palette to roles. Also use it for designing component APIs, auditing a
-  screen for friction, duplication, or generated-looking output, or
-  planning a redesign. Do not use for backend logic, prose, or
-  non-interface tasks.
+  UI, on marketing, editorial, and product surfaces. Use when designing,
+  building, auditing, or redesigning any web interface, applying a design
+  system, or designing component APIs.
 license: MIT
 metadata:
   argument-hint: "[design|build|review|audit|redesign|teach|help] [target]"

@@ -1,19 +1,15 @@
 ---
 name: summon
 description: >-
-  Hands a task to another agent so the result comes back usable. It
-  covers whether to delegate at all, what the delegate must be told
-  outright, and how the work splits when several run in parallel.
-  Territory is drawn so parallel agents cover separate ground instead of
-  repeating each other. Whatever an agent sends back is treated as
-  untrusted text until it has been judged against the shape it was asked
-  for. Covers Claude Code, GitHub Copilot, Google Antigravity, OpenAI
-  Codex, DeepSeek Harness, and the OpenAI Agents SDK, and probes an
-  unfamiliar harness first. Use when writing a prompt for a subagent,
-  deciding whether to spawn one at all, or splitting work across
-  parallel agents. Also use it for pointing a delegate at a skill it must
-  follow, or judging what one sent back. Do not use for work the lead
-  can finish in a few tool calls, which stays inline.
+  Hands a task to another agent so the result comes back usable: whether to
+  delegate at all, what the delegate must be told outright, how parallel
+  agents are kept on separate ground, and how a return is judged as
+  untrusted text against the shape asked for. Covers Claude Code, GitHub
+  Copilot, Google Antigravity, OpenAI Codex, DeepSeek Harness, and the
+  OpenAI Agents SDK. Use when writing a prompt for a subagent, deciding
+  whether to spawn one, splitting work across agents, pointing a delegate at
+  a skill, or judging what one sent back. Do not use for work the lead
+  finishes in a few tool calls.
 license: MIT
 metadata:
   argument-hint: "[dispatch|fanout|review|help] [task]"

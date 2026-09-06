@@ -2,13 +2,11 @@
 name: search-web
 description: >-
   Searches the web, Wikipedia, and the scholarly record, and pulls the
-  readable text out of a page. Results come back with a title, URL, and
-  snippet, and a paper adds its DOI, year, and citation count. Use when the
-  harness offers no search or fetch tool of its own, or when a question
-  needs papers by DOI. Do not use when a harness search tool exists,
-  which ranks better. Do not use it to read a PDF, which read-pdf
-  extracts. Do not use it for a literature review, which lit-review
-  conducts.
+  readable text out of a page; papers come with DOI, year, and citation
+  count. Use when the harness has no search or fetch tool of its own, or
+  when a question needs papers by DOI. Do not use when a harness search tool
+  exists, for reading a PDF (read-pdf), or for a literature review
+  (lit-review).
 license: MIT
 compatibility: >-
   Requires uv, network access, and a full SKILLs repository checkout.

@@ -149,16 +149,14 @@ unchanged in any spec-compliant agent and uploads without hard errors:
 * `description` is a `>-` folded block scalar, ≤1024 characters, third
   person, in two movements: what the skill does (capability statement
   carrying its key search terms), then trigger conditions starting
-  "Use when ..."; append "Do not use for ..." when misfires are likely.
-  It names the deliverable and the guarantees on it, in the reader's own
-  vocabulary: what they get, and when to reach for this skill over a
-  neighboring one. How the skill works belongs in the body, so the
-  description names no internal record, phase, or file the body defines,
-  no library the skill happens to call, and no verb or level that
-  `argument-hint` already lists. A guarantee the reader can hold the skill
-  to is not an implementation detail: "cites only what it retrieved" and
-  "edits nothing without approval" earn their place where the machinery
-  behind them does not.
+  "Use when ..."; append "Do not use for ..." only where a sibling skill
+  is confusable, naming that sibling. Every description sits in context
+  whether or not the skill runs, so it carries the deliverable and the
+  one or two guarantees the reader can hold the skill to ("cites only
+  what it retrieved", "edits nothing without approval"), in the reader's
+  vocabulary, and nothing about how: no internal record, phase, or file
+  the body defines, no library the skill calls, no verb or level that
+  `argument-hint` already lists. Target 100 to 150 tokens.
 * `metadata.argument-hint` is the invocation grammar and the only place it
   is spelled: one bracket group per independent choice, ordered as a user
   types them, so orthogonal axes never collapse into one alternation

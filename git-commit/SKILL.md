@@ -1,12 +1,9 @@
 ---
 name: git-commit
 description: >-
-  Drafts and reviews git commit messages in Conventional Commits form,
-  saying why over what, with the scope taken from the surrounding history.
-  Review can also judge whether the change is atomic and consistent with the
-  commits around it. Use when the user asks to draft a commit, write a
-  message for a diff, review a commit message, run `git commit`, or commit
-  and push.
+  Drafts and reviews Conventional Commits messages, saying why over what,
+  and can commit and push in one step. Use when writing or reviewing a
+  commit message, or when asked to commit or push.
 license: MIT
 metadata:
   argument-hint: "[lite|full|ultra] [push]"

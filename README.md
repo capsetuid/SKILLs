@@ -1,9 +1,8 @@
 # SKILLs
 
-A library of reusable [agent skills](https://agentskills.io): each skill is a
-`SKILL.md` procedure an LLM coding agent loads and follows. Every skill is
-project-agnostic (no hardcoded paths, names, or services) and self-contained
-(one directory: `SKILL.md` plus optional reference files and scripts).
+A library of reusable [agent skills](https://agentskills.io): each is a
+`SKILL.md` procedure an LLM coding agent loads and follows, project-agnostic
+and self-contained in one directory.
 
 Install them with `npx skills`, as a Claude Code plugin, or as a git
 submodule.
@@ -12,11 +11,11 @@ submodule.
 
 | Skill | Purpose |
 | --- | --- |
-| [advisor](advisor/SKILL.md) | Reads a research project like a principal investigator: what prior ideas it combines, which parts of its setup are outdated, what your lab can afford, and the cheapest experiment that proves or kills each claim. |
+| [advisor](advisor/SKILL.md) | Reads a research project like a principal investigator: what it combines, what is outdated, what your lab can afford, and the cheapest experiment that settles each claim. |
 | [aesthete](aesthete/SKILL.md) | Designs, builds, and reviews web interfaces that meet WCAG 2.2, honor a supplied brand or design system, and avoid the templated look of generated UI. |
 | [author-skill](author-skill/SKILL.md) | Turns a task history, workflow, or procedure into a reusable SKILL.md that another agent can follow with no memory of the original session. |
 | [caveman](caveman/SKILL.md) | Compresses replies into terse phrasing that keeps every technical fact, and can rewrite a prose file in place. |
-| [fact-check](fact-check/SKILL.md) | Checks a document claim by claim against retrieved sources, quotes the evidence behind every verdict, and changes nothing until you approve each correction. |
+| [fact-check](fact-check/SKILL.md) | Checks a document claim by claim against retrieved sources, with quotes behind every verdict, and changes nothing until you approve each correction. |
 | [git-commit](git-commit/SKILL.md) | Drafts and reviews Conventional Commits messages, and can commit and push in one step. |
 | [humanize](humanize/SKILL.md) | Rewrites AI-sounding prose so it reads like its writer, keeping every claim's original strength. |
 | [lit-review](lit-review/SKILL.md) | Produces a literature review in which every citation traces to a paper retrieved from OpenAlex, arXiv, or Crossref, never memory. |
@@ -25,11 +24,11 @@ submodule.
 | [ponder](ponder/SKILL.md) | Answers an open question and shows its work, sourcing every load-bearing claim and testing the strongest rival explanation. |
 | [ponytail](ponytail/SKILL.md) | Forces the laziest solution that works: standard library and native features before custom code or new dependencies. |
 | [read-pdf](read-pdf/SKILL.md) | Extracts text and metadata from a PDF and answers questions about it with page-cited evidence, without OCR. |
-| [reframe](reframe/SKILL.md) | Turns a design or planning discussion into a testable direction judgment with costed routes and evidence that could prove it wrong. |
-| [search-web](search-web/SKILL.md) | Searches the web, Wikipedia, and the scholarly record for an agent whose harness has no search tool, and pulls the readable text out of a page. |
+| [reframe](reframe/SKILL.md) | Turns a planning discussion into a testable direction judgment with costed routes and the evidence that would prove it wrong. |
+| [search-web](search-web/SKILL.md) | Searches the web, Wikipedia, and the scholarly record when the harness has no search tool, and pulls the readable text out of a page. |
 | [setup-env](setup-env/SKILL.md) | Provisions a project's development toolchain in userspace, with no sudo, no docker, and nothing assumed present but uv. |
-| [summon](summon/SKILL.md) | Hands work to another agent: whether to delegate at all, what the delegate must be told, how to keep parallel agents off each other's ground, and how to judge what comes back. |
-| [thematic-analysis](thematic-analysis/SKILL.md) | Develops themes from qualitative text under one named school, backing each theme with verbatim extracts and counts, with defaults tuned for feedback and ticket data. |
+| [summon](summon/SKILL.md) | Hands work to another agent: whether to delegate, what to tell the delegate, how to keep parallel agents apart, and how to judge what comes back. |
+| [thematic-analysis](thematic-analysis/SKILL.md) | Develops themes from qualitative text under one named school, each theme backed by verbatim extracts and counts. |
 
 ## Installing
 
@@ -132,17 +131,14 @@ symlinked files under `.github/workflows`.
 The workflow is third-party code running with `contents: write`. Its
 containment:
 
-* The jobs skip cloning and checkout entirely, so no submodule code and no
-  git hook runs.
-* The token is split across two jobs: a read-only job decides what to bump, a
-  `contents: write` job only creates the commit and moves the ref.
-* Commits go through the Git Data API with no author, committer, or signature
-  field, the documented condition under which GitHub signs a bot commit with
-  its own key. The bumps therefore satisfy a `Require signed commits` ruleset
-  with no stored key or bypass actor.
-* The upstream is whatever URL the branch records for the gitlink, so a fork
-  with the same layout works unchanged; `upstream-url` and `upstream-ref`
-  inputs override it.
+* No checkout: the jobs never clone, so no submodule code or git hook runs.
+* Split token: a read-only job decides the bump; a `contents: write` job
+  only commits and moves the ref.
+* Commits go through the Git Data API with no author, committer, or
+  signature, so GitHub signs them with its own key and a `Require signed
+  commits` ruleset passes with no stored key or bypass actor.
+* The upstream is the URL the branch records for the gitlink, so a fork works
+  unchanged; `upstream-url` and `upstream-ref` override it.
 
 If your organization restricts third-party actions, allowlist
 `BTreeMap/SKILLs/.github/workflows/sync-skills.yml@main`.
@@ -157,10 +153,9 @@ skills/<skill-name>            vendor-neutral hub; one symlink per skill
 .claude-plugin/                plugin and marketplace manifests
 ```
 
-Every vendor path is one symlink to `skills/`, so another agent costs one
-link. Edit skills at the root and keep every alias a symlink. The CI gate
-writes and prunes the aliases and regenerates the skill list in
-`marketplace.json`, the address installers resolve each skill by.
+Every vendor path is one symlink to `skills/`, so adding an agent costs one
+link. Edit skills at the root; the CI gate maintains the aliases and the
+skill list in `marketplace.json`.
 
 Git preserves symlinks on Linux and macOS; on Windows, enable Developer Mode or
 configure Git to create symlinks before cloning.

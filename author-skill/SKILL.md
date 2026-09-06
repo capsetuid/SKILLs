@@ -1,11 +1,10 @@
 ---
 name: author-skill
 description: >-
-  Turns a task history, workflow, or procedure into a reusable SKILL.md
-  that another agent can follow with no memory of the original session.
-  It also reviews existing skills against the Agent Skills standard. Use
-  when the user asks to create, refactor, review, or distill a skill, or
-  when a repeated procedure should become one.
+  Turns a procedure or task history into a SKILL.md another agent can follow
+  with no memory of the original session, and reviews existing skills
+  against the Agent Skills standard. Use when asked to create, refactor,
+  review, or distill a skill.
 license: MIT
 metadata:
   argument-hint: "[skill name or path]"
@@ -19,7 +18,7 @@ metadata:
     <rule>Store the skill in a kebab-case directory containing a file named exactly `SKILL.md`.</rule>
     <rule>Begin the file with YAML frontmatter restricted to Agent Skills spec fields (agentskills.io), in this order: `name`, `description`, then only as needed `license`, `compatibility`, `metadata`, `allowed-tools`. Never emit agent-specific extension fields such as `argument-hint` or `when_to_use`; record such hints as quoted string values under `metadata`.</rule>
     <rule>Set `name` equal to the directory name: 1-64 characters; lowercase letters, numbers, and hyphens; no leading, trailing, or consecutive hyphens. Name a task skill with an imperative verb phrase, the command a user would speak (e.g., `fact-check`, `read-pdf`, `git-commit`); name a persona or stance skill with a single noun (e.g., `caveman`, `ponytail`). Never append filler nouns like `-protocol`, `-helper`, or `-skills`.</rule>
-    <rule>Write `description` as a `>-` folded block scalar, 1-1024 characters, third person, in two movements: first a capability statement carrying the skill's key search terms, then trigger conditions starting "Use when"; append a "Do not use for ..." exclusion when misfires are likely. It names the deliverable and the guarantees the reader can hold the skill to, in the reader's vocabulary; it names no internal record, phase, or file the body defines, no library the skill calls, and no verb or level the argument hint lists.</rule>
+    <rule>Write `description` as a `>-` folded block scalar, 1-1024 characters, third person, in two movements: first a capability statement carrying the skill's key search terms, then trigger conditions starting "Use when"; append "Do not use for ..." only where a sibling skill is confusable, naming that sibling. It sits in context whether or not the skill runs, so it carries the deliverable and one or two guarantees the reader can hold the skill to, in the reader's vocabulary, and names no internal record, phase, or file the body defines, no library the skill calls, and no verb or level the argument hint lists. Target 100 to 150 tokens.</rule>
     <rule>Give every skill `metadata.argument-hint`, the one place its invocation grammar is spelled: one bracket group per independent choice, ordered as a user types them (`"[lite|full|ultra] [design|review|help]"`); a skill with no vocabulary names its subject (`"[file-or-section]"`). Re-check it whenever a verb, level, or mode changes.</rule>
     <rule>Set `license: MIT` so a skill vendored out of this repository retains its terms.</rule>
     <rule>Add `compatibility` (max 500 characters) only when the skill requires specific runtimes, system packages, or network access; most skills omit it.</rule>

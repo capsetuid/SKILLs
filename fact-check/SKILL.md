@@ -1,16 +1,12 @@
 ---
 name: fact-check
 description: >-
-  Checks a document claim by claim against sources it retrieves, and reports
-  a verdict on each with verbatim quotes, URLs, and the date the source was
-  read. It never verifies from memory, abstains and says so where the
-  evidence does not settle a claim, and changes no text until the user
-  approves that specific correction. Use when the user asks to
-  fact-check a document, verify claims or specifications, check whether
-  information is still accurate, validate statistics or version numbers,
-  or update outdated facts. Do not use for proofreading, style or
-  grammar editing, running or testing code, or evaluating opinions and
-  logical arguments.
+  Checks a document claim by claim against sources it retrieves, reporting
+  each verdict with verbatim quotes, URLs, and access dates. It never
+  verifies from memory and changes no text until the user approves that
+  correction. Use when asked to fact-check a document, verify claims, specs,
+  statistics, or version numbers, or update outdated facts. Do not use for
+  proofreading, running code, or judging opinions.
 license: MIT
 metadata:
   argument-hint: "[file-or-section]"
