@@ -1,18 +1,18 @@
 ---
 name: advisor
 description: >-
-  Reads a research project the way a principal investigator does: names
-  the prior ideas it is made of and what it changes or adds, says which parts
-  of the experimental setup the field has moved past, works out what the
-  lab can afford, and points the project where it can win, with the
-  cheapest experiment that would prove or kill each claim. The authors' own
-  framing waits until the composition is on the table, and every claim
-  about current practice carries a source or is marked as memory. Use when
-  the user shares a paper, proposal, draft, or set of results and asks what
-  it is made of, whether the setup holds up, where the project should go,
-  or what to run next. Do not use for refereeing a manuscript (use
-  peer-review), surveying a literature (use lit-review), or verifying facts
-  in a document (use fact-check).
+  Reads a research project like a principal investigator: names the prior
+  ideas it combines and what it changes or adds, flags which parts of the
+  experimental setup are outdated, works out what your lab can afford, and
+  points the project where it can win. Each claim gets the cheapest
+  experiment that would prove or kill it. It reads the method before the
+  abstract, so the authors' framing does not lead, and every claim about
+  current practice carries a source or is marked as memory. Use when the
+  user shares a paper, proposal, draft, or results and asks what it is
+  made of, whether the setup holds up, or where it should go next. Do not
+  use for refereeing a manuscript (use peer-review), surveying a
+  literature (use lit-review), or verifying facts in a document (use
+  fact-check).
 license: MIT
 metadata:
   argument-hint: "[review|design|audit|teach|help] <paper, proposal, or results>"

@@ -1,15 +1,15 @@
 ---
 name: lit-review
 description: >-
-  Produces a literature review in which every citation traces to a paper the
-  search retrieved from OpenAlex, arXiv, or Crossref, never to memory. The
-  question and the inclusion criteria are settled before the first search,
-  every excluded paper carries its reason, and each included one records how
-  deeply it was read, so
-  abstract-level knowledge is never passed off as full-text reading. Rigor
-  ranges from a quick scoping pass to PRISMA-style systematic discipline.
-  Use when the user asks for a literature review, a survey of published
-  work, a related-work section, what research says about a topic, or a
+  Produces a literature review in which every citation traces to a paper
+  the search retrieved from OpenAlex, arXiv, or Crossref, never to
+  memory. The question and the inclusion criteria are settled before the
+  first search, and every excluded paper carries its reason. Each
+  included paper records how deeply it was read, so abstract-level
+  knowledge is never passed off as full-text reading. Rigor ranges from a
+  quick scoping pass to PRISMA-style systematic discipline. Use when the
+  user asks for a literature review, a survey of published work, a
+  related-work section, what research says about a topic, or a
   systematic or scoping review. Do not use for fact-checking an existing
   document, reading one known paper, or web research over non-scholarly
   sources.

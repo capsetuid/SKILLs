@@ -9,11 +9,11 @@ description: >-
   ranges from naming a lazier alternative beside what was asked to refusing
   anything a profiler has not justified. Use when
   writing, adding, refactoring, fixing, reviewing, or designing any code,
-  when choosing libraries or dependencies, or whenever the user says
-  "ponytail", "be lazy", "simplest solution", or "yagni", or complains about
-  over-engineering, bloat, boilerplate, or unnecessary dependencies. Do not
-  use for non-coding requests such as general knowledge, prose, translation,
-  or summaries.
+  or when choosing libraries or dependencies. Also use it whenever the
+  user says "ponytail", "be lazy", "simplest solution", or "yagni", or
+  complains about over-engineering, bloat, boilerplate, or unnecessary
+  dependencies. Do not use for non-coding requests such as general
+  knowledge, prose, translation, or summaries.
 license: MIT
 metadata:
   argument-hint: "[lite|full|ultra] [design|refactor|review|audit|test|teach|debt|gain|help]"

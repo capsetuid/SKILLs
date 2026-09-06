@@ -9,10 +9,11 @@ description: >-
   Android project whose tools ship x86_64-only. Everything lands under one
   disposable root, leaving the user's own HOME, caches, and toolchain
   variables as they were. Use when an agent must build, test, or lint a
-  project on a machine lacking its toolchains, when root or docker is
-  unavailable, when arm64 must run amd64-only build tools, or when several
-  languages must coexist in one reproducible environment. Do not use for CI
-  runner images, system package administration, or deploying services.
+  project on a machine lacking its toolchains, or when root or docker is
+  unavailable. Also use it when arm64 must run amd64-only build tools, or
+  when several languages must coexist in one reproducible environment.
+  Do not use for CI runner images, system package administration, or
+  deploying services.
 license: MIT
 compatibility: >-
   uv on PATH, network access, and a full SKILLs repository checkout. Linux

@@ -6,10 +6,11 @@ description: >-
   UI. Works on marketing, portfolio, editorial, and product surfaces,
   including dashboards, forms, tables, and navigation, and breaks a screen
   into components meant for reuse. Use when designing or building any web
-  interface, applying a brand or design system, mapping a color palette to
-  roles, designing component APIs, auditing a screen for friction,
-  duplicated components, or generated-looking output, or planning a
-  redesign. Do not use for backend logic, prose, or non-interface tasks.
+  interface, applying a brand or design system, or mapping a color
+  palette to roles. Also use it for designing component APIs, auditing a
+  screen for friction, duplication, or generated-looking output, or
+  planning a redesign. Do not use for backend logic, prose, or
+  non-interface tasks.
 license: MIT
 metadata:
   argument-hint: "[design|build|review|audit|redesign|teach|help] [target]"

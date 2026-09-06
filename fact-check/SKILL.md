@@ -5,11 +5,12 @@ description: >-
   a verdict on each with verbatim quotes, URLs, and the date the source was
   read. It never verifies from memory, abstains and says so where the
   evidence does not settle a claim, and changes no text until the user
-  approves that specific correction. Use when the user asks to fact-check a
-  document, verify claims or specifications, check whether information is
-  still accurate, validate statistics or version numbers, or update outdated
-  facts in a file. Do not use for proofreading, style or grammar editing,
-  running or testing code, or evaluating opinions and logical arguments.
+  approves that specific correction. Use when the user asks to
+  fact-check a document, verify claims or specifications, check whether
+  information is still accurate, validate statistics or version numbers,
+  or update outdated facts. Do not use for proofreading, style or
+  grammar editing, running or testing code, or evaluating opinions and
+  logical arguments.
 license: MIT
 metadata:
   argument-hint: "[file-or-section]"

@@ -3,10 +3,11 @@ name: thematic-analysis
 description: >-
   Develops themes from qualitative text under one named methodological
   school, reflexive, codebook, template, framework matrix, rapid, or hybrid
-  inductive/deductive, with the choice recorded and its reason given. Every
-  unit is coded against a bounded codebook, an agreement check declared in
-  advance runs where the school calls for one, and each theme is reported as
-  a claim backed by verbatim extracts and counts. Defaults suit user
+  inductive/deductive, with the choice recorded and its reason given.
+  Every unit is coded against a bounded codebook, and an agreement check
+  declared in advance runs where the school calls for one. Each theme is
+  reported as a claim backed by verbatim extracts and counts. Defaults
+  suit user
   feedback, bug and support tickets, app reviews, usability sessions, and
   interview transcripts. Use when the user asks to find themes in
   qualitative data, analyze feedback or tickets qualitatively, code

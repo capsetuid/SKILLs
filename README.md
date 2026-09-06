@@ -12,22 +12,22 @@ submodule.
 
 | Skill | Purpose |
 | --- | --- |
-| [advisor](advisor/SKILL.md) | Reads a research project as a principal investigator would: what prior ideas it combines, which parts of its setup the field has moved past, what the lab can afford, and the cheapest experiment that would prove or kill each claim. |
-| [aesthete](aesthete/SKILL.md) | Designs and reviews web interfaces to a WCAG 2.2 accessibility floor, applies a supplied brand or design system, and strips the templated look of generated UI. |
-| [author-skill](author-skill/SKILL.md) | Writes and reviews skills; every skill here was authored under it. |
-| [caveman](caveman/SKILL.md) | Compresses agent output into terse phrasing to cut token cost, and rewrites a prose file in place reversibly. |
-| [fact-check](fact-check/SKILL.md) | Checks a document claim by claim against retrieved sources, quotes the evidence behind every verdict, and applies corrections only after per-item approval. |
+| [advisor](advisor/SKILL.md) | Reads a research project like a principal investigator: what prior ideas it combines, which parts of its setup are outdated, what your lab can afford, and the cheapest experiment that proves or kills each claim. |
+| [aesthete](aesthete/SKILL.md) | Designs, builds, and reviews web interfaces that meet WCAG 2.2, honor a supplied brand or design system, and avoid the templated look of generated UI. |
+| [author-skill](author-skill/SKILL.md) | Turns a task history, workflow, or procedure into a reusable SKILL.md that another agent can follow with no memory of the original session. |
+| [caveman](caveman/SKILL.md) | Compresses replies into terse phrasing that keeps every technical fact, and can rewrite a prose file in place. |
+| [fact-check](fact-check/SKILL.md) | Checks a document claim by claim against retrieved sources, quotes the evidence behind every verdict, and changes nothing until you approve each correction. |
 | [git-commit](git-commit/SKILL.md) | Drafts and reviews Conventional Commits messages, and can commit and push in one step. |
-| [humanize](humanize/SKILL.md) | Rewrites AI-sounding text in its writer's voice while keeping every claim, working from a documented catalogue of AI writing tells. |
-| [lit-review](lit-review/SKILL.md) | Runs a literature review where the criteria are fixed before the first search, every exclusion carries a reason, and every citation traces to a paper it retrieved. |
-| [peer-review](peer-review/SKILL.md) | Reviews a paper as an adverse referee: verbatim claims, objections admitted only when quoted and sourced, and a recommendation that follows from whatever survives. |
-| [pl-theorist](pl-theorist/SKILL.md) | Code design, review, and refactoring grounded in typed domain modeling and stated complexity, with advice tuned to each language's runtime. |
-| [ponder](ponder/SKILL.md) | Answers an open question with a source behind every load-bearing claim, the strongest rival explanation tested, and whatever stays unsettled reported open. |
-| [ponytail](ponytail/SKILL.md) | Pushes every change toward the simplest working solution: fewer dependencies, smaller diffs, standard library first. |
-| [read-pdf](read-pdf/SKILL.md) | Extracts text and metadata from a PDF file or URL and answers questions about it with page-cited evidence, writing nothing. |
-| [reframe](reframe/SKILL.md) | Produces a testable direction judgment, with costed routes, when planning has locked onto incremental or legacy-bound framing. |
-| [search-web](search-web/SKILL.md) | Searches the web, Wikipedia, and the scholarly record for an agent whose harness has no search tool, and returns the readable text of a page. |
-| [setup-env](setup-env/SKILL.md) | Provisions per-project toolchains entirely in userspace, without root or docker, assuming only uv on PATH; tools built for another CPU architecture still run. |
+| [humanize](humanize/SKILL.md) | Rewrites AI-sounding prose so it reads like its writer, keeping every claim's original strength. |
+| [lit-review](lit-review/SKILL.md) | Produces a literature review in which every citation traces to a paper retrieved from OpenAlex, arXiv, or Crossref, never memory. |
+| [peer-review](peer-review/SKILL.md) | Reviews a paper the way an adverse referee would, pressing on claims, design, analysis, limitations, and novelty. |
+| [pl-theorist](pl-theorist/SKILL.md) | Brings a programming-languages theorist's discipline to design, code, review, and tests, tuned per language. |
+| [ponder](ponder/SKILL.md) | Answers an open question and shows its work, sourcing every load-bearing claim and testing the strongest rival explanation. |
+| [ponytail](ponytail/SKILL.md) | Forces the laziest solution that works: standard library and native features before custom code or new dependencies. |
+| [read-pdf](read-pdf/SKILL.md) | Extracts text and metadata from a PDF and answers questions about it with page-cited evidence, without OCR. |
+| [reframe](reframe/SKILL.md) | Turns a design or planning discussion into a testable direction judgment with costed routes and evidence that could prove it wrong. |
+| [search-web](search-web/SKILL.md) | Searches the web, Wikipedia, and the scholarly record for an agent whose harness has no search tool, and pulls the readable text out of a page. |
+| [setup-env](setup-env/SKILL.md) | Provisions a project's development toolchain in userspace, with no sudo, no docker, and nothing assumed present but uv. |
 | [summon](summon/SKILL.md) | Hands work to another agent: whether to delegate at all, what the delegate must be told, how to keep parallel agents off each other's ground, and how to judge what comes back. |
 | [thematic-analysis](thematic-analysis/SKILL.md) | Develops themes from qualitative text under one named school, backing each theme with verbatim extracts and counts, with defaults tuned for feedback and ticket data. |
 

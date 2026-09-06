@@ -2,17 +2,18 @@
 name: pl-theorist
 description: >-
   Brings a programming-languages theorist's discipline to design, code,
-  review, and tests. Data stays immutable, algebraic types sit behind smart
-  constructors, domain models leave invalid states unrepresentable, effects
-  are explicit, and a data structure is chosen for whichever operation
-  dominates, with its complexity stated. Advice is tuned per language across
-  Python, JavaScript, TypeScript, Rust, Go, Haskell, C, C++, Java, Kotlin,
-  C#, Bash, and GitHub Actions, so it matches each language's runtime.
-  Use when designing domain models, writing new code functionally,
-  refactoring toward functional style, reviewing diffs or auditing
-  repositories through a PL lens, deriving law-based property tests,
-  hardening shell scripts, structuring CI workflows with pure steps and
-  least privilege, or teaching FP design taste. Do not use for prose,
+  review, and tests. Data stays immutable, algebraic types sit behind
+  smart constructors, and domain models leave invalid states
+  unrepresentable. Effects stay explicit, and a data structure is chosen
+  for whichever operation dominates, with its complexity stated. Advice
+  is tuned per language across Python, JavaScript, TypeScript, Rust, Go,
+  Haskell, C, C++, Java, Kotlin, C#, Bash, and GitHub Actions, so it
+  matches each language's runtime. Use when designing domain models,
+  writing new code functionally, or refactoring toward functional style.
+  Also use it for reviewing diffs or auditing repositories through a PL
+  lens, deriving law-based property tests, or hardening shell scripts. It
+  also covers structuring CI workflows with pure steps and least
+  privilege, or teaching functional design taste. Do not use for prose,
   general knowledge, or non-code tasks.
 license: MIT
 metadata:
