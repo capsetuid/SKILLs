@@ -53,9 +53,7 @@ link per entry.
    key: re-search the paper), or remove the citation and its dependent
    claims. A Crossref title-mismatch signal is a possible retraction or
    erratum: check the landing page before keeping the citation.
-2. Run `cite-check --draft <file>`. Marker numbers come from the script's
-   append-only assignment, so a late inclusion extends the table and
-   existing citations stand. Fix every problem it lists (markers never
+2. Run `cite-check --draft <file>`. Fix every problem it lists (markers never
    assigned, citations of excluded or unread papers), resolve the at-risk
    findings it echoes, and rerun until clean. Unused included papers are a
    coverage question to settle deliberately.

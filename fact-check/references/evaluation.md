@@ -1,8 +1,7 @@
 # Maintainer Evaluation Protocol
 
-Maintainer protocol; a fact-check run never loads it. Defines the
-measurements that keep the skill honest; populate results from real runs,
-never from reading docs.
+Maintainer protocol; a fact-check run never loads it. Populate results from
+real runs, never from reading docs.
 
 ## Seeded-error benchmark
 
@@ -39,7 +38,8 @@ delta approaches zero, delete scaffolding (starting with
 right"), hard negatives ("check this document" as proofreading, "verify this
 code works", "is this argument valid"), and paraphrases. Measure trigger
 precision and recall per harness; when triggers misfire, tune the
-description's "Use when" and "Do not use for" clauses and leave the body.
+description's "Use when" clause and the Redirects section and leave the
+rest of the body.
 
 ## Support matrix
 

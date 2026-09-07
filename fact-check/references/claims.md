@@ -12,7 +12,7 @@ checkable proposition each.
   The span is what an approved correction later replaces.
 - Granularity cap: never fragment below one proposition. A sentence bundling
   subject, action, and date ("Org O released product P in month M") is ONE
-  claim; over-fragmentation degrades verification.
+  claim.
 - A compound sentence with genuinely independent propositions ("P has
   property A and costs B") becomes two claims, each carrying the shared
   subject after decontextualization.

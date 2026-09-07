@@ -1,8 +1,7 @@
 # Limitations: The Floor and What Sits Above It
 
 Read the paper's Limitations section last among the banks, after the
-objections from `design` and `analysis` stand, so its content cannot
-anchor the review. Note a `walks` entry for `limitations`.
+objections from `design` and `analysis` stand. Note a `walks` entry for `limitations`.
 
 ## Signalling questions
 

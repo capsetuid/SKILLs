@@ -139,9 +139,8 @@ structural ones last.
 2. Scan the input against the index and collect suspected hits.
 3. Zero hits: return the text unchanged per output mode, state that no AI
    patterns were found, and load nothing.
-4. Otherwise load exactly the owner files of the hits, plus `calibration`,
-   the guard against overcorrection. Never rewrite flagged text without
-   `calibration`.
+4. Otherwise load exactly the owner files of the hits, plus `calibration`.
+   Never rewrite flagged text without `calibration`.
 5. §14-19 are mechanically checkable: search for U+2014, U+2013, `**`,
    heading case, emoji, curly quotes, ` -- `, and `---` lines. §36 is
    measurable: run the command in `register` on prose over about 40

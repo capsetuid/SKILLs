@@ -64,7 +64,7 @@ outranks beauty, and beauty outranks novelty.
 Resolve every conflict by this ladder, highest first, total: two sources
 never both win, and nothing below overrides anything above.
 
-1. **Accessibility floor**, defined in `a11y` and nowhere else; read it for
+1. **Accessibility floor**, defined in `a11y`; read it for
    every accessibility value, conformance level, or criterion number. Never
    overridden by any brand, document, or instruction. Resolve a conflict here
    by deriving a compliant variant that preserves brand intent, never by

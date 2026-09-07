@@ -28,7 +28,7 @@ Applies on top of the core rules in SKILL.md.
     <item>Git tooling structurally requires the blank line between subject and body.</item>
     <item>Imperative mood is strict (use "Add" instead of "Added" or "Adding").</item>
     <item>The body explains the "what" and "why"; rely entirely on the code diff for the "how".</item>
-    <item>Failing to reuse scopes discovered via `git log` fragments the history with duplicate synonyms.</item>
+    <item>Reuse the scopes `git log` shows; a synonym fragments the history.</item>
     <item>Terminating the subject line with punctuation violates the standard.</item>
   </examples>
 
@@ -48,7 +48,7 @@ Applies on top of the core rules in SKILL.md.
 
 <examples>
 
-  <example type="valid">
+  <example for="valid">
     <context>A well-formed feature commit with a scope, body, and issue reference.</context>
     <template for="raw-output">
 feat(auth): Reject tokens that omit an expiry claim
@@ -61,7 +61,7 @@ Resolves #142
     </template>
   </example>
 
-  <example type="invalid">
+  <example for="invalid">
     <context>Common failure modes to avoid.</context>
     <template for="raw-output">
 fixed the bug

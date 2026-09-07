@@ -9,7 +9,7 @@ drafting; they may change what gets committed as well as the message.
     <step>Inspect the staged set with `git status --short` and `git diff --staged --stat`.</step>
     <step>Group the staged files by concern: one logical change per commit (a feature, a fix, a rename, a format pass are separate concerns).</step>
     <step>If more than one concern is staged, propose a split before drafting: name each commit-to-be with its own subject and the files it takes (`git reset` then stage per group, or `git add -p` for mixed files).</step>
-    <step>Never fold a format-only or rename-only sweep into a behavior change; the diff noise buries the review signal.</step>
+    <step>Never fold a format-only or rename-only sweep into a behavior change.</step>
   </checklist>
 
   <checklist for="scope-consistency">

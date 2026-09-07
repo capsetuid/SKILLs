@@ -1,9 +1,8 @@
 # Tells: the catalogue of generated-looking output
 
 A tell is a pattern that appears far more often in generated interfaces than
-in considered ones, a design decision nobody made, and readers who
-see many interfaces recognize each instantly. Each is banned as a **default
-reach**. Any of these is available when the brief genuinely calls for it and
+in considered ones: a design decision nobody made. Each is banned as a
+**default reach**. Any of these is available when the brief genuinely calls for it and
 you can say why.
 
 ## Typography and punctuation

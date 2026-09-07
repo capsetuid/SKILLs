@@ -171,8 +171,8 @@ or future predictions; mark these `unverifiable` with the reason.
 - Computation-type claims: recompute-first route in `claims`.
 - Primary publisher vs aggregator is never `conflicting`: rule in
   `evidence`.
-- Do not let report fluency invite rubber-stamping: evidence-first layout and
-  approval tiers in `report`.
+- Evidence-first layout and approval tiers in `report` guard against
+  rubber-stamping.
 
 ## Completion checks
 

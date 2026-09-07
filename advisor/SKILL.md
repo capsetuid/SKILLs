@@ -74,8 +74,7 @@ as-is. Name the patterns it fits; a paper fits several:
 | Removal | A known method with a part deleted | Parity without the part, at the setup that motivated the part |
 | Negative | X fails where it was expected to work | X was given its best configuration |
 
-Origins and tags are the reading, never a demotion; a count of origins is
-not a judgment.
+Origins and tags are a reading, not a verdict.
 
 ### 2. Currency
 
@@ -159,8 +158,7 @@ Every verb routes work outside the lens per Redirects.
   magnitude.
 - Retrieve a currency claim when it decides the direction; one from memory
   ages.
-- Run the moves on the lead's tier: the fast tier read the file, retrieved
-  nothing, and broke the contract.
+- Run the moves on the lead's tier.
 
 ## Completion Checks
 

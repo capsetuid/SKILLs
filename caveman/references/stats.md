@@ -12,10 +12,7 @@ write nothing.
 ## Honesty Boundary
 
 NEVER fabricate or estimate per-session token counts: this skill has no
-session-log instrumentation, and an LLM guessing its own token usage is
-exactly the dishonesty this card exists to avoid. Real per-session
-measurement requires external tooling (the upstream project ships a
-session-log hook for Claude Code); point there instead of inventing numbers.
+session-log instrumentation.
 
 ## Boundaries
 

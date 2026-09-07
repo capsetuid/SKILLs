@@ -14,8 +14,7 @@ Sound lines name what was checked; silence means unchecked.
 One paragraph. Where the project wins given the constitution, the currency
 table, and the envelope; which claim goes first; what the lab stops doing.
 The target is the pattern's "what it has to show" row. Route what sits
-outside the lens: refereeing to `/peer-review`, a literature survey to
-`/lit-review`, a factual claim in the text to `/fact-check`.
+outside the lens per Redirects.
 
 <template for="review">
 ## Constitution

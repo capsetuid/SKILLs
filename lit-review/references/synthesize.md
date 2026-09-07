@@ -1,7 +1,6 @@
 # Synthesize: Themes, Disagreements, Gaps
 
-Synthesis reads the extraction records and produces the analytical middle of
-the report. Its unit is the theme: a paragraph per paper makes an annotated
+Its unit is the theme: a paragraph per paper makes an annotated
 bibliography.
 
 ## Build themes
@@ -23,8 +22,7 @@ bibliography.
   both sides, their evidence, and any visible cause (different datasets,
   metrics, definitions). Do not average conflicting numbers or pick the
   majority silently. If the corpus cannot resolve it, the report says so.
-- **Single-paper claims are labeled.** Write "One study reports ..." so a
-  lone result never reads as consensus.
+- **Single-paper claims are labeled.** Write "One study reports ...".
 - **Weight follows appraisal.** A weakly appraised paper can be mentioned;
   it cannot anchor a theme's conclusion. Say why when weight differs.
 - **Every synthesis sentence is traceable.** Each claim maps to named
@@ -40,8 +38,8 @@ abstract, matched literally. `brief` re-derives their
 verdicts against the live corpus: an excluded or under-read support flags
 the finding at-risk, and a later paper matching a gap's watch flags the
 gap challenged, which is exactly when a claim written earlier needs
-re-reading. Supersede a record when the field model moves; the chain
-keeps the history. Working hypotheses that are still forming stay on the
+re-reading. Supersede a record when the field model moves. Working
+hypotheses that are still forming stay on the
 pad as `map` or `open` entries until they earn support.
 
 ## Gaps

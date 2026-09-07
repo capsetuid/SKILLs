@@ -77,15 +77,15 @@ Pattern: `[thing] [action] [reason]. [next step].`
 
 <directives for="output">
 
-  <rule trigger="Information Retrieval (Searching/Tracing)">
+  <rule for="Information Retrieval (Searching/Tracing)">
     Format responses strictly as: `[File:Line] <Entity>: <State/Issue>`
   </rule>
 
-  <rule trigger="Building (Code Generation/Fixing)">
+  <rule for="Building (Code Generation/Fixing)">
     Output raw implementation details using standard diff formats or complete code blocks.
   </rule>
 
-  <rule trigger="Reviewing (Audits/Critiques)">
+  <rule for="Reviewing (Audits/Critiques)">
     One line per finding: `L<line>: <tag>: <problem>. <fix>.` Full format defined in `review`.
   </rule>
 </directives>
@@ -100,9 +100,9 @@ Pattern: `[thing] [action] [reason]. [next step].`
 | **wenyan-*** | Classical Chinese compression tiers. Load `wenyan`. |
 
 <examples for="intensity" request="Why does my React component re-render?">
-  <variant name="lite">Your component re-renders because you create a new object reference each render. Wrap it in `useMemo`.</variant>
-  <variant name="full">New object ref each render. Inline object prop = new ref = re-render. Wrap in `useMemo`.</variant>
-  <variant name="ultra">Inline obj prop, new ref, re-render. `useMemo`.</variant>
+  <variant for="lite">Your component re-renders because you create a new object reference each render. Wrap it in `useMemo`.</variant>
+  <variant for="full">New object ref each render. Inline object prop = new ref = re-render. Wrap in `useMemo`.</variant>
+  <variant for="ultra">Inline obj prop, new ref, re-render. `useMemo`.</variant>
 </examples>
 
 ## Modes

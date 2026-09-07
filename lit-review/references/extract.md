@@ -5,8 +5,7 @@ records; anything missing from them needs a re-read later.
 
 ## Reading order and depth
 
-- Start with the anchor: the included paper most cited by the others; it
-  fixes the field's vocabulary and baseline claims.
+- Start with the anchor: the included paper most cited by the others.
 - Read each paper's `pdf_url` with `/read-pdf`; its page markers become
   the claim locations in the extraction record. When no PDF is reachable,
   fall back to the landing page's HTML text, then to the abstract as the
@@ -20,9 +19,8 @@ records; anything missing from them needs a re-read later.
 
 ## Extraction record
 
-One record per paper, jotted onto the session pad so coverage stays
-checkable: `status` and `brief` list included papers with no extraction
-entry. Fill only what the source states; write "not reported" for the
+One record per paper, jotted onto the session pad: `status` and `brief`
+list included papers with no extraction entry. Fill only what the source states; write "not reported" for the
 rest. The body is free beyond `kind` and `key`: add per-paper
 hypothesis-directed questions whenever the argument needs them, and the
 jot advisory warns on a key the corpus lacks.

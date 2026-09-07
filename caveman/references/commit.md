@@ -34,7 +34,7 @@ reduce LTE bandwidth on cold-launch screens.
 Closes #128
   </after>
 
-  <after type="breaking">
+  <after for="breaking">
 feat(api)!: Rename /v1/orders to /v1/checkout
 
 BREAKING CHANGE: clients on /v1/orders must migrate to /v1/checkout

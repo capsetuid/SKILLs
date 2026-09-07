@@ -37,12 +37,11 @@ batch is valid.
 
 ## Bulk rules
 
-A vocabulary cut over hundreds of candidates is one judgment, and the
-record should say so. `screen --on title --exclude` with
+Record a vocabulary cut as one judgment. `screen --on title --exclude` with
 `{"match": "<regex>", "reason": "..."}` on stdin applies a case-insensitive
 regex to every candidate, marks
 each match with `rule:<id>`, and stores the rule with its matched keys in
-the notebook, so flow counts trace to the predicate that produced them.
+the notebook.
 Decided papers stay untouched: make the individual judgments that must
 survive a broad cut before running it. `--include` exists for the mirror
 case, still bound by the criteria gate.
@@ -52,8 +51,7 @@ case, still bound by the criteria gate.
 Use a short reason naming the failed criterion. Recurring kinds: off-topic,
 wrong publication form, outside year window, language, superseded duplicate
 (preprint vs journal version: keep the citable one), inaccessible (no
-abstract and no reachable text). Reasons feed the report's flow counts, so
-keep them consistent across the batch.
+abstract and no reachable text). Keep reasons consistent across the batch.
 
 ## Pass 2: full-text triage
 
