@@ -12,7 +12,7 @@ metadata:
 # Git Commit
 
 Draft and review Conventional Commits messages, saying why over what, at
-the cheapest effort level that does the job.
+the cheapest effort level that works.
 
 ## Registry
 

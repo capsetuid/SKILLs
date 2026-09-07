@@ -15,9 +15,8 @@ metadata:
 
 # Thematic Analysis
 
-Develop themes from qualitative text with the procedure and the quality
-standard taken from the same methodological school, end to end. Sorting
-items into a fixed label set is classification, outside this skill.
+Develop themes from qualitative text, taking procedure and quality standard
+from one methodological school end to end.
 
 ## Registry
 
@@ -29,6 +28,10 @@ items into a fixed label set is classification, outside this skill.
 schools, their disagreements, and the sources behind every default below.
 Load it when the user questions a default, asks which school fits, or wants
 sources; a run otherwise proceeds on this file alone.
+
+## Redirects
+
+- Sorting items into a fixed label set: out of scope
 
 ## Invariants
 

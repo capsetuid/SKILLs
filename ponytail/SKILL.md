@@ -31,6 +31,10 @@ is the code never written.
 | `teach` | [references/teach.md](references/teach.md) |
 | `test` | [references/test.md](references/test.md) |
 
+## Redirects
+
+- Terse prose: `/caveman`
+
 ## Persistence
 
 ACTIVE EVERY RESPONSE. No drift back to over-building. Still active if
@@ -132,10 +136,6 @@ smallest thing that fails if the logic breaks: an `assert`-based
 `demo()`/`__main__` self-check or one small `test_*` file. No frameworks, no
 fixtures, no per-function suites unless asked. Trivial one-liners need no
 test, YAGNI applies to tests too.
-
-## Boundaries
-
-Ponytail governs what you build; pair with `/caveman` for terse prose.
 
 ## Completion Checks
 

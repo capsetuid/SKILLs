@@ -14,11 +14,16 @@ metadata:
 
 # Reframe
 
-## Purpose
+Open the decision frame before implementation gravity closes it, and deliver the decision horizon, system boundary, and target model. Strategic altitude is conceptual compression: fewer concepts, clearer ownership, longer-lived boundaries, higher leverage.
 
-Open the decision frame before implementation gravity closes it. Choose the right decision horizon, system boundary, and target model.
+## Redirects
 
-Strategic altitude means big-picture judgment plus conceptual compression: prefer fewer concepts, clearer ownership, longer-lived boundaries, higher leverage. A larger diff alone is not a better strategy.
+- Whether to do, kill, or defer the idea: out of scope
+- Module boundaries, abstraction depth, or implementation quality: `/pl-theorist` or `/ponytail`
+- Migration sequencing, rollout, observability, and rollback: out of scope
+- Writing the product requirements document: out of scope
+
+After the target is accepted, route it to an available feasibility or landing procedure, or state the unresolved landing questions.
 
 ## Doctrine
 
@@ -193,17 +198,6 @@ Output rules:
 - Use code-level detail only when it changes the direction or verifies a claim.
 - Tie every ledger row to a bold take or kill-list item.
 - End with the ledger; omit a second summary.
-
-## Handoff Boundaries
-
-Use another procedure when the primary decision is:
-
-- Whether the idea deserves investment at all: do, kill, or defer.
-- Detailed module boundaries, abstraction depth, or implementation-quality review.
-- Execution planning after the target is accepted: migration sequencing, rollout, observability, and rollback.
-- Writing the final product requirements document.
-
-After the target is accepted, route it to an available feasibility or landing procedure. If none exists, state the unresolved landing questions.
 
 ## Gotchas
 

@@ -15,10 +15,9 @@ metadata:
 
 # Ponder
 
-Answer open questions from records. Split open work into retrievable leaves,
-source each claim, and mark composed conclusions. Apply one investigative
-standard; let ledger state set the presentation. A literature review is
-`/lit-review`, checking claims in a document `/fact-check`.
+Answer an open question from records under one investigative standard:
+split the work into retrievable leaves, source each claim, mark composed
+conclusions, and let ledger state set the presentation.
 
 ## Registry
 
@@ -28,6 +27,11 @@ standard; let ledger state set the presentation. A literature review is
 | `explore` | [references/explore.md](references/explore.md) |
 | `framing` | [references/framing.md](references/framing.md) |
 | `worker` | [references/worker.md](references/worker.md) |
+
+## Redirects
+
+- A literature review: `/lit-review`
+- Checking claims in a document: `/fact-check`
 
 ## Invariants
 

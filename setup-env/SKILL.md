@@ -21,9 +21,8 @@ metadata:
 # Setup Env
 
 One command provisions everything a project needs into one disposable
-root: run it, source the printed activation script, build. Re-running is
-the repair action. CI images, system packages, and deployment are outside
-this skill.
+root: run it, source the printed activation script, build. Re-run to
+repair.
 
 ## Registry
 
@@ -43,6 +42,10 @@ The console command `btm-setup-env` is the entry point. Read `targets`
 before choosing tags beyond the obvious; read `extending` only to add or
 change a recipe. Invoke the command and read its output; read source only
 for user-instructed troubleshooting.
+
+## Redirects
+
+- CI images, system packages, and deployment: out of scope
 
 ## Procedure
 

@@ -16,7 +16,7 @@ metadata:
 # Read PDF
 
 Extract text and metadata from PDFs and answer questions with page-cited
-evidence. Never creates, modifies, or otherwise writes a PDF.
+evidence. Never writes a PDF.
 
 ## Scope
 

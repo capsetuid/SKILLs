@@ -14,11 +14,11 @@ metadata:
 
 # Humanize: remove AI writing patterns
 
-Rewrite AI-sounding text so it reads like its writer. §1-35 come from
-Wikipedia's ["Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing);
-§36-40 and the added cases in older entries cover tells that survive a
-vocabulary scrub in current model prose. Cure: the specific over the
-generic. Checking a document's facts is `/fact-check`.
+Rewrite AI-sounding text so it reads like its writer. Cure: the specific
+over the generic. §1-35 come from Wikipedia's
+["Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing);
+§36-40 and added cases in older entries cover tells that survive a
+vocabulary scrub.
 
 ## Registry
 
@@ -32,6 +32,10 @@ generic. Checking a document's facts is `/fact-check`.
 | `register` | [references/register.md](references/register.md) |
 | `rhetoric` | [references/rhetoric.md](references/rhetoric.md) |
 | `style` | [references/style.md](references/style.md) |
+
+## Redirects
+
+- Checking a document's facts: `/fact-check`
 
 ## Invariants
 

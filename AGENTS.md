@@ -150,8 +150,8 @@ unchanged in any spec-compliant agent and uploads without hard errors:
 * `description` is a `>-` folded block scalar, ≤1024 characters, third
   person, in two movements: what the skill does (capability statement
   carrying its key search terms), then trigger conditions starting
-  "Use when ...". Routing to a confusable sibling ("refereeing is
-  `/peer-review`") lives in the body's opening paragraph, never here.
+  "Use when ...". Routing to a confusable sibling lives in the body's
+  `## Redirects` section, never here.
   Every description sits in context whether or not the skill runs, so it
   carries the deliverable and the one or two guarantees the reader can
   hold the skill to ("cites only what it retrieved", "edits nothing
@@ -195,6 +195,15 @@ unchanged in any spec-compliant agent and uploads without hard errors:
   imperative holds because the library is consumed as a set, so siblings are
   present. A fallback chain responds to conditions of the environment (an
   unreachable file, no network) and names the degraded path to take.
+* The body opens with one paragraph under the title, one to three
+  sentences stating what the skill does and delivers, naming no sibling.
+* A skill's redirects, the tasks that belong to a sibling or lie outside
+  the skill, sit in one `## Redirects` section directly after
+  `## Registry` (first, when the skill bundles no files; absent, when it
+  has no redirects): one bullet per task, the condition, a colon, then the
+  sibling in slash form or the words "out of scope", and nowhere else in
+  the body. Keep a mid-procedure command of a sibling ("extract the paper
+  with `/read-pdf`") in the procedure.
 * A skill that hands work to another agent commands `/summon` and supplies
   only what summon's caller table asks for: the unit one delegate closes,
   the record it hands over, the rules of its own that unit can break, its

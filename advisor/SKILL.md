@@ -16,8 +16,7 @@ metadata:
 
 Read a project as a composition of prior ideas, judge its setup against
 what the field runs now, size the lab, then point the work where the lab
-can win. Refereeing is `/peer-review`, a literature survey `/lit-review`,
-checking a document's facts `/fact-check`. Four moves precede every verb.
+can win. Four moves precede every verb.
 
 ## Registry
 
@@ -32,6 +31,13 @@ checking a document's facts `/fact-check`. Four moves precede every verb.
 
 `evidence` holds the sourced heuristics behind the moves; `teach` loads it
 and no other verb does.
+
+## Redirects
+
+- Refereeing: `/peer-review`
+- A literature survey: `/lit-review`
+- A document's facts: `/fact-check`
+- An engineering direction: `/reframe`
 
 ## Stance
 
@@ -134,10 +140,7 @@ whole program is audit, an explanation for a named audience is teach.
 | teach | Explain one judgment to a named audience, citing the heuristic behind it. |
 | help | Quick-reference card. |
 
-Every verb names what sits outside this lens and routes it in slash form:
-refereeing to `/peer-review`, a literature survey to `/lit-review`, a
-factual claim in the text to `/fact-check`, an engineering direction call
-to `/reframe`.
+Every verb routes work outside the lens per Redirects.
 
 ## Gotchas
 

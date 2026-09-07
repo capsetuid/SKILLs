@@ -17,9 +17,8 @@ metadata:
 # Lit Review
 
 Produce a literature review whose every citation traces to a retrieved
-record. The bundled script owns state, search, dedup, and checks; the agent
-owns criteria, screening, reading, and synthesis. Checking a document's
-facts is `/fact-check`, reading one known paper `/read-pdf`.
+record. The script owns state, search, dedup, and checks; the agent owns
+criteria, screening, reading, and synthesis.
 
 ## Registry
 
@@ -31,6 +30,11 @@ facts is `/fact-check`, reading one known paper `/read-pdf`.
 | `screen` | [references/screen.md](references/screen.md) |
 | `search` | [references/search.md](references/search.md) |
 | `synthesize` | [references/synthesize.md](references/synthesize.md) |
+
+## Redirects
+
+- Checking a document's facts: `/fact-check`
+- Reading one known paper: `/read-pdf`
 
 ## Invariants
 

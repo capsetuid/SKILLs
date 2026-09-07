@@ -17,10 +17,8 @@ metadata:
 # Peer Review
 
 Hunt for weaknesses in a paper's claims, design, execution, results, and
-limitations; report only what the paper's own text and the retrieved
-literature support. The agent searches adversely; the script derives the
-verdict. A literature survey is `/lit-review`, checking a document's facts
-`/fact-check`.
+limitations, reporting only what its text and the retrieved literature
+support. The agent searches adversely; the script derives the verdict.
 
 ## Registry
 
@@ -33,6 +31,11 @@ verdict. A literature survey is `/lit-review`, checking a document's facts
 | `limitations` | [references/limitations.md](references/limitations.md) |
 | `novelty` | [references/novelty.md](references/novelty.md) |
 | `report` | [references/report.md](references/report.md) |
+
+## Redirects
+
+- A literature survey: `/lit-review`
+- Checking a document's facts: `/fact-check`
 
 ## Invariants
 

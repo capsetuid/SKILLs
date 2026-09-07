@@ -16,10 +16,9 @@ metadata:
 
 # Summon
 
-Delegation is three independent obligations on the caller: the evidence and
-decision rules the delegate cannot derive, the few rules that bind this
-task, and the exact return shape. Each moves a different property of the
-result, so satisfying one buys nothing on the other two.
+Hand a task to another agent under three independent obligations on the
+caller: the evidence and decision rules the delegate cannot derive, the few
+rules that bind this task, and the exact return shape.
 
 ## Registry
 

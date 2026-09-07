@@ -14,7 +14,13 @@ metadata:
 
 # Search Web
 
-Reading a PDF is `/read-pdf`, a literature survey `/lit-review`.
+Retrieve from the web, Wikipedia, and the scholarly indexes, and pull the
+readable text out of one page.
+
+## Redirects
+
+- Reading a PDF: `/read-pdf`
+- A survey with citations: `/lit-review`
 
 ## Invariants
 
@@ -81,8 +87,6 @@ with `fetch` before relying on it.
 - `fetch` refuses a PDF; extract it with `/read-pdf`.
 - Space out a long scholarly run rather than parallelizing it; the indexes
   are metered per address, and one refuses for the rest of the day.
-- A scholarly search is not a literature review. When the deliverable is a
-  survey with citations, run `/lit-review`.
 
 ## Completion checks
 
