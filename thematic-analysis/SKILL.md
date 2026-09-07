@@ -31,7 +31,7 @@ sources; a run otherwise proceeds on this file alone.
 
 ## Redirects
 
-- Sorting items into a fixed label set: out of scope
+- Sorting items into a fixed label set: classify each item against that set directly, with no codebook or themes
 
 ## Invariants
 

@@ -45,7 +45,7 @@ for user-instructed troubleshooting.
 
 ## Redirects
 
-- CI images, system packages, and deployment: out of scope
+- CI images, system packages, and deployment: use the project's own tooling; this root serves local builds and tests
 
 ## Procedure
 

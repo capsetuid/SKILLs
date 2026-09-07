@@ -18,10 +18,10 @@ Open the decision frame before implementation gravity closes it, and deliver the
 
 ## Redirects
 
-- Whether to do, kill, or defer the idea: out of scope
+- Whether to do, kill, or defer the idea: give the call plainly from the evidence at hand; reframe only what proceeds
 - Module boundaries, abstraction depth, or implementation quality: `/pl-theorist` or `/ponytail`
-- Migration sequencing, rollout, observability, and rollback: out of scope
-- Writing the product requirements document: out of scope
+- Migration sequencing, rollout, observability, and rollback: plan them as ordinary engineering work once the target is accepted
+- Writing the product requirements document: write it from the accepted target in the team's own format
 
 After the target is accepted, route it to an available feasibility or landing procedure, or state the unresolved landing questions.
 

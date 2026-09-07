@@ -201,9 +201,9 @@ unchanged in any spec-compliant agent and uploads without hard errors:
   the skill, sit in one `## Redirects` section directly after
   `## Registry` (first, when the skill bundles no files; absent, when it
   has no redirects): one bullet per task, the condition, a colon, then the
-  sibling in slash form or the words "out of scope", and nowhere else in
-  the body. Keep a mid-procedure command of a sibling ("extract the paper
-  with `/read-pdf`") in the procedure.
+  sibling in slash form or, with no sibling, the plain action to take
+  instead, so the model keeps working. Keep a mid-procedure command of a
+  sibling ("extract the paper with `/read-pdf`") in the procedure.
 * A skill that hands work to another agent commands `/summon` and supplies
   only what summon's caller table asks for: the unit one delegate closes,
   the record it hands over, the rules of its own that unit can break, its
