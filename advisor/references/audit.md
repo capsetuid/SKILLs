@@ -2,8 +2,8 @@
 
 Judge a research program: a lab's projects, a thesis's chapters, a
 multi-paper line. Sample by leverage, the projects that consume the most of
-the envelope or carry the program's central claim, and run the four moves
-on each sampled one. Name the unsampled projects. Read-only.
+the envelope or carry the program's central claim, and run the four moves on
+each sampled one. Name the unsampled projects. Read-only.
 
 ## Portfolio reads
 

@@ -136,10 +136,11 @@ containment:
 * Split token: a read-only job decides the bump; a `contents: write` job
   only commits and moves the ref.
 * Commits go through the Git Data API with no author, committer, or
-  signature, so GitHub signs them with its own key and a `Require signed
-  commits` ruleset passes with no stored key or bypass actor.
-* The upstream is the URL the branch records for the gitlink, so a fork works
-  unchanged; `upstream-url` and `upstream-ref` override it.
+  signature, so GitHub signs them with its own key and a
+  `Require signed commits` ruleset passes with no stored key or bypass
+  actor.
+* The upstream is the URL the branch records for the gitlink, so a fork
+  works unchanged; `upstream-url` and `upstream-ref` override it.
 
 If your organization restricts third-party actions, allowlist
 `BTreeMap/SKILLs/.github/workflows/sync-skills.yml@main`.
@@ -159,8 +160,8 @@ Every vendor path is one symlink to `skills/`, so adding an agent costs one
 link. Edit skills at the root; the CI gate maintains the aliases and the
 skill list in `marketplace.json`.
 
-Git preserves symlinks on Linux and macOS; on Windows, enable Developer Mode or
-configure Git to create symlinks before cloning.
+Git preserves symlinks on Linux and macOS; on Windows, enable Developer Mode
+or configure Git to create symlinks before cloning.
 
 ## Contributing
 

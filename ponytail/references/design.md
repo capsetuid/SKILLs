@@ -1,8 +1,8 @@
 # Ponytail Design Verb
 
 Plan before code exists by deciding what not to build. Read the
-requirements, trace what the codebase already does, then run the ladder
-over the plan itself. Produces a plan; edits nothing.
+requirements, trace what the codebase already does, then run the ladder over
+the plan itself. Produces a plan; edits nothing.
 
 ## Output
 
@@ -13,8 +13,8 @@ The kill list, then the build list. One line per requirement:
   already does it. Name the thing.
 - `build:` survives; name the ladder rung it sits on and the minimum shape.
 
-End with the shape of the whole: files touched, new files (fewest
-possible), new dependencies (target: zero).
+End with the shape of the whole: files touched, new files (fewest possible),
+new dependencies (target: zero).
 
 <example for="design" request="Design a notification system: email, SMS, push, user preferences, retry queues, analytics.">
 skip: SMS, push. No sender and no consumer today; add a channel when one exists.

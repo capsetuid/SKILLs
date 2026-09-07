@@ -20,26 +20,45 @@ evidence.
 
 ## Scope
 
-Read PDF content for analysis. Extract text, page numbers, and standard metadata. Preserve source-page provenance.
+Read PDF content for analysis. Extract text, page numbers, and standard
+metadata. Preserve source-page provenance.
 
-Run the extractor through its console command with `uv run --project`; do not invoke a host `python` or `python3`, install packages manually, or use another PDF library, a command-line PDF utility, an OCR tool, or an image renderer.
+Run the extractor through its console command with `uv run --project`; do
+not invoke a host `python` or `python3`, install packages manually, or use
+another PDF library, a command-line PDF utility, an OCR tool, or an image
+renderer.
 
-Pass an http(s) URL directly as the document argument: the extractor's own fetch caches, caps, and cites the URL as provenance.
+Pass an http(s) URL directly as the document argument: the extractor's own
+fetch caches, caps, and cites the URL as provenance.
 
 ## Procedure
 
-1. Locate the requested PDF: a file path (confirm it exists) or an http(s) URL (pass it as is).
-2. Run the bundled extractor. It writes plain text only and never changes the PDF.
-3. Keep the `## PDF page N` markers in the extracted text; they are the evidence anchors.
-4. Inspect the extracted page text before answering. For a specific question, begin with the relevant pages; expand to referenced pages when context is missing.
-5. Report facts with their PDF page numbers. Label conclusions that combine multiple passages as inferences.
-6. State any extraction limitation that affects the answer, such as an image-only page or disrupted reading order.
+1. Locate the requested PDF: a file path (confirm it exists) or an http(s)
+   URL (pass it as is).
+2. Run the bundled extractor. It writes plain text only and never changes
+   the PDF.
+3. Keep the `## PDF page N` markers in the extracted text; they are the
+   evidence anchors.
+4. Inspect the extracted page text before answering. For a specific
+   question, begin with the relevant pages; expand to referenced pages when
+   context is missing.
+5. Report facts with their PDF page numbers. Label conclusions that combine
+   multiple passages as inferences.
+6. State any extraction limitation that affects the answer, such as an
+   image-only page or disrupted reading order.
 
 ## Extract with the Bundled Script
 
-The extractor's console command `btm-read-pdf` accepts one-based page selections, including open-ended ranges. By default it prints all pages and available standard metadata to standard output. It refuses to replace an existing `--output` file unless `--overwrite` is passed, opens owner-locked PDFs (empty user password) without asking, and reports on stderr when selected pages have no extractable text (a likely scanned document).
+The extractor's console command `btm-read-pdf` accepts one-based page
+selections, including open-ended ranges. By default it prints all pages and
+available standard metadata to standard output. It refuses to replace an
+existing `--output` file unless `--overwrite` is passed, opens owner-locked
+PDFs (empty user password) without asking, and reports on stderr when
+selected pages have no extractable text (a likely scanned document).
 
-Bind the command once per shell and re-bind after a reset; `realpath` is required. Invoke it and read its output; source reading belongs to user-instructed troubleshooting.
+Bind the command once per shell and re-bind after a reset; `realpath` is
+required. Invoke it and read its output; source reading belongs to
+user-instructed troubleshooting.
 
 <commands for="all-pages">
 R="env -u VIRTUAL_ENV uv run --project $(realpath <skill-root>/scripts) btm-read-pdf"

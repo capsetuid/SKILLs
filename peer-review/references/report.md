@@ -2,8 +2,8 @@
 
 Draft once from `check` output, then `cite-check` the file. Every objection
 in the draft is a marker `[On]` from the scaffold's `fatal`, `major`,
-`minor`, or `questions` lists; every claim is `[Cn]`. Withdrawn,
-unanchored, and undated records stay out.
+`minor`, or `questions` lists; every claim is `[Cn]`. Withdrawn, unanchored,
+and undated records stay out.
 
 ## Template
 

@@ -2,49 +2,50 @@
 
 ## Disclosed Constraints
 
-- Derive the language standard and library availability from the build. Do not
-  assume ranges, coroutines, concepts, or `std::expected` when the target does not
-  provide them.
-- Templates and standard algorithms can be zero-overhead abstractions, but code
-  size, compile time, iterator category, proxy references, captures, type erasure,
-  and allocation remain material.
-- Value semantics, moves, copies, exceptions, destruction order, and aliasing are
-  observable. `const` and `const` methods do not imply deep immutability.
-- Recursive algorithms lack guaranteed TCO. Lazy range views can dangle when they
-  outlive borrowed sources.
+- Derive the language standard and library availability from the build. Do
+  not assume ranges, coroutines, concepts, or `std::expected` when the
+  target does not provide them.
+- Templates and standard algorithms can be zero-overhead abstractions, but
+  code size, compile time, iterator category, proxy references, captures,
+  type erasure, and allocation remain material.
+- Value semantics, moves, copies, exceptions, destruction order, and
+  aliasing are observable. `const` and `const` methods do not imply deep
+  immutability.
+- Recursive algorithms lack guaranteed TCO. Lazy range views can dangle when
+  they outlive borrowed sources.
 
 ## Preferred FP Shapes
 
 - Use `std::variant` for closed sums, structs/tuples for products,
-  `std::optional` for absence, and `std::expected` for expected failure when the
-  configured standard provides it. Otherwise use the project's result type or a
-  small `std::variant<T, E>`.
+  `std::optional` for absence, and `std::expected` for expected failure when
+  the configured standard provides it. Otherwise use the project's result
+  type or a small `std::variant<T, E>`.
 - Use classes with private representation and static factories for refined
   values. Prefer value semantics, RAII, and deterministic destruction.
-- Use standard algorithms/ranges when they clarify intent and preserve traversal
-  and allocation cost. Prefer `transform_reduce`, `any_of`, `all_of`, and
-  `find_if` over a generic fold when they name the algebra.
+- Use standard algorithms/ranges when they clarify intent and preserve
+  traversal and allocation cost. Prefer `transform_reduce`, `any_of`,
+  `all_of`, and `find_if` over a generic fold when they name the algebra.
 - Capture lambdas narrowly and by value/reference deliberately. Avoid
   `std::function` when a template parameter or concrete callable avoids type
   erasure and allocation.
-- Use futures/coroutines only through project-standard executors and cancellation
-  facilities; the core language does not provide universal structured
-  concurrency.
+- Use futures/coroutines only through project-standard executors and
+  cancellation facilities; the core language does not provide universal
+  structured concurrency.
 
 ## Domain and Effect Constraints
 
-- Visit every `variant` alternative with an overload set or exhaustive visitor.
-  Avoid `get` when `get_if`, `visit`, or a proven state is total.
-- Keep constructors private when construction can fail. A successful object must
-  satisfy its invariant; a temporarily invalid object "finished" later is a
-  defect.
-- Use RAII guards for memory, files, locks, and transactions. Never let a view,
-  span, iterator, callback, or coroutine frame outlive its owner.
+- Visit every `variant` alternative with an overload set or exhaustive
+  visitor. Avoid `get` when `get_if`, `visit`, or a proven state is total.
+- Keep constructors private when construction can fail. A successful object
+  must satisfy its invariant; a temporarily invalid object "finished" later
+  is a defect.
+- Use RAII guards for memory, files, locks, and transactions. Never let a
+  view, span, iterator, callback, or coroutine frame outlive its owner.
 - Distinguish independent scheduled work from dependent continuation chains.
-  Bound fan-out and preserve executor, cancellation, exception aggregation, and
-  transaction semantics.
-- Mark functions `noexcept` only when the complete call graph contract supports
-  it; an unexpected throw then terminates the process.
+  Bound fan-out and preserve executor, cancellation, exception aggregation,
+  and transaction semantics.
+- Mark functions `noexcept` only when the complete call graph contract
+  supports it; an unexpected throw then terminates the process.
 
 ## Teaching Example
 

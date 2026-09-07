@@ -5,9 +5,9 @@ and most of the reading effort. Get it right before touching color.
 
 ## The scale
 
-Fix one scale and use only its steps; six to eight steps covers almost
-every interface. A ratio near 1.2 suits dense product interfaces; near
-1.333 suits marketing surfaces where display type does expressive work.
+Fix one scale and use only its steps; six to eight steps covers almost every
+interface. A ratio near 1.2 suits dense product interfaces; near 1.333 suits
+marketing surfaces where display type does expressive work.
 
 Set the scale in a relative unit so it honors the user's browser text size.
 Fixed pixel sizing for body text overrides an explicit accessibility
@@ -39,17 +39,18 @@ the true italic being used before designing around them.
 
 **Serif discipline.** Reaching for a serif because it feels premium,
 creative, or considered is the most common type misjudgment in generated
-design. Use a serif when the surface is editorial,
-literary, or heritage, or when the brand specifies one. Be able to say why
-that particular serif suits that particular brand. Otherwise choose a display
-sans, the common default in contemporary brand work.
+design. Use a serif when the surface is editorial, literary, or heritage, or
+when the brand specifies one. Be able to say why that particular serif suits
+that particular brand. Otherwise choose a display sans, the common default
+in contemporary brand work.
 
 **Emphasis stays in the family.** Emphasize a word inside a heading with the
 weight or the italic of the same family.
 
-**Rotate faces.** Reusing the same two or three fashionable faces across every
-project produces a house style nobody asked for. If the last comparable
-surface used a face, choose differently unless the brand requires it.
+**Rotate faces.** Reusing the same two or three fashionable faces across
+every project produces a house style nobody asked for. If the last
+comparable surface used a face, choose differently unless the brand requires
+it.
 
 ## Setting text well
 
@@ -69,14 +70,14 @@ surface used a face, choose differently unless the brand requires it.
 
 ## Delivery
 
-* Self-host or use the framework's font pipeline. Keep third-party stylesheet
-  requests off the first-paint path.
+* Self-host or use the framework's font pipeline. Keep third-party
+  stylesheet requests off the first-paint path.
 * Serve variable fonts when a range of weights is in use; one variable file
   usually costs less than three static cuts.
 * Subset to the character sets actually needed.
-* Swap to a fallback during load, and tune the
-  fallback's metrics so the swap does not shift layout. Untuned font
-  fallback is a top cause of layout instability.
+* Swap to a fallback during load, and tune the fallback's metrics so the
+  swap does not shift layout. Untuned font fallback is a top cause of layout
+  instability.
 * Preload only the faces used above the fold.
 
 ## Failure modes

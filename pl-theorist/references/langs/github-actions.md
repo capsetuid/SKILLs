@@ -6,9 +6,9 @@ discipline.
 
 ## Disclosed Constraints
 
-- Each job runs on a fresh runner; spin-up (queue, provision, checkout) costs
-  tens of seconds to minutes before any work starts. A job is a process spawn
-  priced in runner-minutes.
+- Each job runs on a fresh runner; spin-up (queue, provision, checkout)
+  costs tens of seconds to minutes before any work starts. A job is a
+  process spawn priced in runner-minutes.
 - `${{ }}` is textual interpolation performed before the step executes.
   Inside `run:` it is unquoted splice into a shell script: any
   attacker-influenced context (PR titles and bodies, branch names via
@@ -36,16 +36,16 @@ discipline.
 - `matrix` is `map` over a declared finite domain: the embarrassingly
   parallel primitive. Refine the domain with `include`/`exclude` instead of
   `if`-skipping cells at runtime; build dynamic domains with `fromJSON` on a
-  prior job's output. Set `fail-fast: false` when every cell's result matters
-  independently (error accumulation over fail-fast, chosen deliberately).
+  prior job's output. Set `fail-fast: false` when every cell's result
+  matters independently (error accumulation over fail-fast, chosen
+  deliberately).
 - Reusable workflows (`workflow_call`) and composite actions are the named
   combinators. `workflow_call` inputs carry `type`, `required`, and
   `default` (composite action inputs are strings only); validate anything
   stronger in the first step: that is the smart-constructor boundary.
-- Boundedness is explicit: `timeout-minutes` on every job (the 6-hour default
-  ceiling amplifies outages), and a
-  `concurrency` group with `cancel-in-progress` for workflows where only the
-  latest run matters.
+- Boundedness is explicit: `timeout-minutes` on every job (the 6-hour
+  default ceiling amplifies outages), and a `concurrency` group with
+  `cancel-in-progress` for workflows where only the latest run matters.
 - Caching is memoization with a stated key law: the key names exactly the
   inputs that invalidate it (lockfile hashes), `restore-keys` define the
   acceptable staleness lattice. A wrong key law is either a stale hit
@@ -57,11 +57,12 @@ discipline.
   level (`permissions: {}` or `contents: read`) and grant per job only the
   capabilities its effects require. Never rely on the org/repo default token
   setting; declare explicitly.
-- Untrusted context never crosses into a shell via `${{ }}`. Route it through
-  `env:` and reference it as a quoted shell variable (`"$TITLE"`), so it
-  arrives as data.
+- Untrusted context never crosses into a shell via `${{ }}`. Route it
+  through `env:` and reference it as a quoted shell variable (`"$TITLE"`),
+  so it arrives as data.
 - Prefer OIDC federation over long-lived cloud secrets; scope secrets to
-  `environment`s so only the jobs performing the deploy effect can read them.
+  `environment`s so only the jobs performing the deploy effect can read
+  them.
 - Treat `pull_request_target`/`workflow_run` as elevated interpreters: never
   check out or execute PR head code in them; consume only the event payload
   you have parsed and validated.

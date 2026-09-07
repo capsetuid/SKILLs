@@ -1,8 +1,8 @@
 # Firewall: Objections That Do Not Enter
 
-Load with every bank. Before noting an objection, test it against this
-list; a match is dropped, demoted to `question`, or re-shaped into the
-legitimate form named.
+Load with every bank. Before noting an objection, test it against this list;
+a match is dropped, demoted to `question`, or re-shaped into the legitimate
+form named.
 
 | Pattern | Rule |
 | --- | --- |
@@ -21,8 +21,8 @@ legitimate form named.
 
 ## Re-shaping
 
-A dropped pattern often hides a real objection one step away. "Not
-novel" becomes `prior` once the work is found; "needs more experiments"
-becomes `unsupported` once the untested claim is named; "weak baseline"
-becomes `baseline` once the tuning sentence is quoted or `sota` once the
-stronger corpus result is keyed.
+A dropped pattern often hides a real objection one step away. "Not novel"
+becomes `prior` once the work is found; "needs more experiments" becomes
+`unsupported` once the untested claim is named; "weak baseline" becomes
+`baseline` once the tuning sentence is quoted or `sota` once the stronger
+corpus result is keyed.

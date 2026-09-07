@@ -19,8 +19,8 @@ holds, verify the rest, and report every divergence.
 3. **Map the palette to roles** (below).
 4. **Verify against the accessibility floor** (below). This is the step that
    makes adoption safe, and the step most often skipped.
-5. **Fill gaps by deriving values from the supplied system.** A missing value
-   follows the system's own logic so it looks native.
+5. **Fill gaps by deriving values from the supplied system.** A missing
+   value follows the system's own logic so it looks native.
 6. **Report** (below). Name every failing token you adopted and why.
 
 ## Mapping a palette to roles
@@ -40,10 +40,10 @@ once and written down. Identify, in this order:
    obligate five roles.
 
 **A ramp is the role source.** When the palette arrives as stepped scales,
-select steps: a light step for canvas, a mid step for borders and
-secondary text, a dark step for ink, and the accent's own mid and dark steps
-for rest and active states. Every value the interface
-needs should already exist in the ramp.
+select steps: a light step for canvas, a mid step for borders and secondary
+text, a dark step for ink, and the accent's own mid and dark steps for rest
+and active states. Every value the interface needs should already exist in
+the ramp.
 
 **Derive what is missing from the palette's own geometry.** Hover and active
 states are lightness steps on the accent. Surface elevation steps are
@@ -76,12 +76,12 @@ Satisfy the floor and preserve brand intent. Resolve conflicts by
 derivation, in this order, and report which was used:
 
 1. **Restrict by size.** A brand color failing the normal-text threshold
-   often passes the large-text threshold. Keep it for display type and
-   large fills; use a compliant variant for small text. This usually
-   preserves the brand exactly where it is most visible.
+   often passes the large-text threshold. Keep it for display type and large
+   fills; use a compliant variant for small text. This usually preserves the
+   brand exactly where it is most visible.
 2. **Use the darker or lighter ramp step.** Most systems already ship an
-   active or pressed variant that passes. Promote it to the text-bearing
-   use and keep the original for fills.
+   active or pressed variant that passes. Promote it to the text-bearing use
+   and keep the original for fills.
 3. **Change the on-color.** A mid-tone accent frequently fails against white
    and passes against the system's own ink.
 4. **Adjust lightness within the hue**, as little as the threshold requires,
@@ -96,10 +96,10 @@ color entirely, or by claiming the floor does not apply.
 
 Supplied documents govern appearance. Function still applies.
 
-* **Interaction states are function.** Treat unspecified hover,
-  focus, loading, or error states as gaps. Fill them in the system's own
-  language and report them. A document can legitimately forbid a particular
-  hover *treatment*; it cannot forbid focus visibility or an error state.
+* **Interaction states are function.** Treat unspecified hover, focus,
+  loading, or error states as gaps. Fill them in the system's own language
+  and report them. A document can legitimately forbid a particular hover
+  *treatment*; it cannot forbid focus visibility or an error state.
 * **Report every gap you fill.** Missing dark theme, missing states, missing
   responsive rules, and missing semantic colors are all common. Derive each
   value, then say what you derived.

@@ -6,7 +6,8 @@ confidence: complete the task quickly, know the state, never lose work.
 
 Marketing surfaces optimize a first impression. Product surfaces optimize
 the thousandth use. Budget delight against repetition: an animation a user
-sees a thousand times has to stay under the latency budget like anything else.
+sees a thousand times has to stay under the latency budget like anything
+else.
 
 ## Governing posture
 
@@ -42,10 +43,11 @@ sees a thousand times has to stay under the latency budget like anything else.
 * Ask for the minimum. Every field justifies itself against the primary
   goal, and anything derivable is derived.
 * Be liberal in what you accept. Parse phone numbers, dates, currency,
-  identifiers, and pasted values with spaces or separators. Formatting is the system's job.
+  identifiers, and pasted values with spaces or separators. Formatting is
+  the system's job.
 * Validate at the right moment: on blur for a completed field, on submit for
-  the whole, and after the user finishes typing. Once a field has errored, revalidate as they type so the error
-  clears live.
+  the whole, and after the user finishes typing. Once a field has errored,
+  revalidate as they type so the error clears live.
 * Errors sit adjacent to the field, name the problem and the fix, and move
   focus to the first failure. A summary at the top of a long form links to
   each failure.
@@ -78,8 +80,8 @@ sees a thousand times has to stay under the latency budget like anything else.
 ## Dashboards
 
 * State one question per view in the title before adding charts.
-* Rank by decision value. The number that changes
-  behavior goes top-left in left-to-right reading orders.
+* Rank by decision value. The number that changes behavior goes top-left in
+  left-to-right reading orders.
 * Every metric carries its comparison. A number without a baseline, target,
   or trend cannot be acted on.
 * Say when the data is from, and whether it is live, cached, or partial.
@@ -118,6 +120,6 @@ sees a thousand times has to stay under the latency budget like anything else.
 
 The empty state is the first thing most users see and the least designed
 screen in most products. Say what belongs here, why it is worth having, and
-offer the single action that populates it. Distinguish
-never-had-any from none-match-this-filter from you-cleared-them-all: they need
-different copy and different actions.
+offer the single action that populates it. Distinguish never-had-any from
+none-match-this-filter from you-cleared-them-all: they need different copy
+and different actions.

@@ -16,8 +16,8 @@ a backlog. Read-only.
 Enumerate the modules in scope (whole repo unless the user narrows it).
 Identify the hot paths and trust boundaries first: entry points, request
 handlers, parsers of external data, loops over unbounded collections, CI and
-scripts. Budget depth by blast radius: a partial function in a request handler
-outranks one in a test helper.
+scripts. Budget depth by blast radius: a partial function in a request
+handler outranks one in a test helper.
 
 ### 2. Sweep
 
@@ -33,8 +33,8 @@ repo-scale categories only an audit can see:
 | Standard drift | The configured language standard rose (edition, target, `requires-python`) but the code still writes to the old one |
 | Capability sprawl | Scripts and workflows holding broader permissions or secrets than their effects require |
 
-When scope forces sampling, choose by blast radius and name every
-unexamined area.
+When scope forces sampling, choose by blast radius and name every unexamined
+area.
 
 ### 3. Rank
 
@@ -48,9 +48,9 @@ A ledger table, ranked:
 
 `| # | location | category | finding | suggested shape | effort (S/M/L) |`
 
-Then: at most five lines summarizing systemic themes, the highest-value
-fix, and the unexamined areas. Fixing proceeds through
-`refactor` or `build` invocations per ledger row.
+Then: at most five lines summarizing systemic themes, the highest-value fix,
+and the unexamined areas. Fixing proceeds through `refactor` or `build`
+invocations per ledger row.
 
 ## Completion Checks
 

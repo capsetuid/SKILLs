@@ -1,18 +1,18 @@
 # Claims: Extraction and the Support Test
 
-The claim list is the review's target set. Fix it before the paper's
-framing can move it.
+The claim list is the review's target set. Fix it before the paper's framing
+can move it.
 
 ## Extraction
 
-Read the abstract, introduction, and conclusion only. Copy each
-contribution sentence verbatim (cue phrases: "we propose", "we show", "our
+Read the abstract, introduction, and conclusion only. Copy each contribution
+sentence verbatim (cue phrases: "we propose", "we show", "our
 contributions", "the first", "state of the art", "outperforms") into a
 `claims` entry, one sentence each, under 60 words. Split a sentence that
 bundles two results. Then read the rest of the paper.
 
-Three to eight claims is the usual range. A paper with none stated in
-those sections earns a `rhetoric` objection with `missing`.
+Three to eight claims is the usual range. A paper with none stated in those
+sections earns a `rhetoric` objection with `missing`.
 
 ## Signalling questions
 
@@ -35,6 +35,6 @@ headline claim exceeds its evidence; `minor` when a secondary claim does;
 ## Support test
 
 For each claim, name in the objection text the section, table, or theorem
-that would have to support it and what it shows instead. "Table 2 covers
-two of the three benchmarks the abstract names" is an objection; "the
-evidence is weak" is a pad note.
+that would have to support it and what it shows instead. "Table 2 covers two
+of the three benchmarks the abstract names" is an objection; "the evidence
+is weak" is a pad note.

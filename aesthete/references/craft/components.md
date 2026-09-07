@@ -22,8 +22,8 @@ fragments tokens, splits accessibility fixes across files, and multiplies
 the cost of every future change.
 
 When the existing component is close but not sufficient, extend it with a
-new variant. If extending would require contorting it, say so explicitly
-and explain why a second component is the honest answer.
+new variant. If extending would require contorting it, say so explicitly and
+explain why a second component is the honest answer.
 
 ## The two prices of duplication
 
@@ -75,9 +75,9 @@ a closed `variant`, a closed `size`.
 
 ## Prop APIs that exclude the invalid
 
-**Model variants as one closed set.**
-Independent flags multiply into combinations that have no meaning, and each
-one is a state someone will eventually pass.
+**Model variants as one closed set.** Independent flags multiply into
+combinations that have no meaning, and each one is a state someone will
+eventually pass.
 
 <directives for="variants">
 Admits nonsense (primary and danger simultaneously, large and small):
@@ -87,9 +87,9 @@ Closed and total:
   { variant: 'primary' | 'secondary' | 'danger'; size: 'sm' | 'md' | 'lg' }
 </directives>
 
-**Model asynchronous collections as one closed set.** `interaction`
-defines the container states and their canonical union; encode that union
-rather than a bag of flags. A design rule about which states must exist then
+**Model asynchronous collections as one closed set.** `interaction` defines
+the container states and their canonical union; encode that union rather
+than a bag of flags. A design rule about which states must exist then
 becomes a build error when one is missing, instead of a review finding
 somebody has to catch.
 
@@ -104,16 +104,16 @@ that must change. A default branch converts a compile error into a blank
 region in production.
 
 **Require a prop only when it has no sensible default.** Make every other
-prop optional with a default that is correct for the common case. A component
-requiring six props at every call site has not chosen defaults.
+prop optional with a default that is correct for the common case. A
+component requiring six props at every call site has not chosen defaults.
 
 **When only one call site needs a prop, compose instead of adding it.**
 
-**Style escape hatches are for position.** Allowing a call
-site to pass spacing or layout classes is reasonable. Allowing it to
-override color, radius, or type forks the design system at that call site.
-If a call site needs a different look, that look is a new variant inside the
-component, decided once.
+**Style escape hatches are for position.** Allowing a call site to pass
+spacing or layout classes is reasonable. Allowing it to override color,
+radius, or type forks the design system at that call site. If a call site
+needs a different look, that look is a new variant inside the component,
+decided once.
 
 **Keep domain types out of primitives.** A Button that accepts a `User`
 belongs at the pattern layer. Check this mechanically.
@@ -132,9 +132,9 @@ Imports point downward only. A primitive importing a pattern creates a
 cycle. Keep domain knowledge at the pattern layer and above it.
 
 Effects belong at the top. Data access, mutation, storage, navigation,
-randomness, and time live in routes or thin container components.
-Everything below is a pure function of its inputs, which makes it testable,
-previewable in isolation, and reusable in a context nobody anticipated.
+randomness, and time live in routes or thin container components. Everything
+below is a pure function of its inputs, which makes it testable, previewable
+in isolation, and reusable in a context nobody anticipated.
 
 ## Derive, do not synchronize
 
@@ -144,8 +144,8 @@ one frame with the stale value, and desyncs the moment a path forgets to run
 it.
 
 State is the minimum that cannot be derived. Two pieces of state that must
-always agree are one piece of state plus a function. Store state that belongs
-in the URL in the URL.
+always agree are one piece of state plus a function. Store state that
+belongs in the URL in the URL.
 
 ## Cost
 
@@ -177,8 +177,8 @@ Build the index once, then the loop is linear:
 
 ## Naming
 
-Name by concept. Appearance names go stale the first time the design changes, and location
-names discourage the reuse the component exists for.
+Name by concept. Appearance names go stale the first time the design
+changes, and location names discourage the reuse the component exists for.
 
 <directives for="naming">
 Stale on redesign, or discourages reuse:

@@ -3,20 +3,22 @@
 ## Disclosed Constraints
 
 - No guaranteed TCO. Structural recursion is unsuitable for unbounded linear
-  data unless the data structure or algorithm requires it and depth is bounded.
-- Standard iterator adapters and `Option`/`Result` combinators usually compile
-  to allocation-free loops, but "zero cost" remains a claim to verify on a hot
-  path.
-- Deep currying, captured borrows, boxed closures, and trait objects can produce
-  lifetime friction, dynamic dispatch, or heap allocation.
-- Ownership is observable through consuming versus borrowing, clone behavior,
-  drop order, and resource lifetime.
+  data unless the data structure or algorithm requires it and depth is
+  bounded.
+- Standard iterator adapters and `Option`/`Result` combinators usually
+  compile to allocation-free loops, but "zero cost" remains a claim to
+  verify on a hot path.
+- Deep currying, captured borrows, boxed closures, and trait objects can
+  produce lifetime friction, dynamic dispatch, or heap allocation.
+- Ownership is observable through consuming versus borrowing, clone
+  behavior, drop order, and resource lifetime.
 
 ## Preferred FP Shapes
 
 - Use iterator adapters, enums, exhaustive matching, `Option`/`Result`
   combinators, `?`, and `async`/`await`.
-- Prefer generic named helpers over `Box<dyn Fn>` when static composition works.
+- Prefer generic named helpers over `Box<dyn Fn>` when static composition
+  works.
 - Keep chains lazy until collection is part of the required output contract.
 - Use `try_fold` for fallible accumulation and explicit early termination.
 - Model invalid states with enums and constructors that validate invariants.
@@ -24,18 +26,18 @@
 ## Modern Surface
 
 Detect the configured edition and MSRV from `Cargo.toml` (`edition`,
-`rust-version`) and any `rust-toolchain.toml`; use the most expressive stable
-syntax they permit, never beyond.
+`rust-version`) and any `rust-toolchain.toml`; use the most expressive
+stable syntax they permit, never beyond.
 
-- Prefer `let ... else` (stable since 1.65) for refutable bindings with early
-  exit over nested `if let` pyramids.
+- Prefer `let ... else` (stable since 1.65) for refutable bindings with
+  early exit over nested `if let` pyramids.
 - On edition 2024 (stabilized in Rust 1.85, February 2025): async closures
   `async |x| { ... }` are stable from 1.85; let chains
   (`if let Some(a) = x && a.is_valid() && let Ok(b) = f(a)`) are stable from
   1.88 on edition 2024 only, and replace nested conditional ladders.
 - Prefer one `match` with pattern guards and bindings
-  (`Some(n) if n > limit => ...`) over an `if`/`else if` ladder re-testing the
-  same scrutinee: the compiler's exhaustiveness check is the payoff, and
+  (`Some(n) if n > limit => ...`) over an `if`/`else if` ladder re-testing
+  the same scrutinee: the compiler's exhaustiveness check is the payoff, and
   guards keep each arm's condition adjacent to its binding.
 - Use the combinators the stdlib already names before writing manual
   branches: `is_some_and`/`is_ok_and`, `inspect`, `map_or_else`,
@@ -67,22 +69,24 @@ syntax they permit, never beyond.
 - Use enums for closed sums, structs/tuples for products, and newtypes with
   private fields plus smart constructors for refined values. Prefer standard
   refined types such as `NonZeroUsize` when they match the invariant.
-- Use `Option<T>` for absence and `Result<T, E>` for expected failure. Compose
-  with combinators when the chain stays clear; use `?` for propagation and
-  exhaustive `match` when elimination itself carries domain meaning.
-- Use `map` for a pure transformation inside `Option`/`Result` and `and_then` or
-  `?` when the next fallible computation depends on the prior value. Join
-  independent async work only through the established runtime's bounded,
-  cancellation-aware facility.
-- Avoid `unwrap`, indexing, and `unreachable!` unless a local proof is obvious
-  and maintained. Encode the proof in a type when practical.
-- Rely on ownership and `Drop` for resource safety; do not hold blocking guards
-  or borrows across `.await` unless the API explicitly supports it.
+- Use `Option<T>` for absence and `Result<T, E>` for expected failure.
+  Compose with combinators when the chain stays clear; use `?` for
+  propagation and exhaustive `match` when elimination itself carries domain
+  meaning.
+- Use `map` for a pure transformation inside `Option`/`Result` and
+  `and_then` or `?` when the next fallible computation depends on the prior
+  value. Join independent async work only through the established runtime's
+  bounded, cancellation-aware facility.
+- Avoid `unwrap`, indexing, and `unreachable!` unless a local proof is
+  obvious and maintained. Encode the proof in a type when practical.
+- Rely on ownership and `Drop` for resource safety; do not hold blocking
+  guards or borrows across `.await` unless the API explicitly supports it.
 - Scope spawned tasks with the runtime's established mechanism, propagate
-  cancellation, and bound channels/fan-out. Dropping a future is cancellation
-  only where the future and runtime document cancellation safety.
-- Preserve transaction and retry semantics; `?` short-circuits but does not roll
-  back prior effects.
+  cancellation, and bound channels/fan-out. Dropping a future is
+  cancellation only where the future and runtime document cancellation
+  safety.
+- Preserve transaction and retry semantics; `?` short-circuits but does not
+  roll back prior effects.
 
 ## Teaching Example
 

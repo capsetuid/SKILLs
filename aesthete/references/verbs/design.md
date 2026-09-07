@@ -25,14 +25,14 @@ missing, produce them first; everything below depends on them.
    repository's existing component library, and a hand-composed system.
    Prefer, in order: what the repository already uses; an official system
    when the domain expects one; a hand-composed system only when the brand
-   expression is itself the product. Return to the spine and load
-   `systems` when this decision is live.
+   expression is itself the product. Return to the spine and load `systems`
+   when this decision is live.
 
 4. **Set the token spine.** Fix the scales before composing: type scale and
    pairing, spacing scale, radius scale, one accent, neutral family, motion
-   curve family, elevation ladder, icon family and weight. These are
-   decided once for the whole surface. Load the relevant craft references
-   from the spine for any scale that is not obvious from the read.
+   curve family, elevation ladder, icon family and weight. These are decided
+   once for the whole surface. Load the relevant craft references from the
+   spine for any scale that is not obvious from the read.
 
 5. **Compose the sequence.** For a marketing surface, plan the section
    order, assigning each section a distinct layout family and a job. For a
@@ -89,8 +89,8 @@ Icons: {family and weight}
 
 ## Rules
 
-* Commit to one direction. If a genuine fork exists, name the fork, pick a side, and state the one question whose
-  answer would flip it.
+* Commit to one direction. If a genuine fork exists, name the fork, pick a
+  side, and state the one question whose answer would flip it.
 * Give every section and region a distinct job. Combine sections that share
   a job.
 * Specify mobile behavior for each region while planning it.

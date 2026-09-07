@@ -5,14 +5,13 @@ the work; use borders and boxes only when those signals are insufficient.
 
 ## Space
 
-* One geometric spacing scale, used for every gap,
-  padding, and margin. Keep the scale below nineteen distinct values.
+* One geometric spacing scale, used for every gap, padding, and margin. Keep
+  the scale below nineteen distinct values.
 * Proximity is the strongest grouping signal available and costs nothing.
   Space between groups must clearly exceed space within a group. Most
   confusing layouts are uniform spacing applied to non-uniform content.
-* Space belongs to the container. Prefer gap on
-  a layout container over margins on items, so removing an item never leaves
-  a hole.
+* Space belongs to the container. Prefer gap on a layout container over
+  margins on items, so removing an item never leaves a hole.
 * Vertical rhythm is a cadence: section spacing, block spacing, and element
   spacing form three clearly distinct tiers. Two tiers that are close in
   value read as an accident.
@@ -49,15 +48,15 @@ is text, use space and alignment.
 
 ## Responsive behavior
 
-* Design the narrow view as a first-class layout. On
-  most products it is the majority of use.
+* Design the narrow view as a first-class layout. On most products it is the
+  majority of use.
 * Prefer intrinsic sizing and content-driven wrapping over viewport
   breakpoints where the platform supports it. A component that responds to
   its own container works in a sidebar, a modal, and a full-width region
   without three sets of breakpoint overrides.
 * Every multi-column region declares its narrow behavior in the same place
-  it declares its wide behavior. Framework defaults do not cover every narrow
-  layout.
+  it declares its wide behavior. Framework defaults do not cover every
+  narrow layout.
 * Order matters when things stack. Verify the stacked reading order is the
   intended priority order, and that it matches the DOM order so keyboard and
   assistive traversal agree with the visual sequence.
@@ -79,8 +78,7 @@ is text, use space and alignment.
 
 ## Stability
 
-Prevent shifts after paint. Reserve dimensions for images, media,
-embeds, and any region that loads late. Skeletons match the real layout's
-dimensions. Insert notifications and banners in
-reserved space or as overlays. Preserve the reader's position after reading
-begins.
+Prevent shifts after paint. Reserve dimensions for images, media, embeds,
+and any region that loads late. Skeletons match the real layout's
+dimensions. Insert notifications and banners in reserved space or as
+overlays. Preserve the reader's position after reading begins.

@@ -1,13 +1,13 @@
 # Verb: fanout
 
 Partition the open work, then run one dispatch per bundle. Load `dispatch`
-first: every bundle ships a full six-field brief, and the fields are
-defined there.
+first: every bundle ships a full six-field brief, and the fields are defined
+there.
 
 ## Partition law
 
-The bundles are pairwise disjoint and their union is the open work.
-Overlap is a design error, not redundancy.
+The bundles are pairwise disjoint and their union is the open work. Overlap
+is a design error, not redundancy.
 
 Two disjointness axes, both enforced in every bundle's bounds:
 

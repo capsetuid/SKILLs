@@ -7,8 +7,8 @@ real runs, never from reading docs.
 
 Build a small corpus of documents with known-good ground truth, then seed
 errors of each verdict class (wrong value, superseded value,
-missing-context, fabricated citation, internal-computation error). Track
-per run:
+missing-context, fabricated citation, internal-computation error). Track per
+run:
 
 - claim recall: seeded errors found / seeded errors present
 - false-correction rate: corrections proposed against accurate claims
@@ -18,8 +18,8 @@ per run:
 
 Protocol: at least 5 repetitions per condition; compare against a no-skill
 baseline on the same model. Re-run per model generation: when the with-skill
-delta approaches zero, delete scaffolding (starting with
-`evidence` query patterns) before adding anything.
+delta approaches zero, delete scaffolding (starting with `evidence` query
+patterns) before adding anything.
 
 ## Robustness scenarios
 
@@ -38,8 +38,8 @@ delta approaches zero, delete scaffolding (starting with
 right"), hard negatives ("check this document" as proofreading, "verify this
 code works", "is this argument valid"), and paraphrases. Measure trigger
 precision and recall per harness; when triggers misfire, tune the
-description's "Use when" clause and the Redirects section and leave the
-rest of the body.
+description's "Use when" clause and the Redirects section and leave the rest
+of the body.
 
 ## Support matrix
 

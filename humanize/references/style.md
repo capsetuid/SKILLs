@@ -5,12 +5,12 @@ mechanically checkable by searching the text.
 
 ### 14. Em and en dashes
 
-**Rule:** The final rewrite must not contain an em dash (U+2014) or an en dash
-(U+2013) unless the writer's sample uses them; then match the sample's rate.
-Replace each with a period, comma, colon, or parentheses, or rewrite the
-sentence. Also catch a spaced hyphen and a double hyphen used as dashes. The
-example below uses the en dash and double-hyphen forms; the em dash behaves
-identically.
+**Rule:** The final rewrite must not contain an em dash (U+2014) or an en
+dash (U+2013) unless the writer's sample uses them; then match the sample's
+rate. Replace each with a period, comma, colon, or parentheses, or rewrite
+the sentence. Also catch a spaced hyphen and a double hyphen used as dashes.
+The example below uses the en dash and double-hyphen forms; the em dash
+behaves identically.
 
 <before>
 The term is primarily promoted by Dutch institutions – not by the people themselves. The changes -- long overdue according to critics -- will take effect immediately.
@@ -34,7 +34,8 @@ It blends OKRs, KPIs, and visual strategy tools like the Business Model Canvas a
 
 ### 16. Lists with bold mini-headings
 
-**Problem:** Vertical lists in which every item starts with a bold label and a colon.
+**Problem:** Vertical lists in which every item starts with a bold label and
+a colon.
 
 <before>
 - **User Experience:** The user experience has been significantly improved with a new interface.
@@ -99,7 +100,8 @@ Run the command.
 
 ### 19. Curly quotation marks
 
-**Problem:** Curly quotes (“...”) where the writer or target format uses straight quotes ("...").
+**Problem:** Curly quotes (“...”) where the writer or target format uses
+straight quotes ("...").
 
 <before>
 He said “the project is on track” but others disagreed.

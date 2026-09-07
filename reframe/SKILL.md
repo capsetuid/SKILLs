@@ -14,16 +14,24 @@ metadata:
 
 # Reframe
 
-Open the decision frame before implementation gravity closes it, and deliver the decision horizon, system boundary, and target model. Strategic altitude is conceptual compression: fewer concepts, clearer ownership, longer-lived boundaries, higher leverage.
+Open the decision frame before implementation gravity closes it, and deliver
+the decision horizon, system boundary, and target model. Strategic altitude
+is conceptual compression: fewer concepts, clearer ownership, longer-lived
+boundaries, higher leverage.
 
 ## Redirects
 
-- Whether to do, kill, or defer the idea: give the call plainly from the evidence at hand; reframe only what proceeds
-- Module boundaries, abstraction depth, or implementation quality: `/pl-theorist` or `/ponytail`
-- Migration sequencing, rollout, observability, and rollback: plan them as ordinary engineering work once the target is accepted
-- Writing the product requirements document: write it from the accepted target in the team's own format
+- Whether to do, kill, or defer the idea: give the call plainly from the
+  evidence at hand; reframe only what proceeds
+- Module boundaries, abstraction depth, or implementation quality:
+  `/pl-theorist` or `/ponytail`
+- Migration sequencing, rollout, observability, and rollback: plan them as
+  ordinary engineering work once the target is accepted
+- Writing the product requirements document: write it from the accepted
+  target in the team's own format
 
-After the target is accepted, route it to an available feasibility or landing procedure, or state the unresolved landing questions.
+After the target is accepted, route it to an available feasibility or
+landing procedure, or state the unresolved landing questions.
 
 ## Doctrine
 
@@ -43,21 +51,27 @@ After the target is accepted, route it to an available feasibility or landing pr
 
 Invoke on explicit cues, including:
 
-- "Think bigger," "raise the altitude," "step back," or "give me the big-picture call."
-- "Too incremental," "too safe," "too conservative," or "stop optimizing locally."
-- "Greenfield this," "ignore the legacy for a moment," or "what would we build today?"
+- "Think bigger," "raise the altitude," "step back," or "give me the
+  big-picture call."
+- "Too incremental," "too safe," "too conservative," or "stop optimizing
+  locally."
+- "Greenfield this," "ignore the legacy for a moment," or "what would we
+  build today?"
 - "Do not let compatibility or refactor difficulty dictate the direction."
 
 Invoke proactively only when at least one symptom exists:
 
 - A local patch is chosen before the target model is stated.
 - Compatibility is preserved without a named contract or stakeholder.
-- The current package, document, process, or partial implementation is treated as immutable.
+- The current package, document, process, or partial implementation is
+  treated as immutable.
 - Migration size is used to reject a direction before its value is assessed.
 - Many small concepts obscure one lifecycle, owner, or product promise.
-- Proposed options differ in mechanics but preserve the same questionable frame.
+- Proposed options differ in mechanics but preserve the same questionable
+  frame.
 
-A small proposal alone is not a trigger; it can be correct when the boundary, target, and evidence support it.
+A small proposal alone is not a trigger; it can be correct when the
+boundary, target, and evidence support it.
 
 ## Required Inputs
 
@@ -74,12 +88,17 @@ Otherwise continue and state the assumption.
 
 If a repository or document set is available:
 
-1. Search for public contracts, persisted schemas, integrations, callers, tests, migration code, and ownership boundaries.
-2. Read representative definitions and call sites; avoid exhaustive archaeology before forming the thesis.
-3. Inspect version history only when intent or compatibility status could change the decision.
+1. Search for public contracts, persisted schemas, integrations, callers,
+   tests, migration code, and ownership boundaries.
+2. Read representative definitions and call sites; avoid exhaustive
+   archaeology before forming the thesis.
+3. Inspect version history only when intent or compatibility status could
+   change the decision.
 4. Label every unsupported claim as an assumption.
 
-If the outcome, horizon, boundary, or owner is missing, ask only when the answer could change the target model. Otherwise, state the assumption and lower confidence.
+If the outcome, horizon, boundary, or owner is missing, ask only when the
+answer could change the target model. Otherwise, state the assumption and
+lower confidence.
 
 ## Constraint Classification
 
@@ -97,7 +116,8 @@ Internal usage creates work; a contract needs evidence.
 
 ## Frame-Opening Moves
 
-Select the smallest set that exposes the hidden decision. Use at least one; name it in the output.
+Select the smallest set that exposes the hidden decision. Use at least one;
+name it in the output.
 
 | Move | Question | Guardrail |
 | --- | --- | --- |
@@ -114,19 +134,25 @@ Select the smallest set that exposes the hidden decision. Use at least one; name
 
 ### 1. Reframe the decision
 
-State the real choice at the highest useful level. Define outcome, horizon, system boundary, and decision owner. Reject vague goals such as "cleaner" or "more scalable."
+State the real choice at the highest useful level. Define outcome, horizon,
+system boundary, and decision owner. Reject vague goals such as "cleaner" or
+"more scalable."
 
 ### 2. Establish the evidence baseline
 
-Separate observed facts, explicit instructions, and assumptions. Record missing evidence only when it can change the decision.
+Separate observed facts, explicit instructions, and assumptions. Record
+missing evidence only when it can change the decision.
 
 ### 3. Diagnose the inherited frame
 
-Name the constraint currently controlling the proposal. Classify it using the constraint table. State who or what requires it. Grant contract status only when evidence names one.
+Name the constraint currently controlling the proposal. Classify it using
+the constraint table. State who or what requires it. Grant contract status
+only when evidence names one.
 
 ### 4. Open the frame
 
-Apply one or more frame-opening moves. Explain the newly visible option, boundary, deletion, or principle.
+Apply one or more frame-opening moves. Explain the newly visible option,
+boundary, deletion, or principle.
 
 ### 5. Form the clean target
 
@@ -143,37 +169,51 @@ Describe the end-state independently of migration:
 Identify safe-looking actions that block the target:
 
 - Local optimizations that fix symptoms while preserving the wrong boundary.
-- Permanent shims or dual models without a named contract and retirement condition.
+- Permanent shims or dual models without a named contract and retirement
+  condition.
 - Detail work that does not reduce uncertainty or advance the target.
 
 ### 7. Compare three paths
 
 Use the canonical options:
 
-- **Conservative path**: preserve the inherited model; minimize immediate disruption.
+- **Conservative path**: preserve the inherited model; minimize immediate
+  disruption.
 - **Clean target**: move directly to the preferred end-state.
-- **Staged clean path**: preserve the same clean target; sequence reversible steps and give every temporary bridge an owner, a removal trigger, and a deadline or measurable gate.
+- **Staged clean path**: preserve the same clean target; sequence reversible
+  steps and give every temporary bridge an owner, a removal trigger, and a
+  deadline or measurable gate.
 
-Compare target integrity, immediate price, permanent complexity, contract risk, and time to evidence. Recommend one. Choose Staged only when it preserves the clean target and has explicit retirement. If a path is incoherent, mark it non-viable.
+Compare target integrity, immediate price, permanent complexity, contract
+risk, and time to evidence. Recommend one. Choose Staged only when it
+preserves the clean target and has explicit retirement. If a path is
+incoherent, mark it non-viable.
 
 ### 8. Make the call
 
-State material tradeoffs without weakening the recommendation. Assign confidence:
+State material tradeoffs without weakening the recommendation. Assign
+confidence:
 
-- **High**: decisive contracts and representative evidence inspected; no major unresolved assumption.
-- **Medium**: direction supported; one or more material assumptions remain testable.
-- **Low**: thesis mainly opens the frame; decisive evidence is absent or contradictory.
+- **High**: decisive contracts and representative evidence inspected; no
+  major unresolved assumption.
+- **Medium**: direction supported; one or more material assumptions remain
+  testable.
+- **Low**: thesis mainly opens the frame; decisive evidence is absent or
+  contradictory.
 
 ### 9. Design the verification path
 
 Specify:
 
-- First proof point: cheapest artifact or observation that distinguishes this thesis from alternatives.
+- First proof point: cheapest artifact or observation that distinguishes
+  this thesis from alternatives.
 - Expected signal: observable result supporting the thesis.
 - Falsifier: evidence that forces rejection or material revision.
-- Deferred commitment: irreversible choice not to make before the signal arrives.
+- Deferred commitment: irreversible choice not to make before the signal
+  arrives.
 
-Make the proof point test the target model, contract assumption, boundary, or payoff; showing that code can be written is not enough.
+Make the proof point test the target model, contract assumption, boundary,
+or payoff; showing that code can be written is not enough.
 
 ### 10. Close the payoff ledger
 
@@ -184,18 +224,23 @@ For each major bold take or kill-list item, record:
 - Moment or signal when payoff appears.
 - Stakeholder receiving the payoff.
 
-Reject rows based solely on "cleaner," "simpler," "more maintainable," or similar generic claims.
+Reject rows based solely on "cleaner," "simpler," "more maintainable," or
+similar generic claims.
 
 ## Output Contract
 
-Produce one strategic direction judgment in the user's language, using the template in this file. Keep its eleven sections in template order, Thesis first through Payoff Ledger last.
+Produce one strategic direction judgment in the user's language, using the
+template in this file. Keep its eleven sections in template order, Thesis
+first through Payoff Ledger last.
 
 Output rules:
 
 - Lead with the call; methodology and caveats follow.
 - Keep target model separate from migration path.
-- Give every compatibility mechanism a named contract, owner, and retirement condition.
-- Use code-level detail only when it changes the direction or verifies a claim.
+- Give every compatibility mechanism a named contract, owner, and retirement
+  condition.
+- Use code-level detail only when it changes the direction or verifies a
+  claim.
 - Tie every ledger row to a bold take or kill-list item.
 - End with the ledger; omit a second summary.
 
@@ -226,7 +271,8 @@ Output rules:
 
 ## Output Template
 
-Replace every `{{...}}` field. Remove all instructional placeholders before output. Preserve the section order and table structure.
+Replace every `{{...}}` field. Remove all instructional placeholders before
+output. Preserve the section order and table structure.
 
 <template for="output">
 # Strategic Direction: {{topic}}

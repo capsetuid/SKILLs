@@ -1,7 +1,7 @@
 # Framing: from question to leaves
 
-Use this scaffold whenever the probe stays open. Compose its moves into a frame
-around governing mechanisms; most queries mix several modes.
+Use this scaffold whenever the probe stays open. Compose its moves into a
+frame around governing mechanisms; most queries mix several modes.
 
 ## Ready frame
 
@@ -9,8 +9,8 @@ Build every field before registering leaves:
 
 - scope: time, place, jurisdiction, version, population, workload, platform,
   and stakeholder boundaries that can change the answer;
-- premises: every embedded factual or causal claim marked for confirmation or
-  refutation;
+- premises: every embedded factual or causal claim marked for confirmation
+  or refutation;
 - modes: factual, causal, normative, interpretive, feasibility, or
   implementation claims separated where their evidence and warrants differ;
 - mechanisms: the laws, incentives, protocols, physical processes, or cost
@@ -22,13 +22,13 @@ Build every field before registering leaves:
 - leaves: 3-10 independent questions, each settled by one retrieval act.
 
 For critical ambiguity, ask one focused question. If clarification is
-unavailable, branch each plausible reading and use the branch point as Boundary
-material. Put dependent sub-questions in the derived chain.
+unavailable, branch each plausible reading and use the branch point as
+Boundary material. Put dependent sub-questions in the derived chain.
 
 ## Framing moves
 
-Apply each contributing move in order. Re-run `clarify` when evidence exposes a
-new interpretation.
+Apply each contributing move in order. Re-run `clarify` when evidence
+exposes a new interpretation.
 
 | Move | Trigger | Product |
 | --- | --- | --- |
@@ -42,8 +42,8 @@ new interpretation.
 | `pose-rival` | The strongest contrary account lives outside the query's own premises | The rival field, with a leaf that may close `refuted` |
 | `compile-leaves` | Scope and mechanisms are stable | Independent, retrievable leaf questions |
 
-A ready frame groups by mechanism, assigns dependent conclusions to the derived
-chain, and names evidence that could refute each premise.
+A ready frame groups by mechanism, assigns dependent conclusions to the
+derived chain, and names evidence that could refute each premise.
 
 ## Worked frames
 
@@ -229,7 +229,8 @@ chain, and names evidence that could refute each premise.
 Before handing the frame back to `explore`, verify:
 
 - every critical ambiguous term is resolved or branched;
-- every embedded premise supports a `refuted` close while the frame remains valid;
+- every embedded premise supports a `refuted` close while the frame remains
+  valid;
 - factual, causal, normative, interpretive, feasibility, and implementation
   claims use distinct warrants where needed;
 - every leaf names one governing mechanism and one plausible evidence route;

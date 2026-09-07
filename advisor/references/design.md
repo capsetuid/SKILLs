@@ -1,8 +1,7 @@
 # Verb: design
 
 Plan the next phase before any experiment runs. Input: the four moves'
-output; run them now when no review exists. Output: the plan template
-alone.
+output; run them now when no review exists. Output: the plan template alone.
 
 ## Order
 
@@ -17,14 +16,14 @@ baseline in its own best configuration.
 ## Cost
 
 Every phase carries a cost in the envelope's units: accelerator-hours,
-rented money, people-weeks, simulator-hours. A phase whose cost exceeds
-the envelope takes the simulator or emulator row of the spine's instrument
+rented money, people-weeks, simulator-hours. A phase whose cost exceeds the
+envelope takes the simulator or emulator row of the spine's instrument
 table, or names the collaborator it needs.
 
 ## Checkpoints
 
-Each phase names the test that shows it succeeded or failed and the
-decision its result unlocks. A phase with no decision behind it is cut.
+Each phase names the test that shows it succeeded or failed and the decision
+its result unlocks. A phase with no decision behind it is cut.
 
 ## Venue
 

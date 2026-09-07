@@ -83,8 +83,8 @@ Pure: choosing the mode, the partition, the reach, composing the brief,
 judging a return. Effectful: the spawn.
 
 - Not idempotent. Never re-spawn to check a result.
-- Not transactional. One rate limit can kill half a fanout mid-flight.
-  Each brief stays resumable on its own bundle.
+- Not transactional. One rate limit can kill half a fanout mid-flight. Each
+  brief stays resumable on its own bundle.
 - Not queued. In Claude Code the 21st concurrent spawn fails with
   "Concurrent subagent limit reached"; a fanout and its children count
   against the one cap of 20.
@@ -104,10 +104,11 @@ bundles duplicates its share of that spend and buys nothing.
 Cited sizing: simple fact-finding takes one agent at 3 to 10 tool calls, a
 direct comparison 2 to 4 delegates at 10 to 15 calls each, and more than 10
 delegates only where responsibilities are clearly divided; never more than
-20 parallel agents unless the user asks for them. A lead with delegates beats one
-frontier model on cost only on work larger than a single context window,
-and loses on any single dependent chain. The lead pays for the returns
-alone; every token a delegate spends reading is a token the lead did not.
+20 parallel agents unless the user asks for them. A lead with delegates
+beats one frontier model on cost only on work larger than a single context
+window, and loses on any single dependent chain. The lead pays for the
+returns alone; every token a delegate spends reading is a token the lead did
+not.
 
 Where the harness offers a model choice, a delegate whose brief states its
 decision rules takes the fast tier and the join stays on the lead's tier.
@@ -115,8 +116,8 @@ decision rules takes the fast tier and the join stays on the lead's tier.
 ## Called from a skill
 
 A skill that delegates commands `/summon` and supplies what is its own; the
-mode decision, the six fields, the bounds, the sizing, and the review of
-the return are this skill's.
+mode decision, the six fields, the bounds, the sizing, and the review of the
+return are this skill's.
 
 | The caller supplies | Lands in |
 | --- | --- |
@@ -128,27 +129,27 @@ the return are this skill's.
 | The gate the lead admits the return through: a script command, or the lead's own check | the join, after `review` |
 
 A caller's reference file reaches the delegate by absolute path under
-evidence, the Readable variant in `reach`; the caller says so when it
-wants an excerpt instead.
+evidence, the Readable variant in `reach`; the caller says so when it wants
+an excerpt instead.
 
 - The lead is the sole writer. A delegate returns a record and writes no
   session state; the lead judges it under `review`, then admits it through
   the caller's gate.
 - The branch leaves no trace. Deliverable and state are identical whether a
-  unit ran inline or delegated; only cost and latency differ, reported
-  where the caller's report has a line for them.
-- Sizing is the mode table's and the Cost section's, counted in the
-  caller's unit. Delegate a unit whose evidence would otherwise sit in the
-  lead's context (a fetched page, a full text) when it is independent of
-  the others. The fan fits the concurrency cap. A unit the lead closes in
-  a few tool calls stays inline whatever the count.
+  unit ran inline or delegated; only cost and latency differ, reported where
+  the caller's report has a line for them.
+- Sizing is the mode table's and the Cost section's, counted in the caller's
+  unit. Delegate a unit whose evidence would otherwise sit in the lead's
+  context (a fetched page, a full text) when it is independent of the
+  others. The fan fits the concurrency cap. A unit the lead closes in a few
+  tool calls stays inline whatever the count.
 
 ## Gotchas
 
 - A delegate handed a whole skill still ran `git log` for the scope
   convention. Rules do not substitute for evidence.
-- Delegates spawned children unasked. State spawn permission in every
-  brief; the default is none.
+- Delegates spawned children unasked. State spawn permission in every brief;
+  the default is none.
 - Model tier moves judgment less than a stated decision rule does. Haiku on
   a bare pointer loaded the skill, obeyed every format rule, and misjudged
   the classification, the same failure sonnet made without the rule.
@@ -157,9 +158,9 @@ wants an excerpt instead.
   conventions are the task.
 - Where a harness preloads skills at all, it does so at agent-definition
   time. The prompt is the only call-time channel.
-- A writer handed measurement files reproduces the measurements as
-  narrative ("six of twelve died here"). When evidence is data, the brief
-  says: cite numbers as calibration, never as events.
+- A writer handed measurement files reproduces the measurements as narrative
+  ("six of twelve died here"). When evidence is data, the brief says: cite
+  numbers as calibration, never as events.
 
 ## Completion Checks
 

@@ -79,8 +79,8 @@ permanently.
    the frequent one.
 2. **Tolerate.** Parse what the user meant. Accept pasted values with
    spaces, separators, and surrounding characters. Trim. Correct case.
-3. **Recover.** Preserve everything the user entered, place the message
-   next to the cause, name the fix, and move focus to the first failure.
+3. **Recover.** Preserve everything the user entered, place the message next
+   to the cause, name the fix, and move focus to the first failure.
 4. **Explain.** State what happened, what it means, and the next action
    instead of exposing a raw fault code alone. Keep technical detail
    available but secondary.
@@ -94,8 +94,8 @@ after failure and reuse information the system already has.
   This is faster and safer than a confirmation, because confirmations are
   dismissed reflexively.
 * Irreversible: confirm, naming the exact object and the exact consequence,
-  with a verb on the confirming button. For the catastrophic, require a deliberate act such as typing the
-  name.
+  with a verb on the confirming button. For the catastrophic, require a
+  deliberate act such as typing the name.
 * Place destructive actions away from frequent actions and away from the
   default focused control.
 

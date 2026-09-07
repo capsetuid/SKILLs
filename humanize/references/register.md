@@ -1,9 +1,9 @@
 # Register patterns (§36-40)
 
-What survives a vocabulary scrub: flat rhythm, metaphor density, manufactured
-salience, compressed jargon, leaked reasoning. §36 and §39 are structural,
-§38 and §40 rhetorical, §37 lexical: there density is the tell and one
-instance is English.
+What survives a vocabulary scrub: flat rhythm, metaphor density,
+manufactured salience, compressed jargon, leaked reasoning. §36 and §39 are
+structural, §38 and §40 rhetorical, §37 lexical: there density is the tell
+and one instance is English.
 
 ### 36. Uniform sentence rhythm
 
@@ -13,10 +13,9 @@ runs 0.55 to 0.75 with a block floor near 0.4; unedited model output sits
 near 0.2 to 0.3. Flag a block under 0.45, then read it aloud: the number is
 a prompt, and the writer's own baseline replaces it when a sample exists.
 **Problem:** Every sentence lands at the same middle length. The ear hears a
-metronome even after every flagged phrase is gone.
-**Fix:** Merge two adjacent sentences that share a subject; split one
-sentence carrying two independent claims. Adding a short sentence for effect
-produces §31.
+metronome even after every flagged phrase is gone. **Fix:** Merge two
+adjacent sentences that share a subject; split one sentence carrying two
+independent claims. Adding a short sentence for effect produces §31.
 
 <before>
 The validator runs before the request reaches the handler. It checks each field against the schema. It reports every invalid field to the caller. The caller decides whether to retry the request.

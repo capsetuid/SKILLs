@@ -11,8 +11,8 @@ complexity budget.
 From the request and the repository (existing types, storage schemas, wire
 formats, traffic or data-size hints), record: the operations the domain must
 support, their expected frequencies and sizes, the external systems touched,
-and the consistency/latency constraints. Ask at most one focused question, and
-only when the answer changes the model.
+and the consistency/latency constraints. Ask at most one focused question,
+and only when the answer changes the model.
 
 ### 2. Enumerate states and transitions
 
@@ -20,8 +20,8 @@ only when the answer changes the model.
 - Encode alternatives as sums, simultaneous data as products, constrained
   primitives as refined/opaque types. Name each smart-constructor boundary
   where untrusted data enters.
-- Walk the cartesian product of any proposed boolean/nullable fields and name
-  the combinations that are meaningless; restructure until they are
+- Walk the cartesian product of any proposed boolean/nullable fields and
+  name the combinations that are meaningless; restructure until they are
   unrepresentable.
 - Make each transition a total function `State -> Event -> State` (or
   `Result`); name the rejected transitions alongside the successful ones.
@@ -30,8 +30,8 @@ only when the answer changes the model.
 
 Partition the design into a pure core (decisions, transitions, derivations)
 and a thin shell (storage, network, clock, randomness, UI). For each shell
-effect, note: idempotency, retry policy, transaction scope, cancellation, and
-what capability/permission it requires.
+effect, note: idempotency, retry policy, transaction scope, cancellation,
+and what capability/permission it requires.
 
 ### 4. Set the complexity budget
 
@@ -57,8 +57,8 @@ Return, in order:
    that killed it.
 6. Open questions, at most three, each with the default you will assume.
 
-No implementation code beyond type sketches unless the user asks to proceed to
-`build`.
+No implementation code beyond type sketches unless the user asks to proceed
+to `build`.
 
 ## Completion Checks
 

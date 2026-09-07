@@ -8,8 +8,8 @@ checkable proposition each.
 - Decontextualize: resolve pronouns, elided subjects, and relative time
   ("the new release" becomes the named release; "last year" becomes the
   absolute year derived from the document's timestamp).
-- Map every claim to its exact source span: file, line range, verbatim quote.
-  The span is what an approved correction later replaces.
+- Map every claim to its exact source span: file, line range, verbatim
+  quote. The span is what an approved correction later replaces.
 - Granularity cap: never fragment below one proposition. A sentence bundling
   subject, action, and date ("Org O released product P in month M") is ONE
   claim.
@@ -21,8 +21,8 @@ checkable proposition each.
 
 Opinions, recommendations, tutorial instructions, architectural rationale,
 rhetoric, hedged speculation ("may", "could"), and self-referential document
-text.
-When a sentence mixes fact and opinion, extract only the factual proposition.
+text. When a sentence mixes fact and opinion, extract only the factual
+proposition.
 
 ## Claim types and retrieval routing
 

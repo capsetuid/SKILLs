@@ -4,8 +4,10 @@ Conversation artifacts left in text that should stand on its own.
 
 ### 20. Chatbot text left in the answer
 
-**Watch:** I hope this helps, Of course!, Certainly!, You're absolutely right!, Would you like..., Want me to...?, Want me to give examples?, Should I continue?, let me know, here is a...
-**Problem:** A chatbot's greeting, offer, or closing remains in standalone text.
+**Watch:** I hope this helps, Of course!, Certainly!, You're absolutely
+right!, Would you like..., Want me to...?, Want me to give examples?, Should
+I continue?, let me know, here is a... **Problem:** A chatbot's greeting,
+offer, or closing remains in standalone text.
 
 <before>
 Here is an overview of the French Revolution. I hope this helps! Let me know if you'd like me to expand on any section.
@@ -17,8 +19,14 @@ The French Revolution began in 1789 when financial crisis and food shortages led
 
 ### 21. Knowledge-limit disclaimers and guesses
 
-**Watch:** as of [date], Up to my last training update, While specific details are limited/scarce..., based on available information, not publicly available, maintains a low profile, keeps personal details private, prefers to stay out of the spotlight, likely [grew up/studied/began], it is believed that
-**Problem:** A model mentions its knowledge cutoff, or explains that it found no source and then fills the gap with a plausible guess. State what the source does not show, or remove the sentence. Never present a guess as fact.
+**Watch:** as of [date], Up to my last training update, While specific
+details are limited/scarce..., based on available information, not publicly
+available, maintains a low profile, keeps personal details private, prefers
+to stay out of the spotlight, likely [grew up/studied/began], it is believed
+that **Problem:** A model mentions its knowledge cutoff, or explains that it
+found no source and then fills the gap with a plausible guess. State what
+the source does not show, or remove the sentence. Never present a guess as
+fact.
 
 <before case="cutoff disclaimer">
 While specific details about the company's founding are not extensively documented in readily available sources, it appears to have been established sometime in the 1990s.

@@ -5,12 +5,13 @@ approximations honestly.
 
 ## Selection order
 
-1. **What the repository already uses.** Consistency with the existing tree beats any system's individual merit.
+1. **What the repository already uses.** Consistency with the existing tree
+   beats any system's individual merit.
 2. **The system the domain expects or requires.** Some platforms and sectors
    effectively mandate one; using anything else creates a product that feels
    foreign or fails a compliance expectation.
-3. **A foundation you extend**, when the brand expression is a differentiator
-   but the component behavior is not.
+3. **A foundation you extend**, when the brand expression is a
+   differentiator but the component behavior is not.
 4. **Hand-composed**, the most expensive option: choose it only when the
    visual identity is itself the product and is the reason.
 
@@ -67,7 +68,7 @@ honestly with platform primitives, and describe them accurately.
 | Kinetic type | CSS animation and scroll-linked timelines |
 
 A proprietary platform's named material is documented by its vendor for that
-vendor's platforms. A web build of it is an approximation, must be labeled as
-one in code comments, and must not be presented to the user as the real
+vendor's platforms. A web build of it is an approximation, must be labeled
+as one in code comments, and must not be presented to the user as the real
 system. Any translucent material needs a solid fallback that preserves
 contrast when transparency is reduced or unsupported.

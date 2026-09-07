@@ -10,8 +10,8 @@ verb for existing work. Change nothing.
    disagreements between the intended read and the built result, and naming
    the read makes them arguable.
 2. **Walk the flow before the pixels.** Trace the user's path to the primary
-   goal and count the friction budget as built. Interaction failures
-   outrank visual ones and are found by walking the flow.
+   goal and count the friction budget as built. Interaction failures outrank
+   visual ones and are found by walking the flow.
 3. **Pass in five sweeps**, in this order. Do not interleave; each sweep has
    a different attention mode.
    * **Logic**: does behavior follow from appearance, is state complete, are

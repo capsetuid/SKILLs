@@ -50,6 +50,6 @@ need the context.
 
 ## Boundaries
 
-Generates the message only: does not stage, commit, or amend unless the
-user asks. Output the message ready to paste. One-shot: the active
-intensity level is untouched.
+Generates the message only: does not stage, commit, or amend unless the user
+asks. Output the message ready to paste. One-shot: the active intensity
+level is untouched.

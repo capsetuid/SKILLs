@@ -3,45 +3,49 @@
 ## Disclosed Constraints
 
 - C has no algebraic data types, closures, exceptions, ownership checker, or
-  standard `Option`/`Result`. Encode sums explicitly as a tag plus a union and
-  products as structs.
-- Function pointers inhibit inlining in some toolchains; callback-heavy generic
-  pipelines can cost more and obscure ownership compared with a direct loop.
-- Values, pointers, lengths, allocation provenance, aliasing, and lifetimes are
-  part of the contract. `const` prevents mutation through one access path; it
-  does not prove deep immutability.
+  standard `Option`/`Result`. Encode sums explicitly as a tag plus a union
+  and products as structs.
+- Function pointers inhibit inlining in some toolchains; callback-heavy
+  generic pipelines can cost more and obscure ownership compared with a
+  direct loop.
+- Values, pointers, lengths, allocation provenance, aliasing, and lifetimes
+  are part of the contract. `const` prevents mutation through one access
+  path; it does not prove deep immutability.
 - Signed overflow is undefined, allocation can fail, and unchecked indexing,
   null dereference, use-after-free, and data races are defects.
 
 ## Preferred FP Shapes
 
 - Use immutable-by-convention value structs, small pure functions, explicit
-  tagged unions, and constructor functions that establish invariants atomically.
-- Return a struct such as `{ bool has_value; T value; }` for ordinary absence and
-  a tagged result union for expected failure. Never read an inactive union arm.
-- Express `map`/`filter`/`fold` conceptually, but implement hot collection work as
-  a counted single-pass loop with a named predicate/projector/step.
-- Pass allocator and ownership policy explicitly where allocation crosses an API
-  boundary. Prefer caller-owned buffers when that is the established convention.
-- Use cleanup labels or one well-structured exit path when multiple acquisitions
-  require rollback. Preserve lock and transaction order.
+  tagged unions, and constructor functions that establish invariants
+  atomically.
+- Return a struct such as `{ bool has_value; T value; }` for ordinary
+  absence and a tagged result union for expected failure. Never read an
+  inactive union arm.
+- Express `map`/`filter`/`fold` conceptually, but implement hot collection
+  work as a counted single-pass loop with a named predicate/projector/step.
+- Pass allocator and ownership policy explicitly where allocation crosses an
+  API boundary. Prefer caller-owned buffers when that is the established
+  convention.
+- Use cleanup labels or one well-structured exit path when multiple
+  acquisitions require rollback. Preserve lock and transaction order.
 
 ## Domain and Effect Constraints
 
-- Hide struct definitions in implementation files when callers must not forge a
-  refined value. If the representation is public, every public operation must
-  defensively preserve and check the invariant.
-- Give each tagged union constructor and eliminator one responsibility. Switch on
-  every enum variant; enable compiler warnings for missing cases and keep a
-  defensive policy for corrupted/untrusted tags.
+- Hide struct definitions in implementation files when callers must not
+  forge a refined value. If the representation is public, every public
+  operation must defensively preserve and check the invariant.
+- Give each tagged union constructor and eliminator one responsibility.
+  Switch on every enum variant; enable compiler warnings for missing cases
+  and keep a defensive policy for corrupted/untrusted tags.
 - Make ownership visible in names, documentation, and signatures: borrowed,
   transferred, retained, or returned. Pair each successful acquisition with
   exactly one release on every path.
-- Propagate cancellation through the project's explicit token/flag mechanism.
-  Bound queues, threads, retries, and buffers; C supplies no structured
-  concurrency automatically.
-- Keep I/O, volatile/device access, atomics, logging, and mutation outside pure
-  calculations; algebraic laws never license reordering them.
+- Propagate cancellation through the project's explicit token/flag
+  mechanism. Bound queues, threads, retries, and buffers; C supplies no
+  structured concurrency automatically.
+- Keep I/O, volatile/device access, atomics, logging, and mutation outside
+  pure calculations; algebraic laws never license reordering them.
 
 ## Teaching Example
 

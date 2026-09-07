@@ -2,33 +2,34 @@
 
 ## Summary
 
-The included literature describes a family of pattern-finding procedures that share a vocabulary and disagree about what
-a code is, what a theme is, and whether coding can be correct. Four positions
-recur: an approach organised around coding accuracy and multiple coders; an
-approach organised around a shared codebook applied by a team; an approach
-that treats the analyst's interpretation as the instrument and rejects
-accuracy as a standard; and a set of matrix-based procedures that trade
-interpretive depth for auditability across many cases. These positions carry
-incompatible quality criteria, so a procedure borrowed from one and a
-justification borrowed from another produces work that satisfies neither.
-The sharpest live disagreement is whether agreement between coders evidences
-anything; the corpus contains both a worked procedure for measuring it and an
-argument that measuring it misdescribes what qualitative analysis does. For
-the data this review was asked to target (user feedback, bug tickets, and
-other high-volume operational text), the computing literature in the corpus
-has largely pursued automated classification into fixed categories, leaving
-theme development aside, so the two literatures address different problems and
-the corpus does not contain a study that reconciles them.
+The included literature describes a family of pattern-finding procedures
+that share a vocabulary and disagree about what a code is, what a theme is,
+and whether coding can be correct. Four positions recur: an approach
+organised around coding accuracy and multiple coders; an approach organised
+around a shared codebook applied by a team; an approach that treats the
+analyst's interpretation as the instrument and rejects accuracy as a
+standard; and a set of matrix-based procedures that trade interpretive depth
+for auditability across many cases. These positions carry incompatible
+quality criteria, so a procedure borrowed from one and a justification
+borrowed from another produces work that satisfies neither. The sharpest
+live disagreement is whether agreement between coders evidences anything;
+the corpus contains both a worked procedure for measuring it and an argument
+that measuring it misdescribes what qualitative analysis does. For the data
+this review was asked to target (user feedback, bug tickets, and other
+high-volume operational text), the computing literature in the corpus has
+largely pursued automated classification into fixed categories, leaving
+theme development aside, so the two literatures address different problems
+and the corpus does not contain a study that reconciles them.
 
 ## Method
 
 Searches ran on 2026-08-28 against OpenAlex (31 queries), Crossref (7
-queries), and six OpenAlex snowball rounds (backward and forward) seeded from
-Braun & Clarke 2006 [6], McDonald et al. 2019 [22], and Gale et al. 2013
-[11]. That date is the review's as-of point. Every query was logged by the
-session script; all searches returned truncated result sets against upstream
-totals in the thousands to millions, so coverage is a relevance-ranked sample
-rather than an enumeration of the field.
+queries), and six OpenAlex snowball rounds (backward and forward) seeded
+from Braun & Clarke 2006 [6], McDonald et al. 2019 [22], and Gale et al.
+2013 [11]. That date is the review's as-of point. Every query was logged by
+the session script; all searches returned truncated result sets against
+upstream totals in the thousands to millions, so coverage is a
+relevance-ranked sample rather than an enumeration of the field.
 
 Criteria were fixed before the first search. Inclusion required a
 methodological contribution to thematic analysis: proposing, codifying,
@@ -64,9 +65,9 @@ The corpus's organising claim is that approaches sharing the name differ
 enough to be separate methods. Braun & Clarke [25] set out a typology of
 pattern-based approaches that separates coding reliability, codebook,
 reflexive, and thematic coding variants, and cut it across a distinction
-between small-q work operating inside a (post)positivist frame and big-Q work
-that does not. Their stated aim in that paper is informed selection among
-methods.
+between small-q work operating inside a (post)positivist frame and big-Q
+work that does not. Their stated aim in that paper is informed selection
+among methods.
 
 The corpus supports the descriptive claim that the schools coexist, from
 independent author groups. Boyatzis [3] presents thematic analysis as a way
@@ -80,18 +81,18 @@ it was codified. Braun & Clarke [6] then codified a six-phase version that
 the rest of the corpus positions itself against.
 
 The stronger claim, that the schools are mutually incompatible, comes
-predominantly from one author group. Braun & Clarke argue it
-across four included papers [19][25][26][32], and their argument that generic
-quality checklists misjudge reflexive thematic analysis [26] is an untested
-position statement. Independent support in this corpus is
-indirect and comes from one paper: Stol et al. [15] diagnose the same failure
-mode in software engineering, where a method is named in a paper without its
-procedure being followed. They reach that conclusion about grounded theory,
-so it corroborates the pattern while the specific claim about thematic
-analysis stays uncorroborated.
+predominantly from one author group. Braun & Clarke argue it across four
+included papers [19][25][26][32], and their argument that generic quality
+checklists misjudge reflexive thematic analysis [26] is an untested position
+statement. Independent support in this corpus is indirect and comes from one
+paper: Stol et al. [15] diagnose the same failure mode in software
+engineering, where a method is named in a paper without its procedure being
+followed. They reach that conclusion about grounded theory, so it
+corroborates the pattern while the specific claim about thematic analysis
+stays uncorroborated.
 
-Reading level constrains this section. Braun & Clarke's typology [25] and the
-six-phase procedure [6] were both extracted at abstract level with the
+Reading level constrains this section. Braun & Clarke's typology [25] and
+the six-phase procedure [6] were both extracted at abstract level with the
 procedural detail taken from publisher records and secondary methodological
 summaries, because the primary texts were paywalled in this environment.
 
@@ -108,45 +109,44 @@ product of the researcher's engagement, so accuracy is not defined for it
 [19][25].
 
 What a theme is. Attride-Stirling [4] treats themes as tiers to be
-constructed and displayed: Basic themes cluster into Organizing themes, which
-resolve into a Global theme, with practical guidance of roughly 5 to 14
-groupings per network and a caution that the networks are a tool within the
-analysis, never its whole. Braun & Clarke [32] distinguish themes as
+constructed and displayed: Basic themes cluster into Organizing themes,
+which resolve into a Global theme, with practical guidance of roughly 5 to
+14 groupings per network and a caution that the networks are a tool within
+the analysis, never its whole. Braun & Clarke [32] distinguish themes as
 shared patterns of meaning from topic summaries that merely group everything
-said about a subject, and treat the latter as a common failure. Vaismoradi et
-al. [10] and Vaismoradi & Snelgrove [23] locate a related boundary between
-thematic analysis and qualitative content analysis, turning on whether
-counting codes is admissible and on what "theme" denotes.
+said about a subject, and treat the latter as a common failure. Vaismoradi
+et al. [10] and Vaismoradi & Snelgrove [23] locate a related boundary
+between thematic analysis and qualitative content analysis, turning on
+whether counting codes is admissible and on what "theme" denotes.
 
-Whether prior structure is allowed. Fereday & Muir-Cochrane [5], read at full
-text, run a hybrid in six stages: develop a code manual from theory, test its
-reliability with a second coder, summarise the data, apply the template while
-letting data-driven codes emerge, cluster codes into themes, and corroborate
-those themes against the original data. Their own case shows the mechanism:
-a code for "trust and respect" began nested inside a theory-derived category
-and was promoted to a separate data-driven code. Template analysis [9][12]
-formalises the same move differently: an initial template, often carrying a
-priori themes, built on a subset of data and then revised iteratively against
-the whole. Proudfoot [33] sequences inductive and deductive passes within
-mixed methods designs. These procedures are incompatible with the reflexive
-position that themes are constructed by the analyst, never found against a
-prior frame,
-and the corpus does not contain a study that tests which produces better
-analyses.
+Whether prior structure is allowed. Fereday & Muir-Cochrane [5], read at
+full text, run a hybrid in six stages: develop a code manual from theory,
+test its reliability with a second coder, summarise the data, apply the
+template while letting data-driven codes emerge, cluster codes into themes,
+and corroborate those themes against the original data. Their own case shows
+the mechanism: a code for "trust and respect" began nested inside a
+theory-derived category and was promoted to a separate data-driven code.
+Template analysis [9][12] formalises the same move differently: an initial
+template, often carrying a priori themes, built on a subset of data and then
+revised iteratively against the whole. Proudfoot [33] sequences inductive
+and deductive passes within mixed methods designs. These procedures are
+incompatible with the reflexive position that themes are constructed by the
+analyst, never found against a prior frame, and the corpus does not contain
+a study that tests which produces better analyses.
 
 ## Multiple coders and reliability: the corpus's sharpest disagreement
 
 Both sides are represented by independent author groups, and the corpus does
 not resolve the disagreement.
 
-O'Connor & Joffe [27] give the affirmative case its operational form:
-decide coder count, data proportion, coding unit, code depth, statistic, and
+O'Connor & Joffe [27] give the affirmative case its operational form: decide
+coder count, data proportion, coding unit, code depth, statistic, and
 threshold in advance; build the frame through immersion; have a second coder
 work an independently prepared subset; compute per-code reliability; discuss
 and refine; then apply the final frame. They recommend double-coding 10 to
-25% of data units and report the conventional interpretive bands, with values
-above 0.9 acceptable to all and above 0.8 acceptable to many, citing the
-Landis & Koch scale. They also name where it does not belong: recursive
+25% of data units and report the conventional interpretive bands, with
+values above 0.9 acceptable to all and above 0.8 acceptable to many, citing
+the Landis & Koch scale. They also name where it does not belong: recursive
 designs such as grounded theory, purely exploratory work, and analyses
 prioritising depth over consistency. Their own framing limits the claim:
 "ICR is never an end in itself; it is merely a means to the ultimate goal of
@@ -163,13 +163,12 @@ McDonald et al. [22] is the corpus's empirical contribution to this
 disagreement and the one paper addressed directly to computing practice.
 Their meta-analysis of CSCW and HCI papers from 2016 to 2018 reports that
 inter-rater reliability appears in roughly one in nine qualitative papers,
-and they argue the field needs epistemology-specific reporting norms, and
-no blanket rule. That paper was read at abstract
-level here; the one-in-nine figure comes from its abstract and indexed
-summaries. Díaz et al. [34] apply agreement
-measures within collaborative software-engineering studies, which shows the
-practice has an applied-computing constituency independent of the health and
-psychology literatures.
+and they argue the field needs epistemology-specific reporting norms, and no
+blanket rule. That paper was read at abstract level here; the one-in-nine
+figure comes from its abstract and indexed summaries. Díaz et al. [34] apply
+agreement measures within collaborative software-engineering studies, which
+shows the practice has an applied-computing constituency independent of the
+health and psychology literatures.
 
 ## Matrix and template procedures for team and high-volume settings
 
@@ -186,22 +185,22 @@ quotation references for illustration. They recommend that at least two
 researchers, or one from each discipline in a multidisciplinary team,
 independently code the first few transcripts where feasible. They also state
 the method's boundary condition plainly: "The Framework Method cannot
-accommodate highly heterogeneous data, i.e. data must cover similar topics or
-key issues so that it is possible to categorize it." Two further included
-papers [14][30] describe the same method in applied use. Miles & Huberman [1]
-are the corpus's earlier statement of the underlying idea, that data
+accommodate highly heterogeneous data, i.e. data must cover similar topics
+or key issues so that it is possible to categorize it." Two further included
+papers [14][30] describe the same method in applied use. Miles & Huberman
+[1] are the corpus's earlier statement of the underlying idea, that data
 reduction and data display are analytic operations.
 
 A rapid-analysis strand pushes further in the same direction, replacing
 line-by-line coding with templated summaries and matrix displays to reach
 decision-makers on compressed timelines [18][21][28][31]. Saunders et al.
 [36] make the team-facing case explicitly, arguing that practical guidance
-for non-specialists is sparse and that non-specialist perspectives can enrich
-interpretation. The corpus leaves comparability with in-depth analysis
-open: Taylor et al. [18] and Gale et al. [21] each
-compare rapid against fuller analysis in a single applied setting, which is
-not enough to establish equivalence in general, and all four rapid-analysis
-papers were read at abstract level here.
+for non-specialists is sparse and that non-specialist perspectives can
+enrich interpretation. The corpus leaves comparability with in-depth
+analysis open: Taylor et al. [18] and Gale et al. [21] each compare rapid
+against fuller analysis in a single applied setting, which is not enough to
+establish equivalence in general, and all four rapid-analysis papers were
+read at abstract level here.
 
 ## Analysis of user feedback in computing has developed separately
 
@@ -222,19 +221,19 @@ bug tickets, issue trackers, or support transcripts, and none compares
 interpretive theme development against category classification on the same
 feedback corpus. The two literatures in this corpus meet only at McDonald et
 al. [22] and the software-engineering reliability and grounded-theory work
-[15][34][37], all of which concern researchers' qualitative practice, none the
-reading of product feedback.
+[15][34][37], all of which concern researchers' qualitative practice, none
+the reading of product feedback.
 
 ## Mapping onto a thematic analysis skill
 
-This section is design guidance derived from the synthesis, beyond what
-the literature finds.
+This section is design guidance derived from the synthesis, beyond what the
+literature finds.
 
-The corpus's central implication for a skill is that "do a thematic analysis"
-is underspecified. A skill that emits one procedure will produce work whose
-method and whose justification come from different schools, which is the
-failure Braun & Clarke [32] and, for a different method, Stol et al. [15]
-both describe. The first move should be selecting an approach, and the
+The corpus's central implication for a skill is that "do a thematic
+analysis" is underspecified. A skill that emits one procedure will produce
+work whose method and whose justification come from different schools, which
+is the failure Braun & Clarke [32] and, for a different method, Stol et al.
+[15] both describe. The first move should be selecting an approach, and the
 selection should be recorded.
 
 | Approach | Corpus records | Fits when | Quality standard it answers to |
@@ -246,13 +245,14 @@ selection should be recorded.
 | Rapid / templated summary | [18][21][28][31][36] | Deadline-bound triage feeding a decision | Explicit statement of what depth was traded away |
 | Hybrid inductive/deductive | [5][33] | Prior categories exist but must not foreclose new ones | Both passes documented; promotion of codes traceable [5] |
 
-Concrete defaults the corpus supplies, so a skill invents none: double-code 10 to 25% of units when running an agreement
-check, keep the codebook to 20 to 40 codes, and fix coder count, unit,
-statistic, and threshold before coding starts, all from O'Connor & Joffe
-[27]; aim for roughly 5 to 14 theme groupings, from Attride-Stirling [4];
-have at least two people independently code the first few records in a
-multidisciplinary team, from Gale et al. [11]. Each of these is one source's
-recommendation, and [27] and [11] were read at full text while [4] was not.
+Concrete defaults the corpus supplies, so a skill invents none: double-code
+10 to 25% of units when running an agreement check, keep the codebook to 20
+to 40 codes, and fix coder count, unit, statistic, and threshold before
+coding starts, all from O'Connor & Joffe [27]; aim for roughly 5 to 14 theme
+groupings, from Attride-Stirling [4]; have at least two people independently
+code the first few records in a multidisciplinary team, from Gale et al.
+[11]. Each of these is one source's recommendation, and [27] and [11] were
+read at full text while [4] was not.
 
 Behaviours the corpus warrants a skill guarding against: reporting agreement
 statistics alongside a reflexive procedure [19][25][26]; producing topic
@@ -263,8 +263,8 @@ heterogeneous material through a matrix method whose stated precondition is
 topical similarity [11].
 
 For feedback and ticket data specifically, the corpus offers no validated
-procedure, so a skill should present that as its own adaptation, with no validated
-method behind it. The framework and rapid strands are the closest
+procedure, so a skill should present that as its own adaptation, with no
+validated method behind it. The framework and rapid strands are the closest
 structural fit, since tickets are many, short, and comparable across cases,
 and the computing strand [17][24][35] indicates that the volume problem is
 usually solved by classification into fixed categories, which is a different
@@ -275,39 +275,39 @@ operation with different failure modes.
 Read level is the main limitation. Only 3 of 37 included papers were read at
 full text: Fereday & Muir-Cochrane [5], Gale et al. [11], and O'Connor &
 Joffe [27]. Publisher access controls blocked full text for the rest,
-including every Braun & Clarke paper, which is the corpus's most-cited author
-group and the source of its organising typology. Procedural detail for
-Braun & Clarke [6][25] and Attride-Stirling [4] was obtained from publisher
-records and secondary methodological summaries. That is weaker than reading
-the primary text, and those step lists should be checked against the
-originals before they are hard-coded into a skill.
+including every Braun & Clarke paper, which is the corpus's most-cited
+author group and the source of its organising typology. Procedural detail
+for Braun & Clarke [6][25] and Attride-Stirling [4] was obtained from
+publisher records and secondary methodological summaries. That is weaker
+than reading the primary text, and those step lists should be checked
+against the originals before they are hard-coded into a skill.
 
 Coverage limits. Every logged search was truncated against upstream totals,
 so the corpus is a relevance-ranked sample. Nowell et al.'s 2017 paper on
 trustworthiness criteria for thematic analysis, which is frequently cited in
 this area, was not retrieved by any query and is therefore absent from the
 corpus and uncited here. Books are indexed unevenly: Boyatzis [3] carries no
-DOI and entered under a title key, and Miles & Huberman [1] carries a journal
-venue in its record that is an indexing artefact.
+DOI and entered under a title key, and Miles & Huberman [1] carries a
+journal venue in its record that is an indexing artefact.
 
 One verification flag was not cleared. The record at [16] resolves through a
 DOI redirect to a Springer reissue, and its Crossref title match is 0.33
-because the corpus holds a chapter title against a book-level record. I could
-not reach the landing page to confirm the item, found no retraction
+because the corpus holds a chapter title against a book-level record. I
+could not reach the landing page to confirm the item, found no retraction
 indication, and have therefore kept it in the bibliography without citing it
 for any claim.
 
 Screening was carried out by pattern rules applied to titles and keys with a
 recorded reason for each of the 537 exclusions, rather than by reading every
-abstract. That is faster and less accurate than abstract-level screening, and
-it will have excluded some eligible papers whose titles did not signal a
+abstract. That is faster and less accurate than abstract-level screening,
+and it will have excluded some eligible papers whose titles did not signal a
 methodological contribution. One such case is visible in the state file: a
 critical review of how reflexive thematic analysis is reported in Health
 Promotion International (doi:10.1093/heapro/daae049) was excluded by the
 default rule although it plausibly satisfies the inclusion criterion. It is
-named here without citation because it is in the excluded set. A
-re-screen at abstract level would likely recover it and other papers like it,
-and would strengthen the independent evidence available for the section on
+named here without citation because it is in the excluded set. A re-screen
+at abstract level would likely recover it and other papers like it, and
+would strengthen the independent evidence available for the section on
 whether the schools are incompatible.
 
 ## Gaps and open questions
@@ -321,15 +321,16 @@ what the classification-oriented computing work [17][24][35] gives up.
 
 The reliability disagreement rests on position statements on one side
 [19][25][26] and procedural guidance on the other [13][27], with one
-descriptive meta-analysis of reporting practice [22]. No included paper tests
-whether measuring agreement changes the quality of the resulting analysis.
+descriptive meta-analysis of reporting practice [22]. No included paper
+tests whether measuring agreement changes the quality of the resulting
+analysis.
 
 Rapid and templated analysis is compared against fuller analysis in two
 single-setting studies [18][21]. Whether the reduction is safe in general,
 and for which decisions, is not established by this corpus.
 
-Claims that the schools are mutually incompatible come predominantly from one
-author group across four included papers [19][25][26][32]; independent
+Claims that the schools are mutually incompatible come predominantly from
+one author group across four included papers [19][25][26][32]; independent
 corroboration in the corpus is indirect [15].
 
 ## Included papers
@@ -375,4 +376,5 @@ corroboration in the corpus is indirect [15].
 | 37 | Hoda | 2024 | Qualitative Research with Socio-Technical Grounded Theory | Springer (book) | abstract | [10.1007/978-3-031-60533-8](https://doi.org/10.1007/978-3-031-60533-8) |
 
 All 37 DOIs were checked and resolve; the script reported no broken DOIs.
-Session identifier: `thematic-analysis-methodology-m14vkbs4nduntnrdvajiqltnlk`.
+Session identifier:
+`thematic-analysis-methodology-m14vkbs4nduntnrdvajiqltnlk`.

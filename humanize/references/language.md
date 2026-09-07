@@ -1,12 +1,19 @@
 # Language and grammar patterns (§7-13)
 
-Word choice and sentence grammar: AI-favored vocabulary, dodged simple verbs,
-formulaic sentence shapes.
+Word choice and sentence grammar: AI-favored vocabulary, dodged simple
+verbs, formulaic sentence shapes.
 
 ### 7. Overused AI words
 
-**Watch:** Actually, additionally, align with, crucial, delve, emphasizing, enduring, enhance, fostering, garner, gate/gated/gating (figurative; preserve established technical usage), genuine/genuinely, highlight (verb), interplay, intricate/intricacies, key (adjective), landscape (abstract noun), latent, pivotal, quietly, seam (figurative), settled (figurative), showcase, tapestry (abstract noun), testament, underscore (verb), valuable, vibrant
-**Problem:** AI writing uses these words far more often than people do, especially in groups. Count a cluster, never a single word; placement metaphors such as load-bearing belong to §37 in `register`.
+**Watch:** Actually, additionally, align with, crucial, delve, emphasizing,
+enduring, enhance, fostering, garner, gate/gated/gating (figurative;
+preserve established technical usage), genuine/genuinely, highlight (verb),
+interplay, intricate/intricacies, key (adjective), landscape (abstract
+noun), latent, pivotal, quietly, seam (figurative), settled (figurative),
+showcase, tapestry (abstract noun), testament, underscore (verb), valuable,
+vibrant **Problem:** AI writing uses these words far more often than people
+do, especially in groups. Count a cluster, never a single word; placement
+metaphors such as load-bearing belong to §37 in `register`.
 
 <before>
 Additionally, a distinctive feature of Somali cuisine is the incorporation of camel meat. An enduring testament to Italian colonial influence is the widespread adoption of pasta in the local culinary landscape, showcasing how these dishes have integrated into the traditional diet.
@@ -18,8 +25,9 @@ Somali cuisine also includes camel meat, which is considered a delicacy. Pasta d
 
 ### 8. Avoiding is and are
 
-**Watch:** serves as/stands as/marks/represents [a], boasts/features/offers [a]
-**Problem:** Simple verbs such as is, are, and has replaced with longer phrases.
+**Watch:** serves as/stands as/marks/represents [a], boasts/features/offers
+[a] **Problem:** Simple verbs such as is, are, and has replaced with longer
+phrases.
 
 <before>
 Gallery 825 serves as LAAA's exhibition space for contemporary art. The gallery features four separate spaces and boasts over 3,000 square feet.
@@ -31,7 +39,9 @@ Gallery 825 is LAAA's exhibition space for contemporary art. The gallery has fou
 
 ### 9. Not X but Y and clipped negative endings
 
-**Problem:** Overused "Not only...but..." and "It's not just X, it's Y" frames, plus clipped endings such as "no guessing" where a clear clause belongs.
+**Problem:** Overused "Not only...but..." and "It's not just X, it's Y"
+frames, plus clipped endings such as "no guessing" where a clear clause
+belongs.
 
 <before>
 It's not just about the beat riding under the vocals; it's part of the aggression and atmosphere. It's not merely a song, it's a statement.
@@ -58,9 +68,9 @@ It ships as one binary and needs no config file or daemon.
 </after>
 
 The staccato form carries no "not just", so a scan for the phrase misses it.
-Watch for two or more sentences in a row that begin with No or Not a. Cutting
-the negated half can change what the sentence claims; apply invariant 5
-before the rewrite stands.
+Watch for two or more sentences in a row that begin with No or Not a.
+Cutting the negated half can change what the sentence claims; apply
+invariant 5 before the rewrite stands.
 
 ### 10. Forced groups of three
 
@@ -76,10 +86,11 @@ The event includes talks and panels. There's also time for informal networking b
 
 ### 11. Changing names and repeating sentence openings
 
-**Problem:** Repetition handled by rule instead of by ear: the same person or
-thing keeps getting renamed, or several sentences open with the same subject,
-often she or he. Use one clear name for one subject. For repeated openings,
-merge sentences, change the subject when that helps, or begin with the action.
+**Problem:** Repetition handled by rule instead of by ear: the same person
+or thing keeps getting renamed, or several sentences open with the same
+subject, often she or he. Use one clear name for one subject. For repeated
+openings, merge sentences, change the subject when that helps, or begin with
+the action.
 
 <before case="synonym cycling">
 The protagonist faces many challenges. The main character must overcome obstacles. The central figure eventually triumphs. The hero returns home.
@@ -97,8 +108,8 @@ She noted the door. She noted the lock on it. She filed both away.
 She noted the door and its lock, then filed both away.
 </after>
 
-Do not ban the repeated word. Fix the repeated sentence pattern. The remaining
-sentence may still start with "She."
+Do not ban the repeated word. Fix the repeated sentence pattern. The
+remaining sentence may still start with "She."
 
 ### 12. False from X to Y ranges
 
@@ -114,7 +125,8 @@ The book covers the Big Bang, star formation, and current theories about dark ma
 
 ### 13. Passive voice and missing subjects
 
-**Problem:** The actor hidden or the subject dropped. Use active voice when it makes the actor and action clearer.
+**Problem:** The actor hidden or the subject dropped. Use active voice when
+it makes the actor and action clearer.
 
 <before>
 No configuration file needed. The results are preserved automatically.

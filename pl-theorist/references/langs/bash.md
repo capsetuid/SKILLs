@@ -3,9 +3,8 @@
 ## Disclosed Constraints
 
 - The native collection is the stream of lines (or NUL-delimited records)
-  through a pipe. Bash arrays are flat only: no
-  nesting, no structs; associative arrays require bash 4+ (macOS ships bash
-  3.2 by default).
+  through a pipe. Bash arrays are flat only: no nesting, no structs;
+  associative arrays require bash 4+ (macOS ships bash 3.2 by default).
 - Process spawn dominates every other cost. Each command substitution `$()`
   and each external command forks; a per-item `$()` inside a loop is the
   quadratic-allocation disaster of shell. One `awk` pass beats a thousand
@@ -14,14 +13,14 @@
   unquoted expansion is an injection and corruption surface. Quoting is the
   parse boundary.
 - `set -e` has gaps. It is suppressed for commands in `if`/`while`
-  conditions, on the left of `&&`/`||`, and under `!`; and
-  `local x=$(cmd)` masks `cmd`'s failure because `local`'s own status wins.
-  Declare and assign on separate lines when the status matters.
+  conditions, on the left of `&&`/`||`, and under `!`; and `local x=$(cmd)`
+  masks `cmd`'s failure because `local`'s own status wins. Declare and
+  assign on separate lines when the status matters.
 - Pipelines report only the last command's status unless `set -o pipefail`;
   each pipeline stage runs in a subshell, so `cmd | while read ...` cannot
   mutate parent variables.
-- Arithmetic `$(( ))` is fixed-width signed integer and wraps silently; there
-  are no floats. Delegate real arithmetic to `awk`.
+- Arithmetic `$(( ))` is fixed-width signed integer and wraps silently;
+  there are no floats. Delegate real arithmetic to `awk`.
 
 ## Preferred FP Shapes
 
@@ -32,15 +31,15 @@
 - A pure function reads stdin/arguments and writes stdout, returning an exit
   status; treat every global variable write as an effect. Declare function
   state `local`; declare constants `readonly`.
-- Start every script with `set -euo pipefail` and treat the remaining `set -e`
-  gaps as known unsoundness.
+- Start every script with `set -euo pipefail` and treat the remaining
+  `set -e` gaps as known unsoundness.
 - Model absence as empty output plus a nonzero status, never as a sentinel
   string like `"null"` or `"none"`.
-- `case` is pattern matching over globs; prefer it to `if`/`elif` ladders that
-  re-test one string. `${var:?message}` is the totality check for required
-  parameters and fails loudly at the boundary.
-- Build argument lists as arrays and expand with `"$@"`/`"${args[@]}"`; never
-  assemble a command line in a flat string.
+- `case` is pattern matching over globs; prefer it to `if`/`elif` ladders
+  that re-test one string. `${var:?message}` is the totality check for
+  required parameters and fails loudly at the boundary.
+- Build argument lists as arrays and expand with `"$@"`/`"${args[@]}"`;
+  never assemble a command line in a flat string.
 - For filenames or any value that may contain whitespace or newlines, use
   NUL-delimited streams end to end: `find -print0`, `xargs -0`,
   `while IFS= read -r -d ''`.
@@ -50,9 +49,9 @@
 - One parse boundary at the top: validate arguments and environment with
   `${VAR:?}` and explicit checks, then treat them as trusted for the rest of
   the script. Reject early, once.
-- Resource bracket: `trap cleanup EXIT` plus `mktemp`/`mktemp -d` is the RAII
-  of shell. One accumulating cleanup function; register it before acquiring
-  the resource.
+- Resource bracket: `trap cleanup EXIT` plus `mktemp`/`mktemp -d` is the
+  RAII of shell. One accumulating cleanup function; register it before
+  acquiring the resource.
 - Idempotency: scripts get re-run. Use atomic `mv` onto the final path,
   `mkdir` as a mutex, and write-to-temp-then-rename for any generated file.
 - Bounded concurrency: `xargs -P n` (GNU/BSD) or a `wait` loop over a capped

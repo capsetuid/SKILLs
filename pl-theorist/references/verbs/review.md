@@ -1,8 +1,7 @@
 # Verb: review
 
-Judge a change: read-only PL-lens review of a diff, PR, or file set,
-total over its scope. This lens hunts unsound
-domain modeling and unsound cost.
+Judge a change: read-only PL-lens review of a diff, PR, or file set, total
+over its scope. This lens hunts unsound domain modeling and unsound cost.
 
 ## Redirects
 
@@ -13,8 +12,8 @@ domain modeling and unsound cost.
 ### 1. Scope and contract
 
 Identify the exact changed or named code. Reconstruct its contract as in
-`refactor` step 1, but only deeply enough to judge the categories below. Read
-callers when a finding depends on how the code is used.
+`refactor` step 1, but only deeply enough to judge the categories below.
+Read callers when a finding depends on how the code is used.
 
 ### 2. Hunt by category
 
@@ -34,9 +33,9 @@ Sweep the scope once per category, citing file and line for each hit:
 ### 3. Verify before reporting
 
 Re-derive each candidate finding against the loaded profile's cost model and
-the repository's conventions. An imperative loop that is the right backend is
-sound; a missing `Result` where the repository's error channel is exceptions
-is sound. Report only what survives.
+the repository's conventions. An imperative loop that is the right backend
+is sound; a missing `Result` where the repository's error channel is
+exceptions is sound. Report only what survives.
 
 ## Output Contract
 

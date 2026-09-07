@@ -1,8 +1,8 @@
 # Harness reference
 
-What a delegate starts with, per harness. "Not documented" means the
-vendor documentation surveyed does not state it; treat it as a thing to
-probe, not a thing to assume.
+What a delegate starts with, per harness. "Not documented" means the vendor
+documentation surveyed does not state it; treat it as a thing to probe, not
+a thing to assume.
 
 | Harness | Primitive | Delegate inherits | Skill access | Caps and limits | Return |
 | --- | --- | --- | --- | --- | --- |
@@ -13,8 +13,8 @@ probe, not a thing to assume.
 | DeepSeek Harness (dsh) | `dsh-tool-subagent`, plus `dsh-tool-subagent-control` for send_message, interrupt_agent, list_agents | nothing by default: each child gets a new flat tool scope, and the caller passes an optional `toolFilter`. A fork provider inherits a completed-turn prefix of the parent log; spawn and ACP providers inherit nothing | the Agent Skills SKILL.md contract with six-tier non-recursive discovery; whether a spawned child auto-loads skills is not documented | not documented | typed: `SubagentStartRequest` carries an optional `outputSchema` (JSON Schema) for the result; otherwise the child's last non-empty assistant message |
 | OpenAI Agents SDK | `handoff` transfers control with the full history; `as_tool` calls a sub-agent with generated input and leaves the answer with the orchestrator | handoff: everything. as_tool: only the generated input | not documented | not documented | handoff: the delegate owns the conversation from then on. as_tool: a tool result the orchestrator keeps |
 
-Handoff prompts in the OpenAI Agents SDK carry the SDK's recommended
-prefix, which tells the delegate it is part of a multi-agent system.
+Handoff prompts in the OpenAI Agents SDK carry the SDK's recommended prefix,
+which tells the delegate it is part of a multi-agent system.
 
 ## Probing an unknown harness
 

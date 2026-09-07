@@ -18,8 +18,11 @@ Replace the wind-up with the direct form:
 
 ### 24. Too many qualifiers
 
-**Watch:** to be fair, it's also possible, could potentially, might arguably, in some cases it may, this is an inference
-**Problem:** Repeated editing stacks qualifiers until every claim sounds uncertain. Keep a qualifier only when the source supports it and the meaning needs it. Remove caveats that only repair an earlier overstatement.
+**Watch:** to be fair, it's also possible, could potentially, might
+arguably, in some cases it may, this is an inference **Problem:** Repeated
+editing stacks qualifiers until every claim sounds uncertain. Keep a
+qualifier only when the source supports it and the meaning needs it. Remove
+caveats that only repair an earlier overstatement.
 
 <before>
 It could potentially possibly be argued that the policy might have some effect on outcomes.
@@ -43,8 +46,11 @@ The future looks bright for the company. Exciting times lie ahead as they contin
 
 ### 26. Too many hyphenated word pairs
 
-**Watch:** third-party, cross-functional, client-facing, data-driven, decision-making, well-known, high-quality, real-time, long-term, end-to-end
-**Problem:** These pairs hyphenated everywhere. Keep the hyphen before a noun when grammar needs it, as in "a high-quality report". Drop it after the noun, as in "the report is high quality".
+**Watch:** third-party, cross-functional, client-facing, data-driven,
+decision-making, well-known, high-quality, real-time, long-term, end-to-end
+**Problem:** These pairs hyphenated everywhere. Keep the hyphen before a
+noun when grammar needs it, as in "a high-quality report". Drop it after the
+noun, as in "the report is high quality".
 
 <before>
 The cross-functional team delivered a high-quality, data-driven report. The team is cross-functional, the report is high-quality, and the methodology is data-driven.

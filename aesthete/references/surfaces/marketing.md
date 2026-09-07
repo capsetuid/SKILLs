@@ -11,8 +11,8 @@ supporting sentence at most twenty words and four lines, primary action
 visible without scrolling. If the value cannot be stated in twenty words,
 clarify the copy.
 
-**Plan type scale and asset size together.** If a long headline wraps to four
-lines at display scale, adjust the size before shortening the copy.
+**Plan type scale and asset size together.** If a long headline wraps to
+four lines at display scale, adjust the size before shortening the copy.
 Reserve the largest scale for headlines of five words or fewer.
 
 **Cap hero top padding.** Keep content near the top of the first viewport.
@@ -45,10 +45,10 @@ counted. Reshape the grid.
 carry a real image, a considered background, or a pattern. Render a set of
 identical text-only cards as a list.
 
-**Ration section labels.** Use the small uppercase label above a heading once
-or twice per page for orientation, and at most one per three sections,
-counting the hero. Delete it when position on the page already categorizes the
-section.
+**Ration section labels.** Use the small uppercase label above a heading
+once or twice per page for orientation, and at most one per three sections,
+counting the hero. Delete it when position on the page already categorizes
+the section.
 
 **Stack heading and explanation vertically.** Put the sentence under the
 heading at a readable measure, or give the right column real content.
@@ -65,7 +65,7 @@ Marketing surfaces live on the first impression.
   into a comparison of three to five highlights.
 * For lists past about five items, use a different component: grouped
   columns, a card grid, tabs, a disclosure, or a horizontally scrolling set.
-    Group rows or change the component.
+  Group rows or change the component.
 * Quotes run at most three lines. A longer quote should become a case study.
   Attribution carries name and role, never a bare first name.
 
@@ -74,8 +74,8 @@ Marketing surfaces live on the first impression.
 Re-read every visible string: headings, labels, buttons, body, captions,
 alternative text, footer, and error copy. Rewrite any string that is
 grammatically broken, has an unclear referent, depends on wordplay that does
-not survive a literal reading, or performs thoughtfulness. Choose plain, functional copy when clever wording is slightly
-wrong.
+not survive a literal reading, or performs thoughtfulness. Choose plain,
+functional copy when clever wording is slightly wrong.
 
 Use real numbers, label illustrative numbers explicitly, and omit numbers
 that have no basis. Domain readers detect invented precision immediately.
@@ -95,8 +95,8 @@ labels underneath: the mark is the credibility, and the label adds nothing.
 
 Never build a product screenshot out of styled containers. Use a real
 capture, a generated image, an actual embedded component, or editorial
-photography instead. This pattern is the most recognizable marker of generated
-marketing pages.
+photography instead. This pattern is the most recognizable marker of
+generated marketing pages.
 
 ## Theme lock
 

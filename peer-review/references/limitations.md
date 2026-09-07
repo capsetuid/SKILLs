@@ -1,7 +1,8 @@
 # Limitations: The Floor and What Sits Above It
 
 Read the paper's Limitations section last among the banks, after the
-objections from `design` and `analysis` stand. Note a `walks` entry for `limitations`.
+objections from `design` and `analysis` stand. Note a `walks` entry for
+`limitations`.
 
 ## Signalling questions
 
@@ -14,17 +15,17 @@ objections from `design` and `analysis` stand. Note a `walks` entry for `limitat
 
 ## The echo test
 
-`check` reports the echo ratio: the share of anchored objections whose
-quote sits inside the authors' Limitations. Above one half, the review is
-restating the paper. Return to `design` and `analysis` and hunt outside
-that section before drafting. A limitation the authors state is `minor`
-at most unless it undermines a main claim, in which case the objection
-belongs to the bank that found it, anchored in the results.
+`check` reports the echo ratio: the share of anchored objections whose quote
+sits inside the authors' Limitations. Above one half, the review is
+restating the paper. Return to `design` and `analysis` and hunt outside that
+section before drafting. A limitation the authors state is `minor` at most
+unless it undermines a main claim, in which case the objection belongs to
+the bank that found it, anchored in the results.
 
 ## What counts
 
-A good limitation is specific and consequential: the assumption that
-fails, the population or regime where the result breaks, the cost that
-blocks use. Ask for that shape in the objection text: "state which
-morphology-rich languages were tried and what happened"; "add more
-languages" asks for nothing.
+A good limitation is specific and consequential: the assumption that fails,
+the population or regime where the result breaks, the cost that blocks use.
+Ask for that shape in the objection text: "state which morphology-rich
+languages were tried and what happened"; "add more languages" asks for
+nothing.

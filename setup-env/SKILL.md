@@ -20,9 +20,8 @@ metadata:
 
 # Setup Env
 
-One command provisions everything a project needs into one disposable
-root: run it, source the printed activation script, build. Re-run to
-repair.
+One command provisions everything a project needs into one disposable root:
+run it, source the printed activation script, build. Re-run to repair.
 
 ## Registry
 
@@ -45,7 +44,8 @@ for user-instructed troubleshooting.
 
 ## Redirects
 
-- CI images, system packages, and deployment: use the project's own tooling; this root serves local builds and tests
+- CI images, system packages, and deployment: use the project's own tooling;
+  this root serves local builds and tests
 
 ## Procedure
 

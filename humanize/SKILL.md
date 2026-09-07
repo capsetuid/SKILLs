@@ -15,8 +15,8 @@ metadata:
 # Humanize: remove AI writing patterns
 
 Rewrite AI-sounding text so it reads like its writer. Cure: the specific
-over the generic. §1-35 come from Wikipedia's
-["Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing);
+over the generic. §1-35 come from Wikipedia's ["Signs of AI
+writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing);
 §36-40 and added cases in older entries cover tells that survive a
 vocabulary scrub.
 
@@ -44,24 +44,24 @@ Hold these in every mode. Each outranks any pattern fix.
 1. **Keep every claim.** Shorten dull parts, expand useful parts, merge or
    split paragraphs, but keep the information.
 2. **Invent no facts.** Add no fact, name, number, date, quote, or citation
-   the source or user did not supply. When a sentence needs a missing detail,
-   ask for it or write a simpler sentence. An opinion or reaction is allowed
-   where the writer's voice calls for one; a factual claim is not. Fiction is
-   exempt: invented detail is the task.
+   the source or user did not supply. When a sentence needs a missing
+   detail, ask for it or write a simpler sentence. An opinion or reaction is
+   allowed where the writer's voice calls for one; a factual claim is not.
+   Fiction is exempt: invented detail is the task.
 3. **Match the voice.** Formal, casual, or technical to fit the text. Read
    any supplied sample first: note sentence length, word choice, paragraph
    openings, punctuation, repeated phrases, and transitions. Keep casual
-   words casual and deliberate quirks intact. A personal
-   style file (voice guide, style document, explicit voice instructions) or
-   sample outranks every pattern here: load it before any owner file, and
-   where it permits a construction a pattern flags (an em-dash habit,
-   personification of systems, candid asides, placement verbs), keep the
-   construction without asking. A sample full of em dashes keeps its rate,
-   so §14 in `style` is not a ban.
+   words casual and deliberate quirks intact. A personal style file (voice
+   guide, style document, explicit voice instructions) or sample outranks
+   every pattern here: load it before any owner file, and where it permits a
+   construction a pattern flags (an em-dash habit, personification of
+   systems, candid asides, placement verbs), keep the construction without
+   asking. A sample full of em dashes keeps its rate, so §14 in `style` is
+   not a ban.
 4. **Personality only where it fits.** In blog posts, essays, opinion, and
-   personal writing, keep the writer's opinions, uncertainty, mixed feelings,
-   humor, asides, and uneven rhythm. Keep reference, technical, legal, and
-   factual text neutral.
+   personal writing, keep the writer's opinions, uncertainty, mixed
+   feelings, humor, asides, and uneven rhythm. Keep reference, technical,
+   legal, and factual text neutral.
 5. **Preserve logical strength.** Cutting a negation, a hedge, or a
    comparative can change what a sentence claims. After any such cut,
    re-read the claim: a criterion stays a criterion, evidence stays
@@ -79,15 +79,15 @@ Hold these in every mode. Each outranks any pattern fix.
 
 ## Detection index
 
-40 patterns. Ownership by contiguous range: §1-6 `content`, §7-13 `language`,
-§14-19 `style`, §20-22 `chatbot`, §23-26 `filler`, §27-35 `rhetoric`, §36-40
-`register`. Owner files hold the full watch-lists, problem statements, and
-before/after examples; the cues below route only. Signal
-strength: structural and rhetorical entries are diagnostic alone or in pairs;
-lexical entries (§7, §37) count only in clusters or above the density the
-owner file states. Every entry occurs in human writing; a hit is a style
-signal, never proof of authorship. Vocabulary tells drift by model and year;
-structural ones last.
+40 patterns. Ownership by contiguous range: §1-6 `content`, §7-13
+`language`, §14-19 `style`, §20-22 `chatbot`, §23-26 `filler`, §27-35
+`rhetoric`, §36-40 `register`. Owner files hold the full watch-lists,
+problem statements, and before/after examples; the cues below route only.
+Signal strength: structural and rhetorical entries are diagnostic alone or
+in pairs; lexical entries (§7, §37) count only in clusters or above the
+density the owner file states. Every entry occurs in human writing; a hit is
+a style signal, never proof of authorship. Vocabulary tells drift by model
+and year; structural ones last.
 
 | § | Cue |
 | --- | --- |
@@ -148,8 +148,8 @@ structural ones last.
 
 ## Rewrite process
 
-1. Mark each pattern instance from the scan. Confirm against the loaded owner
-   files; drop the false positives `calibration` names.
+1. Mark each pattern instance from the scan. Confirm against the loaded
+   owner files; drop the false positives `calibration` names.
 2. Draft. Read it aloud for rhythm, concrete detail, simple verbs, and the
    right formality. State each point fresh rather than patching flagged
    phrases one at a time. When a sentence stays awkward, rewrite the

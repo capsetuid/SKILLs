@@ -5,9 +5,18 @@ write nothing.
 
 ## What to show
 
-- Upstream benchmark: the caveman project measured a median 65 percent output-token reduction with full technical accuracy retained. Source: https://github.com/JuliusBrussee/caveman (benchmarks/ and docs/HONEST-NUMBERS.md).
-- Rule overhead: the caveman rules themselves cost input tokens every turn (upstream default estimate: about 1,250 tokens per turn). Net savings = output saved minus rule overhead; short sessions or short answers can be net NEGATIVE. When they are, say so plainly and suggest turning caveman off for that workload.
-- Local numbers: the only honest per-file figures here are the `CHARS: X -> Y` lines the compress mode's guard script prints. Character deltas are not token deltas; label them as characters.
+- Upstream benchmark: the caveman project measured a median 65 percent
+  output-token reduction with full technical accuracy retained. Source:
+  https://github.com/JuliusBrussee/caveman (benchmarks/ and
+  docs/HONEST-NUMBERS.md).
+- Rule overhead: the caveman rules themselves cost input tokens every turn
+  (upstream default estimate: about 1,250 tokens per turn). Net savings =
+  output saved minus rule overhead; short sessions or short answers can be
+  net NEGATIVE. When they are, say so plainly and suggest turning caveman
+  off for that workload.
+- Local numbers: the only honest per-file figures here are the
+  `CHARS: X -> Y` lines the compress mode's guard script prints. Character
+  deltas are not token deltas; label them as characters.
 
 ## Honesty Boundary
 

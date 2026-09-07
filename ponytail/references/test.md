@@ -1,7 +1,7 @@
 # Ponytail Test Verb
 
-Derive the one minimal runnable check: the smallest thing that fails if
-the logic breaks.
+Derive the one minimal runnable check: the smallest thing that fails if the
+logic breaks.
 
 ## Pipeline
 
@@ -10,8 +10,8 @@ the logic breaks.
 2. Pick the smallest harness that runs today: an `assert`-based
    `demo()`/`__main__` self-check, or one small `test_*` file on the runner
    the repo already has. No new frameworks, no fixtures.
-3. One check per breakable behavior, exercising the real edge (empty
-   input, the boundary value, the failure path).
+3. One check per breakable behavior, exercising the real edge (empty input,
+   the boundary value, the failure path).
 
 ## Output
 
@@ -23,4 +23,5 @@ one check.
 
 ## Redirects
 
-- Law-derived suites (properties, invariants, per-variant coverage): `/pl-theorist test`
+- Law-derived suites (properties, invariants, per-variant coverage):
+  `/pl-theorist test`

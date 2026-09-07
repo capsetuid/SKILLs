@@ -17,9 +17,9 @@ metadata:
 
 # PL Theorist
 
-A programming-languages theorist's discipline across the software
-lifecycle: model the domain as an algebra, keep the core pure, choose the
-structure that makes the dominant operation cheap, and state its cost.
+A programming-languages theorist's discipline across the software lifecycle:
+model the domain as an algebra, keep the core pure, choose the structure
+that makes the dominant operation cheap, and state its cost.
 
 ## Registry
 
@@ -90,8 +90,8 @@ when it creates code where none exists.
 | help | Quick-reference card of verbs and languages |
 
 A workflow spanning verbs (audit, then refactor the worst finding) runs as
-sequential invocations, each loading its own file. All kernel sections
-below apply to every verb.
+sequential invocations, each loading its own file. All kernel sections below
+apply to every verb.
 
 ## Optimization Order
 
@@ -108,26 +108,30 @@ Apply this precedence. Never trade an earlier property for a later one.
 
 ## Core Laws
 
-- When modifying existing code, preserve values, ordering, cardinality, error
-  behavior, effect order, cancellation, disposal, evaluation timing, and
-  externally visible identity.
+- When modifying existing code, preserve values, ordering, cardinality,
+  error behavior, effect order, cancellation, disposal, evaluation timing,
+  and externally visible identity.
 - Make invalid states unrepresentable with closed variants and exhaustive
-  elimination. Validate untrusted values before admitting them to that domain.
-- Model alternatives as sums, simultaneous fields as products, and constrained
-  primitives as opaque/refined types. Reject boolean blindness, sentinel values,
-  and bags of nullable fields when they encode a state machine.
-- Parse, do not merely validate: use one smart constructor or decoder to turn an
-  untrusted representation into a trusted domain value. Keep raw constructors
-  private when the language permits it.
+  elimination. Validate untrusted values before admitting them to that
+  domain.
+- Model alternatives as sums, simultaneous fields as products, and
+  constrained primitives as opaque/refined types. Reject boolean blindness,
+  sentinel values, and bags of nullable fields when they encode a state
+  machine.
+- Parse, do not merely validate: use one smart constructor or decoder to
+  turn an untrusted representation into a trusted domain value. Keep raw
+  constructors private when the language permits it.
 - Keep the functional core pure. Push I/O, mutation, time, randomness, and
   exceptions to a thin imperative shell.
-- Prefer native `Option`/`Maybe`, `Result`/`Either`, iterators, tasks/promises,
-  `async`/`await`, and query operators over bespoke monad frameworks.
-- Use applicative structure for independent effects and monadic structure for
-  dependent effects. Concurrency is allowed only when ordering, capacity,
-  cancellation, and failure aggregation remain correct.
-- Prefer language-provided `sum`, `any`, `all`, `find`, grouping, and traversal
-  primitives. If absent, use a reduction with an explicit accumulator law.
+- Prefer native `Option`/`Maybe`, `Result`/`Either`, iterators,
+  tasks/promises, `async`/`await`, and query operators over bespoke monad
+  frameworks.
+- Use applicative structure for independent effects and monadic structure
+  for dependent effects. Concurrency is allowed only when ordering,
+  capacity, cancellation, and failure aggregation remain correct.
+- Prefer language-provided `sum`, `any`, `all`, `find`, grouping, and
+  traversal primitives. If absent, use a reduction with an explicit
+  accumulator law.
 - Prefer named combinators when a name captures a domain invariant. Prefer
   point-free style only while data flow and diagnostics remain obvious.
 - Write to the repository's configured language standard, detected from
@@ -138,17 +142,17 @@ Apply this precedence. Never trade an earlier property for a later one.
   sealed hierarchies) over legacy conditional ladders, never beyond the
   configured toolchain; the loaded profile's Modern Surface section, when
   present, names the specific forms.
-- Do not assert "zero cost," fusion, or optimization from syntax alone. Require
-  compiler/runtime guarantees, repository evidence, or measurement.
+- Do not assert "zero cost," fusion, or optimization from syntax alone.
+  Require compiler/runtime guarantees, repository evidence, or measurement.
 
 ## Complexity and Data Structures
 
-State the time and space complexity of any non-trivial shape you produce,
-in terms of the domain's real sizes, as part of the contract.
+State the time and space complexity of any non-trivial shape you produce, in
+terms of the domain's real sizes, as part of the contract.
 
 - Estimate before writing: at roughly $10^8$ to $10^9$ simple operations per
-  second, an $O(n^2)$ loop over $n = 10^5$ costs about $10^{10}$ steps and is
-  wrong by construction. Run this arithmetic whenever sizes are known or
+  second, an $O(n^2)$ loop over $n = 10^5$ costs about $10^{10}$ steps and
+  is wrong by construction. Run this arithmetic whenever sizes are known or
   discoverable; ask for the expected size when the answer would change the
   design.
 - Interrogate every nested loop: when the inner body is a membership test,
@@ -172,55 +176,58 @@ in terms of the domain's real sizes, as part of the contract.
 | Dynamic grouping / connectivity | Union-find with path compression and union by rank |
 | Associative fold over large data | Work-stealing data parallelism (rayon-style) after proving associativity |
 
-- Library first: recognizing the structure is mandatory; implementing it is a
-  last resort. Prefer the standard library, then a well-maintained dependency
-  the repository already carries or can justify, then a hand-rolled version
-  with tests for its invariants.
+- Library first: recognizing the structure is mandatory; implementing it is
+  a last resort. Prefer the standard library, then a well-maintained
+  dependency the repository already carries or can justify, then a
+  hand-rolled version with tests for its invariants.
 - Name amortized versus worst-case bounds when they differ (hash tables,
   dynamic arrays, union-find), and expected versus adversarial: hashing
-  attacker-chosen keys invites collision flooding; use a keyed/randomized hash
-  or an ordered tree at that boundary.
+  attacker-chosen keys invites collision flooding; use a keyed/randomized
+  hash or an ordered tree at that boundary.
 - Asymptotics are necessary, not sufficient: contiguous arrays beat
-  pointer-chasing structures of equal big-O through cache locality, and a small
-  bounded n makes the simple scan both fastest and clearest. Do not deploy a
-  segment tree where a prefix sum suffices; match the structure to the actual
-  operation mix, then measure before claiming a win.
+  pointer-chasing structures of equal big-O through cache locality, and a
+  small bounded n makes the simple scan both fastest and clearest. Do not
+  deploy a segment tree where a prefix sum suffices; match the structure to
+  the actual operation mix, then measure before claiming a win.
 - Space is a first-class budget: memoization, materialized indexes, and
-  persistent structures trade memory for time. State the trade and its bound.
+  persistent structures trade memory for time. State the trade and its
+  bound.
 
 ## Algebra and Lawfulness
 
-- State the identity and associative operation before treating an aggregation as
-  a monoid or parallelizing/reassociating a fold. Never assume commutativity.
+- State the identity and associative operation before treating an
+  aggregation as a monoid or parallelizing/reassociating a fold. Never
+  assume commutativity.
 - Preserve functor shape and cardinality under `map`; use `filter` only when
   cardinality may decrease; use `flatMap`/`bind` only when nesting is real.
-- Prefer `traverse`-like structure when every element performs an effect and the
-  output shape is preserved. Choose fail-fast versus error accumulation
+- Prefer `traverse`-like structure when every element performs an effect and
+  the output shape is preserved. Choose fail-fast versus error accumulation
   deliberately.
-- Use `Option` for expected absence and `Result` for expected failure. Reserve
-  exceptions/panics for defects or boundaries where the language convention
-  requires them.
-- Keep eliminators total. An "unreachable" branch is justified only by a closed
-  type or a validated invariant.
-- Check laws with representative and property-based tests when the repository
-  already supports them; do not add a property framework solely for ceremony.
+- Use `Option` for expected absence and `Result` for expected failure.
+  Reserve exceptions/panics for defects or boundaries where the language
+  convention requires them.
+- Keep eliminators total. An "unreachable" branch is justified only by a
+  closed type or a validated invariant.
+- Check laws with representative and property-based tests when the
+  repository already supports them; do not add a property framework solely
+  for ceremony.
 
 ## Production Effect Discipline
 
-- Preserve resource scopes with the language's native bracket, context manager,
-  RAII, `defer`, `using`, or `try/finally` mechanism. Laziness must not outlive
-  an acquired resource.
+- Preserve resource scopes with the language's native bracket, context
+  manager, RAII, `defer`, `using`, or `try/finally` mechanism. Laziness must
+  not outlive an acquired resource.
 - Preserve structured cancellation. Do not detach work, lose parent
   cancellation, serialize independent work, or parallelize dependent work by
   accident.
 - Bound queues, concurrency, retries, and materialization. An incremental
   stream still needs backpressure or limits from its consumers.
-- Keep transaction boundaries and exactly-once/at-least-once behavior explicit.
-  Retry only idempotent effects or effects protected by an idempotency key or
-  transaction.
-- Keep logs, traces, metrics, and domain errors at observable effect boundaries.
-  Do not bury instrumentation in a nominally pure function or erase useful
-  context through point-free composition.
+- Keep transaction boundaries and exactly-once/at-least-once behavior
+  explicit. Retry only idempotent effects or effects protected by an
+  idempotency key or transaction.
+- Keep logs, traces, metrics, and domain errors at observable effect
+  boundaries. Do not bury instrumentation in a nominally pure function or
+  erase useful context through point-free composition.
 
 ## Progressive Language Disclosure
 
@@ -249,11 +256,11 @@ exactly the profiles participating in that boundary.
 | Bash / POSIX shell | `bash` |
 | GitHub Actions YAML | `github-actions` |
 
-For an unlisted language, derive the same facts from repository configuration
-and authoritative language knowledge: recursion/TCO, strictness/laziness,
-collection fusion, closure representation, allocation, sum types, native effect
-types, and resource semantics. State uncertainty; another language's cost
-model never transfers by analogy.
+For an unlisted language, derive the same facts from repository
+configuration and authoritative language knowledge: recursion/TCO,
+strictness/laziness, collection fusion, closure representation, allocation,
+sum types, native effect types, and resource semantics. State uncertainty;
+another language's cost model never transfers by analogy.
 
 ## Gotchas
 
@@ -261,11 +268,11 @@ model never transfers by analogy.
   invariants.
 - `map` and `filter` can alter eagerness, return type, exception timing, and
   traversal count.
-- "Immutable" outer values can retain mutable references. State the protected
-  boundary; use deep copying only when its cost and ownership semantics justify
-  it.
-- Type-level invalid-state elimination does not validate JSON, database rows,
-  messages, or other untrusted input.
+- "Immutable" outer values can retain mutable references. State the
+  protected boundary; use deep copying only when its cost and ownership
+  semantics justify it.
+- Type-level invalid-state elimination does not validate JSON, database
+  rows, messages, or other untrusted input.
 - `reduce` earns no functional credit by itself. Prefer `sum`, `any`, `all`,
   `find`, or a named fold matching the operation's algebra.
 - Monad vocabulary does not justify wrapper allocation. Prefer native
@@ -274,12 +281,13 @@ model never transfers by analogy.
 - Without TCO, an iterator is the semantics-preserving implementation.
 - Local mutation can be observationally pure. Reject it only when it leaks,
   obscures an invariant, or prevents composition.
-- Applicative-looking parallelism can change ordering, peak memory, rate limits,
-  and failure behavior. Independence is necessary but not sufficient.
-- Exhaustive matching over an open class hierarchy is not totality. Know whether
-  the target language actually seals the variant set.
-- A data structure can smuggle in hidden cost: a heap or index rebuilt inside
-  the loop it was meant to accelerate, a regex recompiled per call, a
+- Applicative-looking parallelism can change ordering, peak memory, rate
+  limits, and failure behavior. Independence is necessary but not
+  sufficient.
+- Exhaustive matching over an open class hierarchy is not totality. Know
+  whether the target language actually seals the variant set.
+- A data structure can smuggle in hidden cost: a heap or index rebuilt
+  inside the loop it was meant to accelerate, a regex recompiled per call, a
   persistent structure fully copied per iteration. Hoist construction out of
   hot paths.
 - A Bloom filter answers "possibly present." Never gate correctness-critical

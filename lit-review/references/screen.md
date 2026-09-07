@@ -39,12 +39,11 @@ batch is valid.
 
 Record a vocabulary cut as one judgment. `screen --on title --exclude` with
 `{"match": "<regex>", "reason": "..."}` on stdin applies a case-insensitive
-regex to every candidate, marks
-each match with `rule:<id>`, and stores the rule with its matched keys in
-the notebook.
-Decided papers stay untouched: make the individual judgments that must
-survive a broad cut before running it. `--include` exists for the mirror
-case, still bound by the criteria gate.
+regex to every candidate, marks each match with `rule:<id>`, and stores the
+rule with its matched keys in the notebook. Decided papers stay untouched:
+make the individual judgments that must survive a broad cut before running
+it. `--include` exists for the mirror case, still bound by the criteria
+gate.
 
 ## Exclusion reasons
 
@@ -72,7 +71,7 @@ failed: reopen search before concluding the field is empty.
 
 After screening, check the included set for concentration: one author group,
 one venue, one year dominating is a signal to search the neglected
-directions. Then derive the flow from state: `status` gives
-per-status counts, the log gives per-search totals. The report template in
-`report` carries the counts block: identified, deduplicated, screened out at
-pass 1, screened out at pass 2, included.
+directions. Then derive the flow from state: `status` gives per-status
+counts, the log gives per-search totals. The report template in `report`
+carries the counts block: identified, deduplicated, screened out at pass 1,
+screened out at pass 2, included.

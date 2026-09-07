@@ -17,8 +17,8 @@ Exactly one per claim.
 Distinctions:
 
 - `contradicted` vs `outdated` is decided by claim-time alone.
-- `conflicting` is reserved for peer sources; a primary publisher beating
-  an aggregator is no conflict.
+- `conflicting` is reserved for peer sources; a primary publisher beating an
+  aggregator is no conflict.
 - `insufficient-evidence` (we could not find it) is never collapsed into
   `unverifiable` (nobody could).
 

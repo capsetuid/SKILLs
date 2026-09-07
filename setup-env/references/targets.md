@@ -1,8 +1,8 @@
 # Targets
 
-The authoritative tag list lives in `catalog` and prints via `btm-setup-env list`.
-Aliases: `js`/`node`, `ts`, `py`, `golang`, `c++`, `cs`/`dotnet`, `sh`/`shell`, and
-bare `android` for `java:android`.
+The authoritative tag list lives in `catalog` and prints via
+`btm-setup-env list`. Aliases: `js`/`node`, `ts`, `py`, `golang`, `c++`,
+`cs`/`dotnet`, `sh`/`shell`, and bare `android` for `java:android`.
 
 ## Per-Target Notes
 
@@ -37,5 +37,5 @@ version axis (`c`, `cpp`) reject one at parse time.
 
 Rough per-target root sizes, dominated by downloads: python or typescript
 0.3 GB; go, rust, or a JVM 0.5-1 GB; android 2 GB (plus 0.5 GB for the
-emulated toolchain on arm64); haskell 7 GB. Sizes add sublinearly within
-one conda prefix.
+emulated toolchain on arm64); haskell 7 GB. Sizes add sublinearly within one
+conda prefix.

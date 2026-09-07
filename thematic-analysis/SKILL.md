@@ -30,7 +30,8 @@ sources; a run otherwise proceeds on this file alone.
 
 ## Redirects
 
-- Sorting items into a fixed label set: classify each item against that set directly, with no codebook or themes
+- Sorting items into a fixed label set: classify each item against that set
+  directly, with no codebook or themes
 
 ## Invariants
 
@@ -39,10 +40,10 @@ Hold at every step and after any context compaction.
 1. One school per analysis. Choose the approach before coding, record the
    choice with its reason, and take procedure and quality standard from the
    same row of the selection table.
-2. A theme states a shared pattern of meaning as a one-sentence claim.
-   A grouping of everything said about one subject is a topic summary: keep
-   it as an intermediate artifact, or develop it into a claim before
-   reporting it as a theme.
+2. A theme states a shared pattern of meaning as a one-sentence claim. A
+   grouping of everything said about one subject is a topic summary: keep it
+   as an intermediate artifact, or develop it into a claim before reporting
+   it as a theme.
 3. Every reported theme cites verbatim extracts with unit identifiers, and
    every analytic claim traces to coded units.
 4. Counts describe the corpus at hand. Report "coded in n of N units" and
@@ -94,22 +95,21 @@ next to the approach.
 4. **Codebook.** Give each code a name, a one-sentence definition, an
    inclusion cue, an exclusion cue, and one example extract. Stay within the
    size default by merging overlapping codes as they appear.
-5. **Code.** Label every unit against the codebook; a unit that fits no
-   code earns a new dated entry. Framework matrix: chart cases as rows and
-   codes as columns, each cell a short summary with a quote reference.
+5. **Code.** Label every unit against the codebook; a unit that fits no code
+   earns a new dated entry. Framework matrix: chart cases as rows and codes
+   as columns, each cell a short summary with a quote reference.
 6. **Check agreement** (codebook school only). Fix statistic and threshold
    first, per the defaults. Have an independent second coder label the
    agreement sample: a delegate briefed through `/summon dispatch` whose
    evidence is the codebook and the raw units and nothing else, and whose
-   contract is one label per unit.
-   Compute per-code agreement, resolve disagreements by refining the
-   codebook, recode affected units. When the second coder is the same model
-   in a fresh context, the report says so.
+   contract is one label per unit. Compute per-code agreement, resolve
+   disagreements by refining the codebook, recode affected units. When the
+   second coder is the same model in a fresh context, the report says so.
 7. **Develop themes.** Cluster codes into groupings within the default
    range. Give each theme a name and its one-sentence central claim, then
    check the claim back against the original units it summarizes.
-8. **Report.** Approach and reason; codebook or template with version
-   notes; each theme with definition, extracts, and counts per Invariant 4;
+8. **Report.** Approach and reason; codebook or template with version notes;
+   each theme with definition, extracts, and counts per Invariant 4;
    agreement figures under the codebook school only; limitations, including
    Invariant 6's disclosure where it applies.
 

@@ -2,8 +2,8 @@
 
 A tell is a pattern that appears far more often in generated interfaces than
 in considered ones: a design decision nobody made. Each is banned as a
-**default reach**. Any of these is available when the brief genuinely calls for it and
-you can say why.
+**default reach**. Any of these is available when the brief genuinely calls
+for it and you can say why.
 
 ## Typography and punctuation
 
@@ -65,8 +65,8 @@ Treat these as honesty failures and fix them ahead of any taste issue.
   marketing pages. Use a real capture, a generated image, a genuinely
   embedded component, or no preview.
 * **Invented precision**: percentages, multipliers, measurements, and
-  weights implying measurement nobody performed. Real, explicitly labeled
-  as illustrative, or absent.
+  weights implying measurement nobody performed. Real, explicitly labeled as
+  illustrative, or absent.
 * **Placeholder people**: generic names, obviously synthetic avatars, and
   round-numbered statistics.
 * **Placeholder brands**: the standard set of invented company names that
@@ -83,8 +83,8 @@ Treat these as honesty failures and fix them ahead of any taste issue.
 
 ## Copy
 
-* **Filler verbs** that mean nothing in context: elevate, unleash,
-  seamless, revolutionize, next-generation, effortless.
+* **Filler verbs** that mean nothing in context: elevate, unleash, seamless,
+  revolutionize, next-generation, effortless.
 * **Performed modesty**: quietly-in-use-at, honest-by-design, and similar
   constructions that claim a virtue.
 * **Craftsman-poetic section labels** on ordinary content: field notes, from

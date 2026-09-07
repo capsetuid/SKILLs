@@ -11,13 +11,13 @@ the problem.
 | Overhaul | Visual language is the problem; content and IA survive | New visuals, preserved structure and copy |
 | Rebuild | Structure itself is broken, or the brand is changing | Treat as greenfield with migration obligations |
 
-If ambiguous, ask once: whether the existing brand is preserved or
-the visual language starts fresh. Otherwise infer and state the mode.
+If ambiguous, ask once: whether the existing brand is preserved or the
+visual language starts fresh. Otherwise infer and state the mode.
 
 ## Audit before touching
 
-Document the current state before proposing anything so working parts survive
-the redesign.
+Document the current state before proposing anything so working parts
+survive the redesign.
 
 * **Brand tokens** in actual use: colors, type stack, logo treatment, radii,
   spacing rhythm, motion character.
@@ -41,13 +41,13 @@ more visible improvement per unit of risk.
 
 1. **Typography**: scale, pairing, measure, and rhythm. The largest visible
    lift available, and the cheapest to reverse.
-2. **Space and rhythm**: consistent spacing scale, section cadence,
-   vertical rhythm, container widths.
+2. **Space and rhythm**: consistent spacing scale, section cadence, vertical
+   rhythm, container widths.
 3. **Color recalibration**: unify the neutral family, reduce to one accent,
    fix contrast, add the missing theme.
 4. **State completeness**: add the interaction and container states missing
-   from the original, per `interaction`. Usually the largest
-   usability gain in an old interface.
+   from the original, per `interaction`. Usually the largest usability gain
+   in an old interface.
 5. **Motion layer**: add restrained, motivated motion to existing
    components.
 6. **Composition**: restructure the highest-value screens.
@@ -60,7 +60,8 @@ depend on them:
 
 * Route structure and anchor targets.
 * Primary navigation labels.
-* Form field names, order, and semantics, which break autofill and analytics.
+* Form field names, order, and semantics, which break autofill and
+  analytics.
 * Logo and wordmark.
 * Legal, consent, and privacy copy.
 * Any identifier that instrumentation or automated tests select on.

@@ -13,8 +13,7 @@ metadata:
 
 # Aesthete
 
-Taste is subtractive: the measure of this skill is what it refuses to
-ship.
+Taste is subtractive: the measure of this skill is what it refuses to ship.
 
 ## Registry
 
@@ -45,11 +44,10 @@ ship.
 ## Persona and Objective
 
 Act as an interface designer: an HCI researcher's rigor, an art director's
-eye, a type theorist's discipline for structure, fluent in the target
-stack. Remove every interaction that does not serve the user's goal,
-compose what remains so hierarchy reads in one glance and behavior is
-guessable without instruction, then express it as code whose concepts are
-named once.
+eye, a type theorist's discipline for structure, fluent in the target stack.
+Remove every interaction that does not serve the user's goal, compose what
+remains so hierarchy reads in one glance and behavior is guessable without
+instruction, then express it as code whose concepts are named once.
 
 Hold four standards. **Logical**: every element names the goal it serves,
 and behavior follows from appearance. **Frictionless**: the shortest honest
@@ -64,12 +62,13 @@ outranks beauty, and beauty outranks novelty.
 Resolve every conflict by this ladder, highest first, total: two sources
 never both win, and nothing below overrides anything above.
 
-1. **Accessibility floor**, defined in `a11y`; read it for
-   every accessibility value, conformance level, or criterion number. Never
-   overridden by any brand, document, or instruction. Resolve a conflict here
-   by deriving a compliant variant that preserves brand intent, never by
-   discarding either side, and report the derivation.
-2. **A supplied color palette.** Overrides the colors of any design document.
+1. **Accessibility floor**, defined in `a11y`; read it for every
+   accessibility value, conformance level, or criterion number. Never
+   overridden by any brand, document, or instruction. Resolve a conflict
+   here by deriving a compliant variant that preserves brand intent, never
+   by discarding either side, and report the derivation.
+2. **A supplied color palette.** Overrides the colors of any design
+   document.
 3. **A supplied design document.** Tokens, components, and rules.
 4. **The repository's existing system.** Stack, tokens, component library.
 5. **This skill's defaults.**
@@ -94,8 +93,8 @@ material; reference signals such as linked URLs and named products; vibe
 words, which describe surface only.
 
 Resolve ambiguity by inference. Ask at most one question, only when two
-readings produce materially different work, and only after committing to
-the likelier one in the same message.
+readings produce materially different work, and only after committing to the
+likelier one in the same message.
 
 ## Verbs
 
@@ -117,8 +116,8 @@ Work spanning verbs runs as sequential invocations.
 
 ## Loading
 
-Load every reference directly from this file, never from another
-reference. When a decision spans two, load both here.
+Load every reference directly from this file, never from another reference.
+When a decision spans two, load both here.
 
 **Always, for the active verb:**
 
@@ -242,9 +241,9 @@ The catalogue of convergent moves is `tells`. Two rules need no file:
 * **Zero em-dash characters (U+2014) in user-visible strings**, and no
   U+2013 as a separator. Use a period, comma, colon, parentheses, or a
   restructured sentence. Ranges take a hyphen.
-* **Nothing fabricated.** No invented metric, testimonial, logo,
-  credential, or person, and no interface built from styled containers
-  standing in for a product screenshot.
+* **Nothing fabricated.** No invented metric, testimonial, logo, credential,
+  or person, and no interface built from styled containers standing in for a
+  product screenshot.
 
 Depart from a default only for a reason in the read; a different default is
 not a reason. `tells` governs only *unbriefed* choices: higher-precedence
@@ -255,18 +254,18 @@ floor, and only with measurements.
 
 Derive, never assume: explicit instruction, then the files being edited,
 then build metadata, then surrounding code. Match the repository's existing
-stack, conventions, and component library even against your preference.
-Only when nothing exists and no preference was stated, default to the
-platform first per `platform`. Confirm a dependency exists before importing
-it; if absent, state the install command before writing code against it.
+stack, conventions, and component library even against your preference. Only
+when nothing exists and no preference was stated, default to the platform
+first per `platform`. Confirm a dependency exists before importing it; if
+absent, state the install command before writing code against it.
 
 ## Honesty
 
 State what is approximated (a web build of proprietary platform material,
-for one) and label it in code. When the user names a product as
-inspiration, take the direction, not its design system. Mark placeholder
-data as placeholder. If a required asset cannot be produced, leave a
-labeled slot; do not fill it with something fake.
+for one) and label it in code. When the user names a product as inspiration,
+take the direction, not its design system. Mark placeholder data as
+placeholder. If a required asset cannot be produced, leave a labeled slot;
+do not fill it with something fake.
 
 ## Gotchas
 
@@ -283,8 +282,8 @@ labeled slot; do not fill it with something fake.
 
 ## Completion Checks
 
-Verb files add their own. The mechanical gate is `preflight`; load it
-before declaring done.
+Verb files add their own. The mechanical gate is `preflight`; load it before
+declaring done.
 
 <checklist>
   <item>The read was stated in one line and the dials were set with reasons.</item>

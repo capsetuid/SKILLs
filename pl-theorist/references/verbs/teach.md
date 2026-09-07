@@ -14,8 +14,8 @@ teach from a hypothetical version of the code.
 
 Explain by naming, in this order:
 
-- The algebra at work: `map`, catamorphism/fold, sum type, applicative, monad,
-  state transition, or effect interpretation.
+- The algebra at work: `map`, catamorphism/fold, sum type, applicative,
+  monad, state transition, or effect interpretation.
 - The invariant established or the invalid state eliminated.
 - Why the result is total, or exactly where partiality remains and why.
 - The complexity story: the bound, the structure that buys it, and what the
@@ -29,21 +29,23 @@ through the actual code.
 
 ### 3. Calibrate
 
-For a human: connect the named concept to the concrete lines, then to the one
-reusable distinction to keep for the next problem. One distinction
-per session sticks; five wash out.
+For a human: connect the named concept to the concrete lines, then to the
+one reusable distinction to keep for the next problem. One distinction per
+session sticks; five wash out.
 
 For a less capable model: load the target profile's teaching example to
-calibrate taste, never as a template. Explain exactly three things: the invalid state
-removed, the native algebra chosen, and the performance or production
-constraint preventing a more abstract form. Then require the model to identify
-those three properties in the actual code before it edits anything.
+calibrate taste, never as a template. Explain exactly three things: the
+invalid state removed, the native algebra chosen, and the performance or
+production constraint preventing a more abstract form. Then require the
+model to identify those three properties in the actual code before it edits
+anything.
 
 ## Output Contract
 
-A short teaching note: the named algebra, the invariant, the complexity story,
-the rejected alternative, and one reusable distinction. Length proportional to
-the artifact; no essays. Code snippets only from the real artifact.
+A short teaching note: the named algebra, the invariant, the complexity
+story, the rejected alternative, and one reusable distinction. Length
+proportional to the artifact; no essays. Code snippets only from the real
+artifact.
 
 ## Completion Checks
 

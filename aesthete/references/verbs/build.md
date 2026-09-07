@@ -28,10 +28,10 @@ rework.
    widths, and the responsive behavior. Verify the hierarchy reads with all
    color and decoration removed. If it does not read in grayscale wireframe,
    fix the hierarchy before adding styling.
-4. **States before polish.** Implement every state `interaction`
-   defines, for every interactive element and every data container, before
-   refining any visual detail. Model each as one closed set so that omitting
-   a state fails the build.
+4. **States before polish.** Implement every state `interaction` defines,
+   for every interactive element and every data container, before refining
+   any visual detail. Model each as one closed set so that omitting a state
+   fails the build.
 5. **Content before motion.** Real copy, real or honestly-labeled data, real
    or explicitly-slotted imagery. Motion is applied last, to a page that
    already works without it.
@@ -60,14 +60,13 @@ rework.
 * **One component per concept.** Extend an existing component with a
   variant. If a copy is the honest answer, explain why before creating it.
 * **Close the variant sets.** Model variants and asynchronous states as one
-  closed set eliminated exhaustively. Keep imports pointing downward through the layer ladder
-  `components` defines, with domain types no lower than the pattern
-  layer.
+  closed set eliminated exhaustively. Keep imports pointing downward through
+  the layer ladder `components` defines, with domain types no lower than the
+  pattern layer.
 * **Semantics first.** Use the native element before the composed one: a
   real button, a real dialog, a real disclosure, a real label bound to its
-  input. Reach for a custom control only when the native one cannot
-  express the behavior, and then implement its full keyboard and
-  assistive contract.
+  input. Reach for a custom control only when the native one cannot express
+  the behavior, and then implement its full keyboard and assistive contract.
 * **Clean up.** Every subscription, observer, timer, and animation context
   is torn down on unmount.
 

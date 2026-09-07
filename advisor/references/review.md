@@ -1,9 +1,9 @@
 # Verb: review
 
-Judge one artifact, a paper, proposal, draft, or result set, after the
-four moves. Read-only: no file changes, no re-run of experiments. The
-output is the template alone; its Direction section is a headline, and
-`design` expands it into a plan.
+Judge one artifact, a paper, proposal, draft, or result set, after the four
+moves. Read-only: no file changes, no re-run of experiments. The output is
+the template alone; its Direction section is a headline, and `design`
+expands it into a plan.
 
 ## Sound
 

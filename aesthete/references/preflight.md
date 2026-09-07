@@ -44,58 +44,58 @@ during design. Measure each count against the declaration.
 Skip only if nothing was supplied.
 
 - [ ] Precedence applied in order: the palette overrode the document's
-      colors, the document overrode this skill's defaults, and the
-      accessibility floor overrode everything.
+  colors, the document overrode this skill's defaults, and the accessibility
+  floor overrode everything.
 - [ ] Every supplied token pairing actually used was measured for contrast,
-      including secondary text on tinted surfaces.
+  including secondary text on tinted surfaces.
 - [ ] Every floor conflict was resolved by derivation and reported, with the
-      brand preserved wherever the threshold allowed.
+  brand preserved wherever the threshold allowed.
 - [ ] Accessibility claims made by the document were verified against the
-      specification.
+  specification.
 - [ ] Gaps the document left were derived from its own logic and reported.
 
 ## Direction
 
 - [ ] The design read was stated, and the built result matches it.
 - [ ] Dials were set from the read with reasons, and the output reflects
-      them. If motion is above 4, the interface actually moves.
+  them. If motion is above 4, the interface actually moves.
 - [ ] Every element can name the user goal it serves.
 - [ ] The friction budget to the primary goal was counted and reported.
 
 ## Interaction
 
 - [ ] Every interactive element and every data container ships every state
-      `interaction` defines, encoded as one closed set.
+  `interaction` defines, encoded as one closed set.
 - [ ] No loader appears for a response under the flash threshold, and every
-      wait past it is acknowledged at the point of action.
+  wait past it is acknowledged at the point of action.
 - [ ] Input is parsed liberally; nothing is rejected for formatting the
-      system could normalize.
+  system could normalize.
 - [ ] Errors preserve entry, sit adjacent to their cause, name the fix, and
-      move focus to the first failure.
+  move focus to the first failure.
 - [ ] Reversible destructive actions offer undo; irreversible ones name the
-      exact object and consequence.
+  exact object and consequence.
 - [ ] User work survives navigation, refresh, back, and server failure.
 - [ ] URL reflects record, tab, filter, sort, and page state.
 
 ## Accessibility
 
 - [ ] Every text and control pairing meets the thresholds in `a11y`,
-      measured against composited backgrounds, with exemptions applied only
-      where `a11y` allows them.
+  measured against composited backgrounds, with exemptions applied only
+  where `a11y` allows them.
 - [ ] Placeholder, helper, disabled, and focus-ring contrast were measured
-      specifically.
+  specifically.
 - [ ] Every control's label is readable against its own background, and text
-      over imagery has a guaranteed backing.
+  over imagery has a guaranteed backing.
 - [ ] Focus is always visible, never suppressed, and never obscured by
-      sticky regions.
+  sticky regions.
 - [ ] Full keyboard parity; focus order matches visual order; dialogs trap
-      and return focus; escape dismisses; backgrounds are inert.
+  and return focus; escape dismisses; backgrounds are inert.
 - [ ] Touch target hit areas meet the minimum in `a11y`, with spacing
-      between neighbors.
+  between neighbors.
 - [ ] No information is carried by color alone.
 - [ ] Every drag interaction has a non-drag alternative.
 - [ ] Reduced motion, reduced transparency, and forced colors are honored
-      without losing function.
+  without losing function.
 - [ ] Asynchronous changes are announced through a live region.
 
 ## Composition
@@ -104,52 +104,52 @@ Skip only if nothing was supplied.
 - [ ] Between-group spacing clearly exceeds within-group spacing.
 - [ ] Cards enclose discrete objects the user acts on.
 - [ ] Narrow layouts were designed and verified, with stacking order
-      matching DOM order.
+  matching DOM order.
 - [ ] Prevent shifts after paint by reserving space for every asynchronous
-      element.
+  element.
 - [ ] One theme holds across the surface, set once at the root.
 - [ ] Both themes were opened and reviewed.
 - [ ] Theme follows the system preference with no stored state, unless the
-      user asked for a toggle.
+  user asked for a toggle.
 
 ## Craft
 
 - [ ] Body measure sits between roughly 45 and 75 characters; type sizes are
-      in relative units.
+  in relative units.
 - [ ] Aligned or updating numbers use tabular figures.
 - [ ] Fonts are self-hosted or pipelined, subset, swapped, and
-      metric-matched to their fallback.
+  metric-matched to their fallback.
 - [ ] One motion curve family; every animation passes the one-sentence
-      justification test.
+  justification test.
 
 ## Content
 
 - [ ] Every visible string was re-read, and anything grammatically broken,
-      referentially unclear, or clever-but-wrong was rewritten.
+  referentially unclear, or clever-but-wrong was rewritten.
 - [ ] Numbers are real, explicitly labeled as illustrative, or absent.
-- [ ] No fabricated product interface, logo, testimonial, metric, credential,
-      or person.
+- [ ] No fabricated product interface, logo, testimonial, metric,
+  credential, or person.
 - [ ] Assets are real, generated, or left as labeled slots, with required
-      assets named in the response.
+  assets named in the response.
 - [ ] One label per call-to-action intent across the surface, fitting on one
-      line at desktop.
+  line at desktop.
 
 ## Engineering
 
 - [ ] Stack, tokens, and component library were derived from the repository,
-      and the repository was searched before any component was authored.
+  and the repository was searched before any component was authored.
 - [ ] Variants and asynchronous states are closed sets eliminated
-      exhaustively, so omitting a state fails the build.
+  exhaustively, so omitting a state fails the build.
 - [ ] Each component varies along one axis; no prop switches which subtree
-      renders and no prop exists for a single call site.
+  renders and no prop exists for a single call site.
 - [ ] Call sites adjust position only; new looks became variants.
 - [ ] No lookup runs inside a row loop; expensive construction is hoisted.
 - [ ] Interactivity is isolated to leaves; no continuous value is driven
-      through render state.
+  through render state.
 - [ ] Only compositor-friendly properties animate; observers, timelines, and
-      contexts are torn down.
+  contexts are torn down.
 - [ ] Native elements and platform APIs were used where they suffice; any
-      custom control carries its full keyboard and assistive contract.
+  custom control carries its full keyboard and assistive contract.
 - [ ] Support status was verified for every platform capability relied on.
 - [ ] Paint, interaction, and layout-stability targets are plausibly met.
 

@@ -4,10 +4,10 @@ Reach for the platform before a dependency. Native capability arrives with
 accessibility, keyboard behavior, and top-layer rendering already correct,
 without adding dependency code to the bundle.
 
-Browser support moves continuously and this file ages. Before relying on
-any capability below, verify its current baseline status yourself against
-the project's stated support targets, and provide a graceful fallback when
-the feature is progressive rather than essential.
+Browser support moves continuously and this file ages. Before relying on any
+capability below, verify its current baseline status yourself against the
+project's stated support targets, and provide a graceful fallback when the
+feature is progressive rather than essential.
 
 ## Choosing the layer
 
@@ -17,8 +17,8 @@ the feature is progressive rather than essential.
 2. **A platform API** for behavior: top-layer overlays, transitions between
    states or documents, scroll-linked progress, anchored positioning.
 3. **CSS** for anything visual or state-driven that CSS can express.
-4. **A dependency**, only when the above cannot express it, and
-   only one per concern.
+4. **A dependency**, only when the above cannot express it, and only one per
+   concern.
 
 Style the native control; a rebuild gains little styling and keeps the
 accessibility and keyboard issues.
@@ -42,9 +42,9 @@ over observers for pure visual effects, and observers over event listeners
 in every case.
 
 **Responsive to context, not viewport.** Size and style queries let a
-component respond to its own container, so one component works in a sidebar, a modal, and a full-width region without
-breakpoint duplication. Relative units tied to the container let type and
-spacing scale with context.
+component respond to its own container, so one component works in a sidebar,
+a modal, and a full-width region without breakpoint duplication. Relative
+units tied to the container let type and spacing scale with context.
 
 **Selection and relational styling.** Parent-, sibling-, and
 state-relational selectors express in one rule what previously required
@@ -60,8 +60,8 @@ digit forms are all native.
 
 **Form ergonomics.** Native validity states distinguish "invalid" from
 "invalid after the user has interacted", the distinction that prevents
-validating a half-typed field. Fields can size to their
-content. The platform styles selection colors and control accents directly.
+validating a half-typed field. Fields can size to their content. The
+platform styles selection colors and control accents directly.
 
 **Rendering and inertness.** Content can be marked inert for interaction and
 assistive technology, and offscreen content can be skipped during rendering
@@ -89,7 +89,8 @@ Match the repository. When choosing for greenfield work:
 
 One vendor's product thresholds, revisable by that vendor, carrying none of
 the regulatory weight of the accessibility floor. Never trade a criterion in
-`a11y` against one of these. Treat them as design constraints, and re-verify the values when they matter.
+`a11y` against one of these. Treat them as design constraints, and re-verify
+the values when they matter.
 
 * Largest contentful paint under 2.5 seconds. The hero image or heading is
   prioritized and not blocked by a font request or a client bundle.

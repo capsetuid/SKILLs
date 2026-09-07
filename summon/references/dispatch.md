@@ -43,8 +43,8 @@ reliability degrades with input length, and one distractor already hurts
 
 ### contract owns cost and shape
 
-A brief with a return contract came back as the artifact alone; one
-without came back wrapped in prose.
+A brief with a return contract came back as the artifact alone; one without
+came back wrapped in prose.
 
 ## 3. Write the prose
 

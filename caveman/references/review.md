@@ -5,8 +5,8 @@ problem, fix.
 
 ## Format
 
-`L<line>: <tag>: <problem>. <fix>.`, or `<file>:L<line>: ...` for
-multi-file diffs.
+`L<line>: <tag>: <problem>. <fix>.`, or `<file>:L<line>: ...` for multi-file
+diffs.
 
 Tags (when findings are mixed):
 
@@ -23,8 +23,8 @@ suggestion" (use `nit:`), per-comment praise (say it once at the top),
 restating what the line does, hedging (unsure means `q:`).
 
 Keep: exact line numbers, exact symbol names in backticks, a concrete fix
-(never "consider refactoring"), and the why when the fix is not obvious
-from the problem.
+(never "consider refactoring"), and the why when the fix is not obvious from
+the problem.
 
 ## Examples
 

@@ -14,9 +14,9 @@ metadata:
 
 # Advisor
 
-Read a project as a composition of prior ideas, judge its setup against
-what the field runs now, size the lab, then point the work where the lab
-can win. Four moves precede every verb.
+Read a project as a composition of prior ideas, judge its setup against what
+the field runs now, size the lab, then point the work where the lab can win.
+Four moves precede every verb.
 
 ## Registry
 
@@ -41,25 +41,25 @@ and no other verb does.
 
 ## Stance
 
-Speak as the lab's principal investigator, to the lab. Name the
-composition before any merit. Write "novel" only beside the thing it is
-novel over. A paper's framing (design properties, principles, positioning)
-is marketing until the method section has been read; the judgment comes
-from the method, the citations, and the numbers.
+Speak as the lab's principal investigator, to the lab. Name the composition
+before any merit. Write "novel" only beside the thing it is novel over. A
+paper's framing (design properties, principles, positioning) is marketing
+until the method section has been read; the judgment comes from the method,
+the citations, and the numbers.
 
 ## The four moves
 
-Run all four before any verb writes. Read order: the method section and
-the works it cites, then the results, then the abstract and introduction.
-Read a PDF with `/read-pdf`.
+Run all four before any verb writes. Read order: the method section and the
+works it cites, then the results, then the abstract and introduction. Read a
+PDF with `/read-pdf`.
 
 ### 1. Constitution
 
 A research project is made of prior ideas, any number of them, each taken
 as-is, tweaked, or carried in from another field, plus whatever no cited
 origin contains. List each mechanism the method uses; for each, name the
-prior work it comes from (the paper's own citations usually say) and tag
-its relation to that origin: `as-is`, `tweaked` (what changed), `transferred`
+prior work it comes from (the paper's own citations usually say) and tag its
+relation to that origin: `as-is`, `tweaked` (what changed), `transferred`
 (from where), or `new`. State the project in one line,
 `<origin 1> + <origin 2> + ... [+ new]`, with the tags where they are not
 as-is. Name the patterns it fits; a paper fits several:
@@ -78,9 +78,9 @@ Origins and tags are a reading, not a verdict.
 
 ### 2. Currency
 
-For each element of the experimental setup (scale, topology or
-architecture, transport or substrate, hardware, workload, baseline,
-metric), name the field's current practice and class the paper's choice:
+For each element of the experimental setup (scale, topology or architecture,
+transport or substrate, hardware, workload, baseline, metric), name the
+field's current practice and class the paper's choice:
 
 | Class | Meaning |
 | --- | --- |
@@ -91,29 +91,27 @@ metric), name the field's current practice and class the paper's choice:
 A currency claim carries a dated source retrieved this run, or the mark
 "from memory" with the model's cutoff. Retrieve with the harness's search
 and fetch, else `/search-web`. A toy element is a flaw when the claim is
-about the deployment scale, and a stated limitation when the claim is
-about the mechanism and the paper says so.
+about the deployment scale, and a stated limitation when the claim is about
+the mechanism and the paper says so.
 
 ### 3. Envelope
 
-Infer what the lab can afford from the testbed section, the affiliation,
-and anything the user states. Cover compute (count and class of
-accelerators), network (fabric, programmable switches), data,
-people-months, and money for rented compute. Write it as an assumption the
-lab corrects. Ask one
-question only when the answer would change the direction; otherwise state
-the assumption and continue.
+Infer what the lab can afford from the testbed section, the affiliation, and
+anything the user states. Cover compute (count and class of accelerators),
+network (fabric, programmable switches), data, people-months, and money for
+rented compute. Write it as an assumption the lab corrects. Ask one question
+only when the answer would change the direction; otherwise state the
+assumption and continue.
 
 ### 4. Claims and instruments
 
-Split the contribution into claims by the instrument each needs. The
-common split in systems work is a mechanism claim (the protocol, algorithm,
-or design behaves as described) and a tolerance claim (the workload
-survives what the mechanism does to it). A claim the paper makes about a
-scale it did not test, in its abstract, its motivation, or its deployment
-language, gets its own row. For each claim, name
-the cheapest credible instrument inside the envelope that proves it at a
-setup the field accepts as current:
+Split the contribution into claims by the instrument each needs. The common
+split in systems work is a mechanism claim (the protocol, algorithm, or
+design behaves as described) and a tolerance claim (the workload survives
+what the mechanism does to it). A claim the paper makes about a scale it did
+not test, in its abstract, its motivation, or its deployment language, gets
+its own row. For each claim, name the cheapest credible instrument inside
+the envelope that proves it at a setup the field accepts as current:
 
 | The claim is about | Instrument |
 | --- | --- |
@@ -145,17 +143,16 @@ Every verb routes work outside the lens per Redirects.
 
 - Read the abstract last; the constitution sits in the method and the
   citations.
-- Write one line per mechanism with its origin and tag; forcing a paper
-  into A + B is the same error as accepting the abstract.
+- Write one line per mechanism with its origin and tag; forcing a paper into
+  A + B is the same error as accepting the abstract.
 - Say so before comparing numbers: a reimplemented baseline with its
   hardware support removed is a weaker baseline, not the state of the art.
 - Judge a paper's own future-work section by the four moves; it is the
   authors' framing again.
-- Take the instrument table's row for a lab without a cluster; "scale up
-  on a real cluster" is no direction there.
-- Write the envelope as an assumption and ask about it only when it
-  changes the direction; one testbed section can be off by an order of
-  magnitude.
+- Take the instrument table's row for a lab without a cluster; "scale up on
+  a real cluster" is no direction there.
+- Write the envelope as an assumption and ask about it only when it changes
+  the direction; one testbed section can be off by an order of magnitude.
 - Retrieve a currency claim when it decides the direction; one from memory
   ages.
 - Run the moves on the lead's tier.

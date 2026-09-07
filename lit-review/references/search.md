@@ -25,14 +25,13 @@ writes.
   name one idea differently; missing a vocabulary misses its papers.
 - Run a pilot query per concept pair, skim the top results, refine terms,
   then run the real queries. Pilot queries are logged like any other.
-- Plain phrases work for openalex and crossref. arXiv ranks fielded
-  queries far better: wrap phrases as `all:"retrieval"` and combine with
-  operators, `cat:cs.CL AND all:"retrieval"`. The script passes queries
-  containing `:` through unchanged and signals when an unfielded query
-  matches nothing.
-- Year bounds: pass `--from-year` and `--to-year` for openalex and
-  crossref; the arxiv source signals that it ignores them, so apply the
-  window at screening.
+- Plain phrases work for openalex and crossref. arXiv ranks fielded queries
+  far better: wrap phrases as `all:"retrieval"` and combine with operators,
+  `cat:cs.CL AND all:"retrieval"`. The script passes queries containing `:`
+  through unchanged and signals when an unfielded query matches nothing.
+- Year bounds: pass `--from-year` and `--to-year` for openalex and crossref;
+  the arxiv source signals that it ignores them, so apply the window at
+  screening.
 - When the script signals truncation, either the query is too broad (narrow
   it and rerun) or the field is genuinely large (raise `--limit` toward the
   cap and say in the report that coverage is a ranked sample, with counts).
@@ -58,5 +57,5 @@ Stop searching when the last round of queries and snowballing returns only
 papers the corpus already holds or papers screening rejects. Before
 stopping, check the misses list: one query per major synonym set has run,
 and each included paper's references were either snowballed or read. Record
-the stopping decision with `jot`; the report states it. A zero-result
-query is evidence: cite it later as a gap probe by its log id.
+the stopping decision with `jot`; the report states it. A zero-result query
+is evidence: cite it later as a gap probe by its log id.

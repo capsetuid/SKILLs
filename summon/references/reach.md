@@ -1,9 +1,9 @@
 # Reach
 
 How a named skill gets into a delegate. Take the first variant that holds,
-reading top down. The order is reliability of the text being read, not
-cost: preloading spends tokens up front whether or not the skill is needed,
-and buys certainty that the body is present.
+reading top down. The order is reliability of the text being read, not cost:
+preloading spends tokens up front whether or not the skill is needed, and
+buys certainty that the body is present.
 
 | Variant | Holds when | What the brief does | Standing |
 | --- | --- | --- | --- |
@@ -21,9 +21,9 @@ Point rather than paste wherever the delegate can load the skill itself.
 Excerpting is the Sealed branch alone, under the excerpting law in
 `dispatch`.
 
-Where a harness preloads skills at all, it does so at agent-definition
-time, and the prompt is the only call-time channel.
+Where a harness preloads skills at all, it does so at agent-definition time,
+and the prompt is the only call-time channel.
 
-Probe rather than assume. An unfamiliar harness, or an agent definition
-with a restricted tool list, settles in one probe delegate (procedure in
+Probe rather than assume. An unfamiliar harness, or an agent definition with
+a restricted tool list, settles in one probe delegate (procedure in
 `harness`), one delegation that settles reach for every later one.

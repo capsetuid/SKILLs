@@ -2,8 +2,8 @@
 
 Classical Chinese compression tiers. Character reduction is 80-90 percent,
 but characters are not tokens: CJK characters often cost more tokens each,
-so verify savings for your tokenizer before adopting wenyan for economy;
-its primary value is extreme visual terseness for Chinese-reading users.
+so verify savings for your tokenizer before adopting wenyan for economy; its
+primary value is extreme visual terseness for Chinese-reading users.
 
 | Level | What changes |
 | --- | --- |

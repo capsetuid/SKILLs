@@ -30,10 +30,10 @@ out. Pick the profile by study type, then answer every question.
 ## Reproducibility items
 
 For `reporting`, check each: model and algorithm description; assumptions;
-train/validation/test splits; excluded data and preprocessing; hyperparameter
-range and selection method; exact number of runs; central tendency and
-variation; compute per result; code or data location. One `reporting`
-objection may carry several missing items in its text.
+train/validation/test splits; excluded data and preprocessing;
+hyperparameter range and selection method; exact number of runs; central
+tendency and variation; compute per result; code or data location. One
+`reporting` objection may carry several missing items in its text.
 
 ## Severity
 

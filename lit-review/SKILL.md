@@ -42,8 +42,8 @@ Non-negotiable at every step and after context compaction; re-open this
 SKILL.md and reload state via the script.
 
 1. Cite only corpus records. Every citation in the deliverable resolves to a
-   record in the session corpus; never from memory, a search-result
-   snippet, or a paper the corpus does not hold.
+   record in the session corpus; never from memory, a search-result snippet,
+   or a paper the corpus does not hold.
 2. Criteria precede search. Inclusion and exclusion criteria stand in
    `protocol.json` before the first query; the script refuses to search
    without them. A later criteria change is appended to `amendments` with
@@ -71,8 +71,8 @@ literature" is lite, "systematic review" is ultra.
 ## Phases
 
 Six phases in order; each loads exactly the reference file of its name.
-Return to an earlier phase when its output proves inadequate (a
-screen that leaves too few papers reopens search); log what reopened it.
+Return to an earlier phase when its output proves inadequate (a screen that
+leaves too few papers reopens search); log what reopened it.
 
 | Phase | Work |
 | --- | --- |
@@ -99,15 +99,15 @@ Two write paths carry different contracts:
 - The pad is free working memory. `jot` admits any JSON object (or prose
   with `--text`) and never rejects content; `recall` filters it back by
   kind, regex, id, or count. An entry with `"kind": "extraction"` and a
-  paper `key` is recognized for coverage tracking; `map`, `open`, and
-  `lore` are suggested kinds; `--lore` reads and writes a cross-session pad
-  for facts worth keeping between reviews.
-- The gate is what the script later judges. `update` and `screen` move
-  paper statuses; `note` admits findings (claim plus supporting keys plus
-  the read level each citation needs) and gaps (the absence claimed, the
-  null-search log ids proving it, a watch of literal words). A rejected
-  batch names every problem at once and changes nothing, so apply all the
-  fixes and resend. A DOI or arXiv id resolves as a key.
+  paper `key` is recognized for coverage tracking; `map`, `open`, and `lore`
+  are suggested kinds; `--lore` reads and writes a cross-session pad for
+  facts worth keeping between reviews.
+- The gate is what the script later judges. `update` and `screen` move paper
+  statuses; `note` admits findings (claim plus supporting keys plus the read
+  level each citation needs) and gaps (the absence claimed, the null-search
+  log ids proving it, a watch of literal words). A rejected batch names
+  every problem at once and changes nothing, so apply all the fixes and
+  resend. A DOI or arXiv id resolves as a key.
 
 `digest` is the screening entry point and the cheapest one: it groups the
 undecided candidates into kinds, each with a rule that selects it, so
@@ -115,19 +115,19 @@ accepting or rejecting a whole kind is one `screen`. Re-run it after each
 cut, since the kinds are relative to what is still undecided. `show` reads
 specific records by key.
 
-Every envelope carries `next`, an advisory step and never a gate:
-revisiting an earlier phase is normal.
+Every envelope carries `next`, an advisory step and never a gate: revisiting
+an earlier phase is normal.
 
-`brief` is the resume view and the belief check: findings and gaps come
-back with verdicts derived from the live corpus, plus corpus drift since
-the previous brief, the citation marker table, unextracted papers, the pad
-tail, and lore. Run it after compaction and before drafting. `cite-check
---draft` checks every `[n]` in the draft against assigned markers; numbers
-are append-only, so a late inclusion extends the table and existing
-citations stand.
+`brief` is the resume view and the belief check: findings and gaps come back
+with verdicts derived from the live corpus, plus corpus drift since the
+previous brief, the citation marker table, unextracted papers, the pad tail,
+and lore. Run it after compaction and before drafting. `cite-check --draft`
+checks every `[n]` in the draft against assigned markers; numbers are
+append-only, so a late inclusion extends the table and existing citations
+stand.
 
-Exit codes: 0 done (stderr `signal:` lines are advisory and never block);
-1 fix the input and resend; 2 upstream failed, retry. Downloaded PDFs and
+Exit codes: 0 done (stderr `signal:` lines are advisory and never block); 1
+fix the input and resend; 2 upstream failed, retry. Downloaded PDFs and
 other heavy artifacts belong in the scratch directory. `clean` lists
 sessions with sizes and removes one session or `--all`, reporting bytes
 freed.

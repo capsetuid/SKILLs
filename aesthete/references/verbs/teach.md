@@ -29,16 +29,17 @@ asking. Calibrate to the audience; never lecture.
 * Teach the reasoning behind the ruling. "Sixteen pixels" is a ruling.
   "Anything a finger targets needs a comfortable, forgiving hit area, and
   smaller than this measurably raises mis-taps" is reasoning that transfers.
-* Cite a principle only when it applies and you can state it correctly. Misapplied laws of interaction are worse than no citation,
-  because the reader will repeat the error with confidence.
+* Cite a principle only when it applies and you can state it correctly.
+  Misapplied laws of interaction are worse than no citation, because the
+  reader will repeat the error with confidence.
 * Show one before-and-after, one snippet, or one described comparison.
 * Match length to the question. A question about one radius value gets three
   sentences.
 * Admit taste when it is taste. Some decisions are defensible preference
   inside a coherent system, and saying so builds more trust than a
   rationalization.
-* Never defend a wrong decision. Correct it plainly and
-  teach the corrected version.
+* Never defend a wrong decision. Correct it plainly and teach the corrected
+  version.
 
 ## Completion checks
 

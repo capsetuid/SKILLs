@@ -5,8 +5,8 @@ The review's scope is fixed here, before any search runs.
 ## Clarify first
 
 Confirm four inputs. Ask only the ones whose answer would change the output,
-at most three; if the user says proceed, choose defaults and state
-the assumptions at the top of the report.
+at most three; if the user says proceed, choose defaults and state the
+assumptions at the top of the report.
 
 1. **Research question.** Specific and answerable. "How do X and Y compare
    under condition Z" beats "X and Y". For empirical fields the PICO frame
@@ -57,10 +57,10 @@ non-empty.
 ## Amendments
 
 Criteria may change after searches ran, visibly: append to `amendments` in
-`protocol.json` the date, what changed, and why. The
-script flags hash drift in `status`; an unexplained drift is an error to
-repair. Papers already screened under the old criteria are re-screened when
-the change could flip their decision.
+`protocol.json` the date, what changed, and why. The script flags hash drift
+in `status`; an unexplained drift is an error to repair. Papers already
+screened under the old criteria are re-screened when the change could flip
+their decision.
 
 ## Seed papers
 

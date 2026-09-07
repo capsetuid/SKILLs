@@ -20,8 +20,8 @@ holds, behavior preserved. This is the verb that edits: `review` lists,
 ## Output
 
 The diff, then at most three short lines:
-`cut: [X], replaced by [Y]. net: -N lines.`
-Nothing to cut: say `Lean already.` and change nothing.
+`cut: [X], replaced by [Y]. net: -N lines.` Nothing to cut: say
+`Lean already.` and change nothing.
 
 ## Redirects
 

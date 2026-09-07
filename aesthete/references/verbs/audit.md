@@ -9,12 +9,13 @@ prioritized remediation plan. Change nothing.
    scope and the shared component and token layer beneath them. State the
    scope and what was excluded.
 2. **Extract the implicit system.** Read what the code uses, whatever the
-   documentation claims: distinct accent colors, radius values,
-   spacing values, type sizes, shadow definitions, icon families, animation
+   documentation claims: distinct accent colors, radius values, spacing
+   values, type sizes, shadow definitions, icon families, animation
    durations. Count the distinct values per scale. Nineteen spacing values
    and four accents count as residue to consolidate.
 3. **Score each surface** on the five sweeps: logic, hierarchy, consistency,
-   voice, structure. Note the primary goal and the friction budget per surface.
+   voice, structure. Note the primary goal and the friction budget per
+   surface.
 4. **Cluster findings by cause.** Twelve contrast failures from one bad
    neutral token are one finding with twelve instances.
 5. **Rank by leverage**: instances affected multiplied by user impact,

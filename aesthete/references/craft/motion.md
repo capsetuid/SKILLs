@@ -16,13 +16,13 @@ only valid answers:
 * **Narrative**: this sequence has an order the user should follow.
 
 Justify motion by what it communicates. Use an animation library only when
-it supplies a needed capability. If the sentence
-does not come, remove the animation.
+it supplies a needed capability. If the sentence does not come, remove the
+animation.
 
 ## Duration and curve
 
-* Small, local changes: fast enough to feel immediate.
-  Hover and press feedback belongs at the short end.
+* Small, local changes: fast enough to feel immediate. Hover and press
+  feedback belongs at the short end.
 * Elements entering or leaving: moderate, and asymmetric. Exits run faster
   than entrances, because the user has already decided.
 * Large surfaces crossing the screen: longer, but keep them brief. Anything
@@ -57,9 +57,9 @@ The mechanism matters more than the library.
   scroll-orchestration library for simple reveals is over-tooling.
 * Reveals fire once. Re-animating on every scroll back through a section is
   a distraction the user did not ask for repeatedly.
-* Pin sequences when the section's top reaches the viewport top. Starting the
-  animation before the section is pinned shows the user half a frame of the
-  intended composition.
+* Pin sequences when the section's top reaches the viewport top. Starting
+  the animation before the section is pinned shows the user half a frame of
+  the intended composition.
 * In a stacked-card sequence, every card except the last pins, and each
   card's recede transform is driven by the arrival of the next card, not by
   its own progress.
@@ -70,8 +70,8 @@ The mechanism matters more than the library.
   section, and keep it off surfaces where the user has a task to complete.
 
 **Use scroll-driven timelines, an intersection observer, or frame-external
-animation values.** Raw scroll events and render state rerun work every frame
-and collapse on mid-range hardware.
+animation values.** Raw scroll events and render state rerun work every
+frame and collapse on mid-range hardware.
 
 ## Restraint
 
@@ -92,10 +92,10 @@ attention. Honor it: replace movement with a fade or an instant change,
 disable parallax and scroll-hijacking entirely, stop infinite loops, and
 keep every transition of state legible without the animation.
 
-Reduced motion means less movement, never less function. Never gate
-content, state changes, or affordances behind an animation the preference
-disables. Check the preference at the point of use so a change mid-session
-takes effect.
+Reduced motion means less movement, never less function. Never gate content,
+state changes, or affordances behind an animation the preference disables.
+Check the preference at the point of use so a change mid-session takes
+effect.
 
 Respect reduced transparency and forced-colors preferences on the same
 principle, with a solid, high-contrast fallback for any material effect.
@@ -104,9 +104,10 @@ principle, with a solid, high-contrast fallback for any material effect.
 
 * Animate only compositor-friendly properties: transform and opacity.
   Animating geometry forces layout every frame.
-* Promote only what animates; blanket promotion
-  consumes memory and can degrade what it was meant to help.
+* Promote only what animates; blanket promotion consumes memory and can
+  degrade what it was meant to help.
 * Keep grain, noise, and heavy filters on a fixed, non-interactive overlay
   layer; in a scrolling container they repaint continuously.
 * Lazy-load animation libraries and heavy scenes that are not needed for the
-  first view, and tear down every observer, timeline, and context on unmount.
+  first view, and tear down every observer, timeline, and context on
+  unmount.
