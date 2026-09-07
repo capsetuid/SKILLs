@@ -123,6 +123,7 @@ uv run --project .github/gate btm-repo-gate fix
 | Frontmatter `name`, `license`, or field-order drift | Frontmatter judgments: a missing or overlong description, non-spec fields, descriptions totalling over the budget |
 | Manifest `name` fields and the declared skill list | A missing or unreadable plugin manifest |
 | Skill entries out of alphabetical order in this file and `README.md` | A skill missing from either list, or an entry naming no skill |
+| Markdown prose off the 76-column wrap; code, tables, and markup keep their width | |
 | | An alias path occupied by real content, which no repair may destroy |
 | | An em-dash (U+2014), whose replacement is a judgment |
 | | Skill Python outside its `scripts/` member, or a manifest off `scripts/pyproject.toml` |
@@ -251,6 +252,9 @@ unchanged in any spec-compliant agent and uploads without hard errors:
     moves, every citation to it moves in the same change.
 * NEVER use em-dash characters (U+2014) anywhere in this repository; use a
   hyphen, a comma, a colon, or restructure the sentence.
+* Markdown prose wraps at 76 columns. The gate reflows paragraphs and list
+  items to that width and leaves frontmatter, code, tables, and XML blocks
+  as written, so wrap by hand only for reading comfort while drafting.
 * A convention change is total: the same change rewrites every statement,
   example, and docstring of the old convention, so the repository shows one
   convention at a time.

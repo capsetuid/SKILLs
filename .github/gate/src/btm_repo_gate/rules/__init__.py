@@ -18,6 +18,7 @@ from btm_repo_gate.rules.kernel import rule_kernel
 from btm_repo_gate.rules.links import rule_alias
 from btm_repo_gate.rules.members import rule_member_layout
 from btm_repo_gate.rules.text import rule_em_dash
+from btm_repo_gate.rules.wrap import rule_wrap
 from btm_repo_gate.snapshot import Repo
 
 RULES: tuple[Callable[[Repo], Iterator[Finding]], ...] = (
@@ -31,6 +32,7 @@ RULES: tuple[Callable[[Repo], Iterator[Finding]], ...] = (
     rule_manifest,
     rule_member_layout,
     rule_skill_layout,
+    rule_wrap,
 )
 
 

@@ -23,6 +23,8 @@ DESCRIPTION_LIMIT = 1024
 # Codex gives the whole skill list 8,000 characters when the context window is
 # unknown and shortens descriptions first.
 DESCRIPTION_BUDGET = 7000
+# Markdown prose is wrapped here; code, tables, and markup keep their width.
+WRAP_WIDTH = 76
 # A skill's Python is one workspace member rooted here; the skill dir stays docs.
 MEMBER_DIR = Path("scripts")
 # The one brand string this repo publishes: marketplace, plugin, XDG state root.
