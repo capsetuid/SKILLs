@@ -20,8 +20,56 @@ from btm_corekit.text import collapse_whitespace, is_digits
 
 DOI_PREFIXES = ("https://doi.org/", "http://doi.org/", "doi:")
 
-ARXIV_ID_WIDTHS = (5, 4)
-"""arXiv numbers a paper `YYMM.NNNNN`, and `YYMM.NNNN` before 2015."""
+ARXIV_NUMBER_WIDTHS = (5, 4)
+"""New-scheme numbers: `YYMM.NNNNN`, and `YYMM.NNNN` before 2015."""
+
+ARXIV_OLD_NUMBER_WIDTH = 7
+"""Old-scheme numbers: `archive/YYMMNNN`, with an optional `.SC` subject class."""
+
+ARXIV_ARCHIVES = frozenset(
+    {
+        "acc-phys",
+        "adap-org",
+        "alg-geom",
+        "ao-sci",
+        "astro-ph",
+        "atom-ph",
+        "bayes-an",
+        "chao-dyn",
+        "chem-ph",
+        "cmp-lg",
+        "comp-gas",
+        "cond-mat",
+        "cs",
+        "dg-ga",
+        "funct-an",
+        "gr-qc",
+        "hep-ex",
+        "hep-lat",
+        "hep-ph",
+        "hep-th",
+        "math",
+        "math-ph",
+        "mtrl-th",
+        "nlin",
+        "nucl-ex",
+        "nucl-th",
+        "patt-sol",
+        "physics",
+        "plasm-ph",
+        "q-alg",
+        "q-bio",
+        "quant-ph",
+        "solv-int",
+        "supr-con",
+    }
+)
+"""Every archive that issued old-scheme ids; a URL ending in `word/NNNNNNN`
+with any other word is some other site's path."""
+
+ARXIV_MARKERS = ("arxiv:", "arxiv.")
+"""What precedes a bare id in a citation (`arXiv:hep-th/9901001`) and in the
+registered DOI (`10.48550/arXiv.hep-th/9901001`), compared case-folded."""
 
 EARLIEST_YEAR = 1000
 LATEST_YEAR = 2999
@@ -47,18 +95,23 @@ def _doi(raw: Any) -> Any:
 
 
 def _arxiv(raw: Any) -> Any:
-    """The `YYMM.NNNNN` id ending the text, an optional `vN` dropped, whatever
-    precedes it ignored. That covers every written form one arrives in: the
-    bare id, `arXiv:2401.01234`, `https://arxiv.org/abs/2401.01234v2`, and the
-    registered DOI `10.48550/arXiv.2401.01234`, which is where OpenAlex now
-    carries it. Unparseable is absence."""
+    """The arXiv id ending the text, either scheme, version and `.pdf` dropped,
+    whatever precedes it ignored: the bare id, `arXiv:` prefix, abs or pdf URL,
+    or the registered DOI. Unparseable is absence."""
     if not isinstance(raw, str):
         return None
     text = raw.strip()
+    if text.lower().endswith(".pdf"):
+        text = text[: -len(".pdf")]
     head, marker, version = text.rpartition("v")
     if marker and is_digits(version):
         text = head
-    for width in ARXIV_ID_WIDTHS:
+    return _new_scheme(text) or _old_scheme(text)
+
+
+def _new_scheme(text: str) -> str | None:
+    """`YYMM.NNNNN` or `YYMM.NNNN` at the end of `text`."""
+    for width in ARXIV_NUMBER_WIDTHS:
         tail = text[-(1 + 4 + width) :]
         if (
             len(tail) == 1 + 4 + width
@@ -68,6 +121,29 @@ def _arxiv(raw: Any) -> Any:
         ):
             return tail
     return None
+
+
+def _old_scheme(text: str) -> str | None:
+    """`archive/NNNNNNN` or `archive.SC/NNNNNNN` at the end of `text`, the
+    archive one of arXiv's own and lowercased, the subject class as written."""
+    head, slash, number = text.rpartition("/")
+    if not slash or len(number) != ARXIV_OLD_NUMBER_WIDTH or not is_digits(number):
+        return None
+    segment = head.rpartition("/")[2]
+    for prefix in ARXIV_MARKERS:
+        if segment.lower().startswith(prefix):
+            segment = segment[len(prefix) :]
+    archive, dot, subject = segment.partition(".")
+    archive = archive.lower()
+    if archive not in ARXIV_ARCHIVES or (dot and not _is_subject_class(subject)):
+        return None
+    return f"{archive}{dot}{subject}/{number}"
+
+
+def _is_subject_class(word: str) -> bool:
+    """Letters and hyphens, non-empty: `GT`, `optics`, `dis-nn`."""
+    letters = word.replace("-", "")
+    return bool(letters) and letters.isascii() and letters.isalpha()
 
 
 def _year(raw: Any) -> Any:

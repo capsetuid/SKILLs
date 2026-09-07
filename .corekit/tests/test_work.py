@@ -66,8 +66,50 @@ class TestArxivId:
     def test_the_four_digit_numbering_still_parses(self):
         assert normalize_arxiv_id("https://arxiv.org/abs/0704.0001") == "0704.0001"
 
-    def test_something_else_entirely_is_absence(self):
-        assert normalize_arxiv_id("https://example.org/paper") is None
+    @pytest.mark.parametrize(
+        "raw",
+        [
+            "cond-mat/0608562",
+            "arXiv:cond-mat/0608562v1",
+            "http://arxiv.org/abs/cond-mat/0608562v1",
+            "https://arxiv.org/pdf/cond-mat/0608562v2.pdf",
+            "10.48550/arXiv.cond-mat/0608562",
+            "COND-MAT/0608562",
+        ],
+    )
+    def test_every_old_scheme_form_converges(self, raw):
+        """The arXiv API still serves pre-2007 papers under `archive/YYMMNNN`,
+        so a search on any old field returns these ids."""
+        assert normalize_arxiv_id(raw) == "cond-mat/0608562"
+
+    @pytest.mark.parametrize(
+        ("raw", "expected"),
+        [
+            ("math.GT/0309136", "math.GT/0309136"),
+            ("http://arxiv.org/abs/hep-th/9901001v2", "hep-th/9901001"),
+            ("physics.optics/0501001", "physics.optics/0501001"),
+            ("cs.LG/0101010", "cs.LG/0101010"),
+        ],
+    )
+    def test_a_subject_class_rides_along_as_written(self, raw, expected):
+        assert normalize_arxiv_id(raw) == expected
+
+    @pytest.mark.parametrize(
+        "raw",
+        [
+            "https://example.org/paper",
+            "https://example.org/a/1234567",
+            "cond-mat/06085",
+            "cond-mat/0608562x",
+            "made-up/0608562",
+            "cond-mat.1/0608562",
+        ],
+    )
+    def test_something_else_entirely_is_absence(self, raw):
+        assert normalize_arxiv_id(raw) is None
+
+    def test_an_old_scheme_id_is_a_valid_field_value(self):
+        assert work(arxiv_id="hep-th/9901001").arxiv_id == "hep-th/9901001"
 
 
 class TestPlausibility:

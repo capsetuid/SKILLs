@@ -64,7 +64,16 @@ Doi = Annotated[str, Folded, StringConstraints(pattern=r"^10\.\d+/\S+$")]
 """A DOI in bare form; the registrant prefix is left open since registries now
 issue longer ones than four digits, and narrowing it would drop valid records."""
 
-ArxivId = Annotated[str, Trimmed, StringConstraints(pattern=r"^\d{4}\.\d{4,5}$")]
+ARXIV_NEW_SCHEME = r"\d{4}\.\d{4,5}"
+"""`YYMM.NNNNN` since April 2007, four digits before 2015."""
+ARXIV_OLD_SCHEME = r"[a-z-]+(?:\.[A-Za-z-]+)?/\d{7}"
+"""`archive/YYMMNNN`, with an optional `.SC` subject class, before April 2007."""
+ArxivId = Annotated[
+    str,
+    Trimmed,
+    StringConstraints(pattern=rf"^(?:{ARXIV_NEW_SCHEME}|{ARXIV_OLD_SCHEME})$"),
+]
+"""Either scheme, version dropped."""
 
 
 def _whole(raw: Any) -> Any:
