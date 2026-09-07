@@ -152,8 +152,7 @@ its wrapper writes nothing to stdout.
 
 ## Gotchas
 
-- uv is the only assumption. A bare ubuntu:24.04 image with uv works: the
-  scripts never call curl, git, tar, or unzip binaries.
+- uv is the only assumption: a bare ubuntu:24.04 image with uv works.
 - Activation redirects HOME, so git identity and ssh keys are absent inside
   an activated shell. Build and test there; commit from a normal shell.
 - The prefix create step replaces the whole prefix, so the planner merges
@@ -168,7 +167,5 @@ its wrapper writes nothing to stdout.
 - Narrowing the tag set reshapes the conda prefix exactly but leaves stale
   publisher downloads under `<root>/tools`; run `destroy` and re-provision
   for a byte-exact minimal root.
-- Recipes were validated end to end on linux (both architectures); macos
-  and windows follow the same code paths with best-effort edges.
 - macos/arm64 Android builds need Rosetta 2 once:
   `softwareupdate --install-rosetta --agree-to-license`.

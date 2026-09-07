@@ -23,7 +23,6 @@ The diff, then at most three short lines:
 `cut: [X], replaced by [Y]. net: -N lines.`
 Nothing to cut: say `Lean already.` and change nothing.
 
-## Boundaries
+## Redirects
 
-Over-engineering only. A correctness or modeling rewrite routes to
-`/pl-theorist refactor`.
+- A correctness or modeling rewrite: `/pl-theorist refactor`

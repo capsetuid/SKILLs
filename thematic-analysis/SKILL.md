@@ -1,12 +1,11 @@
 ---
 name: thematic-analysis
 description: >-
-  Develops themes from qualitative text under one named school (reflexive,
-  codebook, template, framework matrix, rapid, or hybrid), with the choice
-  and its reason recorded, every unit coded against a bounded codebook, and
-  each theme reported as a claim backed by verbatim extracts and counts.
-  Defaults suit feedback, tickets, reviews, usability sessions, and
-  interviews. Use when asked to find themes in qualitative data, code
+  Develops themes from qualitative text under one named school, with the
+  choice and its reason recorded, every unit coded against a bounded
+  codebook, and each theme reported as a claim backed by verbatim extracts
+  and counts. Defaults suit feedback, tickets, reviews, usability sessions,
+  and interviews. Use when asked to find themes in qualitative data, code
   interviews or open responses, or build a codebook.
 license: MIT
 metadata:
@@ -116,9 +115,8 @@ next to the approach.
 
 ## Gotchas
 
-- Topic summaries dressed as themes are a common failure. "Everything about
-  login" is a grouping; "users read login friction as a trust signal" is a
-  theme.
+- "Everything about login" is a grouping; "users read login friction as a
+  trust signal" is a theme.
 - Saturation is an incoherent stopping rationale for interpretive work.
   State the actual stopping rule: corpus exhausted, time box, or decision
   deadline.

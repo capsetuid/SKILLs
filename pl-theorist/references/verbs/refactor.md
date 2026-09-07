@@ -1,7 +1,7 @@
 # Verb: refactor
 
 Behavior-preserving rewrite of existing code toward the kernel's target
-vocabulary. The default verb. The kernel's preservation Core Law (values
+vocabulary. The kernel's preservation Core Law (values
 through externally visible identity) binds every edit.
 
 ## Pipeline

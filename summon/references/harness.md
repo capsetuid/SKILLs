@@ -18,9 +18,7 @@ prefix, which tells the delegate it is part of a multi-agent system.
 
 ## Probing an unknown harness
 
-Dispatch one probe delegate before the first real brief. It costs one
-delegation, on the order of a small errand, and settles reach for every
-brief that follows on that harness.
+Dispatch one probe delegate before the first real brief.
 
 <template for="probe">
 OBJECTIVE

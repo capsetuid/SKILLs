@@ -1,8 +1,7 @@
 # Targets
 
-The authoritative tag list lives in `catalog` and prints via `btm-setup-env list`;
-this file adds the judgment calls the one-line summaries omit. Aliases:
-`js`/`node`, `ts`, `py`, `golang`, `c++`, `cs`/`dotnet`, `sh`/`shell`, and
+The authoritative tag list lives in `catalog` and prints via `btm-setup-env list`.
+Aliases: `js`/`node`, `ts`, `py`, `golang`, `c++`, `cs`/`dotnet`, `sh`/`shell`, and
 bare `android` for `java:android`.
 
 ## Per-Target Notes

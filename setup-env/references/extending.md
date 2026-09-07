@@ -17,9 +17,6 @@ I/O; `cli` only parses and reports.
 
 ## Laws
 
-The invariants the design enforces; a change that weakens one is wrong even
-when it appears to work:
-
 1. Closed domain. Hosts, conda platforms, plan steps, and catalog keys are
    closed sets. An unknown tag, an impossible (target, host) pair, or a
    version handed to a versionless recipe fails during planning with a

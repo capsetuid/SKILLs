@@ -65,8 +65,8 @@ through, is a smaller diff than a guard in every caller.
 ## Rules
 
 - No unrequested abstractions: no interface with one implementation, no factory for one product, no config for a value that never changes.
-- No boilerplate, no scaffolding "for later", later can scaffold for itself.
-- Deletion over addition. Boring over clever, clever is what someone decodes at 3am.
+- No boilerplate, no scaffolding "for later".
+- Deletion over addition. Boring over clever.
 - Fewest files possible: shortest working diff wins; the smallest change in the wrong place is a second bug.
 - Complex request? Ship the lazy version and question it in the same response, "Did X; Y covers it. Need full X? Say so." Never stall on an answer you can default.
 - Two stdlib options, same size? Take the one that's correct on edge cases.
@@ -91,9 +91,9 @@ Pattern: `[code] → skipped: [X], add when [Y].`
 | **ultra** | YAGNI extremist. Deletion before addition. Ship the one-liner and challenge the rest of the requirement in the same breath. |
 
 <examples for="level" request="Add a cache for these API responses.">
-  <variant name="lite">Done, cache added. FYI: `functools.lru_cache` covers this in one line if you'd rather not own a cache class.</variant>
-  <variant name="full">`@lru_cache(maxsize=1000)` on the fetch function. Skipped custom cache class, add when lru_cache measurably falls short.</variant>
-  <variant name="ultra">No cache until a profiler says so. When it does: `@lru_cache`. A hand-rolled TTL cache class is a bug farm with a hit rate.</variant>
+  <variant for="lite">Done, cache added. FYI: `functools.lru_cache` covers this in one line if you'd rather not own a cache class.</variant>
+  <variant for="full">`@lru_cache(maxsize=1000)` on the fetch function. Skipped custom cache class, add when lru_cache measurably falls short.</variant>
+  <variant for="ultra">No cache until a profiler says so. When it does: `@lru_cache`. A hand-rolled TTL cache class is a bug farm with a hit rate.</variant>
 </examples>
 
 ## Verbs

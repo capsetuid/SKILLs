@@ -2,8 +2,7 @@
 
 Types-first domain modeling before code exists. Deliverable: a domain model
 whose invalid states are already dead on paper, an effect boundary, and a
-complexity budget. Kill invalid states at the whiteboard, where deletion is
-free.
+complexity budget.
 
 ## Pipeline
 

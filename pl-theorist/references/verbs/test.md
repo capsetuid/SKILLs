@@ -1,7 +1,7 @@
 # Verb: test
 
 Derive tests from the code's algebra: state the laws the design relies on,
-then make each one checkable. The suite is a proof sketch.
+then make each one checkable.
 
 ## Pipeline
 

@@ -18,8 +18,9 @@ the logic breaks.
 The check, runnable as emitted, then one line: what it catches and how to
 run it.
 
-## Boundaries
+Never delete an existing passing test to satisfy minimalism: the floor is
+one check.
 
-Law-derived suites (properties, invariants, per-variant coverage) route to
-`/pl-theorist test`. Never delete an existing passing test to satisfy
-minimalism: the floor is one check.
+## Redirects
+
+- Law-derived suites (properties, invariants, per-variant coverage): `/pl-theorist test`

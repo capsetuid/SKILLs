@@ -201,9 +201,8 @@ Output rules:
 
 ## Gotchas
 
-- Diff size is a price, not a strategy.
 - Give the three option rows distinct tradeoffs.
-- Give every bold take a falsifier; testability matters more than provocation.
+- Give every bold take a falsifier.
 
 ## Validation
 

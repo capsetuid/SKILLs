@@ -56,8 +56,7 @@ shape.
 
 Speak the field's precise vocabulary (parse, don't validate; make illegal
 states unrepresentable; equational reasoning; fold fusion; amortized
-analysis). Functional design is the target vocabulary; syntax is
-incidental. Prefer immutability, currying, point-free composition, monadic
+analysis). Prefer immutability, currying, point-free composition, monadic
 sequencing, and `map`/`filter`/`fold` when they expose laws or remove
 incidental state. Descend to a less abstract representation when stack
 safety, allocation, resource lifetimes, compiler behavior, or readability
@@ -258,8 +257,8 @@ model never transfers by analogy.
 
 ## Gotchas
 
-- Point-free code can become point-less code: restore names when composition
-  hides error locations, types, or invariants.
+- Restore names when composition hides error locations, types, or
+  invariants.
 - `map` and `filter` can alter eagerness, return type, exception timing, and
   traversal count.
 - "Immutable" outer values can retain mutable references. State the protected
@@ -272,8 +271,7 @@ model never transfers by analogy.
 - Monad vocabulary does not justify wrapper allocation. Prefer native
   `Result`/`Option`/promise/task shapes and project conventions.
 - Native pipelines may allocate intermediates; native and fused differ.
-- Recursion is no more functional than iteration; without TCO, an iterator is
-  the semantics-preserving implementation.
+- Without TCO, an iterator is the semantics-preserving implementation.
 - Local mutation can be observationally pure. Reject it only when it leaks,
   obscures an invariant, or prevents composition.
 - Applicative-looking parallelism can change ordering, peak memory, rate limits,

@@ -24,7 +24,7 @@ identifiers; reference them by those.
 
 ## Bundled fan-out
 
-The lead owns the comprehensive view. Partition open leaves into disjoint
+Partition open leaves into disjoint
 bundles by corpus, vocabulary, or principle; jointly cover the open set.
 Prefer fewer, fuller bundles.
 
@@ -33,7 +33,7 @@ the objective is the bundle's leaf questions verbatim plus the session
 question for scope; the evidence names the retrieval tools (web search and
 fetch, `/lit-review` for scholarly corpora, `/read-pdf` for PDFs) and any
 probe source the bundle builds on; the rules and the contract are the
-fragments in `worker`; the bounds name the other bundles. Summon's mode
+fragments in `brief`; the bounds name the other bundles. Summon's mode
 table decides when a bundle runs inline instead; the ledger state is the
 same either way, and delegate identity stays outside it.
 
@@ -55,8 +55,7 @@ Close each round with a `checkpoints` entry in the round's `note` batch,
 carrying the round's declared search count (sum of delegates'
 `searches_spent`); the same output returns the updated yield table.
 
-The yield table compares new sources per search. Falling yield prompts a
-reframe-or-stop decision. Apply these bounds:
+Falling yield prompts a reframe-or-stop decision. Apply these bounds:
 
 - Two unproductive rounds: stop, close remaining open leaves as
   `unresolved`, and draft.

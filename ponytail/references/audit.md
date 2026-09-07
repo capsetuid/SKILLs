@@ -24,9 +24,10 @@ One line per finding, ranked: `<tag> <what to cut>. <replacement>. [path]`.
 End with `net: -<N> lines, -<M> deps possible.`
 Nothing to cut: `Lean already. Ship.`
 
-## Boundaries
+A single smoke test or `assert`-based self-check is the ponytail minimum
+and stays.
 
-Scope: over-engineering and complexity only; correctness bugs, security
-holes, and performance route to `/pl-theorist audit`. A single smoke test
-or `assert`-based self-check is the ponytail minimum and stays. Lists
-findings; applying the cuts is `/ponytail refactor`.
+## Redirects
+
+- Correctness bugs, security holes, and performance: `/pl-theorist audit`
+- Applying the cuts: `/ponytail refactor`

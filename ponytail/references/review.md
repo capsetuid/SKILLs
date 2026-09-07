@@ -33,9 +33,10 @@ Tags:
 End with the only metric that matters: `net: -<N> lines possible.`
 Nothing to cut: say `Lean already. Ship.` and stop.
 
-## Boundaries
+A single smoke test or `assert`-based self-check is the ponytail minimum
+and stays.
 
-Scope: over-engineering and complexity only; correctness bugs, security
-holes, and performance route to `/pl-theorist review`. A single smoke test
-or `assert`-based self-check is the ponytail minimum and stays. Lists
-findings; applying the cuts is `/ponytail refactor`.
+## Redirects
+
+- Correctness bugs, security holes, and performance: `/pl-theorist review`
+- Applying the cuts: `/ponytail refactor`

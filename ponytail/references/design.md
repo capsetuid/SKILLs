@@ -25,7 +25,6 @@ build: per-user opt-out, one boolean column. rung 4: DB constraint, no prefs ser
 Whole: 1 migration, ~40 lines in existing files, 0 new deps.
 </example>
 
-## Boundaries
+## Redirects
 
-Challenge scope, never correctness. Domain modeling and typing the
-states route to `/pl-theorist design`.
+- Domain modeling and typing the states: `/pl-theorist design`

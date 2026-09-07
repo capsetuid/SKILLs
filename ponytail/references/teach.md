@@ -18,8 +18,7 @@ themselves. The one verb where prose is the deliverable; still no essays.
 
 Short paragraphs or a tight list, sized to the audience's question.
 
-## Boundaries
+## Redirects
 
-Teach the simplification; type-level design rationale routes to
-`/pl-theorist teach`. No invented metrics; counted
-figures come from `/ponytail debt`.
+- Type-level design rationale: `/pl-theorist teach`
+- Counted figures: `/ponytail debt`

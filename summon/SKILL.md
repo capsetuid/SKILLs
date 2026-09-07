@@ -104,14 +104,13 @@ bundles duplicates its share of that spend and buys nothing.
 Cited sizing: simple fact-finding takes one agent at 3 to 10 tool calls, a
 direct comparison 2 to 4 delegates at 10 to 15 calls each, and more than 10
 delegates only where responsibilities are clearly divided; never more than
-20 parallel agents unless the user asks for them. An orchestrator beats one
+20 parallel agents unless the user asks for them. A lead with delegates beats one
 frontier model on cost only on work larger than a single context window,
 and loses on any single dependent chain. The lead pays for the returns
 alone; every token a delegate spends reading is a token the lead did not.
 
 Where the harness offers a model choice, a delegate whose brief states its
-decision rules takes the fast tier and the join stays on the lead's tier:
-tier moved judgment less than the stated rule did (Gotchas).
+decision rules takes the fast tier and the join stays on the lead's tier.
 
 ## Called from a skill
 

@@ -24,9 +24,9 @@ conclusions, and let ledger state set the presentation.
 | Name | Path |
 | --- | --- |
 | `answer` | [references/answer.md](references/answer.md) |
+| `brief` | [references/brief.md](references/brief.md) |
 | `explore` | [references/explore.md](references/explore.md) |
 | `framing` | [references/framing.md](references/framing.md) |
-| `worker` | [references/worker.md](references/worker.md) |
 
 ## Redirects
 
@@ -51,7 +51,7 @@ After context compaction, re-open this file and replay state with `status`.
 
 Probe, explore for up to three rounds when material questions remain, then
 answer. The spine owns the probe; open probes load `framing` with `explore`;
-drafting loads `answer`. Load `worker` only when composing a delegate's
+drafting loads `answer`. Load `brief` only when composing a delegate's
 brief.
 
 ### Probe: the lead's own first round

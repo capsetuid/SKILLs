@@ -1,8 +1,7 @@
 # Ponytail Debt Verb
 
 Every deliberate ponytail shortcut is marked with a `ponytail:` comment
-naming its ceiling and upgrade path. This verb collects them into one ledger
-so deferrals stay visible.
+naming its ceiling and upgrade path.
 
 ## Scan
 
@@ -30,7 +29,7 @@ and the trigger straight from the comment. For an owner per row, add
 `git blame -L<line>,<line>`.
 
 Flag the rot risk: any `ponytail:` comment naming no upgrade path or trigger
-gets a `no-trigger` tag; those silently rot.
+gets a `no-trigger` tag.
 
 End with `<N> markers, <M> with no trigger.`
 Nothing found: `No ponytail: debt. Clean ledger.`

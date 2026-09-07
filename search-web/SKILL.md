@@ -80,8 +80,8 @@ with `fetch` before relying on it.
 
 ## Gotchas
 
-- `web` results are unofficial and rate-limited. Empty results can mean
-  throttling rather than absence: try `wiki` or `scholar`, or retry later.
+- `web` results are unofficial and rate-limited. On empty results, try
+  `wiki` or `scholar`, or retry later.
 - `fetch` returns an article, so a listing, a paywall, or a page rendered by
   JavaScript comes back refused rather than empty.
 - `fetch` refuses a PDF; extract it with `/read-pdf`.

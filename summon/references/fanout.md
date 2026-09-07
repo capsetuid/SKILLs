@@ -18,16 +18,7 @@ Two disjointness axes, both enforced in every bundle's bounds:
 
 ## Boundary text
 
-Naming your own bundle is not a boundary. Naming the neighbouring agent's
-territory is.
-
-Measured, one pair per arm: two bundles named but unboundaried duplicated 5
-of 8 techniques (62.5%), yielding 11 unique results from 16 slots. The same
-two bundles plus about 60 words naming the neighbouring bundle's territory
-and the refusal rule duplicated 0 of 8, yielding 16 from 16, at identical
-per-agent cost (within 2%). Each boundaried delegate's handoff list named
-the neighbour's material by name, so the refusal fired rather than the
-boundary being ignored.
+A boundary names the neighbouring agent's territory.
 
 Every bundle's bounds carry all five lines:
 

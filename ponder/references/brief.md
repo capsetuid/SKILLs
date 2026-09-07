@@ -1,4 +1,4 @@
-# Worker Fragments
+# Brief Fragments
 
 The rules and contract a search delegate's brief carries. The lead composes
 the brief under `/summon fanout`, per `explore`; objective, evidence,
