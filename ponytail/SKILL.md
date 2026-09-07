@@ -6,8 +6,7 @@ description: >-
   before a dependency; review and audit look only at over-engineering, and
   every shortcut is recorded as debt. Use when writing, refactoring,
   reviewing, or designing code, when choosing dependencies, or when the user
-  says "ponytail", "be lazy", "simplest solution", or "yagni". Do not use
-  for prose or general knowledge.
+  says "ponytail", "be lazy", "simplest solution", or "yagni".
 license: MIT
 metadata:
   argument-hint: "[lite|full|ultra] [design|refactor|review|audit|test|teach|debt|gain|help]"

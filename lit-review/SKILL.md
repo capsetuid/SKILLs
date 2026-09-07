@@ -6,9 +6,7 @@ description: >-
   fixed before the first search, every exclusion carries its reason, and
   abstract-level reading is never passed off as full-text. Rigor ranges from
   a scoping pass to PRISMA-style. Use when asked for a literature review, a
-  survey, a related-work section, or what research says about a topic. Do
-  not use for checking facts in a document (fact-check) or reading one known
-  paper (read-pdf).
+  survey, a related-work section, or what research says about a topic.
 license: MIT
 compatibility: >-
   Requires uv, network access, and a full SKILLs repository checkout.
@@ -20,7 +18,8 @@ metadata:
 
 Produce a literature review whose every citation traces to a retrieved
 record. The bundled script owns state, search, dedup, and checks; the agent
-owns criteria, screening, reading, and synthesis.
+owns criteria, screening, reading, and synthesis. Checking a document's
+facts is `/fact-check`, reading one known paper `/read-pdf`.
 
 ## Registry
 

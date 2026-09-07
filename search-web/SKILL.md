@@ -4,9 +4,7 @@ description: >-
   Searches the web, Wikipedia, and the scholarly record, and pulls the
   readable text out of a page; papers come with DOI, year, and citation
   count. Use when the harness has no search or fetch tool of its own, or
-  when a question needs papers by DOI. Do not use when a harness search tool
-  exists, for reading a PDF (read-pdf), or for a literature review
-  (lit-review).
+  when a question needs papers by DOI.
 license: MIT
 compatibility: >-
   Requires uv, network access, and a full SKILLs repository checkout.
@@ -15,6 +13,8 @@ metadata:
 ---
 
 # Search Web
+
+Reading a PDF is `/read-pdf`, a literature survey `/lit-review`.
 
 ## Invariants
 

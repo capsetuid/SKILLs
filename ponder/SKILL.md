@@ -4,9 +4,7 @@ description: >-
   Answers an open question and shows its work: every load-bearing claim
   carries a source, inferred conclusions are marked, the strongest rival
   explanation is tested, and what stays unsettled is reported open. Use when
-  the user asks an open question needing a researched, sourced answer. Do
-  not use for literature reviews (lit-review) or checking claims in a
-  document (fact-check).
+  the user asks an open question needing a researched, sourced answer.
 license: MIT
 compatibility: >-
   Requires uv, retrieval (the harness's web search and fetch, else
@@ -19,7 +17,8 @@ metadata:
 
 Answer open questions from records. Split open work into retrievable leaves,
 source each claim, and mark composed conclusions. Apply one investigative
-standard; let ledger state set the presentation.
+standard; let ledger state set the presentation. A literature review is
+`/lit-review`, checking claims in a document `/fact-check`.
 
 ## Registry
 

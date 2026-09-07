@@ -11,6 +11,7 @@ import pytest
 from btm_repo_gate.cli import find_root, repair_to_fixpoint
 from btm_repo_gate.repairs import _relative_target
 from btm_repo_gate.rules import audit
+from btm_repo_gate.rules.frontmatter import rule_description_budget
 from btm_repo_gate.snapshot import snapshot
 
 SKILL = """---
@@ -62,6 +63,11 @@ def rules_hit(root) -> set[str]:
     return {finding.rule for finding in audit(snapshot(root))}
 
 
+def budget_findings(root) -> list:
+    """The budget rule alone, since it shares the frontmatter rule's name."""
+    return list(rule_description_budget(snapshot(root)))
+
+
 class TestFindRoot:
     def test_the_marketplace_manifest_marks_the_root(self, repo):
         assert find_root(repo) == repo
@@ -108,6 +114,23 @@ class TestFrontmatter:
         )
         (repo / "alpha" / "SKILL.md").write_text(text, encoding="utf-8")
         assert "frontmatter" in rules_hit(repo)
+
+
+class TestDescriptionBudget:
+    def test_a_tree_over_the_budget_is_a_finding(self, repo):
+        for index in range(8):
+            name = f"skill{index}"
+            (repo / name).mkdir()
+            (repo / name / "SKILL.md").write_text(
+                SKILL.format(name=name).replace(
+                    "Does a thing worth naming.", "x" * 900
+                ),
+                encoding="utf-8",
+            )
+        assert budget_findings(repo)
+
+    def test_a_tree_under_the_budget_reports_nothing(self, repo):
+        assert not budget_findings(repo)
 
 
 class TestSkillLayout:

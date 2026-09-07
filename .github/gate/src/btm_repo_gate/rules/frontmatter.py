@@ -9,6 +9,7 @@ from typing import Any
 import yaml
 
 from btm_repo_gate.conventions import (
+    DESCRIPTION_BUDGET,
     DESCRIPTION_LIMIT,
     SPEC_FIELDS,
     split_frontmatter,
@@ -37,18 +38,11 @@ def rule_frontmatter(repo: Repo) -> Iterator[Finding]:
         if text is None:
             continue  # rule_skill_layout owns the missing-file case
         where = str(document)
-        header = split_frontmatter(text)
-        if header is None:
-            yield Finding("frontmatter", where, "no YAML frontmatter")
+        parsed = _header_fields(text)
+        if isinstance(parsed, str):
+            yield Finding("frontmatter", where, parsed)
             continue
-        try:
-            fields = yaml.safe_load(header[0]) or {}
-        except yaml.YAMLError as error:
-            yield Finding("frontmatter", where, f"unparseable frontmatter: {error}")
-            continue
-        if not isinstance(fields, dict):
-            yield Finding("frontmatter", where, "frontmatter is not a mapping")
-            continue
+        fields, header = parsed
         yield from _frontmatter_judgments(where, fields)
         normalized = _canonical_header(skill, fields, header[0])
         if normalized is not None:
@@ -60,6 +54,41 @@ def rule_frontmatter(repo: Repo) -> Iterator[Finding]:
                 "; ".join(reasons),
                 WriteText(document, repaired),
             )
+
+
+def rule_description_budget(repo: Repo) -> Iterator[Finding]:
+    """Every description is loaded at once, so their sum is a budget no
+    single-skill limit can hold; trimming which one is a person's judgment."""
+    total = 0
+    for skill in sorted(repo.skills):
+        text = repo.texts.get(Path(skill, "SKILL.md"))
+        parsed = _header_fields(text) if text is not None else "no SKILL.md"
+        if isinstance(parsed, str):
+            continue  # rule_frontmatter and rule_skill_layout own unreadable headers
+        description = parsed[0].get("description")
+        total += len(description) if isinstance(description, str) else 0
+    if total > DESCRIPTION_BUDGET:
+        yield Finding(
+            "frontmatter",
+            "SKILL.md descriptions",
+            f"descriptions total {total} characters, over the "
+            f"{DESCRIPTION_BUDGET} budget",
+        )
+
+
+def _header_fields(text: str) -> tuple[dict[str, Any], tuple[str, int]] | str:
+    """A SKILL.md's header fields paired with the raw block and body offset,
+    or the reason the header does not parse."""
+    header = split_frontmatter(text)
+    if header is None:
+        return "no YAML frontmatter"
+    try:
+        fields = yaml.safe_load(header[0]) or {}
+    except yaml.YAMLError as error:
+        return f"unparseable frontmatter: {error}"
+    if not isinstance(fields, dict):
+        return "frontmatter is not a mapping"
+    return fields, header
 
 
 def _frontmatter_judgments(where: str, fields: dict[str, Any]) -> Iterator[Finding]:

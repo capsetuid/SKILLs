@@ -5,8 +5,7 @@ description: >-
   objections admitted only when they quote a page and cite dated prior work
   from its own literature search, and a recommendation that follows from
   what survives. Use when asked to review, referee, red-team, or find
-  weaknesses in a paper, manuscript, or thesis chapter. Do not use for a
-  literature survey (lit-review) or checking facts (fact-check).
+  weaknesses in a paper, manuscript, or thesis chapter.
 license: MIT
 compatibility: >-
   Requires uv and a full SKILLs repository checkout. The novelty bank needs
@@ -20,7 +19,8 @@ metadata:
 Hunt for weaknesses in a paper's claims, design, execution, results, and
 limitations; report only what the paper's own text and the retrieved
 literature support. The agent searches adversely; the script derives the
-verdict.
+verdict. A literature survey is `/lit-review`, checking a document's facts
+`/fact-check`.
 
 ## Registry
 

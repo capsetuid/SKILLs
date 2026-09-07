@@ -17,13 +17,14 @@ unrelated projects**. Load linked skills only when a task needs them.
   filler nouns (`-protocol`, `-helper`, `-skills`), no gerunds.
 * Every top-level directory that is neither dotted nor `skills/` IS a skill
   directory; that namespace is reserved. Repository plumbing lives in dotted
-  directories (`.github`, `.claude`, `.claude-plugin`) or in single files at
-  the root (e.g. `sync-skills.example.yml`).
+  directories (`.github`, `.claude`, `.claude-plugin`, `.agents`) or in
+  single files at the root (e.g. `sync-skills.example.yml`).
 * `skills/` is the vendor-neutral hub: one committed relative symlink per
   skill, `skills/<skill-name>` to `../<skill-name>`. Every vendor path is one
   symlink to that hub, so another agent costs one link. `.github/skills`
   serves GitHub Copilot and mirrors the path downstream projects mount this
-  repository at; `.claude/skills` serves Claude Code.
+  repository at; `.claude/skills` serves Claude Code; `.agents/skills`
+  serves OpenAI Codex.
 * `.claude-plugin/` carries the installer manifests: `marketplace.json` lists
   every skill by its canonical root path, the address installers resolve, and
   `plugin.json` declares the same root container to Claude Code. The gate
@@ -119,7 +120,7 @@ uv run --project .github/gate btm-repo-gate fix
 | --- | --- |
 | ruff's safe lint fixes and formatting (policy in `ruff.toml`) | Lint findings ruff cannot fix safely |
 | A missing, wrong, orphaned, or legacy-shaped hub or vendor alias | A skill directory with no `SKILL.md` |
-| Frontmatter `name`, `license`, or field-order drift | Frontmatter judgments: a missing or overlong description, non-spec fields |
+| Frontmatter `name`, `license`, or field-order drift | Frontmatter judgments: a missing or overlong description, non-spec fields, descriptions totalling over the budget |
 | Manifest `name` fields and the declared skill list | A missing or unreadable plugin manifest |
 | Skill entries out of alphabetical order in this file and `README.md` | A skill missing from either list, or an entry naming no skill |
 | | An alias path occupied by real content, which no repair may destroy |
@@ -149,14 +150,17 @@ unchanged in any spec-compliant agent and uploads without hard errors:
 * `description` is a `>-` folded block scalar, ≤1024 characters, third
   person, in two movements: what the skill does (capability statement
   carrying its key search terms), then trigger conditions starting
-  "Use when ..."; append "Do not use for ..." only where a sibling skill
-  is confusable, naming that sibling. Every description sits in context
-  whether or not the skill runs, so it carries the deliverable and the
-  one or two guarantees the reader can hold the skill to ("cites only
-  what it retrieved", "edits nothing without approval"), in the reader's
-  vocabulary, and nothing about how: no internal record, phase, or file
-  the body defines, no library the skill calls, no verb or level that
-  `argument-hint` already lists. Target 100 to 150 tokens.
+  "Use when ...". Routing to a confusable sibling ("refereeing is
+  `/peer-review`") lives in the body's opening paragraph, never here.
+  Every description sits in context whether or not the skill runs, so it
+  carries the deliverable and the one or two guarantees the reader can
+  hold the skill to ("cites only what it retrieved", "edits nothing
+  without approval"), in the reader's vocabulary, and nothing about how:
+  no internal record, phase, or file the body defines, no library the
+  skill calls, no verb or level that `argument-hint` already lists.
+  Target 100 to 150 tokens. All descriptions together stay under the
+  gate's 7,000-character budget: Codex gives the whole skill list 8,000
+  characters and shortens descriptions first.
 * `metadata.argument-hint` is the invocation grammar and the only place it
   is spelled: one bracket group per independent choice, ordered as a user
   types them, so orthogonal axes never collapse into one alternation
@@ -342,9 +346,10 @@ with `git submodule update --remote .github/skills` followed by committing the
 bumped pointer. A change here reaches a project only after that project
 bumps its submodule pointer.
 
-For Claude discovery in a consuming repository, commit a relative parent-level
-alias from `.claude/skills` to `../.github/skills`. A submodule cannot create that
-entry in its parent repository. The root skill directories remain canonical; this
+For Claude Code and Codex discovery in a consuming repository, commit relative
+parent-level aliases from `.claude/skills` and `.agents/skills` to
+`../.github/skills`. A submodule cannot create those entries in its parent
+repository. The root skill directories remain canonical; this
 repository's `skills/` hub and its vendor aliases are relative symlinks.
 
 ## Boundaries

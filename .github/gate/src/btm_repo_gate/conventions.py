@@ -20,13 +20,16 @@ SPEC_FIELDS = (
     "allowed-tools",
 )
 DESCRIPTION_LIMIT = 1024
+# Codex gives the whole skill list 8,000 characters when the context window is
+# unknown and shortens descriptions first.
+DESCRIPTION_BUDGET = 7000
 # A skill's Python is one workspace member rooted here; the skill dir stays docs.
 MEMBER_DIR = Path("scripts")
 # The one brand string this repo publishes: marketplace, plugin, XDG state root.
 BRAND = "btm-skills"
 # `skills/` is the vendor-neutral hub; vendor paths symlink to it, not the skill.
 HUB = Path("skills")
-VENDOR_LINKS = (Path(".claude/skills"), Path(".github/skills"))
+VENDOR_LINKS = (Path(".agents/skills"), Path(".claude/skills"), Path(".github/skills"))
 # The shared kernel package; a consumer member declares it as a workspace dependency.
 KERNEL = Path(".corekit")
 MARKETPLACE = Path(".claude-plugin/marketplace.json")

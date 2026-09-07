@@ -7,8 +7,7 @@ description: >-
   each theme reported as a claim backed by verbatim extracts and counts.
   Defaults suit feedback, tickets, reviews, usability sessions, and
   interviews. Use when asked to find themes in qualitative data, code
-  interviews or open responses, or build a codebook. Do not use for sorting
-  items into a fixed label set, which is classification.
+  interviews or open responses, or build a codebook.
 license: MIT
 metadata:
   argument-hint: "[reflexive|codebook|template|framework|rapid|hybrid] <corpus>"
@@ -17,7 +16,8 @@ metadata:
 # Thematic Analysis
 
 Develop themes from qualitative text with the procedure and the quality
-standard taken from the same methodological school, end to end.
+standard taken from the same methodological school, end to end. Sorting
+items into a fixed label set is classification, outside this skill.
 
 ## Registry
 

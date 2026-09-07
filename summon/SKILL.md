@@ -8,8 +8,7 @@ description: >-
   Copilot, Google Antigravity, OpenAI Codex, DeepSeek Harness, and the
   OpenAI Agents SDK. Use when writing a prompt for a subagent, deciding
   whether to spawn one, splitting work across agents, pointing a delegate at
-  a skill, or judging what one sent back. Do not use for work the lead
-  finishes in a few tool calls.
+  a skill, or judging what one sent back.
 license: MIT
 metadata:
   argument-hint: "[dispatch|fanout|review|help] [task]"

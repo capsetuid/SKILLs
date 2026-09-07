@@ -52,7 +52,7 @@ claude plugin install btm-skills@btm-skills
 
 Pins an exact commit and updates on your schedule; the bundled sync workflow
 below automates the update. Add the library at `.github/skills` and alias it
-for Claude:
+for Claude Code and Codex:
 
 ```bash
 (
@@ -64,14 +64,15 @@ for Claude:
     echo "Adding the skills submodule."
     git submodule add https://github.com/BTreeMap/SKILLs.git .github/skills
   fi
-  mkdir -p .claude
+  mkdir -p .claude .agents
   ln -sfn ../.github/skills .claude/skills
-  git add -- .gitmodules .claude/skills .github/skills
-  if git diff --cached --quiet -- .gitmodules .claude/skills .github/skills; then
+  ln -sfn ../.github/skills .agents/skills
+  git add -- .gitmodules .agents/skills .claude/skills .github/skills
+  if git diff --cached --quiet -- .gitmodules .agents/skills .claude/skills .github/skills; then
     echo "Already up to date."
   else
     git commit -m "chore: Add agent skills submodule" \
-      -- .gitmodules .claude/skills .github/skills
+      -- .gitmodules .agents/skills .claude/skills .github/skills
   fi
 )
 ```
@@ -150,6 +151,7 @@ If your organization restricts third-party actions, allowlist
 skills/<skill-name>            vendor-neutral hub; one symlink per skill
 .github/skills -> ../skills    GitHub Copilot, and the submodule mount
 .claude/skills -> ../skills    Claude Code
+.agents/skills -> ../skills    OpenAI Codex
 .claude-plugin/                plugin and marketplace manifests
 ```
 

@@ -6,8 +6,7 @@ description: >-
   nothing. A writing sample or style file outranks its catalogue of AI
   writing tells. Pasted text comes back rewritten; a named file is edited in
   place. Use when asked to humanize, de-AI, or naturalize prose, or to
-  remove AI writing patterns. Do not use for code or for checking facts
-  (fact-check).
+  remove AI writing patterns.
 license: MIT
 metadata:
   argument-hint: "[text-or-file]"
@@ -19,7 +18,7 @@ Rewrite AI-sounding text so it reads like its writer. §1-35 come from
 Wikipedia's ["Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing);
 §36-40 and the added cases in older entries cover tells that survive a
 vocabulary scrub in current model prose. Cure: the specific over the
-generic.
+generic. Checking a document's facts is `/fact-check`.
 
 ## Registry
 

@@ -5,8 +5,7 @@ description: >-
   each verdict with verbatim quotes, URLs, and access dates. It never
   verifies from memory and changes no text until the user approves that
   correction. Use when asked to fact-check a document, verify claims, specs,
-  statistics, or version numbers, or update outdated facts. Do not use for
-  proofreading, running code, or judging opinions.
+  statistics, or version numbers, or update outdated facts.
 license: MIT
 metadata:
   argument-hint: "[file-or-section]"

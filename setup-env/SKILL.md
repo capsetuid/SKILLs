@@ -7,8 +7,7 @@ description: >-
   kotlin:android, or rust name what a project needs, and tools shipped for
   another CPU architecture still run. Use when a project must be built,
   tested, or linted on a machine lacking its toolchains, when root or docker
-  is unavailable, or when several languages must coexist reproducibly. Do
-  not use for CI images, system packages, or deploying services.
+  is unavailable, or when several languages must coexist reproducibly.
 license: MIT
 compatibility: >-
   uv on PATH, network access, and a full SKILLs repository checkout. Linux
@@ -23,7 +22,8 @@ metadata:
 
 One command provisions everything a project needs into one disposable
 root: run it, source the printed activation script, build. Re-running is
-the repair action.
+the repair action. CI images, system packages, and deployment are outside
+this skill.
 
 ## Registry
 

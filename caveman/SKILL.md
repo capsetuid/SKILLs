@@ -5,8 +5,7 @@ description: >-
   code, numbers, units, negations, and error strings stay exact. Terseness
   ranges from tightened prose to one-word answers, in English or classical
   Chinese. Use when the user asks for caveman mode, "be brief", fewer
-  tokens, or a longer-lived context. Do not use on code, docs, or other
-  persisted files unless asked to rewrite one.
+  tokens, or a longer-lived context.
 license: MIT
 compatibility: >-
   Compress mode requires uv and a full SKILLs repository checkout.

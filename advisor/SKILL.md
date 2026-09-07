@@ -7,8 +7,6 @@ description: >-
   claim. Every claim about current practice carries a source or is marked as
   memory. Use when the user shares a paper, proposal, draft, or results and
   asks what it is made of, whether the setup holds up, or what to run next.
-  Do not use for refereeing (peer-review), literature surveys (lit-review),
-  or checking facts in a document (fact-check).
 license: MIT
 metadata:
   argument-hint: "[review|design|audit|teach|help] <paper, proposal, or results>"
@@ -18,7 +16,8 @@ metadata:
 
 Read a project as a composition of prior ideas, judge its setup against
 what the field runs now, size the lab, then point the work where the lab
-can win. Four moves precede every verb.
+can win. Refereeing is `/peer-review`, a literature survey `/lit-review`,
+checking a document's facts `/fact-check`. Four moves precede every verb.
 
 ## Registry
 
