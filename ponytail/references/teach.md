@@ -17,8 +17,3 @@ The one verb where prose is the deliverable; still no essays.
 ## Output
 
 Short paragraphs or a tight list, sized to the audience's question.
-
-## Redirects
-
-- Type-level design rationale: `/pl-theorist teach`
-- Counted figures: `/ponytail debt`

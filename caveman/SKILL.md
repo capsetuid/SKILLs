@@ -29,6 +29,10 @@ die.
 | `stats` | [references/stats.md](references/stats.md) |
 | `wenyan` | [references/wenyan.md](references/wenyan.md) |
 
+## Redirects
+
+- Hunting over-engineering in a review: `/ponytail review`
+
 ## Persistence
 
 ACTIVE EVERY RESPONSE. No revert after many turns. No filler drift. Still

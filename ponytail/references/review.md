@@ -38,8 +38,3 @@ to cut: say `Lean already. Ship.` and stop.
 
 A single smoke test or `assert`-based self-check is the ponytail minimum and
 stays.
-
-## Redirects
-
-- Correctness bugs, security holes, and performance: `/pl-theorist review`
-- Applying the cuts: `/ponytail refactor`

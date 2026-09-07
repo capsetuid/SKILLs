@@ -34,6 +34,10 @@ the code never written.
 ## Redirects
 
 - Terse prose: `/caveman`
+- Correctness, security, performance, domain modeling, typing, or
+  law-derived tests: `/pl-theorist`, same verb
+- Applying a review's or audit's cuts: `/ponytail refactor`
+- Counted figures for teach: `/ponytail debt`
 
 ## Persistence
 

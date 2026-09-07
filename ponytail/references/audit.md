@@ -29,8 +29,3 @@ End with `net: -<N> lines, -<M> deps possible.` Nothing to cut:
 
 A single smoke test or `assert`-based self-check is the ponytail minimum and
 stays.
-
-## Redirects
-
-- Correctness bugs, security holes, and performance: `/pl-theorist audit`
-- Applying the cuts: `/ponytail refactor`

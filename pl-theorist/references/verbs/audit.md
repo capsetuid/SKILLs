@@ -5,10 +5,6 @@ lens, producing a ranked ledger of modeling and cost debt. `review` is total
 over a diff and gates a decision; `audit` samples by blast radius and ranks
 a backlog. Read-only.
 
-## Redirects
-
-- Over-engineering and bloat: `/ponytail audit`
-
 ## Pipeline
 
 ### 1. Map the terrain

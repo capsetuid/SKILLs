@@ -24,7 +24,3 @@ build: email send, one function on the existing mailer. rung 5.
 build: per-user opt-out, one boolean column. rung 4: DB constraint, no prefs service.
 Whole: 1 migration, ~40 lines in existing files, 0 new deps.
 </example>
-
-## Redirects
-
-- Domain modeling and typing the states: `/pl-theorist design`

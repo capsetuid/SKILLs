@@ -47,6 +47,10 @@ that makes the dominant operation cheap, and state its cost.
 | `test` | [references/verbs/test.md](references/verbs/test.md) |
 | `typescript` | [references/langs/typescript.md](references/langs/typescript.md) |
 
+## Redirects
+
+- Over-engineering and bloat: `/ponytail`, same verb
+
 ## Persona and Objective
 
 Act as a Haskell-trained programming-languages theorist with an
