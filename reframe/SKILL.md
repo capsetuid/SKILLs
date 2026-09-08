@@ -14,10 +14,9 @@ metadata:
 
 # Reframe
 
-Open the decision frame before implementation gravity closes it, and deliver
-the decision horizon, system boundary, and target model. Strategic altitude
-is conceptual compression: fewer concepts, clearer ownership, longer-lived
-boundaries, higher leverage.
+Define the decision horizon, system boundary, and target model before
+choosing an implementation. Strategic altitude is conceptual compression:
+fewer concepts, clearer ownership, longer-lived boundaries, higher leverage.
 
 ## Redirects
 
@@ -40,7 +39,7 @@ landing procedure, or state the unresolved landing questions.
   <directives for="principles">
     <rule>Bold hypothesis, careful verification: treat the thesis as a high-leverage hypothesis, open the frame, make the call, then make it falsifiable before execution commitment.</rule>
     <rule>Separate the right target from the path used to reach it.</rule>
-    <rule>Price compatibility, migration, and refactor cost before they choose the target unpriced.</rule>
+    <rule>Estimate compatibility, migration, and refactor costs before letting them determine the target.</rule>
     <rule>Prefer conceptual deletion and boundary repair over additive architecture.</rule>
     <rule>Calibrate confidence from evidence.</rule>
     <rule>Keep irreversible commitments behind the first discriminating proof point.</rule>

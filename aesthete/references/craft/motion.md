@@ -43,9 +43,8 @@ animation.
   cap the total: a long stagger across many items means the last item
   arrives after the user has already started reading the first.
 * Animate the parent or the child, not both in competing ways.
-* Shared-element continuity is the highest-value motion available, the one
-  case where motion reduces cognitive load: when the same object persists
-  across a state or route change, animate it.
+* When the same object persists across a state or route change, animate it
+  to preserve continuity.
 * Show content the user is waiting for without an entry animation.
 
 ## Scroll-linked motion

@@ -41,11 +41,6 @@ to 21% at ten, across ten models ("When Instructions Multiply", 2025);
 reliability degrades with input length, and one distractor already hurts
 (Chroma, "Context Rot", 2025).
 
-### contract owns cost and shape
-
-A brief with a return contract came back as the artifact alone; one without
-came back wrapped in prose.
-
 ## 3. Write the prose
 
 Load `/caveman` and write the brief under it; then load `/humanize` and

@@ -48,7 +48,7 @@ otherwise dispatch.
 
 ## Mode
 
-Inline is the default and is argued away from, never defaulted away from.
+Default to Inline. Justify another mode against the mode table.
 
 | Mode | The delegate starts with | Reach for it when |
 | --- | --- | --- |

@@ -163,5 +163,3 @@ test, YAGNI applies to tests too.
   accessibility survived the simplification.
 - Non-trivial logic left one minimal runnable check behind.
 - Unrequested explanation is at most three short lines.
-
-The shortest path to done is the right path.

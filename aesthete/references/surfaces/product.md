@@ -28,8 +28,7 @@ else.
   sidebar for many peer sections, a top bar for few, tabs only for switching
   views of one object.
 * Current location is unambiguous in the navigation, and the page title
-  matches the navigation label exactly. Different names for the same place
-  is the cheapest possible confusion to avoid.
+  matches the navigation label exactly.
 * The URL encodes real state: the record, the tab, the filters, the page.
   Everything the user can reach should be linkable and survive a refresh.
 * Depth over three levels needs a different structure.
@@ -52,8 +51,7 @@ else.
   focus to the first failure. A summary at the top of a long form links to
   each failure.
 * Required and optional are marked explicitly, whichever is rarer.
-* Preserve entry across navigation, refresh, and failure. Losing a completed
-  form to a server error is the most damaging single failure a form has.
+* Preserve entry across navigation, refresh, and failure.
 * Disable a submit button only when disabled state is explained. Preferably
   leave it enabled and explain what is missing on click.
 

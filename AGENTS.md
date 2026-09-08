@@ -219,15 +219,10 @@ any spec-compliant agent and uploads without hard errors:
   return through. Mode, brief shape, bounds, sizing, trust, and the review
   of a return are summon's; a skill restates none of them and carries no
   worker prompt, delegation threshold, or cost figure of its own.
-* Write directives, not commentary about the document. A sentence that
-  explains why a convention exists, restates a table's headings, or narrates
-  the file's structure is paid for on every load. Keep rationale only where
-  it changes a judgment call.
-* State each directive as the pattern to follow. A prohibition spells out
-  the unwanted pattern in full, which raises its salience for the reading
-  model; the positive form spends the same tokens on the right path. Reserve
-  negation for hard boundaries where the banned form must be named to be
-  recognized (secrets, em-dashes, spec violations).
+* Write skill text to the writing standard in author-skill's execution
+  rules: direct imperatives, each rule stated once, rationale only where it
+  changes a decision, no slogans, rankings, or process history; keep
+  uncertainty, negation, literals, and safety boundaries.
 * Bundled files are addressed by **registered name**, never by path, so a
   path cannot drift and two files cannot claim one name:
   * **One declaration site, declared before use.** Every skill that bundles

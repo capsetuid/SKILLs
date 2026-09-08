@@ -13,7 +13,8 @@ metadata:
 
 # Aesthete
 
-Taste is subtractive: the measure of this skill is what it refuses to ship.
+Design, build, and review interfaces: clear hierarchy, predictable
+interaction, accessible behavior.
 
 ## Registry
 

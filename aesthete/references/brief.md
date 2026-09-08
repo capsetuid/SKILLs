@@ -17,8 +17,7 @@ holds, verify the rest, and report every divergence.
    and nothing else. The document keeps its type, spacing, radius,
    component, and composition decisions.
 3. **Map the palette to roles** (below).
-4. **Verify against the accessibility floor** (below). This is the step that
-   makes adoption safe, and the step most often skipped.
+4. **Verify against the accessibility floor** (below).
 5. **Fill gaps by deriving values from the supplied system.** A missing
    value follows the system's own logic so it looks native.
 6. **Report** (below). Name every failing token you adopted and why.

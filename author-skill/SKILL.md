@@ -37,15 +37,16 @@ an existing skill against the Agent Skills standard.
     <rule>When distilling from a session, extract only verified tool calls and successful commands from its history.</rule>
     <rule>When the skill's value is a judgment (a persona, a review, a reading), test the draft before writing it up: brief a delegate through `/summon` with the draft and a held-out case, score the return against criteria fixed in advance, and change the text until it holds. The scores and the runs stay out of the skill.</rule>
     <rule>Parameterize all project-specific values (paths, hostnames, IDs) or instruct how to derive them dynamically.</rule>
-    <rule>State each directive with its condition where one exists ("If X, execute Y").</rule>
-    <rule>Enforce token-economical language in the generated skill: sentence fragments, no conversational filler; `/caveman` defines that register in full.</rule>
-    <rule>Write every sentence to carry a rule, a condition, an input, or an example; delete narration about the document, restated headings, and repeated rationale. Keep rationale only where it changes a judgment call.</rule>
-    <rule>A skill's text is loaded into an agent's context to be paid for on every invocation, so it carries only what changes what the agent does: the contract (what a verb takes, returns, and refuses), the routing (when to reach for this verb, this level, or a sibling skill), and the judgments the agent owns. Leave out which library, service, or endpoint implements a verb, since the agent chooses a verb and never a vendor. Leave out why the design is as it is. Leave out policy, licensing, and terms-of-use framing. Leave out anything the script already states at the moment it matters: a `signal:` line, a rejection hint, or a `next` field. The `description` is stricter still, since it sits in context whether or not the skill ever runs.</rule>
+    <rule>Lead with the action; condition first ("If X, do Y"). Imperatives; a fragment only where its role stays clear.</rule>
+    <rule>Each sentence gives an instruction, a decision rule, needed context, or an example. State a rule once; cite its owner only when that owner is in the reader's context. Keep rationale only where it changes a decision.</rule>
+    <rule>Delete greetings, praise, wind-ups, heading restatements, process history, summaries, slogans, and unsupported rankings. Replace metaphors, invented labels, and theatrical contrasts with the concrete action or condition.</rule>
+    <rule>Cut filler hedges; keep uncertainty, evidence strength, scope, negation, and necessary-versus-sufficient distinctions. Keep terms, commands, schemas, literals, numbers, units, citations, permissions, safety boundaries, intentional bad examples, and quoted sources.</rule>
+    <rule>State the pattern to follow; name a banned form only where it must be recognized (secrets, em-dashes, spec violations).</rule>
+    <rule>Write under `/caveman lite`; sweep with `/humanize`. Patterns are signals, not banned words. Invent no abbreviations; strip no grammar; when a cut is in doubt, count tokens, not words.</rule>
+    <rule>When a shorter form makes a weaker agent guess, keep the explicit form: no step implied, no assumption unstated.</rule>
+    <rule>A skill's text is loaded into an agent's context to be paid for on every invocation, so it carries only what changes what the agent does: the contract (what a verb takes, returns, and refuses), the routing (when to reach for this verb, this level, or a sibling skill), and the judgments the agent owns. Leave out which library, service, or endpoint implements a verb, since the agent chooses a verb and never a vendor. Leave out policy, licensing, and terms-of-use framing. Leave out anything the script already states at the moment it matters: a `signal:` line, a rejection hint, or a `next` field. The `description` is stricter still, since it sits in context whether or not the skill ever runs.</rule>
     <rule>A docstring or comment states the contract in at most two lines, then one further sentence only where a reader would otherwise make the wrong call. History belongs to the commit: what the code replaced, which bug prompted it, and what an earlier shape did wrong are read once and paid for on every load.</rule>
-    <rule>State each directive as the pattern to follow; a prohibition spells out the unwanted pattern and raises its salience. Reserve negation for hard boundaries where the banned form must be named to be recognized.</rule>
-    <rule>Exclude inflation vocabulary (comprehensive, seamless, robust, powerful, leverage, delve, cutting-edge) and wind-ups (in order to, it is important to note); sweep the finished draft with `/humanize` before finalizing.</rule>
     <rule>A skill that hands work to another agent commands `/summon` and supplies only what summon's caller table asks for: the unit one delegate closes, the record it hands over, the rules of its own that unit can break, its return shape by registered name, its cap, and the gate the lead admits the return through. Mode, brief shape, bounds, sizing, trust, and review of the return are summon's: restate none of them, and carry no worker prompt, delegation threshold, or cost figure in the skill.</rule>
-    <rule>Write for a follower model less capable than the author: leave no step implied and no assumption unstated. When brevity and sufficiency conflict, sufficiency wins.</rule>
     <rule>Never emit em-dash characters (U+2014); use a hyphen, a comma, a colon, or restructure the sentence.</rule>
   </directives>
 
@@ -120,7 +121,7 @@ an existing skill against the Agent Skills standard.
   <example for="frontmatter-routing">
     <context>Writing trigger-based descriptions.</context>
     <before>This skill helps format python code using black and flake8.</before>
-    <after>Triggered when the user asks to format Python code, lint a file, or run Black and Flake8.</after>
+    <after>Formats and lints Python code with Black and Flake8. Use when asked to format Python, lint a file, or run either tool.</after>
   </example>
 
   <example for="parameterization">

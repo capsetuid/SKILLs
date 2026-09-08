@@ -65,7 +65,7 @@ link per entry.
 
 ## Prose rules
 
-The report is judged by what it pins down. Concrete subjects, plain verbs,
+Concrete subjects, plain verbs,
 reported numbers with units, named papers doing named things.
 
 - Banned vocabulary, in the report and in every intermediate note. If one

@@ -38,8 +38,8 @@ writes.
 
 ## Snowballing
 
-Keyword search finds what shares your vocabulary; snowballing finds the
-rest. After the first screening pass produces included papers:
+Use citation snowballing to seek papers missed by keyword search. After the
+first screening pass produces included papers:
 
 - Backward (`--direction backward`): the references of an included paper;
   finds the foundations everyone cites.

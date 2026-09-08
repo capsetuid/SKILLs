@@ -30,8 +30,7 @@ through the actual code.
 ### 3. Calibrate
 
 For a human: connect the named concept to the concrete lines, then to the
-one reusable distinction to keep for the next problem. One distinction per
-session sticks; five wash out.
+one reusable distinction to keep for the next problem.
 
 For a less capable model: load the target profile's teaching example to
 calibrate taste, never as a template. Explain exactly three things: the
