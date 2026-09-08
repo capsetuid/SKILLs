@@ -1,22 +1,16 @@
 # AGENTS.md
 
-This repository is a central, project-agnostic library of reusable agent
-skills. Each skill is a self-contained `SKILL.md` describing a procedure an
-LLM agent can load and execute. Downstream projects consume it as a git
-submodule mounted at `.github/skills`, as a Claude Code plugin, or through a
-skills manager such as `npx skills`, so **every skill here MUST be neutral
-and reusable across unrelated projects**. Load linked skills only when a
-task needs them.
+A project-agnostic library of agent skills: each `SKILL.md` is a procedure
+an LLM agent loads and follows. Downstream projects consume it as a git
+submodule at `.github/skills`, as a Claude Code plugin, or through
+`npx skills`, so every skill stays neutral across unrelated projects. Load a
+linked skill only when a task needs it.
 
 ## Repository shape
 
 * One directory per skill, named in kebab-case, containing a file named
   exactly `SKILL.md`. The directory name MUST match the skill's `name` in
   its frontmatter.
-* Naming convention: a task skill is an imperative verb phrase, the command
-  a user would speak (`fact-check`, `read-pdf`, `git-commit`); a persona or
-  stance skill is a single noun (`caveman`, `ponytail`, `pl-theorist`). No
-  filler nouns (`-protocol`, `-helper`, `-skills`), no gerunds.
 * Every top-level directory that is neither dotted nor `skills/` IS a skill
   directory; that namespace is reserved. Repository plumbing lives in dotted
   directories (`.github`, `.claude`, `.claude-plugin`, `.agents`) or in
@@ -33,79 +27,55 @@ task needs them.
   Code. The gate regenerates that list from the tree, so adding a skill
   never edits a manifest by hand.
 * `LICENSE`: MIT.
-* This repository is documentation that other agents read; correctness is an
-  editorial property. The exception is the bundled Python, a uv workspace:
-  the root `pyproject.toml` lists every member, `uv.lock` pins the whole
-  library, and the gate lints, formats, and tests it (see Automated gate).
+* Bundled Python is one uv workspace: the root `pyproject.toml` lists every
+  member and `uv.lock` pins the library.
 
 Each skill loads its reference files on demand from `references/`.
 
 Current skills:
 
-* `advisor/` - a principal investigator's read of a research project:
-  constitution as every origin with each mechanism tagged as-is, tweaked,
-  transferred, or new and its patterns named, each setup element classed
-  current, legacy, or toy with a source, the lab's envelope written as an
-  assumption, one instrument and one kill test per claim, and verbs review,
-  design, audit, teach, help.
-* `aesthete/` - UI design and review with an HCI eye: design read,
-  composition dials, precedence ladder, ownership table, a dated WCAG 2.2
-  accessibility floor, verbs
-  (design/build/refactor/review/audit/teach/help), surface profiles, craft
-  references, and a generated-output tell catalogue.
-* `author-skill/` - how to distill a procedure into a reproducible skill;
-  the meta-skill governing this repository.
-* `caveman/` - token-economical output with lite/full/ultra/wenyan levels
-  and commit/review/refactor/stats/help verbs; refactor is guarded by a
-  script.
-* `fact-check/` - atomic-claim verification against retrieved evidence:
-  calibrated verdicts, evidence-first reports, tiered approval before edits,
-  one delegate per claim through summon.
-* `git-commit/` - Conventional Commits with lite/full/ultra effort levels
-  and a push verb.
-* `humanize/` - claim-preserving rewrites of AI-sounding prose: 40-pattern
-  detection index (Wikipedia's "Signs of AI writing" plus Claude-specific
-  tells), invariants, progressive loading, calibration guard.
-* `lit-review/` - staged literature reviews with a search script over
-  OpenAlex, arXiv, and Crossref: criteria before search, logged queries,
-  deduplication, two-pass screening, snowballing, extraction, a gated
-  notebook of findings and gaps, DOI and citation checks.
-* `peer-review/` - adverse, referenced paper review: verbatim claims,
-  signalling-question banks for design, analysis, limitations, and novelty,
-  a lit-review corpus for prior work, objections admitted only with a
-  resolved quote or a dated corpus key, and a derived recommendation.
-* `pl-theorist/` - a PL theorist's discipline via verbs
-  (design/build/refactor/review/audit/test/teach/help) with per-language
-  cost models, Bash and GitHub Actions YAML included.
-* `ponder/` - open-question research with uniform rigor: lead-run first
-  round, decomposition to retrievable leaves, a script-owned event ledger,
-  fan-out over orthogonal bundles, a mandatory rival sweep, presentation
-  derived from ledger state.
-* `ponytail/` - laziest-working-solution discipline: YAGNI, stdlib first,
-  minimal diffs; lite/full/ultra levels and
-  design/refactor/review/audit/test/teach/debt/stats/help verbs.
-* `read-pdf/` - text and metadata extraction from PDF files or URLs; URLs
-  download once into a capped temp cache.
-* `reframe/` - testable target-direction judgments that challenge
-  incremental or legacy-bound framing.
-* `search-web/` - retrieval for an agent with no harness search tool: ranked
-  web results, instant answers, Wikipedia summaries, papers with DOIs, and
-  the readable text of one page, all in one record shape.
-* `setup-env/` - isolated per-project dev environments in userspace with uv
-  as the only assumption: a typed target algebra of
-  `family[:flavor][@version]` tags, micromamba and publisher suppliers, qemu
-  user-mode emulation, a typed planner under `scripts/`.
-* `summon/` - delegation to another agent: an inline-first mode ladder, a
-  six-field brief, a reach ladder for getting a skill into a delegate,
-  fanout bundles that name the neighbouring territory, returns treated as
-  untrusted and judged against their contract, a cross-harness table, and
-  the caller protocol every other skill delegates through (the caller
-  supplies unit, record, rules, return shape, cap, and gate; the lead is the
-  sole writer).
-* `thematic-analysis/` - theme development from qualitative text under one
-  named school (reflexive, codebook, template, framework matrix, rapid,
-  hybrid), with corpus-sourced defaults, a feedback-data adaptation
-  disclosure, and its cited evidence base.
+* `advisor/` - Reads a research project like a principal investigator: what
+  it combines, what is outdated, what your lab can afford, and the cheapest
+  experiment that settles each claim.
+* `aesthete/` - Designs, builds, and reviews web interfaces that meet WCAG
+  2.2, honor a supplied brand or design system, and avoid the templated look
+  of generated UI.
+* `author-skill/` - Turns a task history, workflow, or procedure into a
+  reusable SKILL.md that another agent can follow with no memory of the
+  original session.
+* `caveman/` - Compresses replies into terse phrasing that keeps every
+  technical fact, and can rewrite a prose file in place.
+* `fact-check/` - Checks a document claim by claim against retrieved
+  sources, with quotes behind every verdict, and changes nothing until you
+  approve each correction.
+* `git-commit/` - Drafts and reviews Conventional Commits messages, and can
+  commit and push in one step.
+* `humanize/` - Rewrites AI-sounding prose so it reads like its writer,
+  keeping every claim's original strength.
+* `lit-review/` - Produces a literature review in which every citation
+  traces to a paper retrieved from OpenAlex, arXiv, or Crossref, never
+  memory.
+* `peer-review/` - Reviews a paper the way an adverse referee would,
+  pressing on claims, design, analysis, limitations, and novelty.
+* `pl-theorist/` - Brings a programming-languages theorist's discipline to
+  design, code, review, and tests, tuned per language.
+* `ponder/` - Answers an open question and shows its work, sourcing every
+  load-bearing claim and testing the strongest rival explanation.
+* `ponytail/` - Forces the laziest solution that works: standard library and
+  native features before custom code or new dependencies.
+* `read-pdf/` - Extracts text and metadata from a PDF and answers questions
+  about it with page-cited evidence, without OCR.
+* `reframe/` - Turns a planning discussion into a testable direction
+  judgment with costed routes and the evidence that would prove it wrong.
+* `search-web/` - Searches the web, Wikipedia, and the scholarly record when
+  the harness has no search tool, and pulls the readable text out of a page.
+* `setup-env/` - Provisions a project's development toolchain in userspace,
+  with no sudo, no docker, and nothing assumed present but uv.
+* `summon/` - Hands work to another agent: whether to delegate, what to tell
+  the delegate, how to keep parallel agents apart, and how to judge what
+  comes back.
+* `thematic-analysis/` - Develops themes from qualitative text under one
+  named school, each theme backed by verbatim extracts and counts.
 
 ## Automated gate
 
@@ -140,199 +110,27 @@ touches the driver or the workflow. Never silence a ruff rule
 repository-wide: put a `# noqa: RULE` carrying its reason on the line that
 earns it.
 
-## Frontmatter protocol
-
-Every `SKILL.md` header conforms strictly to the [Agent
-Skills](https://agentskills.io) open standard, so a skill loads unchanged in
-any spec-compliant agent and uploads without hard errors:
-
-* Fields, in canonical order: `name`, `description`, then only as needed
-  `license`, `compatibility`, `metadata`, `allowed-tools`. NEVER emit
-  agent-specific extension fields (`argument-hint`, `when_to_use`, ...);
-  record such hints as quoted string values under `metadata` (e.g.
-  `metadata: {argument-hint: "[lite|full|ultra]"}`).
-* `name` equals the directory name: 1-64 characters; lowercase letters,
-  numbers, and hyphens; no leading, trailing, or consecutive hyphens.
-* `description` is a `>-` folded block scalar, ≤1024 characters, third
-  person, in two movements: what the skill does (capability statement
-  carrying its key search terms), then trigger conditions starting "Use when
-  ...". Routing to a confusable sibling lives in the body's `## Redirects`
-  section, never here. Every description sits in context whether or not the
-  skill runs, so it carries the deliverable and the one or two guarantees
-  the reader can hold the skill to ("cites only what it retrieved", "edits
-  nothing without approval"), in the reader's vocabulary, and nothing about
-  how: no internal record, phase, or file the body defines, no library the
-  skill calls, no verb or level that `argument-hint` already lists. Target
-  100 to 150 tokens. All descriptions together stay under the gate's
-  7,000-character budget: Codex gives the whole skill list 8,000 characters
-  and shortens descriptions first.
-* `metadata.argument-hint` is the invocation grammar and the only place it
-  is spelled: one bracket group per independent choice, ordered as a user
-  types them, so orthogonal axes never collapse into one alternation
-  (`"[lite|full|ultra] [design|review|help]"`, never
-  `"[lite|full|ultra|design|review|help]"`, which reads as pick exactly
-  one). Every skill carries one; a skill with no vocabulary names its
-  subject instead (`"[file-or-section]"`). No check can derive this from the
-  body, since verbs, levels, and modes are declared in different shapes per
-  skill and nowhere authoritatively, so it is a review obligation whenever a
-  verb, level, or mode changes.
-* `license: MIT` on every skill; skills are vendored individually and keep
-  their terms when copied out of this repository.
-* `compatibility` (≤500 characters) only for real environment requirements
-  (runtimes, system packages, network access); most skills omit it.
-
 ## Authoring and editing skills
 
 * Before creating or modifying any skill, load
-  [author-skill/SKILL.md](author-skill/SKILL.md) and follow it. It defines
-  the required structure, the distillation workflow, the validation
-  checklist, and the full rules for bundled scripts (its scripts
-  directives).
-* A skill MUST be a reproducible procedure, never a narrative of one past
-  session, and MUST NOT hardcode any single project's identity (paths,
-  scopes, service or package names). Parameterize project-specific values or
-  instruct the agent to derive them from the consuming repository.
-* Keep each skill within context economy (~500 lines). Offload bulky
-  reference material to sibling files the agent reads on demand.
-* When a step uses a capability another skill in this library provides (PDF
-  extraction, commit drafting, prose cleanup, environment provisioning),
-  command that skill in its slash form as an unconditional instruction:
-  "read PDFs with `/read-pdf`". The slash marks a skill invocation, and the
-  imperative holds because the library is consumed as a set, so siblings are
-  present. A fallback chain responds to conditions of the environment (an
-  unreachable file, no network) and names the degraded path to take.
-* The body opens with one paragraph under the title, one to three sentences
-  stating what the skill does and delivers, naming no sibling.
-* A skill's redirects, the tasks that belong to a sibling or lie outside the
-  skill, sit in one `## Redirects` section directly after `## Registry`
-  (first, when the skill bundles no files; absent, when it has no
-  redirects): one bullet per task, the condition, a colon, then the sibling
-  in slash form or, with no sibling, the plain action to take instead, so
-  the model keeps working. Route per verb from the spine where two personas
-  pair verb for verb ("`/pl-theorist`, same verb"). Keep a mid-procedure
-  command of a sibling ("extract the paper with `/read-pdf`") in the
-  procedure.
-* A skill that hands work to another agent commands `/summon` and supplies
-  only what summon's caller table asks for: the unit one delegate closes,
-  the record it hands over, the rules of its own that unit can break, its
-  return shape by registered name, its cap, and the gate the lead admits the
-  return through. Mode, brief shape, bounds, sizing, trust, and the review
-  of a return are summon's; a skill restates none of them and carries no
-  worker prompt, delegation threshold, or cost figure of its own.
-* Write skill text to the writing standard in author-skill's execution
-  rules: direct imperatives, each rule stated once, rationale only where it
-  changes a decision, no slogans, rankings, or process history; keep
-  uncertainty, negation, literals, and safety boundaries.
-* Bundled files are addressed by **registered name**, never by path, so a
-  path cannot drift and two files cannot claim one name:
-  * **One declaration site, declared before use.** Every skill that bundles
-    files opens with a `## Registry` section, the first `##` heading in the
-    file, mapping each name to its path. That table is the only place a path
-    appears. It lists every bundled file, including any not loaded during a
-    run, such as a maintainer protocol; those say so in their own first
-    line.
-  * **A name is the basename without `.md`, in backticks**: `` `a11y` ``, ``
-    `interaction` ``. Backticks mark an identifier, so it is never read as
-    the ordinary word. Basenames are unique within a skill.
-  * **Everything outside the declaration uses the name alone**, in
-    `SKILL.md` and inside `references/` alike. Reference files MUST NOT
-    contain Markdown links to other reference files: the spec keeps
-    references one level deep from `SKILL.md`, and link syntax invites the
-    chaining that rule forbids.
-  * **State the name-is-the-file identity once, never per row.** When a
-    table is keyed by verb, mode, or level and each row loads the file of
-    that name, say so in one sentence above the table and drop the column.
-    Rows that deviate (loading nothing, or loading two files) are named in
-    that same sentence.
-  * **A name is an address, never a sentence's payload.** It appears as the
-    object of a word that says what it is: "defined in `review`", "load
-    `brief`", "the template in `report`". Never "Full format: `review`.",
-    which reads as a value. In a table cell the column heading supplies that
-    word.
-  * **Runnable commands keep the literal path**, since they are invocations.
-  * A citation names the file that owns the topic. When ownership moves,
-    every citation to it moves in the same change.
-* NEVER use em-dash characters (U+2014) anywhere in this repository; use a
-  hyphen, a comma, a colon, or restructure the sentence.
-* Markdown prose wraps at 76 columns. The gate reflows paragraphs and list
-  items to that width and leaves frontmatter, code, tables, and XML blocks
-  as written, so wrap by hand only for reading comfort while drafting.
-* A convention change is total: the same change rewrites every statement,
-  example, and docstring of the old convention, so the repository shows one
-  convention at a time.
-* A bundled script and its invoking agent form a neuro-symbolic pair; the
-  scripts directives in author-skill govern the split (exact invariants in
-  the script, advisory signals for heuristics, witness-gated destruction,
-  script-minted identifiers, uniform command surfaces, stdin JSON, the uv
-  workspace member layout under `scripts/`, the `btm-corekit` kernel, the
-  documented `R=` binding, and the request-origin convention). The gate
-  keeps the kernel single-defined and the layout canonical: a member that
-  redefines a kernel symbol, skill Python outside `scripts/`, or a manifest
-  off `<skill>/scripts/pyproject.toml` is a blocking finding.
-* A script is frugal with the user's disk, and its state placement follows
-  the XDG base directory standard:
-  * Durable, light state (backups, logs, resumable sessions) lives in the
-    library's one state root under the XDG state directory:
-    `${XDG_STATE_HOME:-$HOME/.local/state}/btm-skills/`
-    (`%LOCALAPPDATA%\btm-skills\` on Windows). The `btm-skills` segment
-    marks this library as the source of every file under it, and each script
-    keeps all of its durable files inside its own skill's subdirectory of
-    that root, `btm-skills/<skill-name>/`, in purpose-named subdirectories
-    (`backups/`, `logs/`, `sessions/`).
-  * Heavy or regenerable artifacts (downloads, toolchains, caches,
-    extractions) live in temporary space. Any temp location serves; the
-    directory's name identifies its owner, the way `/setup-env` prefixes its
-    roots with `denv`.
-  * Logs are JSONL with one timestamped record per line and a size cap the
-    script enforces at write time by trimming or one-step rotation.
-  * Every script that writes state ships a `clean` verb that removes its
-    state, one target or `--all`, and reports the bytes freed.
-* All of a skill's Python, entry point included, lives inside its member:
-  the member's `pyproject.toml` is the single source of truth for what it
-  needs, and its console command is the only way in. Skills invoke that
-  command with `uv run --project` through the documented binding, never with
-  a host `python`/`python3` and never by module path.
+  [author-skill/SKILL.md](author-skill/SKILL.md) and follow it. It holds
+  every authoring rule: frontmatter, registry, redirects, the writing
+  standard, bundled scripts, and persona verbs.
 * When adding or renaming a skill, create it at `<skill-name>/SKILL.md` in
   the repository root and update the skill lists in `AGENTS.md` and
   `README.md` in the same change. The gate writes the alias symlink and the
-  manifest entry, so run it rather than hand-maintaining either.
-* Edit skills **here**, in this repository. NEVER edit the vendored copy
-  inside a downstream project's `.github/skills` submodule; those changes
-  are discarded on the next submodule update.
-
-## Persona verb protocol
-
-A persona skill dispatches work through verbs. A persona implements, from
-this table, the verbs its lens can honor, each with the table's contract;
-`pl-theorist` and `ponytail` carry all eight:
-
-| Verb | Contract |
-| --- | --- |
-| design | Plan before code exists |
-| build | Write new code |
-| refactor | Rewrite existing code, behavior preserved |
-| review | Judge a change: total over the diff, sound areas named |
-| audit | Judge a codebase: sampled by blast radius, unexamined areas named |
-| test | Derive checks from the lens's own laws |
-| teach | Explain a judgment, calibrated to audience |
-| help | Quick-reference card |
-
-Laws:
-
-* `build` and `refactor` apply changes; every other verb is read-only.
-* Same verb, same contract in every persona; only the lens differs.
-* A read-only verb names what is outside its lens and routes it to the
-  sibling skill in slash form.
-* Dispatch precedence: explicit verb, then unambiguous request shape, then
-  the persona's declared default verb.
-* One verb file per invocation, registered under the verb's name.
-
-Beyond the core the namespace is free (`ponytail` carries `debt` and
-`stats`), and a verb name keeps one meaning across the library: core names
-keep the table's semantics, and a name another skill already uses keeps that
-skill's meaning. Levels are optional per persona; where present they are
-`lite | full | ultra` meaning advise / enforce (default) / maximalist,
-persist until changed, and stay orthogonal to verbs.
+  manifest entry.
+* Edit skills here. NEVER edit the vendored copy inside a downstream
+  project's `.github/skills` submodule; the next submodule update discards
+  it.
+* NEVER use em-dash characters (U+2014) anywhere in this repository; use a
+  hyphen, a comma, a colon, or restructure the sentence.
+* Markdown prose wraps at 76 columns. The gate reflows paragraphs and list
+  items and leaves frontmatter, code, tables, and XML blocks as written.
+* A convention change is total: the same change rewrites every statement,
+  example, and docstring of the old convention.
+* NEVER add secrets, credentials, or project-internal data to a skill; these
+  files are public and vendored verbatim into many repositories.
 
 ## Commit conventions
 
@@ -343,45 +141,9 @@ repository-wide changes.
 
 ## How downstream projects consume this repository
 
-Skills are added as a submodule:
-
-```bash
-git submodule add https://github.com/BTreeMap/SKILLs.git .github/skills
-```
-
-The default setup also hard-copies `sync-skills.example.yml` from this
-repository's root to the consumer's `.github/workflows/sync-skills.yml`, so
-the submodule pointer auto-bumps to the upstream tip on a schedule. The copy
-MUST be a real file: GitHub Actions does not resolve symlinks under
-`.github/workflows`.
-
-Consumers clone with `--recurse-submodules` (or run
-`git submodule update --init --recursive` on an existing checkout), and
-refresh with `git submodule update --remote .github/skills` followed by
-committing the bumped pointer. A change here reaches a project only after
-that project bumps its submodule pointer.
-
-For Claude Code and Codex discovery in a consuming repository, commit
-relative parent-level aliases from `.claude/skills` and `.agents/skills` to
-`../.github/skills`. A submodule cannot create those entries in its parent
-repository. The root skill directories remain canonical; this repository's
-`skills/` hub and its vendor aliases are relative symlinks.
-
-## Boundaries
-
-* NEVER add secrets, credentials, or project-internal data to a skill; these
-  files are public and vendored verbatim into many repositories.
-* NEVER make a skill depend on a specific language, framework, or directory
-  layout unless the skill's whole purpose is that ecosystem, and say so in
-  the `description`.
-* When in doubt about a project-specific value, write the skill to discover
-  it from the repository at runtime instead of assuming it.
-
-## Types
-
-Every bundled script is typechecked. `uv run mypy` runs strict over every
-member's `src/`, with the pydantic plugin so a model's fields are checked at
-authoring time, and the gate workflow fails on a finding. Domain records
-subclass `Model` from the kernel, which is frozen and refuses unknown
-fields; constrained strings use the kernel's refined aliases (`Slug`, `Doi`,
-`ArxivId`, `Keyword`, `NonEmpty`) rather than bare `str`.
+A consumer adds this repository as a submodule at `.github/skills`, aliases
+`.claude/skills` and `.agents/skills` to it (a submodule cannot create
+entries in its parent), and copies `sync-skills.example.yml` to
+`.github/workflows/sync-skills.yml` as a real file, since GitHub Actions
+ignores symlinks there. A change here reaches a project when that project
+bumps its submodule pointer; the README carries the recipe.

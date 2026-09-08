@@ -165,11 +165,10 @@ or configure Git to create symlinks before cloning.
 
 ## Contributing
 
-Conventions, the CI gate, and the frontmatter protocol live in
-[AGENTS.md](AGENTS.md); the authoring procedure is
-[author-skill](author-skill/SKILL.md). CI repairs mechanical findings
-(formatting, ordering, aliases) on every push and fails only on what needs a
-person.
+Repository conventions and the CI gate live in [AGENTS.md](AGENTS.md); every
+authoring rule is in [author-skill](author-skill/SKILL.md). CI repairs
+mechanical findings (formatting, ordering, aliases) on every push and fails
+only on what needs a person.
 
 ## License
 
