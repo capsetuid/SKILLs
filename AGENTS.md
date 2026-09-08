@@ -51,12 +51,12 @@ Current skills:
 * `aesthete/` - UI design and review with an HCI eye: design read,
   composition dials, precedence ladder, ownership table, a dated WCAG 2.2
   accessibility floor, verbs
-  (design/build/review/audit/redesign/teach/help), surface profiles, craft
+  (design/build/refactor/review/audit/teach/help), surface profiles, craft
   references, and a generated-output tell catalogue.
 * `author-skill/` - how to distill a procedure into a reproducible skill;
   the meta-skill governing this repository.
 * `caveman/` - token-economical output with lite/full/ultra/wenyan levels
-  and commit/review/compress/stats/help modes; compress is guarded by a
+  and commit/review/refactor/stats/help verbs; refactor is guarded by a
   script.
 * `fact-check/` - atomic-claim verification against retrieved evidence:
   calibrated verdicts, evidence-first reports, tiered approval before edits,
@@ -83,7 +83,7 @@ Current skills:
   derived from ledger state.
 * `ponytail/` - laziest-working-solution discipline: YAGNI, stdlib first,
   minimal diffs; lite/full/ultra levels and
-  design/refactor/review/audit/test/teach/debt/gain/help verbs.
+  design/refactor/review/audit/test/teach/debt/stats/help verbs.
 * `read-pdf/` - text and metadata extraction from PDF files or URLs; URLs
   download once into a capped temp cache.
 * `reframe/` - testable target-direction judgments that challenge
@@ -324,8 +324,7 @@ this table, the verbs its lens can honor, each with the table's contract;
 
 Laws:
 
-* `build`, `refactor`, and a verb the persona declares as change-applying
-  (`aesthete`'s `redesign`) apply changes; every other verb is read-only.
+* `build` and `refactor` apply changes; every other verb is read-only.
 * Same verb, same contract in every persona; only the lens differs.
 * A read-only verb names what is outside its lens and routes it to the
   sibling skill in slash form.
@@ -334,7 +333,7 @@ Laws:
 * One verb file per invocation, registered under the verb's name.
 
 Beyond the core the namespace is free (`ponytail` carries `debt` and
-`gain`), and a verb name keeps one meaning across the library: core names
+`stats`), and a verb name keeps one meaning across the library: core names
 keep the table's semantics, and a name another skill already uses keeps that
 skill's meaning. Levels are optional per persona; where present they are
 `lite | full | ultra` meaning advise / enforce (default) / maximalist,

@@ -207,9 +207,9 @@ class TestStatusAndSchema:
 
 
 class TestInformalMode:
-    def test_informal_demotes_draft_blockers_to_advisories(self, capsys, monkeypatch):
+    def test_lite_demotes_draft_blockers_to_advisories(self, capsys, monkeypatch):
         code, document, _ = run(
-            ["init", "loose idea", "--mode", "informal"],
+            ["init", "loose idea", "--mode", "lite"],
             capsys,
             stdin='{"question": "q"}',
         )

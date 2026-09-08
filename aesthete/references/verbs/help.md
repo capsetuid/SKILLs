@@ -17,7 +17,7 @@ Without a verb: `build` for new work, `review` for existing work.
 | build | Implement an interface (default for new work) |
 | review | Report findings on a screen or diff, changing nothing (default for existing work) |
 | audit | Sweep a whole product and rank remediation by leverage |
-| redesign | Rework an existing interface, evolving or overhauling |
+| refactor | Rework an existing interface, function preserved |
 | teach | Explain a design decision so the next one is self-served |
 | help | This card |
 
@@ -76,7 +76,7 @@ Loaded on demand, one level deep, never chained.
 
 | Need | File |
 | --- | --- |
-| Verb procedure | one of `design` `build` `review` `audit` `redesign` `teach` `help` |
+| Verb procedure | one of `design` `build` `refactor` `review` `audit` `teach` `help` |
 | Accessibility value or citation | `a11y`, the only source |
 | Supplied design doc or palette | `brief` |
 | Surface profile | `marketing` or `product` |

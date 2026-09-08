@@ -41,7 +41,7 @@ from btm_ponder.store import (
     write_meta,
 )
 from btm_ponder.views import (
-    INFORMAL_DEMOTED,
+    LITE_DEMOTED,
     counts_of,
     hedges,
     leaf_view,
@@ -124,8 +124,8 @@ def cmd_check(args: argparse.Namespace) -> int:
     }
     found = violations(ledger)
     demoted = (
-        [line for line in found if line.startswith(INFORMAL_DEMOTED)]
-        if mode is Mode.INFORMAL
+        [line for line in found if line.startswith(LITE_DEMOTED)]
+        if mode is Mode.LITE
         else []
     )
     blocking = [line for line in found if line not in demoted]
@@ -191,7 +191,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--mode",
         choices=MODES,
         default="full",
-        help="informal demotes draft blockers to advisories",
+        help="lite demotes draft blockers to advisories",
     )
     note = commands.add_parser(
         "note", help="admit one round of leaves, sources, and closes"

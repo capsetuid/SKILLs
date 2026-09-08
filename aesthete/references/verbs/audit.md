@@ -53,7 +53,7 @@ Leverage: {why this rank}
 **Later** (composition and flow): {items}
 
 ## Not fixed by this plan
-{structural problems requiring a redesign decision}
+{structural problems requiring a refactor decision}
 </template>
 
 ## Rules
@@ -68,7 +68,7 @@ Leverage: {why this rank}
   reasons out of findings, and report undocumented deviations as missing
   documentation.
 * Record a new design-system adoption in "not fixed by this plan". It is a
-  redesign decision with its own verb.
+  refactor decision with its own verb.
 * Cap the ranked list at what can be acted on. A hundred findings is noise.
 * Report accessibility failures as their own cluster with the specific
   criterion each violates, since these carry obligations the rest do not.

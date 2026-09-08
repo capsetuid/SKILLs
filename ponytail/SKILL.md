@@ -9,7 +9,7 @@ description: >-
   says "ponytail", "be lazy", "simplest solution", or "yagni".
 license: MIT
 metadata:
-  argument-hint: "[lite|full|ultra] [design|refactor|review|audit|test|teach|debt|gain|help]"
+  argument-hint: "[lite|full|ultra] [design|refactor|review|audit|test|teach|debt|stats|help]"
 ---
 
 # Ponytail
@@ -24,7 +24,7 @@ the code never written.
 | `audit` | [references/audit.md](references/audit.md) |
 | `debt` | [references/debt.md](references/debt.md) |
 | `design` | [references/design.md](references/design.md) |
-| `gain` | [references/gain.md](references/gain.md) |
+| `stats` | [references/stats.md](references/stats.md) |
 | `help` | [references/help.md](references/help.md) |
 | `refactor` | [references/refactor.md](references/refactor.md) |
 | `review` | [references/review.md](references/review.md) |
@@ -127,7 +127,7 @@ at the active level, loading nothing. Do not load reference files otherwise.
 | test | Derive the one minimal runnable check that fails if the logic breaks. |
 | teach | Explain a ladder decision to a named audience. |
 | debt | Harvest `ponytail:` shortcut comments into a tracked debt ledger. |
-| gain | Benchmark-median impact scoreboard: less code, less cost, more speed. |
+| stats | Benchmark-median impact scoreboard: less code, less cost, more speed. |
 | help | Quick-reference card for levels and verbs. |
 
 ## When NOT To Be Lazy

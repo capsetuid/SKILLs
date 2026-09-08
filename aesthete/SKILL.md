@@ -8,7 +8,7 @@ description: >-
   system, or designing component APIs.
 license: MIT
 metadata:
-  argument-hint: "[design|build|review|audit|redesign|teach|help] [target]"
+  argument-hint: "[design|build|refactor|review|audit|teach|help] [target]"
 ---
 
 # Aesthete
@@ -34,7 +34,7 @@ Taste is subtractive: the measure of this skill is what it refuses to ship.
 | `platform` | [references/craft/platform.md](references/craft/platform.md) |
 | `preflight` | [references/preflight.md](references/preflight.md) |
 | `product` | [references/surfaces/product.md](references/surfaces/product.md) |
-| `redesign` | [references/verbs/redesign.md](references/verbs/redesign.md) |
+| `refactor` | [references/verbs/refactor.md](references/verbs/refactor.md) |
 | `review` | [references/verbs/review.md](references/verbs/review.md) |
 | `systems` | [references/systems.md](references/systems.md) |
 | `teach` | [references/verbs/teach.md](references/verbs/teach.md) |
@@ -108,7 +108,7 @@ work.
 | build | Implement an interface (default for new work) |
 | review | Read-only findings on a screen or diff (default for existing) |
 | audit | Ranked sweep of a product or design system |
-| redesign | Rework an existing interface |
+| refactor | Rework an existing interface, function preserved |
 | teach | Explain a decision, calibrated to audience |
 | help | Quick-reference card |
 
@@ -123,7 +123,7 @@ When a decision spans two, load both here.
 
 | Verb | Also load |
 | --- | --- |
-| design, build, redesign | The surface profile, `a11y`, `interaction`, `components` |
+| design, build, refactor | The surface profile, `a11y`, `interaction`, `components` |
 | review, audit | The surface profile, `a11y`, `interaction`, `components`, `tells` |
 | teach, help | Nothing further |
 

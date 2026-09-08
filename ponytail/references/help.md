@@ -27,7 +27,7 @@ stance itself, no reference file.
 | **test** | `/ponytail test` | The one minimal runnable check that fails if the logic breaks. |
 | **teach** | `/ponytail teach` | Explain a ladder decision to a named audience. |
 | **debt** | `/ponytail debt` | Harvest `ponytail:` shortcut comments into a tracked ledger. |
-| **gain** | `/ponytail gain` | Benchmark-median impact scoreboard: less code, less cost, more speed. |
+| **stats** | `/ponytail stats` | Benchmark-median impact scoreboard: less code, less cost, more speed. |
 | **help** | `/ponytail help` | This card. |
 
 ## Deactivate
@@ -36,6 +36,6 @@ Say "stop ponytail" or "normal mode". Resume anytime with `/ponytail`.
 
 ## More
 
-Levels are defined in this skill's SKILL.md; review, audit, debt, and gain
+Levels are defined in this skill's SKILL.md; review, audit, debt, and stats
 are adapted from the upstream ponytail project:
 https://github.com/DietrichGebert/ponytail

@@ -10,7 +10,7 @@ write files, or persist anything. Output in caveman style.
 | **lite** | `/caveman lite` | Drop filler. Keep sentence structure. |
 | **full** | `/caveman` | Drop articles, filler, pleasantries, hedging. Fragments OK. Default. |
 | **ultra** | `/caveman ultra` | Extreme compression. Bare fragments. One word when one word enough. |
-| **wenyan-*** | `/caveman wenyan-lite\|wenyan-full\|wenyan-ultra` | Classical Chinese tiers. |
+| **wenyan** | `/caveman wenyan` | Classical Chinese at the active level. |
 
 Level sticks until changed or session end.
 
@@ -22,7 +22,7 @@ One-shot reports; the active level is untouched.
 | --- | --- | --- |
 | **commit** | `/caveman commit` | Terse Conventional Commits message. Why over what. |
 | **review** | `/caveman review` | One-line findings: `L42: bug: user null. Add guard.` |
-| **compress** | `/caveman compress <file>` | Rewrite prose file in place; script-guarded, backup kept. |
+| **refactor** | `/caveman refactor <file>` | Rewrite prose file in place; script-guarded, backup kept. |
 | **stats** | `/caveman stats` | Honest savings card. No invented numbers. |
 | **help** | `/caveman help` | This card. |
 

@@ -41,10 +41,10 @@ class Reason(StrEnum):
 
 
 class Mode(StrEnum):
-    """INFORMAL demotes draft blockers to advisories; sourcing is unchanged."""
+    """LITE demotes draft blockers to advisories; sourcing is unchanged."""
 
     FULL = "full"
-    INFORMAL = "informal"
+    LITE = "lite"
 
 
 class CloseState(StrEnum):

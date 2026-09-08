@@ -10,8 +10,8 @@ docstring:
 
     model -> steps -> catalog -> plan -> render/effects -> cli
 
-Everything through `plan` is pure: `btm-setup-env plan` prints exactly what
-`provision` would do, with no network and no filesystem writes; that
+Everything through `plan` is pure: `btm-setup-env design` prints exactly
+what `provision` would do, with no network and no filesystem writes; that
 property is the test seam. `effects` is the only module that performs I/O;
 `cli` only parses and reports.
 
@@ -68,7 +68,7 @@ property is the test seam. `effects` is the only module that performs I/O;
 
 On at least one linux host, ideally both architectures:
 
-- `btm-setup-env plan <tag>`: steps and env look right, twice for
+- `btm-setup-env design <tag>`: steps and env look right, twice for
   determinism.
 - `btm-setup-env provision <tag>`: exit 0, probes ok; re-run completes in
   under a second changing nothing.

@@ -15,7 +15,7 @@ write nothing.
   net NEGATIVE. When they are, say so plainly and suggest turning caveman
   off for that workload.
 - Local numbers: the only honest per-file figures here are the
-  `CHARS: X -> Y` lines the compress mode's guard script prints. Character
+  `CHARS: X -> Y` lines the refactor verb's guard script prints. Character
   deltas are not token deltas; label them as characters.
 
 ## Honesty Boundary

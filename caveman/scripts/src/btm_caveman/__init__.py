@@ -1,4 +1,4 @@
-"""Deterministic guard for the caveman compress mode.
+"""Deterministic guard for the caveman refactor verb.
 
 The agent compresses prose; this package validates and backs it up:
 check, prepare, apply, restore, clean <file>|--all. The target is never

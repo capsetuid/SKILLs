@@ -1,7 +1,7 @@
-# Verb: redesign
+# Verb: refactor
 
-Rework an existing interface. Detect the mode first so the redesign matches
-the problem.
+Rework an existing interface, function preserved. Detect the mode first so
+the rework matches the problem.
 
 ## Mode detection
 
@@ -17,7 +17,7 @@ visual language starts fresh. Otherwise infer and state the mode.
 ## Audit before touching
 
 Document the current state before proposing anything so working parts
-survive the redesign.
+survive the rework.
 
 * **Brand tokens** in actual use: colors, type stack, logo treatment, radii,
   spacing rhythm, motion character.
@@ -31,8 +31,8 @@ survive the redesign.
 * **Current dials**: infer VARIANCE, MOTION, and DENSITY from the existing
   interface. That reading is the starting point.
 * **Discoverability baseline**: ranking pages, titles, structured data, and
-  share cards. Migration damage here is the highest-cost redesign failure
-  and the least visible during the work.
+  share cards. Migration damage here is the highest-cost rework failure and
+  the least visible during the work.
 
 ## Modernization levers
 

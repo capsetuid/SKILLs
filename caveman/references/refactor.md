@@ -1,4 +1,4 @@
-# Caveman Compress Mode
+# Caveman Refactor Verb
 
 Rewrite a natural-language file (CLAUDE.md, notes, todos, preferences) in
 caveman style to cut input-token cost. Agent compresses the prose; the

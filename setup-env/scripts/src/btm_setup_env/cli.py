@@ -30,7 +30,7 @@ from btm_setup_env.shell.commands import ProbeResult
 from btm_setup_env.steps import CondaEnv, Fetch, stage_of
 from btm_setup_env.tags import resolve_tag
 
-VERBS = ("provision", "plan", "status", "shim", "destroy", "list")
+VERBS = ("provision", "design", "status", "shim", "destroy", "list")
 
 
 def _resolve(
@@ -58,7 +58,7 @@ def _describe_step(step: object) -> str:
             return type(step).__name__
 
 
-def cmd_plan(args: argparse.Namespace) -> int:
+def cmd_design(args: argparse.Namespace) -> int:
     plan = _build_plan(args.project, args.root, args.tags)
     if args.json:
         print(
@@ -206,7 +206,11 @@ def _parser() -> argparse.ArgumentParser:
 
     for verb, summary, handler in (
         ("provision", "install the toolchains these tags name", cmd_provision),
-        ("plan", "show what provision would install, and install nothing", cmd_plan),
+        (
+            "design",
+            "show what provision would install, and install nothing",
+            cmd_design,
+        ),
     ):
         sp = sub.add_parser(verb, help=summary)
         sp.set_defaults(func=handler)

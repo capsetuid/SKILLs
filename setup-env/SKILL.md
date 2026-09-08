@@ -15,7 +15,7 @@ compatibility: >-
   (haskell, bash, c, cpp unavailable there). Roughly 1-6 GB under the
   environment root, depending on targets.
 metadata:
-  argument-hint: "[provision|plan|status|shim|destroy|list] [tags...]"
+  argument-hint: "[provision|design|status|shim|destroy|list] [tags...]"
 ---
 
 # Setup Env
@@ -83,7 +83,7 @@ btm-setup-env provision kotlin:native
 btm-setup-env provision go:cgo rust cmake
 
 # Preview the plan without executing anything
-btm-setup-env plan haskell csharp
+btm-setup-env design haskell csharp
 ```
 
 </commands>

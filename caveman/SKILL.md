@@ -8,9 +8,9 @@ description: >-
   tokens, or a longer-lived context.
 license: MIT
 compatibility: >-
-  Compress mode requires uv and a full SKILLs repository checkout.
+  The refactor verb requires uv and a full SKILLs repository checkout.
 metadata:
-  argument-hint: "[lite|full|ultra|wenyan-lite|wenyan-full|wenyan-ultra] [commit|review|compress|stats|help]"
+  argument-hint: "[lite|full|ultra] [wenyan] [commit|review|refactor|stats|help]"
 ---
 
 # Caveman
@@ -23,7 +23,7 @@ die.
 | Name | Path |
 | --- | --- |
 | `commit` | [references/commit.md](references/commit.md) |
-| `compress` | [references/compress.md](references/compress.md) |
+| `refactor` | [references/refactor.md](references/refactor.md) |
 | `help` | [references/help.md](references/help.md) |
 | `review` | [references/review.md](references/review.md) |
 | `stats` | [references/stats.md](references/stats.md) |
@@ -38,7 +38,7 @@ die.
 ACTIVE EVERY RESPONSE. No revert after many turns. No filler drift. Still
 active if unsure. Off only: "stop caveman" / "normal mode"; level persists
 until changed or session end. Default: **full**. Switch:
-`/caveman lite|full|ultra|wenyan-lite|wenyan-full|wenyan-ultra`.
+`/caveman lite|full|ultra [wenyan]`.
 
 ## Rules
 
@@ -102,7 +102,7 @@ Pattern: `[thing] [action] [reason]. [next step].`
 | **lite** | No filler or hedging. Keep articles and full sentences. Professional but tight. |
 | **full** | Drop articles, fragments OK, short synonyms. Classic caveman. Default. |
 | **ultra** | Strip conjunctions when cause-then-effect stays unambiguous. One word when one word enough. State each fact once. Code symbols, function names, error strings: never touch. |
-| **wenyan-*** | Classical Chinese compression tiers. Load `wenyan`. |
+| **wenyan** | Classical Chinese at the active level. Load `wenyan`. |
 
 <examples for="intensity" request="Why does my React component re-render?">
   <variant for="lite">Your component re-renders because you create a new object reference each render. Wrap it in `useMemo`.</variant>
@@ -110,22 +110,20 @@ Pattern: `[thing] [action] [reason]. [next step].`
   <variant for="ultra">Inline obj prop, new ref, re-render. `useMemo`.</variant>
 </examples>
 
-## Modes
+## Verbs
 
-One-shot sub-commands. On `/caveman <mode>` or a matching trigger phrase,
-read ONLY that mode's reference file, follow it, report; active intensity
-level untouched. Mode name is its registered name: mode selects file. Do
+One-shot sub-commands. On `/caveman <verb>` or a matching trigger phrase, read ONLY that verb's reference file, follow it, report; active intensity level untouched. Verb name is its registered name: verb selects file. Do
 not load reference files otherwise.
 
-| Mode | What it does |
+| Verb | What it does |
 | --- | --- |
 | commit | Terse Conventional Commits message: why over what, body only when needed. |
 | review | One-line review findings: location, tag, problem, fix. |
-| compress | Rewrite a prose file in caveman style in place, code untouched, backup kept. |
+| refactor | Rewrite a prose file in caveman style in place, code untouched, backup kept. |
 | stats | Honest savings card: measured benchmarks, rule overhead, no invented numbers. |
-| help | Quick-reference card for levels and modes. |
+| help | Quick-reference card for levels and verbs. |
 
-The guard script's command surface, documented in `compress`, is the
+The guard script's command surface, documented in `refactor`, is the
 handoff point: invoke it and read its output; source reading belongs to
 user-instructed troubleshooting.
 
@@ -141,12 +139,11 @@ then resume caveman after the clear part is done.
 
 - Compress natural-language prose exclusively: compressed code syntax, URLs, or literal string values break functionality.
 - Stop precisely at the end of the requested artifact; don't append a summary after a code block.
-- Classical characters belong to wenyan levels only; never swap a word for a classical character to shrink at other levels.
+- Classical characters belong to wenyan only.
 
 ## Boundaries
 
 Persisted outside chat: write normal prose in code, comments, commit
-messages, docs, issue/PR text, memory files, third-party messages (the
-compress mode is the sole exemption). Text an agent loads as instructions,
+messages, docs, issue/PR text, memory files, third-party messages (the refactor verb is the sole exemption). Text an agent loads as instructions,
 a skill or a delegate brief, takes this register at lite: full sentences,
 no filler, no hedge.
