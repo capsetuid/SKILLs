@@ -124,7 +124,8 @@ class TestArxiv:
     seconds, so the class fetches once rather than once per assertion."""
 
     @pytest.fixture(scope="class")
-    def feed(self, client) -> arxiv.Feed:
+    @staticmethod
+    def feed(client) -> arxiv.Feed:
         return arxiv.feed(client, CAP, "all:superconductivity", PAGE)
 
     def test_a_search_answers_with_entries(self, feed):
