@@ -68,20 +68,44 @@ outrank brevity.
   </directives>
 
   <directives for="scripts">
-    <rule>Split the work between script and agent by the table and the test in Script and agent below: the script is the symbolic half and holds what is decidable and what must be remembered; the agent is the neuro half and holds every judgment about meaning, choice, and intent.</rule>
-    <rule>Give the script the exact, decidable checks (existence, size, encoding, identity, structural equality, digests, atomic writes, backups) and hard-fail only on an invariant violation. Emit every heuristic as an advisory signal line stating its evidence, and have the skill text weigh signals against user intent. When a check is skipped or vacuous, say so in the output.</rule>
-    <rule>Gate a destructive or hard-to-reverse effect on an exact witness (a marker file, an identity record, an explicit flag) and provide an undo path. Keep mechanical, idempotent repairs in the script; leave judgment calls to the agent.</rule>
-    <rule>Document the full command surface and output conventions in `SKILL.md`, with one line beside the commands reserving source reading for user-instructed troubleshooting.</rule>
-    <rule>Keep the command surface uniform: one record is a batch of one, sibling record kinds share one plural-array container, every subcommand names its subject the same way, and each effect has one spelling.</rule>
-    <rule>Mint identifiers in the script: the agent supplies two or three keywords; return the lowercase dash-joined slug plus a 128-bit suffix (`b32hexencode(os.urandom(16)).decode().rstrip("=").lower()`) and echo it in every output. Accept a keyword subset as recovery for a lost identifier, signaling and re-echoing it, and error with candidates on ambiguity. Keep a natural key (DOI, path) where one exists.</rule>
-    <rule>Pass configuration as flags and free-form content as one JSON object on stdin or `--file`: closed vocabularies, counts, booleans, paths, and identifiers are shell-safe; prose, queries, regexes, and JSON bodies are not, so give them no inline spelling. Let a literal parameter also take `@path` and `-`, with `@@` starting a literal `@`; keep a path-only parameter bare. Reject a malformed argument line as a located exit-1 rejection. Name the subject in every call and hold no ambient current-subject state; instruct the agent to bind the command and the session identifier to shell variables and chain a round's calls in one invocation.</rule>
-    <rule>Make a skill that bundles Python a uv workspace member rooted at `scripts/`: `scripts/pyproject.toml`, `scripts/src/btm_<skill>/`, `scripts/tests/`, listed in the root `pyproject.toml`, with no code outside `scripts/`. Expose one entry point, the console command `btm-<skill>`, invoked through one binding, `R="env -u VIRTUAL_ENV uv run --project $(realpath <skill-root>/scripts) btm-<skill>"`; `realpath` is required because uv resolves the project path lexically and an alias path has no workspace root above it. Invoke no host `python` and no module path.</rule>
-    <rule>Put logic shared across members once in the kernel `btm-corekit` under `.corekit/`, declared as `dependencies = ["btm-corekit"]` with source `btm-corekit = { workspace = true }`. Compose its gate mechanics (`SessionStore`, `EventLog`, `Admission` with `Pool`, `read_batch` and `rejection`, `wire_pad` and `wire_clean`) and add only the member's record semantics; redefine no kernel symbol.</rule>
-    <rule>Decode every boundary-crossing shape with one pydantic model: a wire kind with variants as a union discriminated on its tag, a state file as a record, an untrusted value as a refined alias (`Slug`, `Doi`, `Count`). Subclass the kernel's frozen `Model`; set `extra="forbid"` where the agent writes the file and `extra="ignore"` where another writer owns it. Keep in the script only what a model cannot see: resolving against live state, minting, proving a cross-record link. Pass `uv run mypy`, strict with the pydantic plugin.</rule>
-    <rule>Return every fix in one rejection: decode rows one at a time, check the values of a malformed row that resolve outside it, name the field to edit (`findings[0].claim`), and attach the entry's schema fragment as the hint.</rule>
-    <rule>Use three shapes and no fourth: a `Model` serialized with `dump` for a record on disk, a `TypedDict` for a view a command computes and indexes, and `dict[str, JSON]` for the document a command emits.</rule>
-    <rule>Keep durable light state (backups, logs, sessions) under `${XDG_STATE_HOME:-$HOME/.local/state}/btm-skills/<skill-name>/` (`%LOCALAPPDATA%\btm-skills\` on Windows) in purpose-named subdirectories. Put heavy or regenerable artifacts in temporary space under a directory named for its owner. Write logs as JSONL, one timestamped record per line, capped at write time. Ship a `clean` verb that removes one target or `--all` and reports the bytes freed.</rule>
-    <rule>Mark a network request's origin by one convention, first defined wins: `BTM_USER_AGENT` sent verbatim; else `BTM_CONTACT`, else `skills@oss.joefang.org`, in the header `btm-skills/1.0 (<skill-name>; mailto:<contact>)`. Disclose the contact through polite pools (an OpenAlex or Crossref `mailto` parameter) only from a contact-derived identity. Read the variables in the script alone; mention them in no skill text.</rule>
+
+    <directives for="codesign">
+      <rule>Place each responsibility with the first test it passes. Computable exactly from bytes, no taste involved: script, as a hard-failing invariant. A fact the agent would otherwise remember across turns (an admitted record, an identifier, a count): script, stored once and echoed in every output. A verdict that follows from stored facts (a standing, a coverage, a ratio, the next legal step): script, derived from live state on every call and never stored. A judgment about meaning, relevance, quality, or intent: agent, with the script handing over evidence as a signal. An irreversible effect: agent decides; script executes behind an explicit witness and keeps an undo where the agent's judgment could be wrong.</rule>
+      <rule>Give the script existence, size, encoding, digests, schemas, structural equality, cross-record links, session files, ledgers, minted identifiers, derived scaffolds with a `next` advisory, HTTP with retries and rate limits, wire decoding, idempotent repairs, and witnessed effects. Leave to the agent whether a claim is supported, a paper relevant, or a sentence clear; which rung, school, level, or sibling fits; every draft, rewrite, and brief; the reading of retrieved text as data; the weighing of a signal against the user's request; and the decision to take an irreversible step.</rule>
+      <rule>Validate only what a derivation branches, joins, or counts on: closed vocabularies at the envelope, open payloads inside. Reject only unparseable transport, a dangling reference, or a value outside a branching vocabulary; make everything else at most an advisory. Reject a missing required field, never an extra one. Return everything admitted in some view.</rule>
+      <rule>Give the agent free memory beside the gate: a pad (`jot`, `recall`) that admits any JSON object or prose under a script-stamped envelope and never rejects content, so rigor sits only on the fields the next reader depends on. Let a gated record cite pad ids as provenance, each checked to exist.</rule>
+      <rule>Store a claim's inputs (support keys, probes, a watch regex, the log position) and derive its verdict on every read, so a stale verdict is unrepresentable. Branch on structure (a variant keyed by field presence), never on a vocabulary value. Make append-only what must never move, such as citation markers. Surface a contradiction candidate (a watch hit) and leave the judgment to the agent.</rule>
+      <rule>Design for the agent's loop, not a pipeline: give evolving beliefs objects and verbs (findings, gaps, open threads) with supersede chains; record a bulk judgment as one rule with its matched keys; keep a zero-result search in the log as evidence of absence; ship a resume view (`brief`, `status`) that re-enters the loop after compaction with derived verdicts, drift since the last snapshot, coverage, and the pad tail.</rule>
+      <rule>Encode no taste as a hard rule. Put a style threshold or a file-kind guess in a signal that names its evidence, and let the skill text say when a signal stops the run (a guessed code file stops unless the user named it). Memoize a repeatable query and say so in a signal. Report a skipped, vacuous, or partial check in the output (empty pages counted, a suffix the checker cannot parse).</rule>
+      <rule>Treat a consumer agent's friction report as requirements, and reproduce the reported failure session as the acceptance test.</rule>
+    </directives>
+
+    <directives for="interface">
+      <rule>Document the full command surface and output conventions in `SKILL.md`, with one line beside the commands reserving source reading for user-instructed troubleshooting. Show a round's calls chained with `&&`, so a rejection stops the chain.</rule>
+      <rule>Keep the command surface uniform: one record is a batch of one; sibling record kinds share one plural-array container decoded row by row; every subcommand names its subject with the same positional; each effect has one spelling across the library (`init`, `note`, `check`, `status`, `jot`, `recall`, `schema`, `clean`).</rule>
+      <rule>Pass configuration as flags and free-form content as one JSON object on stdin or `--file`: closed vocabularies, counts, booleans, paths, and identifiers are shell-safe; prose, queries, regexes, and JSON bodies are not, so give them no inline spelling. Let a literal parameter also take `@path` and `-`, with `@@` starting a literal `@`; keep a path-only parameter bare. Reject a malformed argument line as a located exit-1 rejection. Name the subject in every call and hold no ambient current-subject state; instruct the agent to bind the command and the session identifier to shell variables and chain a round's calls in one invocation.</rule>
+      <rule>Mint identifiers in the script: the agent supplies two or three keywords; return the lowercase dash-joined slug plus a 128-bit suffix (`b32hexencode(os.urandom(16)).decode().rstrip("=").lower()`) and echo it in every output. Accept a keyword subset as recovery for a lost identifier, signaling and re-echoing it, and error with candidates on ambiguity. Keep a natural key (DOI, path) where one exists.</rule>
+      <rule>Spend output freely and reject totally: run every row before committing anything, then return one verdict naming every problem as an imperative fix with its field path (`findings[0].claim`) and a hint (a did-you-mean, the valid vocabulary, the schema fragment), with state unchanged. Echo receipts (minted ids, marker tables) so the agent copies instead of deriving. Ship a `schema` verb. Accept an alias an agent plausibly writes (a DOI, an arXiv id) with a resolution advisory.</rule>
+      <rule>Exit 0 when done, with `signal:` lines on stderr that never abort a batch loop; exit 1 for fix-your-input, carrying the corrective verdict; exit 2 for an upstream failure worth retrying.</rule>
+    </directives>
+
+    <directives for="state">
+      <rule>Decode every boundary-crossing shape with one pydantic model: a wire kind with variants as a union discriminated on its tag, a state file as a record, an untrusted value as a refined alias (`Slug`, `Doi`, `Count`). Subclass the kernel's frozen `Model`; set `extra="forbid"` where the agent writes the file and `extra="ignore"` where another writer owns it. Keep in the script only what a model cannot see: resolving against live state, minting, proving a cross-record link. Pass `uv run mypy`, strict with the pydantic plugin.</rule>
+      <rule>Use three shapes and no fourth: a `Model` serialized with `dump` for a record on disk, a `TypedDict` for a view a command computes and indexes, and `dict[str, JSON]` for the document a command emits.</rule>
+      <rule>Gate a destructive or hard-to-reverse effect on an exact witness (a marker file, an identity record, an explicit flag) and provide an undo path where the agent's judgment could be wrong; a user-directed `clean` needs the witness alone. On a digest mismatch, delete the corrupt artifact and hard-fail so a re-run self-heals. Keep mechanical, idempotent repairs in the script; leave judgment calls to the agent.</rule>
+      <rule>Keep durable light state (backups, logs, sessions) under `${XDG_STATE_HOME:-$HOME/.local/state}/btm-skills/<skill-name>/` (`%LOCALAPPDATA%\btm-skills\` on Windows) in purpose-named subdirectories. Put heavy or regenerable artifacts in temporary space under a directory named for its owner. Write logs as JSONL, one timestamped record per line, capped at write time. Ship a `clean` verb that removes one target or `--all` and reports the bytes freed.</rule>
+    </directives>
+
+    <directives for="workspace">
+      <rule>Make a skill that bundles Python a uv workspace member rooted at `scripts/`: `scripts/pyproject.toml`, `scripts/src/btm_<skill>/`, `scripts/tests/`, listed in the root `pyproject.toml`, with no code outside `scripts/`. Expose one entry point, the console command `btm-<skill>`, invoked through one binding, `R="env -u VIRTUAL_ENV uv run --project $(realpath <skill-root>/scripts) btm-<skill>"`; `realpath` is required because uv resolves the project path lexically and an alias path has no workspace root above it. Invoke no host `python` and no module path.</rule>
+      <rule>Put logic shared across members once in the kernel `btm-corekit` under `.corekit/`, declared as `dependencies = ["btm-corekit"]` with source `btm-corekit = { workspace = true }`. Compose its gate mechanics (`SessionStore`, `EventLog`, `Admission` with `Pool`, `read_batch` and `rejection`, `wire_pad` and `wire_clean`) and add only the member's record semantics; redefine no kernel symbol.</rule>
+      <rule>Mark a network request's origin by one convention, first defined wins: `BTM_USER_AGENT` sent verbatim; else `BTM_CONTACT`, else `skills@oss.joefang.org`, in the header `btm-skills/1.0 (<skill-name>; mailto:<contact>)`. Disclose the contact through polite pools (an OpenAlex or Crossref `mailto` parameter) only from a contact-derived identity. Read the variables in the script alone; mention them in no skill text.</rule>
+    </directives>
+
+    <directives for="tests">
+      <rule>Scan text with `str` methods (`translate` and `split`, `find` and `partition`) or one compiled pattern with one class per quantifier; keep Python iteration proportional to tokens produced, never characters read; cap the length of an agent-supplied pattern. Prefer a maintained C library over a hand-rolled index. Benchmark realistic and adversarial inputs and report both.</rule>
+      <rule>Audit behavior before asserting it: fix what is wrong, test the corrected behavior, and confirm a bug-pinning test fails against the old code. Test the bridge code (the decoder at an untrusted boundary, the error conversion, an all-or-nothing law, a witness gating destruction); test nothing pydantic or a closed union already proves. Move a failure to authoring time (an exhaustive `match`) before writing a test for it.</rule>
+    </directives>
   </directives>
 
   <directives for="output">
@@ -101,38 +125,6 @@ outrank brevity.
     <item>A fresh agent can execute the skill from its text alone, with no session memory or clarifying question.</item>
   </checklist>
 </directives>
-
-## Script and agent
-
-Place each responsibility with the first test it passes:
-
-1. Computable exactly from bytes the script can read, with no taste
-   involved: script, as an invariant that hard-fails.
-2. A fact the agent would otherwise have to remember across turns (what was
-   admitted, an identifier, a count, a status): script, stored once and
-   echoed in every output.
-3. A verdict that follows from stored facts (a claim's standing, coverage,
-   a ratio, the next legal step): script, derived from live state on every
-   call and never stored, so it cannot go stale.
-4. A judgment about meaning, relevance, quality, or intent: agent. The
-   script hands it evidence as a signal line, never a verdict.
-5. An irreversible effect (delete, overwrite, publish): agent decides, the
-   script executes only behind an explicit witness and keeps the undo.
-
-| Script (symbolic) | Agent (neuro) |
-| --- | --- |
-| Existence, size, encoding, digest, schema, structural equality, cross-record links | Whether a claim is supported, a paper relevant, a sentence clear |
-| Session files, ledgers, minted identifiers, admitted records | Which rung, school, level, or sibling fits this case |
-| Verdicts and scaffolds derived from the ledger; a `next` advisory | Drafts, rewrites, briefs, and the reading of retrieved text as data |
-| HTTP, retries, rate limits, wire formats decoded into records | Weighing a signal against what the user asked for |
-| Idempotent repairs; effects behind a witness with an undo | The decision to take an irreversible step |
-
-Keep the agent's side wide: encode no taste as a hard rule, and put a
-style threshold in a signal. Give the agent free memory beside the gate,
-a pad that never rejects, so rigor sits only on the fields the next reader
-depends on. Make the script's output the agent's whole view of it: a
-rejection names every fix, a receipt echoes every identifier, and a skipped
-check says so.
 
 ## Persona verbs
 
