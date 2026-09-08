@@ -68,6 +68,7 @@ outrank brevity.
   </directives>
 
   <directives for="scripts">
+    <rule>Split the work between script and agent by the table and the test in Script and agent below: the script is the symbolic half and holds what is decidable and what must be remembered; the agent is the neuro half and holds every judgment about meaning, choice, and intent.</rule>
     <rule>Give the script the exact, decidable checks (existence, size, encoding, identity, structural equality, digests, atomic writes, backups) and hard-fail only on an invariant violation. Emit every heuristic as an advisory signal line stating its evidence, and have the skill text weigh signals against user intent. When a check is skipped or vacuous, say so in the output.</rule>
     <rule>Gate a destructive or hard-to-reverse effect on an exact witness (a marker file, an identity record, an explicit flag) and provide an undo path. Keep mechanical, idempotent repairs in the script; leave judgment calls to the agent.</rule>
     <rule>Document the full command surface and output conventions in `SKILL.md`, with one line beside the commands reserving source reading for user-instructed troubleshooting.</rule>
@@ -100,6 +101,38 @@ outrank brevity.
     <item>A fresh agent can execute the skill from its text alone, with no session memory or clarifying question.</item>
   </checklist>
 </directives>
+
+## Script and agent
+
+Place each responsibility with the first test it passes:
+
+1. Computable exactly from bytes the script can read, with no taste
+   involved: script, as an invariant that hard-fails.
+2. A fact the agent would otherwise have to remember across turns (what was
+   admitted, an identifier, a count, a status): script, stored once and
+   echoed in every output.
+3. A verdict that follows from stored facts (a claim's standing, coverage,
+   a ratio, the next legal step): script, derived from live state on every
+   call and never stored, so it cannot go stale.
+4. A judgment about meaning, relevance, quality, or intent: agent. The
+   script hands it evidence as a signal line, never a verdict.
+5. An irreversible effect (delete, overwrite, publish): agent decides, the
+   script executes only behind an explicit witness and keeps the undo.
+
+| Script (symbolic) | Agent (neuro) |
+| --- | --- |
+| Existence, size, encoding, digest, schema, structural equality, cross-record links | Whether a claim is supported, a paper relevant, a sentence clear |
+| Session files, ledgers, minted identifiers, admitted records | Which rung, school, level, or sibling fits this case |
+| Verdicts and scaffolds derived from the ledger; a `next` advisory | Drafts, rewrites, briefs, and the reading of retrieved text as data |
+| HTTP, retries, rate limits, wire formats decoded into records | Weighing a signal against what the user asked for |
+| Idempotent repairs; effects behind a witness with an undo | The decision to take an irreversible step |
+
+Keep the agent's side wide: encode no taste as a hard rule, and put a
+style threshold in a signal. Give the agent free memory beside the gate,
+a pad that never rejects, so rigor sits only on the fields the next reader
+depends on. Make the script's output the agent's whole view of it: a
+rejection names every fix, a receipt echoes every identifier, and a skipped
+check says so.
 
 ## Persona verbs
 
