@@ -164,8 +164,7 @@ $R jot "$S" [--text] [--lore] <<'JSON'
 JSON
 $R jot "$S" --file <record.json>
 $R recall "$S" [--kind extraction] [--match <regex>] [--since j9] [--limit 20] [--lore]
-$R note "$S" --file <round.json>
-$R brief "$S"
+$R note "$S" --file <round.json> && $R brief "$S"
 $R cite-check "$S" --draft report.md
 $R status "$S"
 $R verify "$S"

@@ -8,7 +8,7 @@ import pytest
 
 from btm_caveman.classify import assess
 from btm_caveman.model import FileKind
-from btm_caveman.sensitive import is_sensitive
+from btm_caveman.sensitive import is_sensitive, name_reads_sensitive
 
 
 def kind(path: Path, text: str | None = None) -> FileKind:
@@ -70,10 +70,18 @@ class TestSignals:
 
 class TestSensitive:
     @pytest.mark.parametrize(
-        "path", ["/home/u/.aws/config", "api-key.md", "/home/u/.ssh/config"]
+        "path",
+        ["/home/u/.aws/config", "/home/u/.ssh/config", "id_rsa.pub", "site.pem"],
     )
-    def test_secret_bearing_paths_are_refused(self, path):
+    def test_exact_names_and_private_paths_are_refused(self, path):
         assert is_sensitive(Path(path))
 
     def test_an_ordinary_note_is_not_sensitive(self):
         assert not is_sensitive(Path("notes.md"))
+
+    @pytest.mark.parametrize("name", ["api-key.md", "token_notes.md"])
+    def test_a_token_in_the_name_is_a_guess_not_a_refusal(self, name):
+        assert name_reads_sensitive(name) and not is_sensitive(Path(name))
+
+    def test_an_ordinary_name_reads_as_nothing(self):
+        assert not name_reads_sensitive("notes.md")

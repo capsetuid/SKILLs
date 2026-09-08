@@ -60,6 +60,28 @@ class TestVerbs:
         assert calls == [3, 5]
 
 
+class TestFetch:
+    def test_the_second_fetch_of_one_url_costs_no_request(self, capsys, monkeypatch):
+        calls = []
+
+        def once(url):
+            calls.append(url)
+            return "the readable body"
+
+        monkeypatch.setattr(sources, "fetch", once)
+        _, first, _ = run(["fetch", "https://x.org/a"], capsys)
+        _, second, err = run(["fetch", "https://x.org/a"], capsys)
+        assert calls == ["https://x.org/a"]
+        assert second == first and second["chars"] == len("the readable body")
+        assert "cached" in err
+
+    def test_a_different_url_is_a_different_page(self, capsys, monkeypatch):
+        monkeypatch.setattr(sources, "fetch", lambda url: url)
+        run(["fetch", "https://x.org/a"], capsys)
+        _, document, err = run(["fetch", "https://x.org/b"], capsys)
+        assert document["text"] == "https://x.org/b" and "cached" not in err
+
+
 class TestClean:
     def test_clean_reports_what_it_freed(self, capsys, monkeypatch):
         monkeypatch.setattr(

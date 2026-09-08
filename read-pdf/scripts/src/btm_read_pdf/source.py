@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import os
+import shutil
 import sys
 import tempfile
 from dataclasses import dataclass
@@ -11,7 +12,7 @@ from pathlib import Path
 
 import httpx
 
-from btm_corekit import CommandError, build_client, stream
+from btm_corekit import CommandError, build_client, stream, tree_bytes
 
 TIMEOUT_SECONDS = 30
 DEFAULT_MAX_BYTES = 200 * 1024 * 1024
@@ -43,6 +44,22 @@ def parse_source(raw: str) -> Source:
 def cache_dir() -> Path:
     """Regenerable downloads live in temp space, owner-named per convention."""
     return Path(tempfile.gettempdir()) / "btm-read-pdf"
+
+
+@dataclass(frozen=True, slots=True)
+class Cleaned:
+    directory: Path
+    freed: int
+
+
+def clean() -> Cleaned | None:
+    """Remove the download cache; None when there was none to remove."""
+    directory = cache_dir()
+    if not directory.is_dir():
+        return None
+    freed = tree_bytes(directory)
+    shutil.rmtree(directory)
+    return Cleaned(directory, freed)
 
 
 def materialize(

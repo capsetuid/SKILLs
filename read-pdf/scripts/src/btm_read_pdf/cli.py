@@ -14,7 +14,7 @@ from btm_corekit import CommandError, Parser, dispatch
 from btm_read_pdf.document import decrypt_if_needed, open_output
 from btm_read_pdf.pages import parse_page_specification
 from btm_read_pdf.render import write_extraction
-from btm_read_pdf.source import DEFAULT_MAX_BYTES, materialize, parse_source
+from btm_read_pdf.source import DEFAULT_MAX_BYTES, clean, materialize, parse_source
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -61,7 +61,34 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def clean_parser() -> argparse.ArgumentParser:
+    parser = Parser(
+        prog="btm-read-pdf clean",
+        description="Remove the download cache and report the bytes freed.",
+    )
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="accepted for uniformity; the cache is this skill's only state",
+    )
+    return parser
+
+
+def _clean(argv: Sequence[str]) -> int:
+    clean_parser().parse_args(argv)
+    cleaned = clean()
+    if cleaned is None:
+        print("nothing to remove: 0 bytes freed")
+    else:
+        print(f"{cleaned.directory}: {cleaned.freed} bytes freed")
+    return 0
+
+
 def _run(argv: Sequence[str] | None) -> int:
+    argv = list(sys.argv[1:] if argv is None else argv)
+    if argv[:1] == ["clean"]:
+        # The verb precedes the document parser, whose positional would eat it.
+        return _clean(argv[1:])
     args = build_parser().parse_args(argv)
     if args.output and args.output.exists() and not args.overwrite:
         # Destroying existing bytes needs the caller's explicit consent;

@@ -6,7 +6,7 @@ import io
 import json
 import sys
 
-from btm_peer_review.cli import main
+from btm_peer_review.cli import build_parser, main
 
 
 def run(argv, capsys, stdin: str | None = None):
@@ -46,6 +46,10 @@ def batch(tmp_path, payload) -> str:
 
 
 class TestFlow:
+    def test_init_names_its_positional_as_every_sibling_does(self):
+        args = build_parser().parse_args(["init", "ada route", "--date", "2026-03"])
+        assert args.session == "ada route"
+
     def test_init_rejects_a_bad_date(self, capsys):
         code, _, err = run(
             ["init", "ada route", "--date", "March"],

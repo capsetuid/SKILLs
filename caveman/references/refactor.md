@@ -16,14 +16,15 @@ R="env -u VIRTUAL_ENV uv run --project $(realpath <skill-root>/scripts) btm-cave
 $R prepare <absolute-filepath>
 </commands>
 
-   On REFUSED (sensitive name, empty, oversized, non-UTF-8, backup artifact,
-   existing backup), report the reason and stop: refusals are hard
-   invariants. On success it prints BACKUP and BODY paths; frontmatter is
-   already split off and preserved verbatim. SIGNAL lines are advisory
-   heuristics (content assessed as code, config, or inconclusive, with the
-   observed ratios): weigh them yourself. Signals saying code or config stop
-   the run unless the user explicitly named this file; then proceed, since
-   the verified backup makes it undoable.
+   On REFUSED (a credential or key filename, a known private path, empty,
+   oversized, non-UTF-8, backup artifact, existing backup), report the reason
+   and stop: refusals are hard invariants. On success it prints BACKUP and
+   BODY paths; frontmatter is already split off and preserved verbatim.
+   SIGNAL lines are advisory heuristics (content assessed as code, config, or
+   inconclusive, with the observed ratios; a filename that merely reads
+   sensitive): weigh them yourself. Signals saying code, config, or sensitive
+   filename stop the run unless the user explicitly named this file; then
+   proceed, since the verified backup makes it undoable.
 
 2. Compress. Read the BODY file and rewrite its prose per the rules below.
    Write the result to a scratch file. Do not touch fenced code, inline
@@ -79,7 +80,7 @@ list numbering, table structure (compress cell text only), YAML frontmatter
 
 ## Boundaries
 
-- The script hard-refuses only invariants: secrets-like names, backup artifacts, files over 500KB, non-UTF-8, empty files. Trust refusals; never bypass with a manual write. Content-type judgment arrives as SIGNAL lines for you to weigh: code or config signals mean stop unless the user explicitly asked for that exact file.
+- The script hard-refuses only invariants: exact credential, key, and secret filenames, paths inside a known private directory, backup artifacts, files over 500KB, non-UTF-8, empty files. Trust refusals; never bypass with a manual write. Guesses arrive as SIGNAL lines for you to weigh: a code or config assessment, or a filename that reads sensitive, means stop unless the user explicitly asked for that exact file.
 - Mixed prose and code: compress prose only; code blocks are read-only regions. When unsure whether a span is code or prose, leave it unchanged.
 - Non-Markdown prose (.rst, .tex, .typ): the script warns that its checks assume Markdown; those headings and code blocks are unprotected, so preserve structure manually.
 - Backups live outside the tree so skill auto-loaders never re-ingest them; the script refuses any path inside the backup tree.

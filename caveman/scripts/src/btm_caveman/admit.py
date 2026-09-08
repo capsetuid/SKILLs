@@ -7,7 +7,7 @@ from pathlib import Path
 from btm_caveman.classify import assess
 from btm_caveman.markdown import split_frontmatter
 from btm_caveman.model import MAX_FILE_SIZE, Admission, FileKind, Plan, Refusal
-from btm_caveman.sensitive import is_sensitive
+from btm_caveman.sensitive import is_sensitive, name_reads_sensitive
 from btm_caveman.store import backup_base, read_utf8
 
 # Guidance the agent receives alongside a non-prose assessment. Advisory:
@@ -19,6 +19,9 @@ KIND_GUIDANCE = {
     FileKind.CONFIG: ("assessed as CONFIG/DATA: compress only on explicit user intent"),
     FileKind.UNKNOWN: ("assessment inconclusive: read the file, judge prose yourself"),
 }
+NAME_GUIDANCE = (
+    "filename looks sensitive: proceed only when the user named this exact file"
+)
 
 
 def admit(path: Path) -> Admission:  # noqa: PLR0911
@@ -33,8 +36,8 @@ def admit(path: Path) -> Admission:  # noqa: PLR0911
         return Refusal(f"Not a file: {path}")
     if is_sensitive(path):
         return Refusal(
-            f"Refusing {path.name}: filename looks sensitive (credentials, keys,"
-            " secrets, or known private paths). Rename it if this is a false positive."
+            f"Refusing {path.name}: a sensitive filename (credentials, keys,"
+            " secrets, or a known private path). Rename it if this is a false positive."
         )
     if path.name.endswith(".original.md") or backup_base().resolve() in path.parents:
         return Refusal("Refusing to compress a backup file")
@@ -52,4 +55,6 @@ def admit(path: Path) -> Admission:  # noqa: PLR0911
     notes = assessment.signals
     if assessment.kind is not FileKind.NATURAL_LANGUAGE:
         notes = (KIND_GUIDANCE[assessment.kind], *notes)
+    if name_reads_sensitive(path.name):
+        notes = (NAME_GUIDANCE, *notes)
     return Plan(path=path, frontmatter=frontmatter, body=body, notes=notes)

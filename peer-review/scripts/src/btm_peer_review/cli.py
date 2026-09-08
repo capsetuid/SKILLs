@@ -81,7 +81,7 @@ def cmd_init(args: argparse.Namespace) -> int:
         },
         "the session",
     )
-    made = STORE.create(args.ref)
+    made = STORE.create(args.session)
     write_meta(made.directory, meta)
     emit(
         {
@@ -320,7 +320,7 @@ def build_parser() -> argparse.ArgumentParser:
         "init", help='mint a session for one paper; {"title": ...} on stdin'
     )
     init.set_defaults(func=cmd_init)
-    init.add_argument("ref", help="two or three keywords, or a directory path")
+    init.add_argument("session", help="two or three keywords, or a directory path")
     init.add_argument(
         "--file", default=None, help="read the title from this file instead of stdin"
     )

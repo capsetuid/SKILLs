@@ -37,10 +37,17 @@ class TestAdmit:
         path.write_text("   \n", encoding="utf-8")
         assert "empty" in admit(path).reason
 
-    def test_a_secret_looking_name_is_refused(self, tmp_path):
-        path = tmp_path / "api-key.md"
+    def test_an_exact_secret_name_is_refused(self, tmp_path):
+        path = tmp_path / "credentials.md"
         path.write_text(PROSE, encoding="utf-8")
         assert "sensitive" in admit(path).reason
+
+    def test_a_secret_looking_name_is_admitted_with_a_note(self, tmp_path):
+        path = tmp_path / "api-key.md"
+        path.write_text(PROSE, encoding="utf-8")
+        admission = admit(path)
+        assert isinstance(admission, Plan)
+        assert "filename looks sensitive" in admission.notes[0]
 
     def test_an_oversized_file_is_refused(self, tmp_path):
         path = tmp_path / "big.md"

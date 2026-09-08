@@ -8,12 +8,12 @@ change a recipe, or understand why the code is shaped as it is.
 Strict one-directional layering; each module names its concern in its
 docstring:
 
-    model -> steps -> catalog -> plan -> render/effects -> cli
+    model -> steps -> catalog -> plan -> render/execute -> cli
 
 Everything through `plan` is pure: `btm-setup-env design` prints exactly
 what `provision` would do, with no network and no filesystem writes; that
-property is the test seam. `effects` is the only module that performs I/O;
-`cli` only parses and reports.
+property is the test seam. `execute` and the rest of the shell package hold
+every effect; `cli` only parses and reports.
 
 ## Laws
 
@@ -51,7 +51,7 @@ property is the test seam. `effects` is the only module that performs I/O;
    platforms); the publisher otherwise, pinned by version and sha256 when
    the publisher offers no digest sidecar; never a curl-pipe-sh installer.
 3. Write the `Recipe` in `catalog`: requirements as existing step values
-   when possible (a new step type in `steps` plus one executor in `effects`
+   when possible (a new step type in `steps` plus one executor in `execute`
    only for new machinery), env as an `EnvDelta` of redirections under the
    root, at least one probe per user-visible tool. Reject unsupported hosts
    inside `requirements` with a message naming the alternative.

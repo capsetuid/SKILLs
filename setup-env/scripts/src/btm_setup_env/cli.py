@@ -10,7 +10,7 @@ import sys
 from collections.abc import Callable
 from pathlib import Path
 
-from btm_corekit import Parser, dispatch
+from btm_corekit import Parser, dispatch, tree_bytes
 from btm_setup_env.catalog import CATALOG
 from btm_setup_env.model import (
     GENERIC,
@@ -149,8 +149,12 @@ def cmd_destroy(args: argparse.Namespace) -> int:
             f"refusing to delete {layout.root}: no manifest.json; "
             "was this directory provisioned by btm-setup-env?"
         )
+    freed = tree_bytes(layout.root)
     shutil.rmtree(layout.root)
-    print(f"removed {layout.root}")
+    if args.json:
+        print(json.dumps({"removed": str(layout.root), "bytes_freed": freed}, indent=2))
+        return 0
+    print(f"removed {layout.root}: {freed} bytes freed")
     return 0
 
 
@@ -217,17 +221,17 @@ def _parser() -> argparse.ArgumentParser:
         sp.add_argument("tags", nargs="+", metavar="TAG")
         sp.add_argument("--json", action="store_true")
         common(sp)
-    for verb, summary, handler in (
-        (
-            "status",
-            "report what is installed and whether each probe passes",
-            cmd_status,
-        ),
-        ("destroy", "remove the environment root for this project", cmd_destroy),
-    ):
-        sp = sub.add_parser(verb, help=summary)
-        sp.set_defaults(func=handler)
-        common(sp)
+    status = sub.add_parser(
+        "status", help="report what is installed and whether each probe passes"
+    )
+    status.set_defaults(func=cmd_status)
+    common(status)
+    destroy = sub.add_parser(
+        "destroy", help="remove the environment root for this project"
+    )
+    destroy.set_defaults(func=cmd_destroy)
+    destroy.add_argument("--json", action="store_true")
+    common(destroy)
     shim = sub.add_parser("shim", help="wrap a foreign-architecture binary to run here")
     shim.set_defaults(func=cmd_shim)
     shim.add_argument("binary", type=Path)

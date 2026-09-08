@@ -77,9 +77,15 @@ $R <document.pdf> --pages 4-6 --no-metadata
 $R https://<host>/<paper>.pdf --pages 1-3
 </commands>
 
+<commands for="clean">
+$R clean
+</commands>
+
 A URL downloads once into a digest-keyed file under the system temp
-directory's `btm-read-pdf/`; a rerun reuses it, and deleting that file
-forces a refetch. Downloads over 200 MB are refused
+directory's `btm-read-pdf/`; a rerun reuses it, and `clean` removes the
+cache, reports the bytes freed, and makes the next run refetch
+(`clean --all` is the same call, since the cache is this skill's only
+state). Downloads over 200 MB are refused
 (`--max-bytes` raises the cap), and a response without PDF magic bytes, such
 as a paywall's HTML page, is refused and left uncached.
 

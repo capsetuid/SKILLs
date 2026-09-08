@@ -33,7 +33,7 @@ run it, source the printed activation script, build. Re-run to repair.
 | `catalog` | [scripts/src/btm_setup_env/catalog.py](scripts/src/btm_setup_env/catalog.py) |
 | `plan` | [scripts/src/btm_setup_env/plan.py](scripts/src/btm_setup_env/plan.py) |
 | `render` | [scripts/src/btm_setup_env/render.py](scripts/src/btm_setup_env/render.py) |
-| `effects` | [scripts/src/btm_setup_env/effects.py](scripts/src/btm_setup_env/effects.py) |
+| `execute` | [scripts/src/btm_setup_env/shell/execute.py](scripts/src/btm_setup_env/shell/execute.py) |
 | `targets` | [references/targets.md](references/targets.md) |
 | `extending` | [references/extending.md](references/extending.md) |
 

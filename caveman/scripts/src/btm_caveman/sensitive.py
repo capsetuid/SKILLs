@@ -1,4 +1,4 @@
-"""Exact refusal: filenames and paths that must never be rewritten."""
+"""Names that refuse a rewrite outright, and names that only look sensitive."""
 
 from __future__ import annotations
 
@@ -56,10 +56,13 @@ SENSITIVE_NAME_TOKENS = (
 
 
 def is_sensitive(path: Path) -> bool:
-    """Files that must never enter a compression flow, by name alone."""
-    if sensitive_basename(path.name):
-        return True
-    if {p.lower() for p in path.parts} & SENSITIVE_PATH_COMPONENTS:
-        return True
-    collapsed = path.name.lower().translate(_JOINERS)
+    """Files that must never enter a compression flow, by exact name or path."""
+    return sensitive_basename(path.name) or bool(
+        {p.lower() for p in path.parts} & SENSITIVE_PATH_COMPONENTS
+    )
+
+
+def name_reads_sensitive(name: str) -> bool:
+    """A secret-sounding word inside the name: a guess, so advisory only."""
+    collapsed = name.lower().translate(_JOINERS)
     return any(token in collapsed for token in SENSITIVE_NAME_TOKENS)

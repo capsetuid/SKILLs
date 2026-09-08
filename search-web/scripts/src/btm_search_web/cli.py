@@ -92,7 +92,18 @@ def cmd_scholar(args: argparse.Namespace) -> int:
 
 
 def cmd_fetch(args: argparse.Namespace) -> int:
-    text = sources.fetch(args.url)
+    """One page's text, cached by URL in the record shape every verb caches."""
+    key = f"fetch:{args.url}"
+    rows = remembered(key)
+    if rows:
+        signal("cached: this fetch ran before; clean drops the cache")
+        text = rows[0].snippet
+    else:
+        text = sources.fetch(args.url)
+        remember(
+            key,
+            [Result(title=args.url, url=args.url, source="fetch", snippet=text)],
+        )
     emit({"verb": "fetch", "url": args.url, "chars": len(text), "text": text})
     return 0
 
